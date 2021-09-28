@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-iss-auth-resp-01
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-iss-auth-resp/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="OAuth 2.0 Authorization Server Issuer Identification (Internet-Draft, 2021)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-iss-auth-resp-01.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-iss-auth-resp-01.html" title="HTML version of this document, from XML2RFC">html</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-iss-auth-resp-01.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-iss-auth-resp-01.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-iss-auth-resp/01/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-iss-auth-resp/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-iss-auth-resp@ietf.org?subject=draft-ietf-oauth-iss-auth-resp" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-iss-auth-resp-01.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-iss-auth-resp-01.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-iss-auth-resp-01.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-meyerzuselhausen-oauth-iss-auth-resp">draft-meyerzuselhausen-oauth-iss-auth-resp</a>)                  
+          <a href="/doc/html/draft-ietf-oauth-iss-auth-resp-00">00</a> <a href="/doc/html/draft-ietf-oauth-iss-auth-resp-01"><b>01</b></a>                                                         </pre>
+</div>
+<div class="draftcontent">
+<pre>Web Authorization Protocol                         K. Meyer zu Selhausen
+Internet-Draft                                                 Hackmanit
+Intended status: Standards Track                                 D. Fett
+Expires: 10 December 2021                                        yes.com
+                                                             8 June 2021
+
+
+          <span class="h1">OAuth 2.0 Authorization Server Issuer Identification</span>
+                   <span class="h1">draft-ietf-oauth-iss-auth-resp-01</span>
+
+Abstract
+
+   This document specifies a new parameter "iss" that is used to
+   explicitly include the issuer identifier of the authorization server
+   in the authorization response of an OAuth authorization flow.  The
+   "iss" parameter serves as an effective countermeasure to "mix-up
+   attacks".
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 10 December 2021.
+
+Copyright Notice
+
+   Copyright (c) 2021 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (<a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/</a>
+   <a href="https://trustee.ietf.org/license-info">license-info</a>) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the <a href="https://trustee.ietf.org/license-info">Trust Legal Provisions</a> and are
+   provided without warranty as described in the Simplified BSD License.
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.1">1.1</a>.  Conventions and Terminology . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+   <a href="#section-2">2</a>.  Response Parameter "iss"  . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+     <a href="#section-2.1">2.1</a>.  Example Authorization Response  . . . . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.2">2.2</a>.  Example Error Response  . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.3">2.3</a>.  Providing the Issuer Identifier "iss" . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.4">2.4</a>.  Validation of the Issuer Identifier "iss" . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-3">3</a>.  Authorization Server Metadata . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#section-4">4</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#section-5">5</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-5.1">5.1</a>.  OAuth Authorization Server Metadata . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-5.2">5.2</a>.  OAuth Parameters Registration . . . . . . . . . . . . . .   <a href="#page-8">8</a>
+   <a href="#section-6">6</a>.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-8">8</a>
+   <a href="#section-7">7</a>.  Normative References  . . . . . . . . . . . . . . . . . . . .   <a href="#page-8">8</a>
+   <a href="#section-8">8</a>.  Informative References  . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+   <a href="#appendix-A">Appendix A</a>.  Document History . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   The OAuth authorization framework [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] allows clients to
+   interact with multiple independent authorization servers under the
+   control of separate entities.  Some OAuth grant types utilize the
+   resource owner's user-agent to deliver the authorization server's
+   response to the OAuth client.  One example of this pattern is the
+   authorization response of the authorization code grant.
+
+   The authorization response as specified in <a href="/doc/html/rfc6479#section-4.1.2">Section 4.1.2. of
+   [RFC6479]</a> does not contain any information about the identity of the
+   authorization server which issued the response.  Therefore, clients
+   receiving a response from the resource owner's user-agent cannot be
+   sure who initially issued the response and the secrets contained
+   therein.  The lack of certainty about the origin of the response
+   enables a class of attacks called "mix-up attacks".
+
+   Mix-up attacks are a potential threat to all OAuth clients that
+   interact with multiple authorization servers.  When at least one of
+   these authorization servers is under an attacker's control, the
+   attacker can launch a mix-up attack to acquire authorization codes or
+   access tokens issued by any one of the other authorization servers.
+   There are multiple ways in which an attacker can gain control over an
+   authorization server supported by the client: For instance, an
+   authorization server could become compromised, or the attacker could
+   register their own authorization server, for example, using dynamic
+   client registration ([<a href="/doc/html/rfc7591" title='"OAuth 2.0 Dynamic Client Registration Protocol"'>RFC7591</a>]).
+
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   OAuth clients that interact with only one authorization server are
+   not vulnerable to mix-up attacks.  However, when such clients decide
+   to add support for a second authorization server in the future they
+   become vulnerable and need to apply countermeasures to mix-up
+   attacks.
+
+   Mix-up attacks aim to steal an authorization code or access token by
+   tricking the client into sending the authorization code or access
+   token to the attacker instead of the honest authorization or resource
+   server.  This marks a severe threat to the confidentiality and
+   integrity of resources whose access is managed with OAuth.  A
+   detailed description and different variants of the mix-up attack
+   class can be found in <a href="#section-4.4">Section 4.4</a>. of the OAuth Security Best Current
+   Practice [<a href="#ref-I-D.ietf-oauth-security-topics">I-D.ietf-oauth-security-topics</a>].
+
+   This document defines a new parameter in the authorization response
+   called "iss".  The "iss" parameter allows the authorization server to
+   include its identity in the authorization response explicitly.  The
+   client can compare the value of the "iss" parameter to the issuer
+   identifier of the authorization server (e.g., retrieved from its
+   metadata) it believes it is interacting with.  The "iss" parameter
+   gives the client certainty about the authorization server's identity
+   and enables it to send credentials such as authorization codes and
+   access tokens only to the intended recipients.  Therefore, the
+   implementation of the "iss" parameter serves as an effective
+   countermeasure to mix-up attacks.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Conventions%20and%20Terminology"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Conventions and Terminology</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "NOT <em>RECOMMENDED</em>", "<em>MAY</em>", and
+   "<em>OPTIONAL</em>" in this document are to be interpreted as described in <a href="/doc/html/bcp14">BCP</a>
+   <a href="/doc/html/bcp14">14</a> [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>] [<a href="/doc/html/rfc8174" title='"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"'>RFC8174</a>] when, and only when, they appear in all
+   capitals, as shown here.
+
+   This specification uses the terms "access token", "authorization
+   code", "authorization code grant", "authorization server", "resource
+   server", "authorization response", "grant type", and "client" defined
+   by the OAuth 2.0 Authorization Framework [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] and the term
+   "issuer identifier" defined by OAuth 2.0 Authorization Server
+   Metadata [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>].
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Response%20Parameter%20%22iss%22"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Response Parameter "iss"</span>
+
+   In authorization responses to the client, including error responses,
+   an authorization server supporting this specification <em>MUST</em> indicate
+   its identity by including the "iss" parameter in the response.
+
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   The "iss" parameter value is the issuer identifier of the
+   authorization server which created the authorization response, as
+   defined in [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>].  Its value <em>MUST</em> be a URL that uses the "https"
+   scheme without any query or fragment components.  If the
+   authorization server provides metadata as defined in [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>], the
+   value of the parameter "iss" <em>MUST</em> be identical to the authorization
+   server metadata value "issuer".
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.1.%20%20Example%20Authorization%20Response"></a></body></html><a class="selflink" href="#section-2.1" id="section-2.1">2.1</a>.  Example Authorization Response</span>
+
+   The following example shows an authorization response from the
+   authorization server whose issuer identifier is
+   "https://honest.as.example" (extra line breaks and indentation are
+   for display purposes only):
+
+   HTTP/1.1 302 Found
+   Location: https://client.example/cb?
+     code=x1848ZT64p4IirMPT0R-X3141MFPTuBX-VFL_cvaplMH58
+     &amp;state=ZWVlNDBlYzA1NjdkMDNhYjg3ZjUxZjAyNGQzMTM2NzI
+     &amp;iss=https%3A%2F%2Fhonest.as.example
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.2.%20%20Example%20Error%20Response"></a></body></html><a class="selflink" href="#section-2.2" id="section-2.2">2.2</a>.  Example Error Response</span>
+
+   The following example shows an error response from the same
+   authorization server (extra line breaks and indentation are for
+   display purposes only):
+
+   HTTP/1.1 302 Found
+   Location: https://client.example/cb?
+     error=access_denied
+     &amp;state=ZWVlNDBlYzA1NjdkMDNhYjg3ZjUxZjAyNGQzMTM2NzI
+     &amp;iss=https%3A%2F%2Fhonest.as.example
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.3.%20%20Providing%20the%20Issuer%20Identifier%20%22iss%22"></a></body></html><a class="selflink" href="#section-2.3" id="section-2.3">2.3</a>.  Providing the Issuer Identifier "iss"</span>
+
+   Authorization servers supporting this specification <em>MUST</em> provide
+   their issuer identifier to enable clients to validate the "iss"
+   parameter effectively.
+
+   For authorization servers publishing metadata according to [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>],
+   the following rules apply:
+
+   *  The issuer identifier included in the server's metadata value
+      "issuer" <em>MUST</em> be identical to the "iss" parameter's value.
+
+
+
+
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   *  The server <em>MUST</em> indicate its support for the "iss" parameter by
+      setting the metadata parameter
+      "authorization_response_iss_parameter_supported", defined in
+      <a href="#section-3">Section 3</a>, to "true".
+
+   Authorization servers <em>MAY</em> additionally provide the issuer identifier
+   to clients by any other mechanism which is outside of the scope of
+   this specification.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.4.%20%20Validation%20of%20the%20Issuer%20Identifier%20%22iss%22"></a></body></html><a class="selflink" href="#section-2.4" id="section-2.4">2.4</a>.  Validation of the Issuer Identifier "iss"</span>
+
+   Clients that support this specification <em>MUST</em> extract the value of the
+   "iss" parameter from authorization responses they receive if the
+   parameter is present.  Clients <em>MUST</em> compare the extracted and URL-
+   decoded value to the issuer identifier of the authorization server
+   where the authorization request was sent to.  This comparison <em>MUST</em>
+   use simple string comparison as defined in <a href="/doc/html/rfc3986#section-6.2.1">Section 6.2.1. of
+   [RFC3986]</a>.  If the value does not match the expected issuer
+   identifier, clients <em>MUST</em> reject the authorization response and <em>MUST</em>
+   NOT proceed with the authorization grant.  For error responses,
+   clients <em>MUST NOT</em> assume that the error originates from the intended
+   authorization server.
+
+   More precisely, clients that interact with authorization servers
+   supporting OAuth metadata [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>] <em>MUST</em> compare the "iss" parameter
+   value to the "issuer" value in the server's metadata document.  If
+   OAuth metadata is not used, clients <em>MUST</em> use deployment-specific
+   ways, for example a static configuration, to decide if the returned
+   "iss" value is the expected value in the current flow (see also
+   <a href="#section-4">Section 4</a>).
+
+   If clients interact with both authorization servers supporting this
+   specification and authorization servers not supporting this
+   specification, clients <em>SHOULD</em> store the information which
+   authorization server supports the "iss" parameter.  Clients <em>MUST</em>
+   reject authorization responses without the "iss" parameter from
+   authorization servers which do support the parameter according to the
+   client's configuration.
+
+   In general, clients that support this specification <em>MAY</em> accept
+   authorization responses that do not contain the "iss" parameter or
+   reject them and exclusively support authorization servers which
+   provide the "iss" parameter in the authorization response.  This
+   decision is individual for every scenario and it is not in the scope
+   of this specification.
+
+
+
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   In OpenID Connect [<a href="#ref-OIDC.Core">OIDC.Core</a>] flows where an ID Token is returned
+   from the authorization endpoint, the value in the "iss" parameter
+   <em>MUST</em> always be identical to the "iss" claim in the ID Token.
+
+   <a href="/doc/html/rfc6479#section-4.1.2">Section 4.1.2. of [RFC6479]</a> already mandates that clients that do not
+   support this specification <em>MUST</em> ignore the unrecognized "iss"
+   parameter.
+
+   Note: The "JWT Secured Authorization Response Mode for OAuth 2.0
+   (JARM)" [<a href="#ref-JARM" title='"Financial-grade API: JWT Secured Authorization Response Mode for OAuth 2.0 (JARM)"'>JARM</a>] defines a mechanism that conveys all authorization
+   response parameters in a JWT.  This JWT contains an "iss" claim that
+   provides the same protection if it is validated as described in
+   <a href="#section-2.4">Section 2.4</a>.  Therefore, an additional "iss" parameter outside the
+   JWT is not necessary when JARM is used.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Authorization%20Server%20Metadata"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Authorization Server Metadata</span>
+
+   The following parameter for the authorization server metadata
+   [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>] is introduced to signal the authorization server's support
+   for this specification:
+
+   "authorization_response_iss_parameter_supported"  Boolean parameter
+      indicating whether the authorization server provides the "iss"
+      parameter in the authorization response as defined in <a href="#section-2">Section 2</a>.
+      If omitted, the default value is false.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Security Considerations</span>
+
+   The authorization response parameter "iss" defined in this
+   specification serves as a countermeasure to mix-up attacks described
+   in <a href="#section-4.4">Section 4.4</a>. of the OAuth Security Best Current Practices
+   [<a href="#ref-I-D.ietf-oauth-security-topics">I-D.ietf-oauth-security-topics</a>] and in detail in "On the security of
+   modern Single Sign-On Protocols: Second-Order Vulnerabilities in
+   OpenID Connect" [<a href="#ref-arXiv.1508.04324">arXiv.1508.04324</a>] and "A Comprehensive Formal
+   Security Analysis of OAuth 2.0" [<a href="#ref-arXiv.1601.01229">arXiv.1601.01229</a>].  The latter
+   provides a formal proof of the effectiveness of the countermeasure.
+
+   Clients <em>MUST</em> validate the "iss" parameter precisely as described in
+   <a href="#section-2.4">Section 2.4</a> and <em>MUST NOT</em> allow multiple authorization servers to use
+   the same issuer identifier.  In particular, when authorization server
+   details can be manually configured in the client, the client <em>MUST</em>
+   ensure that the accepted "iss" values are unique for each
+   authorization server.
+
+   The "iss" parameter enables a client to decide if an authorization
+   server "expects" to be used in an OAuth flow together with a certain
+   token endpoint and potentially other endpoints, like the userinfo
+   endpoint ([<a href="#ref-OIDC.Core">OIDC.Core</a>]).  When OAuth metadata is used, the "iss"
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   parameter identifies the issuer and therefore the respective OAuth
+   metadata document which points to the other endpoints.  When OAuth
+   metadata is not used, the client can use, for example, a statically
+   configured expected "iss" value for each configured authorization
+   server.
+
+   The issuer identifier contained in the authorization response is not
+   cryptographically protected against tampering.  In general,
+   mechanisms such as JWTs (as specified in JARM [<a href="#ref-JARM" title='"Financial-grade API: JWT Secured Authorization Response Mode for OAuth 2.0 (JARM)"'>JARM</a>]) could be used
+   to protect the integrity of the authorization response.  However, in
+   mix-up attacks, the client generally receives the authorization
+   response from an uncompromised authorization server.  If an attacker
+   can tamper this authorization response before it is received by the
+   client, the attacker would also have direct access to the
+   authorization code.  The attacker does not need to execute a mix-up
+   attack to steal the authorization code.  Therefore, integrity
+   protection for the authorization response is not necessary to defend
+   against mix-up attacks.
+
+   There are also alternative countermeasures to mix-up attacks.  When
+   an authorization response already includes an authorization server's
+   issuer identifier by other means, and this identifier is checked as
+   laid out in <a href="#section-2.4">Section 2.4</a>, the use and verification of the "iss"
+   parameter is not necessary and <em>MAY</em> be omitted.  This is the case when
+   OpenID Connect response types that return an ID token from the
+   authorization endpoint (e.g., "response_type=code id_token") or JARM
+   response mode are used, for example.  However, if a client receives
+   an authorization response that contains multiple issuer identifiers,
+   the client <em>MUST</em> reject the response if these issuer identifiers do
+   not match.  The details of alternative countermeasures are outside of
+   the scope of this specification.
+
+   Mix-up attacks are only relevant to clients that interact with
+   multiple authorization servers.  However, clients interacting with
+   only one authorization server might add support for a second
+   authorization server in the future.  By supporting multiple
+   authorization servers they become vulnerable to mix-up attacks and
+   need to apply countermeasures.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  IANA Considerations</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.1.%20%20OAuth%20Authorization%20Server%20Metadata"></a></body></html><a class="selflink" href="#section-5.1" id="section-5.1">5.1</a>.  OAuth Authorization Server Metadata</span>
+
+   This specification requests registration of the following values in
+   the IANA "OAuth Authorization Server Metadata" registry of
+   [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>].
+
+   Metadata Name:  "authorization_response_iss_parameter_supported"
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   Metadata Description:  Boolean value indicating whether the
+      authorization server provides the "iss" parameter in the
+      authorization response.
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-3">Section 3</a> of [[ this document ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.2.%20%20OAuth%20Parameters%20Registration"></a></body></html><a class="selflink" href="#section-5.2" id="section-5.2">5.2</a>.  OAuth Parameters Registration</span>
+
+   This specification requests registration of the following values in
+   the IANA "OAuth Parameters" registry of [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>]
+   established by [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+   Parameter name:  "iss"
+   Parameter usage location:  authorization response
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-2">Section 2</a> of [[ this document ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Acknowledgements</span>
+
+   TBD
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Normative References</span>
+
+   [<a id="ref-RFC6479">RFC6479</a>]  Zhang, X. and T. Tsou, "IPsec Anti-Replay Algorithm
+              without Bit Shifting", <a href="/doc/html/rfc6479">RFC 6479</a>, DOI 10.17487/RFC6479,
+              January 2012, &lt;<a href="https://www.rfc-editor.org/info/rfc6479">https://www.rfc-editor.org/info/rfc6479</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-security-topics">I-D.ietf-oauth-security-topics</a>]
+              Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
+              "OAuth 2.0 Security Best Current Practice", Work in
+              Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-security-topics-18">draft-ietf-oauth-security-</a>
+              <a href="/doc/html/draft-ietf-oauth-security-topics-18">topics-18</a>, 13 April 2021, &lt;<a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics-18">https://tools.ietf.org/html/</a>
+              <a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics-18">draft-ietf-oauth-security-topics-18</a>&gt;.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC8174">RFC8174</a>]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in <a href="/doc/html/rfc2119">RFC</a>
+              <a href="/doc/html/rfc2119">2119</a> Key Words", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc8174">RFC 8174</a>, DOI 10.17487/RFC8174,
+              May 2017, &lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;.
+
+   [<a id="ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>]
+              IANA, "OAuth Parameters",
+              &lt;<a href="http://www.iana.org/assignments/oauth-parameters">http://www.iana.org/assignments/oauth-parameters</a>&gt;.
+
+
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6749">https://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC8414">RFC8414</a>]  Jones, M., Sakimura, N., and J. Bradley, "OAuth 2.0
+              Authorization Server Metadata", <a href="/doc/html/rfc8414">RFC 8414</a>,
+              DOI 10.17487/RFC8414, June 2018,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8414">https://www.rfc-editor.org/info/rfc8414</a>&gt;.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              <a href="/doc/html/rfc3986">RFC 3986</a>, DOI 10.17487/RFC3986, January 2005,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc3986">https://www.rfc-editor.org/info/rfc3986</a>&gt;.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Informative References</span>
+
+   [<a id="ref-arXiv.1601.01229">arXiv.1601.01229</a>]
+              Fett, D., Kuesters, R., and G. Schmitz, "A Comprehensive
+              Formal Security Analysis of OAuth 2.0", 6 January 2016,
+              &lt;<a href="https://arxiv.org/abs/1601.01229">https://arxiv.org/abs/1601.01229</a>&gt;.
+
+   [<a id="ref-OIDC.Core">OIDC.Core</a>]
+              Sakimura, N., Bradley, J., Jones, M., de Medeiros, B., and
+              C. Mortimore, "OpenID Connect Core 1.0 incorporating
+              errata set 1", 8 November 2014,
+              &lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;.
+
+   [<a id="ref-JARM">JARM</a>]     Lodderstedt, T. and B. Campbell, "Financial-grade API: JWT
+              Secured Authorization Response Mode for OAuth 2.0 (JARM)",
+              17 October 2018,
+              &lt;<a href="https://openid.net/specs/openid-financial-api-jarm.html">https://openid.net/specs/openid-financial-api-jarm.html</a>&gt;.
+
+   [<a id="ref-arXiv.1508.04324">arXiv.1508.04324</a>]
+              Mainka, C., Mladenov, V., and J. Schwenk, "On the security
+              of modern Single Sign-On Protocols: Second-Order
+              Vulnerabilities in OpenID Connect", 18 August 2015,
+              &lt;<a href="http://arxiv.org/abs/1508.04324">http://arxiv.org/abs/1508.04324</a>&gt;.
+
+   [<a id="ref-RFC7591">RFC7591</a>]  Richer, J., Ed., Jones, M., Bradley, J., Machulak, M., and
+              P. Hunt, "OAuth 2.0 Dynamic Client Registration Protocol",
+              <a href="/doc/html/rfc7591">RFC 7591</a>, DOI 10.17487/RFC7591, July 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7591">https://www.rfc-editor.org/info/rfc7591</a>&gt;.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Document History</span>
+
+
+
+
+
+
+
+<span class="grey">Meyer zu Selhausen &amp; FetExpires 10 December 2021                [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft             oauth-iss-auth-resp                 June 2021</span>
+
+
+   [[ To be removed from the final specification ]]
+
+   -01 [[ Working Group Draft ]]
+   *  Incorporated WG feedback
+   *  Changed title of the draft to make it shorter
+   *  Clarified mix-up attacks in introduction
+   *  Improved note on JARM in validation section
+
+   -00 [[ Working Group Draft ]]
+   *  Working group draft
+
+   -02
+   *  Incorporated WG feedback
+   *  Clarifications for unique issuer identifier
+   *  Clarifications when multiple issuer identifier could be present
+   *  Added note that iss parameter <em>MUST NOT</em> be used with JARM
+   *  Added note on error responses and example for error response
+   *  Editorial changes
+
+   -01
+
+   *  Incorporated first WG feedback
+   *  Clarifications for use with OIDC
+   *  Added note that clients supporting just one AS are not vulnerable
+   *  Renamed metadata parameter
+   *  Various editorial changes
+
+   -00
+
+   *  initial draft
+
+Authors' Addresses
+
+   Karsten Meyer zu Selhausen
+   Hackmanit
+
+   Email: karsten.meyerzuselhausen@hackmanit.de
+
+
+   Daniel Fett
+   yes.com
+
+   Email: mail@danielfett.de
+
+
+
+
+
+
+
+
+Meyer zu Selhausen &amp; FetExpires 10 December 2021               [Page 10]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

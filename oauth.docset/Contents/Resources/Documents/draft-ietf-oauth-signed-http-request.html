@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-signed-http-request-03
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-signed-http-request/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="A Method for Signing HTTP Requests for OAuth (Internet-Draft, 2016)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-signed-http-request-03.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-signed-http-request-03.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-signed-http-request-03.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-signed-http-request/03/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-signed-http-request/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-signed-http-request@ietf.org?subject=draft-ietf-oauth-signed-http-request" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-signed-http-request-03.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-signed-http-request-03.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-signed-http-request-03.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-richer-oauth-signed-http-request">draft-richer-oauth-signed-http-request</a>)                      
+          <a href="/doc/html/draft-ietf-oauth-signed-http-request-00">00</a> <a href="/doc/html/draft-ietf-oauth-signed-http-request-01">01</a> <a href="/doc/html/draft-ietf-oauth-signed-http-request-02">02</a> <a href="/doc/html/draft-ietf-oauth-signed-http-request-03"><b>03</b></a>                                                   </pre>
+</div>
+<div class="draftcontent">
+<pre>OAuth Working Group                                       J. Richer, Ed.
+Internet-Draft
+Intended status: Standards Track                              J. Bradley
+Expires: February 9, 2017                                  Ping Identity
+                                                           H. Tschofenig
+                                                             ARM Limited
+                                                         August 08, 2016
+
+
+              <span class="h1">A Method for Signing HTTP Requests for OAuth</span>
+                <span class="h1">draft-ietf-oauth-signed-http-request-03</span>
+
+Abstract
+
+   This document a method for offering data origin authentication and
+   integrity protection of HTTP requests.  To convey the relevant data
+   items in the request a JSON-based encapsulation is used and the JSON
+   Web Signature (JWS) technique is re-used.  JWS offers integrity
+   protection using symmetric as well as asymmetric cryptography.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on February 9, 2017.
+
+Copyright Notice
+
+   Copyright (c) 2016 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+   <a href="#section-2">2</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+   <a href="#section-3">3</a>.  Generating a JSON Object from an HTTP Request . . . . . . . .   <a href="#page-3">3</a>
+     <a href="#section-3.1">3.1</a>.  Calculating the query parameter list and hash . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-3.2">3.2</a>.  Calculating the header list and hash  . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-4">4</a>.  Sending the signed object . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-4.1">4.1</a>.  HTTP Authorization header . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-4.2">4.2</a>.  HTTP Form body  . . . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-4.3">4.3</a>.  HTTP Query parameter  . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+   <a href="#section-5">5</a>.  Validating the request  . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-5.1">5.1</a>.  Validating the query parameter list and hash  . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-5.2">5.2</a>.  Validating the header list and hash . . . . . . . . . . .   <a href="#page-8">8</a>
+   <a href="#section-6">6</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+     <a href="#section-6.1">6.1</a>.  The 'pop' OAuth Access Token Type . . . . . . . . . . . .   <a href="#page-9">9</a>
+     6.2.  JSON Web Signature and Encryption Type Values
+           Registration  . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+   <a href="#section-7">7</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+     7.1.  Offering Confidentiality Protection for Access to
+           Protected       Resources . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+     <a href="#section-7.2">7.2</a>.  Plaintext Storage of Credentials  . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-7.3">7.3</a>.  Entropy of Keys . . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-7.4">7.4</a>.  Denial of Service . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-7.5">7.5</a>.  Validating the integrity of HTTP message  . . . . . . . .  <a href="#page-11">11</a>
+   <a href="#section-8">8</a>.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   <a href="#section-9">9</a>.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   <a href="#section-10">10</a>. Normative References  . . . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   In order to prove possession of an access token and its associated
+   key, an OAuth 2.0 client needs to compute some cryptographic function
+   and present the results to the protected resource as a signature.
+   The protected resource then needs to verify the signature and compare
+   that to the expected keys associated with the access token.  This is
+   in addition to the normal token protections provided by a bearer
+   token [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>] and transport layer security (TLS).
+
+   Furthermore, it is desirable to bind the signature to the HTTP
+   request.  Ideally, this should be done without replicating the
+   information already present in the HTTP request more than required.
+   However, many HTTP application frameworks insert extra headers, query
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   parameters, and otherwise manipulate the HTTP request on its way from
+   the web server into the application code itself.  It is the goal of
+   this draft to have a signature protection mechanism that is
+   sufficiently robust against such deployment constraints while still
+   providing sufficient security benefits.
+
+   The key required for this signature calculation is distributed via
+   mechanisms described in companion documents (see
+   [<a href="#ref-I-D.ietf-oauth-pop-key-distribution">I-D.ietf-oauth-pop-key-distribution</a>] and
+   [<a href="#ref-I-D.ietf-oauth-pop-architecture">I-D.ietf-oauth-pop-architecture</a>]).  The JSON Web Signature (JWS)
+   specification [<a href="/doc/html/rfc7515" title='"JSON Web Signature (JWS)"'>RFC7515</a>] is used for computing a digital signature
+   (which uses asymmetric cryptography) or a keyed message digest (in
+   case of symmetric cryptography).
+
+   The mechanism described in this document assumes that a client is in
+   possession of an access token and asociated key.  That client then
+   creates a JSON object including the access token, signs the JSON
+   object using JWS, and issues an request to a resource server for
+   access to a protected resource using the signed object as its
+   authorization.  The protected resource validates the JWS signature
+   and parses the JSON object to obtain token information.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Terminology"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Terminology</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "NOT <em>RECOMMENDED</em>", "<em>MAY</em>", and
+   "<em>OPTIONAL</em>" in this document are to be interpreted as described in <a href="/doc/html/rfc2119">RFC</a>
+   <a href="/doc/html/rfc2119">2119</a> [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>].
+
+   Other terms such as "client", "authorization server", "access token",
+   and "protected resource" are inherited from OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+   We use the term 'sign' (or 'signature') to denote both a keyed
+   message digest and a digital signature operation.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Generating%20a%20JSON%20Object%20from%20an%20HTTP%20Request"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Generating a JSON Object from an HTTP Request</span>
+
+   This specification uses JSON Web Signatures [<a href="/doc/html/rfc7515" title='"JSON Web Signature (JWS)"'>RFC7515</a>] to protect the
+   access token and, optionally, parts of the request.
+
+   This section describes how to generate a JSON [<a href="/doc/html/rfc7159" title='"The JavaScript Object Notation (JSON) Data Interchange Format"'>RFC7159</a>] object from
+   the HTTP request.  Each value below is included as a member of the
+   JSON object at the top level.
+
+   at <em>REQUIRED</em>.  The access token value.  This string is assumed to have
+      no particular format or structure and remains opaque to the
+      client.
+
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   ts <em>RECOMMENDED</em>.  The timestamp.  This integer provides replay
+      protection of the signed JSON object.  Its value <em>MUST</em> be a number
+      containing an integer value representing number of whole integer
+      seconds from midnight, January 1, 1970 GMT.
+
+   m  <em>OPTIONAL</em>.  The HTTP Method used to make this request.  This <em>MUST</em>
+      be the uppercase HTTP verb as a JSON string.
+
+   u  <em>OPTIONAL</em>.  The HTTP URL host component as a JSON string.  This <em>MAY</em>
+      include the port separated from the host by a colon in host:port
+      format.
+
+   p  <em>OPTIONAL</em>.  The HTTP URL path component of the request as an HTTP
+      string.
+
+   q  <em>OPTIONAL</em>.  The hashed HTTP URL query parameter map of the request
+      as a two-part JSON array.  The first part of this array is a JSON
+      array listing all query parameters that were used in the
+      calculation of the hash in the order that they were added to the
+      hashed value as described below.  The second part of this array is
+      a JSON string containing the Base64URL encoded hash itself,
+      calculated as described below.
+
+   h  <em>OPTIONAL</em>.  The hashed HTTP request headers as a two-part JSON
+      array.  The first part of this array is a JSON array listing all
+      headers that were used in the calculation of the hash in the order
+      that they were added to the hashed value as described below.  The
+      second part of this array is a JSON string containing the
+      Base64URL encoded hash itself, calculated as described below.
+
+   b  <em>OPTIONAL</em>.  The base64URL encoded hash of the HTTP Request body,
+      calculated as the SHA256 of the byte array of the body
+
+   All hashes <em>SHALL</em> be calculated using the SHA256 algorithm. [[ Note to
+   WG: do we want crypto agility here?  If so how do we signal this ]]
+
+   The JSON object is signed using the algorithm appropriate to the
+   associated access token key, usually communicated as part of key
+   distribution [<a href="#ref-I-D.ietf-oauth-pop-key-distribution">I-D.ietf-oauth-pop-key-distribution</a>].
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.1.%20%20Calculating%20the%20query%20parameter%20list%20and%20hash"></a></body></html><a class="selflink" href="#section-3.1" id="section-3.1">3.1</a>.  Calculating the query parameter list and hash</span>
+
+   To generate the query parameter list and hash, the client creates two
+   data objects: an ordered list of strings to hold the query parameter
+   names and a string buffer to hold the data to be hashed.
+
+   The client iterates through all query parameters in whatever order it
+   chooses and for each query parameter it does the following:
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   1.  Adds the name of the query parameter to the end of the list.
+
+   2.  Percent-encodes the name and value of the parameter as specified
+       in [<a href="/doc/html/rfc3986" title='"Uniform Resource Identifier (URI): Generic Syntax"'>RFC3986</a>].  Note that if the name and value have already been
+       percent-encoded for transit, they are not re-encoded for this
+       step.
+
+   3.  Encodes the name and value of the query parameter as "name=value"
+       and appends it to the string buffer separated by the ampersand
+       "&amp;" character.
+
+   Repeated parameter names are processed separately with no special
+   handling.  Parameters <em>MAY</em> be skipped by the client if they are not
+   required (or desired) to be covered by the signature.
+
+   The client then calculates the hash over the resulting string buffer.
+   The list and the hash result are added to a list as the value of the
+   "q" member.
+
+   For example, the query parameter set of "b=bar", "a=foo", "c=duck" is
+   concatenated into the string:
+
+   b=bar&amp;a=foo&amp;c=duck
+
+   When added to the JSON structure using this process, the results are:
+
+   "q": [["b", "a", "c"], "u4LgkGUWhP9MsKrEjA4dizIllDXluDku6ZqCeyuR-JY"]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.2.%20%20Calculating%20the%20header%20list%20and%20hash"></a></body></html><a class="selflink" href="#section-3.2" id="section-3.2">3.2</a>.  Calculating the header list and hash</span>
+
+   To generate the header list and hash, the client creates two data
+   objects: an ordered list of strings to hold the header names and a
+   string buffer to hold the data to be hashed.
+
+   The client iterates through all query parameters in whatever order it
+   chooses and for each query parameter it does the following:
+
+   1.  Lowercases the header name.
+
+   2.  Adds the name of the header to the end of the list.
+
+   3.  Encodes the name and value of the header as "name: value" and
+       appends it to the string buffer separated by a newline "\n"
+       character.
+
+   Repeated header names are processed separately with no special
+   handling.  Headers <em>MAY</em> be skipped by the client if they are not
+   required (or desired) to be covered by the signature.
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   The client then calculates the hash over the resulting string buffer.
+   The list and the hash result are added to a list as the value of the
+   "h" member.
+
+   For example, the headers "Content-Type: application/json" and "Etag:
+   742-3u8f34-3r2nvv3" are concatenated into the string:
+
+   content-type: application/json
+   etag: 742-3u8f34-3r2nvv3
+
+   "h": [["content-type", "etag"],
+     "bZA981YJBrPlIzOvplbu3e7ueREXXr38vSkxIBYOaxI"]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Sending%20the%20signed%20object"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Sending the signed object</span>
+
+   In order to send the signed object to the protected resource, the
+   client includes it in one of the following three places.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.1.%20%20HTTP%20Authorization%20header"></a></body></html><a class="selflink" href="#section-4.1" id="section-4.1">4.1</a>.  HTTP Authorization header</span>
+
+   The client <em>SHOULD</em> send the signed object to the protected resource in
+   the Authorization header.  The value of the signed object in JWS
+   compact form is appended to the Authorization header as a PoP value.
+   This is the preferred method.  Note that if this method is used, the
+   Authorization header <em>MUST NOT</em> be included in the protected elements
+   of the signed object.
+
+   GET /resource/foo
+   Authorization: PoP eyJ....omitted for brevity...
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.2.%20%20HTTP%20Form%20body"></a></body></html><a class="selflink" href="#section-4.2" id="section-4.2">4.2</a>.  HTTP Form body</span>
+
+   If the client is sending the request as a form-encoded HTTP message
+   with parameters in the body, the client <em>MAY</em> send the signed object as
+   part of that form body.  The value of the signed object in JWS
+   compact form is sent as the form parameter pop_access_token.  Note
+   that if this method is used, the body hash cannot be included in the
+   protected elements of the signed object.
+
+   POST /resource
+   Content-type: application/www-form-encoded
+
+   pop_access_token=eyJ....omitted for brevity...
+
+
+
+
+
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.3.%20%20HTTP%20Query%20parameter"></a></body></html><a class="selflink" href="#section-4.3" id="section-4.3">4.3</a>.  HTTP Query parameter</span>
+
+   If neither the Authorization header nor the form-encoded body
+   parameter are available to the client, the client <em>MAY</em> send the signed
+   object as a query parameter.  The value of the signed object in JWS
+   compact form is sent as the query parameter pop_access_token.  Note
+   that if this method is used, the pop_access_token parameter <em>MUST NOT</em>
+   be included in the protected elements of the signed object.
+
+   GET /resource?pop_access_token=eyJ....
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20Validating%20the%20request"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  Validating the request</span>
+
+   Just like with a bearer token [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>], while the access token value
+   included in the signed object is opaque to the client, it <em>MUST</em> be
+   understood by the protected resource in order to fulfill the request.
+   Also like a bearer token, the protected resource traditionally has
+   several methods at its disposal for understanding the access token.
+   It can look up the token locally (such as in a database), it can
+   parse a structured token (such as JWT [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>]), or it can use a
+   service to look up token information (such as introspection
+   [<a href="/doc/html/rfc7662" title='"OAuth 2.0 Token Introspection"'>RFC7662</a>]).  Whatever method is used to look up token information,
+   the protected resource <em>MUST</em> have access to the key associated with
+   the access token, as this key is required to validate the signature
+   of the incoming request.  Validation of the signature is done using
+   normal JWS validation for the signature and key type.
+
+   Additionally, in order to trust any of the hashed components of the
+   HTTP request, the protected resource <em>MUST</em> re-create and verify a hash
+   for each component as described below.  This process is a mirror of
+   the process used to create the hashes in the first place, with a mind
+   toward the fact that order may have changed and that elements may
+   have been added or deleted.  The protected resource <em>MUST</em> similarly
+   compare the replicated values included in various JSON fields with
+   the corresponding actual values from the request.  Failure to do so
+   will allow an attacker to modify the underlying request while at the
+   same time having the application layer verify the signature
+   correctly.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.1.%20%20Validating%20the%20query%20parameter%20list%20and%20hash"></a></body></html><a class="selflink" href="#section-5.1" id="section-5.1">5.1</a>.  Validating the query parameter list and hash</span>
+
+   The client has at its disposal a map that indexes the query parameter
+   names to the values given.  The client creates a string buffer for
+   calculating the hash.  The client then iterates through the "list"
+   portion of the "p" parameter.  For each item in the list (in the
+   order of the list) it does the following:
+
+
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   1.  Fetch the value of the parameter from the HTTP request query
+       parameter map.  If a parameter is found in the list of signed
+       parameters but not in the map, the validation fails.
+
+   2.  Percent-encodes the name and value of the parameter as specified
+       in [<a href="/doc/html/rfc3986" title='"Uniform Resource Identifier (URI): Generic Syntax"'>RFC3986</a>].  Note that if the name and value have already been
+       percent-encoded for transit, they are not re-encoded for this
+       step.
+
+   3.  Encode the parameter as "name=value" and concatenate it to the
+       end of the string buffer, separated by an ampersand character.
+
+   The client calculates the hash of the string buffer and base64url
+   encodes it.  The protected resource compares that string to the
+   string passed in as the hash.  If the two match, the hash validates,
+   and all named parameters and their values are considered covered by
+   the signature.
+
+   There <em>MAY</em> be additional query parameters that are not listed in the
+   list and are therefore not covered by the signature.  The client <em>MUST</em>
+   decide whether or not to accept a request with these uncovered
+   parameters.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.2.%20%20Validating%20the%20header%20list%20and%20hash"></a></body></html><a class="selflink" href="#section-5.2" id="section-5.2">5.2</a>.  Validating the header list and hash</span>
+
+   The client has at its disposal a map that indexes the header names to
+   the values given.  The client creates a string buffer for calculating
+   the hash.  The client then iterates through the "list" portion of the
+   "h" parameter.  For each item in the list (in the order of the list)
+   it does the following:
+
+   1.  Fetch the value of the header from the HTTP request header map.
+       If a header is found in the list of signed parameters but not in
+       the map, the validation fails.
+
+   2.  Encode the parameter as "name: value" and concatenate it to the
+       end of the string buffer, separated by a newline character.
+
+   The client calculates the hash of the string buffer and base64url
+   encodes it.  The protected resource compares that string to the
+   string passed in as the hash.  If the two match, the hash validates,
+   and all named headers and their values are considered covered by the
+   signature.
+
+   There <em>MAY</em> be additional headers that are not listed in the list and
+   are therefore not covered by the signature.  The client <em>MUST</em> decide
+   whether or not to accept a request with these uncovered headers.
+
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  IANA Considerations</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.%20%20The%20%27pop%27%20OAuth%20Access%20Token%20Type"></a></body></html><a class="selflink" href="#section-6.1" id="section-6.1">6.1</a>.  The 'pop' OAuth Access Token Type</span>
+
+   <a href="/doc/html/rfc6749#section-11.1">Section 11.1 of [RFC6749]</a> defines the OAuth Access Token Type
+   Registry and this document adds another token type to this registry.
+
+   Type name:  pop
+
+   Additional Token Endpoint Response Parameters:  (none)
+
+   HTTP Authentication Scheme(s):  Proof-of-possession access token for
+      use with OAuth 2.0
+
+   Change controller:  IETF
+
+   Specification document(s):  [[ this document ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.2.%20%20JSON%20Web%20Signature%20and%20Encryption%20Type%20Values%20Registration"></a></body></html><a class="selflink" href="#section-6.2" id="section-6.2">6.2</a>.  JSON Web Signature and Encryption Type Values Registration</span>
+
+   This specification registers the "pop" type value in the IANA JSON
+   Web Signature and Encryption Type Values registry [<a href="/doc/html/rfc7515" title='"JSON Web Signature (JWS)"'>RFC7515</a>]:
+
+   o  "typ" Header Parameter Value: "pop"
+
+   o  Abbreviation for MIME Type: None
+
+   o  Change Controller: IETF
+
+   o  Specification Document(s): [[ this document ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Security Considerations</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.%20%20Offering%20Confidentiality%20Protection%20for%20Access%20to%20Protected"></a></body></html><a class="selflink" href="#section-7.1" id="section-7.1">7.1</a>.  Offering Confidentiality Protection for Access to Protected</span>
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/%20%20%20%20%20%20Resources"></a></body></html>      Resources</span>
+
+   This specification can be used with and without Transport Layer
+   Security (TLS).
+
+   Without TLS this protocol provides a mechanism for verifying the
+   integrity of requests, it provides no confidentiality protection.
+   Consequently, eavesdroppers will have full access to communication
+   content and any further messages exchanged between the client and the
+   resource server.  This could be problematic when data is exchanged
+   that requires care, such as personal data.
+
+   When TLS is used then confidentiality of the transmission can be
+   ensured between endpoints, including both the request and the
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017                [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   response.  The use of TLS in combination with the signed HTTP request
+   mechanism is highly recommended to ensure the confidentiality of the
+   data returned from the protected resource.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.2.%20%20Plaintext%20Storage%20of%20Credentials"></a></body></html><a class="selflink" href="#section-7.2" id="section-7.2">7.2</a>.  Plaintext Storage of Credentials</span>
+
+   The mechanism described in this document works in a similar way to
+   many three-party authentication and key exchange mechanisms.  In
+   order to compute the signature over the HTTP request, the client must
+   have access to a key bound to the access token in plaintext form.  If
+   an attacker were to gain access to these stored secrets at the client
+   or (in case of symmetric keys) at the resource server they would be
+   able to perform any action on behalf of any client just as if they
+   had stolen a bearer token.
+
+   It is therefore paramount to the security of the protocol that the
+   private keys associated with the access tokens are protected from
+   unauthorized access.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.3.%20%20Entropy%20of%20Keys"></a></body></html><a class="selflink" href="#section-7.3" id="section-7.3">7.3</a>.  Entropy of Keys</span>
+
+   Unless TLS is used between the client and the resource server,
+   eavesdroppers will have full access to requests sent by the client.
+   They will thus be able to mount off-line brute-force attacks to
+   attempt recovery of the session key or private key used to compute
+   the keyed message digest or digital signature, respectively.
+
+   This specification assumes that the key used herein has been
+   distributed via other mechanisms, such as
+   [<a href="#ref-I-D.ietf-oauth-pop-key-distribution">I-D.ietf-oauth-pop-key-distribution</a>].  Hence, it is the
+   responsibility of the authorization server and or the client to be
+   careful when generating fresh and unique keys with sufficient entropy
+   to resist such attacks for at least the length of time that the
+   session keys (and the access tokens) are valid.
+
+   For example, if the key bound to the access token is valid for one
+   day, authorization servers must ensure that it is not possible to
+   mount a brute force attack that recovers that key in less than one
+   day.  Of course, servers are urged to err on the side of caution, and
+   use the longest key length possible within reason.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.4.%20%20Denial%20of%20Service"></a></body></html><a class="selflink" href="#section-7.4" id="section-7.4">7.4</a>.  Denial of Service</span>
+
+   This specification includes a number of features which may make
+   resource exhaustion attacks against resource servers possible.  For
+   example, a resource server may need to process the incoming request,
+   verify the access token, perform signature verification, and might
+   (in certain circumstances) have to consult back-end databases or the
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017               [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   authorization server before granting access to the protected
+   resource.  Many of these actions are shared with bearer tokens, but
+   the additional cryptographic overhead of validating the signed
+   request needs to be taken into consideration with deployment of this
+   specification.
+
+   An attacker may exploit this to perform a denial of service attack by
+   sending a large number of invalid requests to the server.  The
+   computational overhead of verifying the keyed message digest alone is
+   not likely sufficient to mount a denial of service attack.  To help
+   combat this, it is <em>RECOMMENDED</em> that the protected resource validate
+   the access token (contained in the "at" member of the signed
+   structure) before performing any cryptographic verification
+   calculations.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.5.%20%20Validating%20the%20integrity%20of%20HTTP%20message"></a></body></html><a class="selflink" href="#section-7.5" id="section-7.5">7.5</a>.  Validating the integrity of HTTP message</span>
+
+   This specification provides flexibility for selectively validating
+   the integrity of the HTTP request, including header fields, query
+   parameters, and message bodies.  Since all components of the HTTP
+   request are only optionally validated by this method, and even some
+   components may be validated only in part (e.g., some headers but not
+   others) it is up to protected resource developers to verify that any
+   vital parameters in a request are actually covered by the signature.
+   Failure to do so could allow an attacker to inject vital parameters
+   or headers into the request, ouside of the protection of the
+   signature.
+
+   The application verifying this signature <em>MUST NOT</em> assume that any
+   particular parameter is appropriately covered by the signature unless
+   it is included in the signed structure and the hash is verified.  Any
+   applications that are sensitive of header or query parameter order
+   <em>MUST</em> verify the order of the parameters on their own.  The
+   application <em>MUST</em> also compare the values in the JSON container with
+   the actual parameters received with the HTTP request (using a direct
+   comparison or a hash calculation, as appropriate).  Failure to make
+   this comparison will render the signature mechanism useless for
+   protecting these elements.
+
+   The behavior of repeated query parameters or repeated HTTP headers is
+   undefined by this specification.  If a header or query parameter is
+   repeated on either the outgoing request from the client or the
+   incoming request to the protected resource, that query parameter or
+   header name <em>MUST NOT</em> be covered by the hash and signature.
+
+   This specification records the order in which query parameters and
+   headers are hashed, but it does not guarantee that order is preserved
+   between the client and protected resource.  If the order of
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017               [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   parameters or headers are significant to the underlying application,
+   it <em>MUST</em> confirm their order on its own, apart from the signature and
+   HTTP message validation.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Privacy%20Considerations"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Privacy Considerations</span>
+
+   This specification addresses machine to machine communications and
+   raises no privacy considerations beyond existing OAuth transactions.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  Acknowledgements</span>
+
+   The authors thank the OAuth Working Group for input into this work.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-10" id="section-10">10</a>.  Normative References</span>
+
+   [<a id="ref-I-D.ietf-oauth-pop-architecture">I-D.ietf-oauth-pop-architecture</a>]
+              Hunt, P., Richer, J., Mills, W., Mishra, P., and H.
+              Tschofenig, "OAuth 2.0 Proof-of-Possession (PoP) Security
+              Architecture", <a href="/doc/html/draft-ietf-oauth-pop-architecture-08">draft-ietf-oauth-pop-architecture-08</a> (work
+              in progress), July 2016.
+
+   [<a id="ref-I-D.ietf-oauth-pop-key-distribution">I-D.ietf-oauth-pop-key-distribution</a>]
+              Bradley, J., Hunt, P., Jones, M., and H. Tschofenig,
+              "OAuth 2.0 Proof-of-Possession: Authorization Server to
+              Client Key Distribution", <a href="/doc/html/draft-ietf-oauth-pop-key-distribution-02">draft-ietf-oauth-pop-key-</a>
+              <a href="/doc/html/draft-ietf-oauth-pop-key-distribution-02">distribution-02</a> (work in progress), October 2015.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc2119">http://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              <a href="/doc/html/rfc3986">RFC 3986</a>, DOI 10.17487/RFC3986, January 2005,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc3986">http://www.rfc-editor.org/info/rfc3986</a>&gt;.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc6749">http://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC6750">RFC6750</a>]  Jones, M. and D. Hardt, "The OAuth 2.0 Authorization
+              Framework: Bearer Token Usage", <a href="/doc/html/rfc6750">RFC 6750</a>,
+              DOI 10.17487/RFC6750, October 2012,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc6750">http://www.rfc-editor.org/info/rfc6750</a>&gt;.
+
+
+
+
+
+
+<span class="grey">Richer, et al.          Expires February 9, 2017               [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft            HTTP Signed Messages               August 2016</span>
+
+
+   [<a id="ref-RFC7159">RFC7159</a>]  Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
+              Interchange Format", <a href="/doc/html/rfc7159">RFC 7159</a>, DOI 10.17487/RFC7159, March
+              2014, &lt;<a href="http://www.rfc-editor.org/info/rfc7159">http://www.rfc-editor.org/info/rfc7159</a>&gt;.
+
+   [<a id="ref-RFC7515">RFC7515</a>]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web
+              Signature (JWS)", <a href="/doc/html/rfc7515">RFC 7515</a>, DOI 10.17487/RFC7515, May
+              2015, &lt;<a href="http://www.rfc-editor.org/info/rfc7515">http://www.rfc-editor.org/info/rfc7515</a>&gt;.
+
+   [<a id="ref-RFC7519">RFC7519</a>]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
+              (JWT)", <a href="/doc/html/rfc7519">RFC 7519</a>, DOI 10.17487/RFC7519, May 2015,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc7519">http://www.rfc-editor.org/info/rfc7519</a>&gt;.
+
+   [<a id="ref-RFC7662">RFC7662</a>]  Richer, J., Ed., "OAuth 2.0 Token Introspection",
+              <a href="/doc/html/rfc7662">RFC 7662</a>, DOI 10.17487/RFC7662, October 2015,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc7662">http://www.rfc-editor.org/info/rfc7662</a>&gt;.
+
+Authors' Addresses
+
+   Justin Richer (editor)
+
+   Email: ietf@justin.richer.org
+
+
+   John Bradley
+   Ping Identity
+
+   Email: ve7jtb@ve7jtb.com
+   URI:   <a href="http://www.thread-safe.com/">http://www.thread-safe.com/</a>
+
+
+   Hannes Tschofenig
+   ARM Limited
+   Austria
+
+   Email: Hannes.Tschofenig@gmx.net
+   URI:   <a href="http://www.tschofenig.priv.at">http://www.tschofenig.priv.at</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Richer, et al.          Expires February 9, 2017               [Page 13]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

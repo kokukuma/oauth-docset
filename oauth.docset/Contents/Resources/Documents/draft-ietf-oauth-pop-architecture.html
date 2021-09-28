@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-pop-architecture-08
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-pop-architecture/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="OAuth 2.0 Proof-of-Possession (PoP) Security Architecture (Internet-Draft, 2016)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-pop-architecture-08.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-pop-architecture-08.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-pop-architecture-08.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-pop-architecture/08/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-pop-architecture/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-pop-architecture@ietf.org?subject=draft-ietf-oauth-pop-architecture" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-pop-architecture-08.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-pop-architecture-08.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-pop-architecture-08.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-hunt-oauth-pop-architecture">draft-hunt-oauth-pop-architecture</a>) <a href="/doc/html/draft-ietf-oauth-pop-architecture-00">00</a>           Informational
+          <a href="/doc/html/draft-ietf-oauth-pop-architecture-01">01</a> <a href="/doc/html/draft-ietf-oauth-pop-architecture-02">02</a> <a href="/doc/html/draft-ietf-oauth-pop-architecture-03">03</a> <a href="/doc/html/draft-ietf-oauth-pop-architecture-04">04</a> <a href="/doc/html/draft-ietf-oauth-pop-architecture-05">05</a> <a href="/doc/html/draft-ietf-oauth-pop-architecture-06">06</a> <a href="/doc/html/draft-ietf-oauth-pop-architecture-07">07</a> <a href="/doc/html/draft-ietf-oauth-pop-architecture-08"><b>08</b></a>                                       </pre>
+</div>
+<div class="draftcontent">
+<pre>OAuth                                                       P. Hunt, Ed.
+Internet-Draft                                        Oracle Corporation
+Intended status: Informational                                 J. Richer
+Expires: January 9, 2017
+                                                                W. Mills
+
+                                                               P. Mishra
+                                                      Oracle Corporation
+                                                           H. Tschofenig
+                                                             ARM Limited
+                                                            July 8, 2016
+
+
+       <span class="h1">OAuth 2.0 Proof-of-Possession (PoP) Security Architecture</span>
+                <span class="h1">draft-ietf-oauth-pop-architecture-08.txt</span>
+
+Abstract
+
+   The OAuth 2.0 bearer token specification, as defined in <a href="/doc/html/rfc6750">RFC 6750</a>,
+   allows any party in possession of a bearer token (a "bearer") to get
+   access to the associated resources (without demonstrating possession
+   of a cryptographic key).  To prevent misuse, bearer tokens must be
+   protected from disclosure in transit and at rest.
+
+   Some scenarios demand additional security protection whereby a client
+   needs to demonstrate possession of cryptographic keying material when
+   accessing a protected resource.  This document motivates the
+   development of the OAuth 2.0 proof-of-possession security mechanism.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on January 9, 2017.
+
+
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+Copyright Notice
+
+   Copyright (c) 2016 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+   <a href="#section-2">2</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+   <a href="#section-3">3</a>.  Use Cases . . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+     <a href="#section-3.1">3.1</a>.  Preventing Access Token Re-Use by the Resource Server . .   <a href="#page-4">4</a>
+     <a href="#section-3.2">3.2</a>.  TLS and DTLS Channel Binding Support  . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-3.3">3.3</a>.  Access to a Non-TLS Protected Resource  . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-3.4">3.4</a>.  Offering Application Layer End-to-End Security  . . . . .   <a href="#page-5">5</a>
+   <a href="#section-4">4</a>.  Security and Privacy Threats  . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-5">5</a>.  Requirements  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#section-6">6</a>.  Threat Mitigation . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-6.1">6.1</a>.  Confidentiality Protection  . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+     <a href="#section-6.2">6.2</a>.  Sender Constraint . . . . . . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+     <a href="#section-6.3">6.3</a>.  Key Confirmation  . . . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+     <a href="#section-6.4">6.4</a>.  Summary . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+   <a href="#section-7">7</a>.  Architecture  . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+     <a href="#section-7.1">7.1</a>.  Client and Authorization Server Interaction . . . . . . .  <a href="#page-15">15</a>
+       <a href="#section-7.1.1">7.1.1</a>.  Symmetric Keys  . . . . . . . . . . . . . . . . . . .  <a href="#page-15">15</a>
+       <a href="#section-7.1.2">7.1.2</a>.  Asymmetric Keys . . . . . . . . . . . . . . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-7.2">7.2</a>.  Client and Resource Server Interaction  . . . . . . . . .  <a href="#page-17">17</a>
+     7.3.  Resource and Authorization Server Interaction (Token
+           Introspection)  . . . . . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+   <a href="#section-8">8</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .  <a href="#page-19">19</a>
+   <a href="#section-9">9</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <a href="#page-19">19</a>
+   <a href="#section-10">10</a>. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-19">19</a>
+   <a href="#section-11">11</a>. References  . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-20">20</a>
+     <a href="#section-11.1">11.1</a>.  Normative References . . . . . . . . . . . . . . . . . .  <a href="#page-20">20</a>
+     <a href="#section-11.2">11.2</a>.  Informative References . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-22">22</a>
+
+
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   The OAuth 2.0 protocol family ([<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>], [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>], and [<a href="/doc/html/rfc6819" title='"OAuth 2.0 Threat Model and Security Considerations"'>RFC6819</a>])
+   offer a single token type known as the "bearer" token to access
+   protected resources.  <a href="/doc/html/rfc6750">RFC 6750</a> [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>] specifies the bearer token
+   mechanism and defines it as follows:
+
+      "A security token with the property that any party in possession
+      of the token (a "bearer") can use the token in any way that any
+      other party in possession of it can.  Using a bearer token does
+      not require a bearer to prove possession of cryptographic key
+      material."
+
+   The bearer token meets the security needs of a number of use cases
+   the OAuth 2.0 protocol had originally been designed for.  There are,
+   however, other scenarios that require stronger security properties
+   and ask for active participation of the OAuth client in form of
+   cryptographic computations when presenting an access token to a
+   resource server.
+
+   This document outlines additional use cases requiring stronger
+   security protection in <a href="#section-3">Section 3</a>, identifies threats in <a href="#section-4">Section 4</a>,
+   proposes different ways to mitigate those threats in <a href="#section-6">Section 6</a>,
+   outlines an architecture for a solution that builds on top of the
+   existing OAuth 2.0 framework in <a href="#section-7">Section 7</a>, and concludes with a
+   requirements list in <a href="#section-5">Section 5</a>.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Terminology"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Terminology</span>
+
+   The key words '<em>MUST</em>', '<em>MUST NOT</em>', '<em>REQUIRED</em>', '<em>SHALL</em>', '<em>SHALL NOT</em>',
+   '<em>SHOULD</em>', '<em>SHOULD NOT</em>', '<em>RECOMMENDED</em>', '<em>MAY</em>', and '<em>OPTIONAL</em>' in this
+   specification are to be interpreted as described in [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>], with
+   the important qualification that, unless otherwise stated, these
+   terms apply to the design of the protocol, not its implementation or
+   application.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Use%20Cases"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Use Cases</span>
+
+   The main use case that motivates improvement upon "bearer" token
+   security is the desire of resource servers to obtain additional
+   assurance that the client is indeed authorized to present an access
+   token.  The expectation is that the use of additional credentials
+   (symmetric or asymmetric keying material) will encourage developers
+   to take additional precautions when transferring and storing access
+   token in combination with these credentials.
+
+
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   Additional use cases listed below provide further requirements for
+   the solution development.  Note that a single solution does not
+   necessarily need to offer support for all use cases.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.1.%20%20Preventing%20Access%20Token%20Re-Use%20by%20the%20Resource%20Server"></a></body></html><a class="selflink" href="#section-3.1" id="section-3.1">3.1</a>.  Preventing Access Token Re-Use by the Resource Server</span>
+
+   In a scenario where a resource server receives a valid access token,
+   the resource server then re-uses it with other resource server.  The
+   reason for re-use may be malicious or may well be legitimate.  In a
+   legitimate case, the intent is to support chaining of computations
+   whereby a resource server needs to consult other third party resource
+   servers to complete a requested operation.  In both cases it may be
+   assumed that the scope and audience of the access token is
+   sufficiently defined that to allow such a re-use.  For example,
+   imagine a case where a company operates email services as well as
+   picture sharing services and that company had decided to issue access
+   tokens with a scope and audience that allows access to both services.
+
+   With this use case the desire is to prevent such access token re-use.
+   This also implies that the legitimate use cases require additional
+   enhancements for request chaining.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.2.%20%20TLS%20and%20DTLS%20Channel%20Binding%20Support"></a></body></html><a class="selflink" href="#section-3.2" id="section-3.2">3.2</a>.  TLS and DTLS Channel Binding Support</span>
+
+   In this use case we consider the scenario where an OAuth 2.0 request
+   to a protected resource is secured using TLS or DTLS (see [<a href="/doc/html/rfc4347" title='"Datagram Transport Layer Security"'>RFC4347</a>]),
+   but the client and the resource server demand that the underlying
+   TLS/DTLS exchange is bound to additional application layer security
+   to prevent cases where the TLS/DTLS connection is terminated at a
+   TLS/DTLS intermediary, which splits the TLS/DTLS connection into two
+   separate connections.
+
+   In this use case additional information should be conveyed to the
+   resource server to ensure that no entity entity has tampered with the
+   TLS/DTLS connection.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.3.%20%20Access%20to%20a%20Non-TLS%20Protected%20Resource"></a></body></html><a class="selflink" href="#section-3.3" id="section-3.3">3.3</a>.  Access to a Non-TLS Protected Resource</span>
+
+   This use case is for a web client that needs to access a resource
+   that makes data available (such as videos) without offering integrity
+   and confidentiality protection using TLS.  Still, the initial
+   resource request using OAuth, which includes the access token, must
+   be protected against various threats (e.g., token replay, token
+   modification).
+
+   While it is possible to utilize bearer tokens in this scenario with
+   TLS protection when the request to the protected resource is made, as
+   described in [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>], there may be the desire to avoid using TLS
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   between the client and the resource server at all.  In such a case
+   the bearer token approach is not possible since it relies on TLS for
+   ensuring integrity and confidentiality protection of the access token
+   exchange since otherwise replay attacks are possible: First, an
+   eavesdropper may steal an access token and present it at a different
+   resource server.  Second, an eavesdropper may steal an access token
+   and replay it against the same resource server at a later point in
+   time.  In both cases, if the attack is successful, the adversary gets
+   access to the resource owners data or may perform an operation
+   selected by the adversary (e.g., sending a message).  Note that the
+   adversary may obtain the access token (if the recommendations in
+   [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] and [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>] are not followed) using a number of ways,
+   including eavesdropping the communication on the wireless link.
+
+   Consequently, the important assumption in this use case is that a
+   resource server does not have TLS support and the security solution
+   should work in such a scenario.  Furthermore, it may not be necessary
+   to provide authentication of the resource server towards the client.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.4.%20%20Offering%20Application%20Layer%20End-to-End%20Security"></a></body></html><a class="selflink" href="#section-3.4" id="section-3.4">3.4</a>.  Offering Application Layer End-to-End Security</span>
+
+   In Web deployments resource servers are often placed behind load
+   balancers, which are deployed by the same organization that operates
+   the resource servers.  These load balancers may terminate the TLS
+   connection setup and HTTP traffic is transmitted without TLS
+   protection from the load balancer to the resource server.  With
+   application layer security in addition to the underlying TLS security
+   it is possible to allow application servers to perform cryptographic
+   verification on an end-to-end basis.
+
+   The key aspect in this use case is therefore to offer end-to-end
+   security in the presence of load balancers via application layer
+   security.  Enterprise networks also deploy proxies that inspect
+   traffic and thereby break TLS.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Security%20and%20Privacy%20Threats"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Security and Privacy Threats</span>
+
+   The following list presents several common threats against protocols
+   utilizing some form of token.  This list of threats is based on NIST
+   Special Publication 800-63 [<a href="#ref-NIST800-63">NIST800-63</a>].  We exclude a discussion of
+   threats related to any form of identity proofing and authentication
+   of the resource owner to the authorization server since these
+   procedures are not part of the OAuth 2.0 protocol specification
+   itself.
+
+   Token manufacture/modification:
+
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+      An attacker may generate a bogus token or modify the token content
+      (such as authentication or attribute statements) of an existing
+      token, causing resource server to grant inappropriate access to
+      the client.  For example, an attacker may modify the token to
+      extend the validity period.  A client, which <em>MAY</em> be a normal
+      client or <em>MAY</em> be assumed to be constrained (see [<a href="/doc/html/rfc7252" title='"The Constrained Application Protocol (CoAP)"'>RFC7252</a>]), may
+      modify the token to have access to information that they should
+      not be able to view.
+
+   Token disclosure:
+
+      Tokens may contain personal data, such as real name, age or
+      birthday, payment information, etc.
+
+   Token redirect:
+
+      An attacker uses the token generated for consumption by the
+      resource server to obtain access to another resource server.
+
+   Token reuse:
+
+      An attacker attempts to use a token that has already been used
+      once with a resource server.  The attacker may be an eavesdropper
+      who observes the communication exchange or, worse, one of the
+      communication end points.  A client may, for example, leak access
+      tokens because it cannot keep secrets confidential.  A client may
+      also reuse access tokens for some other resource servers.
+      Finally, a resource server may use a token it had obtained from a
+      client and use it with another resource server that the client
+      interacts with.  A resource server, offering relatively
+      unimportant application services, may attempt to use an access
+      token obtained from a client to access a high-value service, such
+      as a payment service, on behalf of the client using the same
+      access token.
+
+   Token repudiation:
+
+      Token repudiation refers to a property whereby a resource server
+      is given an assurance that the authorization server cannot deny to
+      have created a token for the client.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20Requirements"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  Requirements</span>
+
+   <a href="/doc/html/rfc4962">RFC 4962</a> [<a href="/doc/html/rfc4962" title='"Guidance for Authentication, Authorization, and Accounting (AAA) Key Management"'>RFC4962</a>] gives useful guidelines for designers of
+   authentication and key management protocols.  While <a href="/doc/html/rfc4962">RFC 4962</a> was
+   written with the AAA framework used for network access authentication
+   in mind the offered suggestions are useful for the design of other
+   key management systems as well.  The following requirements list
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   applies OAuth 2.0 terminology to the requirements outlined in <a href="/doc/html/rfc4962">RFC</a>
+   <a href="/doc/html/rfc4962">4962</a>.
+
+   These requirements include
+
+   Cryptographic Algorithm Independent:
+
+      The key management protocol <em>MUST</em> be cryptographic algorithm
+      independent.
+
+   Strong, fresh session keys:
+
+      Session keys <em>MUST</em> be strong and fresh.  Each session deserves an
+      independent session key, i.e., one that is generated specifically
+      for the intended use.  In context of OAuth this means that keying
+      material is created in such a way that can only be used by the
+      combination of a client instance, protected resource, and
+      authorization scope.
+
+   Limit Key Scope:
+
+      Following the principle of least privilege, parties <em>MUST NOT</em> have
+      access to keying material that is not needed to perform their
+      role.  Any protocol that is used to establish session keys <em>MUST</em>
+      specify the scope for session keys, clearly identifying the
+      parties to whom the session key is available.
+
+   Replay Detection Mechanism:
+
+      The key management protocol exchanges <em>MUST</em> be replay protected.
+      Replay protection allows a protocol message recipient to discard
+      any message that was recorded during a previous legitimate
+      dialogue and presented as though it belonged to the current
+      dialogue.
+
+   Authenticate All Parties:
+
+      Each party in the key management protocol <em>MUST</em> be authenticated to
+      the other parties with whom they communicate.  Authentication
+      mechanisms <em>MUST</em> maintain the confidentiality of any secret values
+      used in the authentication process.  Secrets <em>MUST NOT</em> be sent to
+      another party without confidentiality protection.
+
+   Authorization:
+
+      Client and resource server authorization <em>MUST</em> be performed.  These
+      entities <em>MUST</em> demonstrate possession of the appropriate keying
+      material, without disclosing it.  Authorization is <em>REQUIRED</em>
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+      whenever a client interacts with an authorization server.
+      Authorization checking prevents an elevation of privilege attack.
+
+   Keying Material Confidentiality and Integrity:
+
+      While preserving algorithm independence, confidentiality and
+      integrity of all keying material <em>MUST</em> be maintained.
+
+   Confirm Cryptographic Algorithm Selection:
+
+      The selection of the "best" cryptographic algorithms <em>SHOULD</em> be
+      securely confirmed.  The mechanism <em>SHOULD</em> detect attempted roll-
+      back attacks.
+
+   Uniquely Named Keys:
+
+      Key management proposals require a robust key naming scheme,
+      particularly where key caching is supported.  The key name
+      provides a way to refer to a key in a protocol so that it is clear
+      to all parties which key is being referenced.  Objects that cannot
+      be named cannot be managed.  All keys <em>MUST</em> be uniquely named, and
+      the key name <em>MUST NOT</em> directly or indirectly disclose the keying
+      material.
+
+   Prevent the Domino Effect:
+
+      Compromise of a single client <em>MUST NOT</em> compromise keying material
+      held by any other client within the system, including session keys
+      and long-term keys.  Likewise, compromise of a single resource
+      server <em>MUST NOT</em> compromise keying material held by any other
+      Resource Server within the system.  In the context of a key
+      hierarchy, this means that the compromise of one node in the key
+      hierarchy must not disclose the information necessary to
+      compromise other branches in the key hierarchy.  Obviously, the
+      compromise of the root of the key hierarchy will compromise all of
+      the keys; however, a compromise in one branch <em>MUST NOT</em> result in
+      the compromise of other branches.  There are many implications of
+      this requirement; however, two implications deserve highlighting.
+      First, the scope of the keying material must be defined and
+      understood by all parties that communicate with a party that holds
+      that keying material.  Second, a party that holds keying material
+      in a key hierarchy must not share that keying material with
+      parties that are associated with other branches in the key
+      hierarchy.
+
+   Bind Key to its Context:
+
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+      Keying material <em>MUST</em> be bound to the appropriate context.  The
+      context includes the following.
+
+      *  The manner in which the keying material is expected to be used.
+
+      *  The other parties that are expected to have access to the
+         keying material.
+
+      *  The expected lifetime of the keying material.  Lifetime of a
+         child key <em>SHOULD NOT</em> be greater than the lifetime of its parent
+         in the key hierarchy.
+
+      Any party with legitimate access to keying material can determine
+      its context.  In addition, the protocol <em>MUST</em> ensure that all
+      parties with legitimate access to keying material have the same
+      context for the keying material.  This requires that the parties
+      are properly identified and authenticated, so that all of the
+      parties that have access to the keying material can be determined.
+      The context will include the client and the resource server
+      identities in more than one form.
+
+   Authorization Restriction:
+
+      If client authorization is restricted, then the client <em>SHOULD</em> be
+      made aware of the restriction.
+
+   Client Identity Confidentiality:
+
+      A client has identity confidentiality when any party other than
+      the resource server and the authorization server cannot
+      sufficiently identify the client within the anonymity set.  In
+      comparison to anonymity and pseudonymity, identity confidentiality
+      is concerned with eavesdroppers and intermediaries.  A key
+      management protocol <em>SHOULD</em> provide this property.
+
+   Resource Owner Identity Confidentiality:
+
+      Resource servers <em>SHOULD</em> be prevented from knowing the real or
+      pseudonymous identity of the resource owner, since the
+      authorization server is the only entity involved in verifying the
+      resource owner's identity.
+
+   Collusion:
+
+      Resource servers that collude can be prevented from using
+      information related to the resource owner to track the individual.
+      That is, two different resource servers can be prevented from
+      determining that the same resource owner has authenticated to both
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017                [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+      of them.  Authorization servers <em>MUST</em> bind different keying
+      material to access tokens used for resource servers from different
+      origins (or similar concepts in the app world).
+
+   AS-to-RS Relationship Anonymity:
+
+      For solutions using asymmetric key cryptography the client <em>MAY</em>
+      conceal information about the resource server it wants to interact
+      with.  The authorization server <em>MAY</em> reject such an attempt since
+      it may not be able to enforce access control decisions.
+
+   Channel Binding:
+
+      A solution <em>MUST</em> enable support for channel bindings.  The concept
+      of channel binding, as defined in [<a href="/doc/html/rfc5056" title='"On the Use of Channel Bindings to Secure Channels"'>RFC5056</a>], allows applications
+      to establish that the two end-points of a secure channel at one
+      network layer are the same as at a higher layer by binding
+      authentication at the higher layer to the channel at the lower
+      layer.
+
+   There are performance concerns with the use of asymmetric
+   cryptography.  Although symmetric key cryptography offers better
+   performance asymmetric cryptography offers additional security
+   properties.  A solution <em>MUST</em> therefore offer the capability to
+   support both symmetric as well as asymmetric keys.
+
+   There are threats that relate to the experience of the software
+   developer as well as operational practices.  Verifying the servers
+   identity in TLS is discussed at length in [<a href="/doc/html/rfc6125" title='"Representation and Verification of Domain-Based Application Service Identity within Internet Public Key Infrastructure Using X.509 (PKIX) Certificates in the Context of Transport Layer Security (TLS)"'>RFC6125</a>].
+
+   A number of the threats listed in <a href="#section-4">Section 4</a> demand protection of the
+   access token content and a standardized solution, for example, in the
+   form of a JSON-based format, is available with the JWT [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>].
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Threat%20Mitigation"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Threat Mitigation</span>
+
+   A large range of threats can be mitigated by protecting the content
+   of the token, for example using a digital signature or a keyed
+   message digest.  Alternatively, the content of the token could be
+   passed by reference rather than by value (requiring a separate
+   message exchange to resolve the reference to the token content).
+
+   To simplify discussion in the following example we assume that the
+   token itself cannot be modified by the client, either due to
+   cryptographic protection (such as signature or encryption) or use of
+   a reference value with sufficient entropy and associated secure
+   lookup.  The token remains opaque to the client.  These are
+   characteristics shared with bearer tokens and more information on
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   best practices can be found in [<a href="/doc/html/rfc6819" title='"OAuth 2.0 Threat Model and Security Considerations"'>RFC6819</a>] and in the security
+   considerations section of [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>].
+
+   To deal with token redirect it is important for the authorization
+   server to include the identifier of the intended recipient - the
+   resource server.  A resource server must not be allowed to accept
+   access tokens that are not meant for its consumption.
+
+   To provide protection against token disclosure two approaches are
+   possible, namely (a) not to include sensitive information inside the
+   token or (b) to ensure confidentiality protection.  The latter
+   approach requires at least the communication interaction between the
+   client and the authorization server as well as the interaction
+   between the client and the resource server to experience
+   confidentiality protection.  As an example, TLS with a ciphersuite
+   that offers confidentiality protection has to be applied as per
+   [<a href="/doc/html/rfc7525" title='"Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"'>RFC7525</a>].  Encrypting the token content itself is another
+   alternative.  In our scenario the authorization server would, for
+   example, encrypt the token content with a symmetric key shared with
+   the resource server.
+
+   To deal with token reuse more choices are available.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.%20%20Confidentiality%20Protection"></a></body></html><a class="selflink" href="#section-6.1" id="section-6.1">6.1</a>.  Confidentiality Protection</span>
+
+   In this approach confidentiality protection of the exchange is
+   provided on the communication interfaces between the client and the
+   resource server, and between the client and the authorization server.
+   No eavesdropper on the wire is able to observe the token exchange.
+   Consequently, a replay by a third party is not possible.  An
+   authorization server wants to ensure that it only hands out tokens to
+   clients it has authenticated first and who are authorized.  For this
+   purpose, authentication of the client to the authorization server
+   will be a requirement to ensure adequate protection against a range
+   of attacks.  This is, however, true for the description in
+   <a href="#section-6.2">Section 6.2</a> and <a href="#section-6.3">Section 6.3</a> as well.  Furthermore, the client has to
+   make sure it does not distribute (or leak) the access token to
+   entities other than the intended the resource server.  For that
+   purpose the client will have to authenticate the resource server
+   before transmitting the access token.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.2.%20%20Sender%20Constraint"></a></body></html><a class="selflink" href="#section-6.2" id="section-6.2">6.2</a>.  Sender Constraint</span>
+
+   Instead of providing confidentiality protection, the authorization
+   server could also put the identifier of the client into the protected
+   token with the following semantic: 'This token is only valid when
+   presented by a client with the following identifier.'  When the
+   access token is then presented to the resource server how does it
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   know that it was provided by the client?  It has to authenticate the
+   client!  There are many choices for authenticating the client to the
+   resource server, for example by using client certificates in TLS
+   [<a href="/doc/html/rfc5246" title='"The Transport Layer Security (TLS) Protocol Version 1.2"'>RFC5246</a>], or pre-shared secrets within TLS [<a href="/doc/html/rfc4279" title='"Pre-Shared Key Ciphersuites for Transport Layer Security (TLS)"'>RFC4279</a>].  The choice of
+   the preferred authentication mechanism and credential type may depend
+   on a number of factors, including
+
+   o  security properties
+
+   o  available infrastructure
+
+   o  library support
+
+   o  credential cost (financial)
+
+   o  performance
+
+   o  integration into the existing IT infrastructure
+
+   o  operational overhead for configuration and distribution of
+      credentials
+
+   This long list hints to the challenge of selecting at least one
+   mandatory-to-implement client authentication mechanism.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.3.%20%20Key%20Confirmation"></a></body></html><a class="selflink" href="#section-6.3" id="section-6.3">6.3</a>.  Key Confirmation</span>
+
+   A variation of the mechanism of sender authentication, described in
+   <a href="#section-6.2">Section 6.2</a>, is to replace authentication with the proof-of-
+   possession of a specific (session) key, i.e., key confirmation.  In
+   this model the resource server would not authenticate the client
+   itself but would rather verify whether the client knows the session
+   key associated with a specific access token.  Examples of this
+   approach can be found with the OAuth 1.0 MAC token [<a href="/doc/html/rfc5849" title='"The OAuth 1.0 Protocol"'>RFC5849</a>], and
+   Kerberos [<a href="/doc/html/rfc4120" title='"The Kerberos Network Authentication Service (V5)"'>RFC4120</a>] when utilizing the AP_REQ/AP_REP exchange (see
+   also [<a href="#ref-I-D.hardjono-oauth-kerberos">I-D.hardjono-oauth-kerberos</a>] for a comparison between Kerberos
+   and OAuth).
+
+   To illustrate key confirmation, the first example is borrowed from
+   Kerberos and use symmetric key cryptography.  Assume that the
+   authorization server shares a long-term secret with the resource
+   server, called K(Authorization Server-Resource Server).  This secret
+   would be established between them out-of-band.  When the client
+   requests an access token the authorization server creates a fresh and
+   unique session key Ks and places it into the token encrypted with the
+   long term key K(Authorization Server-Resource Server).  Additionally,
+   the authorization server attaches Ks to the response message to the
+   client (in addition to the access token itself) over a
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   confidentiality protected channel.  When the client sends a request
+   to the resource server it has to use Ks to compute a keyed message
+   digest for the request (in whatever form or whatever layer).  The
+   resource server, when receiving the message, retrieves the access
+   token, verifies it and extracts K(Authorization Server-Resource
+   Server) to obtain Ks.  This key Ks is then used to verify the keyed
+   message digest of the request message.
+
+   Note that in this example one could imagine that the mechanism to
+   protect the token itself is based on a symmetric key based mechanism
+   to avoid any form of public key infrastructure but this aspect is not
+   further elaborated in the scenario.
+
+   A similar mechanism can also be designed using asymmetric
+   cryptography.  When the client requests an access token the
+   authorization server creates an ephemeral public / privacy key pair
+   (PK/SK) and places the public key PK into the protected token.  When
+   the authorization server returns the access token to the client it
+   also provides the PK/SK key pair over a confidentiality protected
+   channel.  When the client sends a request to the resource server it
+   has to use the privacy key SK to sign the request.  The resource
+   server, when receiving the message, retrieves the access token,
+   verifies it and extracts the public key PK.  It uses this ephemeral
+   public key to verify the attached signature.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.4.%20%20Summary"></a></body></html><a class="selflink" href="#section-6.4" id="section-6.4">6.4</a>.  Summary</span>
+
+   As a high level message, there are various ways the threats can be
+   mitigated.  While the details of each solution are somewhat
+   different, they all accomplish the goal of mitigating the threats.
+
+   The three approaches are:
+
+   Confidentiality Protection:
+
+      The weak point with this approach, which is briefly described in
+      <a href="#section-6.1">Section 6.1</a>, is that the client has to be careful to whom it
+      discloses the access token.  What can be done with the token
+      entirely depends on what rights the token entitles the presenter
+      and what constraints it contains.  A token could encode the
+      identifier of the client but there are scenarios where the client
+      is not authenticated to the resource server or where the
+      identifier of the client rather represents an application class
+      rather than a single application instance.  As such, it is
+      possible that certain deployments choose a rather liberal approach
+      to security and that everyone who is in possession of the access
+      token is granted access to the data.
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 13]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-14"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   Sender Constraint:
+
+      The weak point with this approach, which is briefly described in
+      <a href="#section-6.2">Section 6.2</a>, is to setup the authentication infrastructure such
+      that clients can be authenticated towards resource servers.
+      Additionally, the authorization server must encode the identifier
+      of the client in the token for later verification by the resource
+      server.  Depending on the chosen layer for providing client-side
+      authentication there may be additional challenges due to Web
+      server load balancing, lack of API access to identity information,
+      etc.
+
+   Key Confirmation:
+
+      The weak point with this approach, see <a href="#section-6.3">Section 6.3</a>, is the
+      increased complexity: a complete key distribution protocol has to
+      be defined.
+
+   In all cases above it has to be ensured that the client is able to
+   keep the credentials secret.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Architecture"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Architecture</span>
+
+   The proof-of-possession security concept assumes that the
+   authorization server acts as a trusted third party that binds keys to
+   access tokens.  These keys are then used by the client to demonstrate
+   the possession of the secret to the resource server when accessing
+   the resource.  The resource server, when receiving an access token,
+   needs to verify that the key used by the client matches the one
+   included in the access token.
+
+   There are slight differences between the use of symmetric keys and
+   asymmetric keys when they are bound to the access token and the
+   subsequent interaction between the client and the authorization
+   server when demonstrating possession of these keys.  Figure 1 shows
+   the symmetric key procedure and Figure 2 illustrates how asymmetric
+   keys are used.  While symmetric cryptography provides better
+   performance properties the use of asymmetric cryptography allows the
+   client to keep the private key locally and never expose it to any
+   other party.
+
+   For example, with the JSON Web Token (JWT) [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>] a standardized
+   format for access tokens is available.  The necessary elements to
+   bind symmetric or asymmetric keys to a JWT are described in
+   [<a href="#ref-I-D.ietf-oauth-proof-of-possession">I-D.ietf-oauth-proof-of-possession</a>].
+
+   Note: The negotiation of cryptographic algorithms between the client
+   and the authorization server is not shown in the examples below and
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 14]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-15"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   assumed to be present in a protocol solution to meet the requirements
+   for crypto-agility.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.%20%20Client%20and%20Authorization%20Server%20Interaction"></a></body></html><a class="selflink" href="#section-7.1" id="section-7.1">7.1</a>.  Client and Authorization Server Interaction</span>
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.1.%20%20Symmetric%20Keys"></a></body></html><a class="selflink" href="#section-7.1.1" id="section-7.1.1">7.1.1</a>.  Symmetric Keys</span>
+
+                        +---------------+
+                       ^|               |
+                     // | Authorization |
+                    /   | Server        |
+                  //    |               |
+                 /      |               |
+          (I)  //      /+---------------+
+   Access     /      //
+   Token     /      /
+   Request //     //  (II) Access Token
+   +Params /      /        +Symmetric Key
+        //     //
+       /      v
+     +-----------+                       +------------+
+     |           |                       |            |
+     |           |                       | Resource   |
+     | Client    |                       | Server     |
+     |           |                       |            |
+     |           |                       |            |
+     +-----------+                       +------------+
+
+   Figure 1: Interaction between the Client and the Authorization Server
+                             (Symmetric Keys).
+
+   In order to request an access token the client interacts with the
+   authorization server as part of the a normal grant exchange, as shown
+   in Figure 1.  However, it needs to include additional information
+   elements for use with the PoP security mechanism, as depicted in
+   message (I).  In message (II) the authorization server then returns
+   the requested access token.  In addition to the access token itself,
+   the symmetric key is communicated to the client.  This symmetric key
+   is a unique and fresh session key with sufficient entropy for the
+   given lifetime.  Furthermore, information within the access token
+   ties it to this specific symmetric key.
+
+   Note: For this security mechanism to work the client as well as the
+   resource server need to have access to the session key.  While the
+   key transport mechanism from the authorization server to the client
+   has been explained in the previous paragraph there are three ways for
+   communicating this session key from the authorization server to the
+   resource server, namely
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 15]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-16"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+      Embedding the symmetric key inside the access token itself.  This
+      requires that the symmetric key is confidentiality protected.
+
+      The resource server queries the authorization server for the
+      symmetric key.  This is an approach envisioned by the token
+      introspection endpoint [<a href="/doc/html/rfc7662" title='"OAuth 2.0 Token Introspection"'>RFC7662</a>].
+
+      The authorization server and the resource server both have access
+      to the same back-end database.  Smaller, tightly coupled systems
+      might prefer such a deployment strategy.
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.2.%20%20Asymmetric%20Keys"></a></body></html><a class="selflink" href="#section-7.1.2" id="section-7.1.2">7.1.2</a>.  Asymmetric Keys</span>
+
+                        +---------------+
+                       ^|               |
+   Access Token Req. // | Authorization |
+   +Parameters      /   | Server        |
+   +[Fingerprint] //    |               |
+                 /      |               |
+       (I)     //      /+---------------+
+              /      //
+             /      /     (II)
+           //     //  Access Token
+           /      /   +[ephemeral
+        //     //      asymmetric key pair]
+       /      v
+     +-----------+                       +------------+
+     |           |                       |            |
+     |           |                       | Resource   |
+     | Client    |                       | Server     |
+     |           |                       |            |
+     |           |                       |            |
+     +-----------+                       +------------+
+
+   Figure 2: Interaction between the Client and the Authorization Server
+                            (Asymmetric Keys).
+
+   The use of asymmetric keys is slightly different since the client or
+   the server could be involved in the generation of the ephemeral key
+   pair.  This exchange is shown in Figure 1.  If the client generates
+   the key pair it either includes a fingerprint of the public key or
+   the public key in the request to the authorization server.  The
+   authorization server would include this fingerprint or public key in
+   the confirmation claim inside the access token and thereby bind the
+   asymmetric key pair to the token.  If the client did not provide a
+   fingerprint or a public key in the request then the authorization
+   server is asked to create an ephemeral asymmetric key pair, binds the
+   fingerprint of the public key to the access token, and returns the
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 16]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-17"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   asymmetric key pair (public and private key) to the client.  Note
+   that there is a strong preference for generating the private/public
+   key pair locally at the client rather than at the server.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.2.%20%20Client%20and%20Resource%20Server%20Interaction"></a></body></html><a class="selflink" href="#section-7.2" id="section-7.2">7.2</a>.  Client and Resource Server Interaction</span>
+
+   The specification describing the interaction between the client and
+   the authorization server, as shown in Figure 1 and in Figure 2, can
+   be found in [<a href="#ref-I-D.ietf-oauth-pop-key-distribution">I-D.ietf-oauth-pop-key-distribution</a>].
+
+   Once the client has obtained the necessary access token and keying
+   material it can start to interact with the resource server.  To
+   demonstrate possession of the key bound to the access token it needs
+   to apply this key to the request by computing a keyed message digest
+   (i.e., a symmetric key-based cryptographic primitive) or a digital
+   signature (i.e., an asymmetric cryptographic computation).  When the
+   resource server receives the request it verifies it and decides
+   whether access to the protected resource can be granted.  This
+   exchange is shown in Figure 3.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 17]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-18"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+                      +---------------+
+                      |               |
+                      | Authorization |
+                      | Server        |
+                      |               |
+                      |               |
+                      +---------------+
+
+
+
+
+
+                    Request
+   +-----------+  + Signature/MAC (a)  +------------+
+   |           |----------------------&gt;|            |
+   |           |  [+Access Token]      | Resource   |
+   | Client    |                       | Server     |
+   |           |    Response (b)       |            |
+   |           |&lt;----------------------|            |
+   +-----------+  [+ Signature/MAC]    +------------+
+
+        ^                                    ^
+        |                                    |
+        |                                    |
+    Symmetric Key                       Symmetric Key
+       or                                   or
+    Asymmetric Key Pair                Public Key (Client)
+       +                                     +
+     Parameters                          Parameters
+
+                    Figure 3: Client Demonstrates PoP.
+
+   The specification describing the ability to sign the HTTP request
+   from the client to the resource server can be found in
+   [<a href="#ref-I-D.ietf-oauth-signed-http-request">I-D.ietf-oauth-signed-http-request</a>].
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.3.%20%20Resource%20and%20Authorization%20Server%20Interaction%20%28Token"></a></body></html><a class="selflink" href="#section-7.3" id="section-7.3">7.3</a>.  Resource and Authorization Server Interaction (Token</span>
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/%20%20%20%20%20%20Introspection%29"></a></body></html>      Introspection)</span>
+
+   So far the examples talked about access tokens that are passed by
+   value and allow the resource server to make authorization decisions
+   immediately after verifying the request from the client.  In some
+   deployments a real-time interaction between the authorization server
+   and the resource server is envisioned that lowers the need to pass
+   self-contained access tokens around.  In that case the access token
+   merely serves as a handle or a reference to state stored at the
+   authorization server.  As a consequence, the resource server cannot
+   autonomously make an authorization decision when receiving a request
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 18]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-19"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   from a client but has to consult the authorization server.  This can,
+   for example, be done using the token introspection endpoint (see
+   [<a href="/doc/html/rfc7662" title='"OAuth 2.0 Token Introspection"'>RFC7662</a>]).  Figure 4 shows the protocol interaction graphically.
+   Despite the additional token exchange previous descriptions about
+   associating symmetric and asymmetric keys to the access token are
+   still applicable to this scenario.
+
+                      +---------------+
+        Access       ^|               |
+        Token Req. // | Authorization |^
+          (I)     /   | Server        | \  (IV) Token
+                //    |               |  \ Introspection Req.
+               /      |               |   \     +Access
+             //      /+---------------+    \     Token
+            /      // (II)             \    \\
+           /      /   Access            \     \
+         //     //    Token              \ (V) \
+         /      /                         \Resp.\
+      //     //                            \     \
+     /      v                               V     \
+   +-----------+ Request +Signature/MAC+------------+
+   |           |  (III)  +Access Token |            |
+   |           |----------------------&gt;| Resource   |
+   | Client    |   (VI) Success or     | Server     |
+   |           |        Failure        |            |
+   |           |&lt;----------------------|            |
+   +-----------+                       +------------+
+
+          Figure 4: Token Introspection and Access Token Handles.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Security Considerations</span>
+
+   The purpose of this document is to provide use cases, requirements,
+   and motivation for developing an OAuth security solution extending
+   Bearer Tokens.  As such, this document is only about security.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  IANA Considerations</span>
+
+   This document does not require actions by IANA.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.%20%20Acknowledgments"></a></body></html><a class="selflink" href="#section-10" id="section-10">10</a>.  Acknowledgments</span>
+
+   This document is the result of conference calls late 2012/early 2013
+   and in design team conference calls February 2013 of the IETF OAuth
+   working group.  The following persons (in addition to the OAuth WG
+   chairs, Hannes Tschofenig, and Derek Atkins) provided their input
+   during these calls: Bill Mills, Justin Richer, Phil Hunt, Prateek
+   Mishra, Mike Jones, George Fletcher, Leif Johansson, Lucy Lynch, John
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 19]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-20"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   Bradley, Tony Nadalin, Klaas Wierenga, Thomas Hardjono, Brian
+   Campbell
+
+   In the appendix of this document we reuse content from [<a href="/doc/html/rfc4962" title='"Guidance for Authentication, Authorization, and Accounting (AAA) Key Management"'>RFC4962</a>] and
+   the authors would like thank Russ Housely and Bernard Aboba for their
+   work on <a href="/doc/html/rfc4962">RFC 4962</a>.
+
+   We would like to thank Reddy Tirumaleswar for his review.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.%20%20References"></a></body></html><a class="selflink" href="#section-11" id="section-11">11</a>.  References</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.1.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-11.1" id="section-11.1">11.1</a>.  Normative References</span>
+
+   [<a id="ref-I-D.ietf-oauth-pop-key-distribution">I-D.ietf-oauth-pop-key-distribution</a>]
+              Bradley, J., Hunt, P., Jones, M., and H. Tschofenig,
+              "OAuth 2.0 Proof-of-Possession: Authorization Server to
+              Client Key Distribution", <a href="/doc/html/draft-ietf-oauth-pop-key-distribution-02">draft-ietf-oauth-pop-key-</a>
+              <a href="/doc/html/draft-ietf-oauth-pop-key-distribution-02">distribution-02</a> (work in progress), October 2015.
+
+   [<a id="ref-I-D.ietf-oauth-proof-of-possession">I-D.ietf-oauth-proof-of-possession</a>]
+              Jones, M., Bradley, J., and H. Tschofenig, "Proof-of-
+              Possession Key Semantics for JSON Web Tokens (JWTs)",
+              <a href="/doc/html/draft-ietf-oauth-proof-of-possession-11">draft-ietf-oauth-proof-of-possession-11</a> (work in
+              progress), December 2015.
+
+   [<a id="ref-I-D.ietf-oauth-signed-http-request">I-D.ietf-oauth-signed-http-request</a>]
+              Richer, J., Bradley, J., and H. Tschofenig, "A Method for
+              Signing HTTP Requests for OAuth", <a href="/doc/html/draft-ietf-oauth-signed-http-request-02">draft-ietf-oauth-signed-</a>
+              <a href="/doc/html/draft-ietf-oauth-signed-http-request-02">http-request-02</a> (work in progress), February 2016.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>, DOI 10.17487/
+              <a href="/doc/html/rfc2119">RFC2119</a>, March 1997,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc2119">http://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC5246">RFC5246</a>]  Dierks, T. and E. Rescorla, "The Transport Layer Security
+              (TLS) Protocol Version 1.2", <a href="/doc/html/rfc5246">RFC 5246</a>, DOI 10.17487/
+              <a href="/doc/html/rfc5246">RFC5246</a>, August 2008,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc5246">http://www.rfc-editor.org/info/rfc5246</a>&gt;.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc6749">http://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC7519">RFC7519</a>]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
+              (JWT)", <a href="/doc/html/rfc7519">RFC 7519</a>, DOI 10.17487/RFC7519, May 2015,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc7519">http://www.rfc-editor.org/info/rfc7519</a>&gt;.
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 20]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-21"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   [<a id="ref-RFC7525">RFC7525</a>]  Sheffer, Y., Holz, R., and P. Saint-Andre,
+              "Recommendations for Secure Use of Transport Layer
+              Security (TLS) and Datagram Transport Layer Security
+              (DTLS)", <a href="/doc/html/bcp195">BCP 195</a>, <a href="/doc/html/rfc7525">RFC 7525</a>, DOI 10.17487/RFC7525, May
+              2015, &lt;<a href="http://www.rfc-editor.org/info/rfc7525">http://www.rfc-editor.org/info/rfc7525</a>&gt;.
+
+   [<a id="ref-RFC7662">RFC7662</a>]  Richer, J., Ed., "OAuth 2.0 Token Introspection", <a href="/doc/html/rfc7662">RFC</a>
+              <a href="/doc/html/rfc7662">7662</a>, DOI 10.17487/RFC7662, October 2015,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc7662">http://www.rfc-editor.org/info/rfc7662</a>&gt;.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.2.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-11.2" id="section-11.2">11.2</a>.  Informative References</span>
+
+   [<a id="ref-I-D.hardjono-oauth-kerberos">I-D.hardjono-oauth-kerberos</a>]
+              Hardjono, T., "OAuth 2.0 support for the Kerberos V5
+              Authentication Protocol", <a href="/doc/html/draft-hardjono-oauth-kerberos-01">draft-hardjono-oauth-kerberos-01</a>
+              (work in progress), December 2010.
+
+   [<a id="ref-NIST800-63">NIST800-63</a>]
+              Burr, W., Dodson, D., Perlner, R., Polk, T., Gupta, S.,
+              and E. Nabbus, "NIST Special Publication 800-63-1,
+              INFORMATION SECURITY", December 2008.
+
+   [<a id="ref-RFC4120">RFC4120</a>]  Neuman, C., Yu, T., Hartman, S., and K. Raeburn, "The
+              Kerberos Network Authentication Service (V5)", <a href="/doc/html/rfc4120">RFC 4120</a>,
+              DOI 10.17487/RFC4120, July 2005,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc4120">http://www.rfc-editor.org/info/rfc4120</a>&gt;.
+
+   [<a id="ref-RFC4279">RFC4279</a>]  Eronen, P., Ed. and H. Tschofenig, Ed., "Pre-Shared Key
+              Ciphersuites for Transport Layer Security (TLS)", <a href="/doc/html/rfc4279">RFC</a>
+              <a href="/doc/html/rfc4279">4279</a>, DOI 10.17487/RFC4279, December 2005,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc4279">http://www.rfc-editor.org/info/rfc4279</a>&gt;.
+
+   [<a id="ref-RFC4347">RFC4347</a>]  Rescorla, E. and N. Modadugu, "Datagram Transport Layer
+              Security", <a href="/doc/html/rfc4347">RFC 4347</a>, DOI 10.17487/RFC4347, April 2006,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc4347">http://www.rfc-editor.org/info/rfc4347</a>&gt;.
+
+   [<a id="ref-RFC4962">RFC4962</a>]  Housley, R. and B. Aboba, "Guidance for Authentication,
+              Authorization, and Accounting (AAA) Key Management", <a href="/doc/html/bcp132">BCP</a>
+              <a href="/doc/html/bcp132">132</a>, <a href="/doc/html/rfc4962">RFC 4962</a>, DOI 10.17487/RFC4962, July 2007,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc4962">http://www.rfc-editor.org/info/rfc4962</a>&gt;.
+
+   [<a id="ref-RFC5056">RFC5056</a>]  Williams, N., "On the Use of Channel Bindings to Secure
+              Channels", <a href="/doc/html/rfc5056">RFC 5056</a>, DOI 10.17487/RFC5056, November 2007,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc5056">http://www.rfc-editor.org/info/rfc5056</a>&gt;.
+
+   [<a id="ref-RFC5849">RFC5849</a>]  Hammer-Lahav, E., Ed., "The OAuth 1.0 Protocol", <a href="/doc/html/rfc5849">RFC 5849</a>,
+              DOI 10.17487/RFC5849, April 2010,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc5849">http://www.rfc-editor.org/info/rfc5849</a>&gt;.
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 21]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-22"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   [<a id="ref-RFC6125">RFC6125</a>]  Saint-Andre, P. and J. Hodges, "Representation and
+              Verification of Domain-Based Application Service Identity
+              within Internet Public Key Infrastructure Using X.509
+              (PKIX) Certificates in the Context of Transport Layer
+              Security (TLS)", <a href="/doc/html/rfc6125">RFC 6125</a>, DOI 10.17487/RFC6125, March
+              2011, &lt;<a href="http://www.rfc-editor.org/info/rfc6125">http://www.rfc-editor.org/info/rfc6125</a>&gt;.
+
+   [<a id="ref-RFC6750">RFC6750</a>]  Jones, M. and D. Hardt, "The OAuth 2.0 Authorization
+              Framework: Bearer Token Usage", <a href="/doc/html/rfc6750">RFC 6750</a>, DOI 10.17487/
+              <a href="/doc/html/rfc6750">RFC6750</a>, October 2012,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc6750">http://www.rfc-editor.org/info/rfc6750</a>&gt;.
+
+   [<a id="ref-RFC6819">RFC6819</a>]  Lodderstedt, T., Ed., McGloin, M., and P. Hunt, "OAuth 2.0
+              Threat Model and Security Considerations", <a href="/doc/html/rfc6819">RFC 6819</a>, DOI
+              10.17487/RFC6819, January 2013,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc6819">http://www.rfc-editor.org/info/rfc6819</a>&gt;.
+
+   [<a id="ref-RFC7252">RFC7252</a>]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
+              Application Protocol (CoAP)", <a href="/doc/html/rfc7252">RFC 7252</a>, DOI 10.17487/
+              <a href="/doc/html/rfc7252">RFC7252</a>, June 2014,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc7252">http://www.rfc-editor.org/info/rfc7252</a>&gt;.
+
+Authors' Addresses
+
+   Phil Hunt (editor)
+   Oracle Corporation
+
+   Email: phil.hunt@yahoo.com
+
+
+   Justin Richer
+
+   Email: ietf@justin.richer.org
+
+
+   William Mills
+
+   Email: wmills@yahoo-inc.com
+
+
+   Prateek Mishra
+   Oracle Corporation
+
+   Email: prateek.mishra@oracle.com
+
+
+
+
+
+
+
+<span class="grey">Hunt, et al.             Expires January 9, 2017               [Page 22]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-23"></span>
+<span class="grey">Internet-Draft         OAuth 2.0 PoP Architecture              July 2016</span>
+
+
+   Hannes Tschofenig
+   ARM Limited
+   Hall in Tirol  6060
+   Austria
+
+   Email: Hannes.Tschofenig@gmx.net
+   URI:   <a href="http://www.tschofenig.priv.at">http://www.tschofenig.priv.at</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hunt, et al.             Expires January 9, 2017               [Page 23]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

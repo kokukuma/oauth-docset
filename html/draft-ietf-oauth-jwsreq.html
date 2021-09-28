@@ -1,0 +1,2255 @@
+<!DOCTYPE html> 
+
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+  
+    draft-ietf-oauth-jwsreq-34
+  
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+
+    <!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    
+  <link rel="alternate" type="application/atom+xml" title="Document changes" href="/feed/document-changes/draft-ietf-oauth-jwsreq/">
+  <meta name="description" content="The OAuth 2.0 Authorization Framework: JWT Secured Authorization Request (JAR) (Internet-Draft, 2021)">
+  <script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+  <script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+
+
+    
+    <link rel="shortcut icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png">
+    
+    <link rel="apple-touch-icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png">
+  </head>
+
+  <body style="padding-top: 0;">
+
+	  <div class="content" id="content">
+        
+  <!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+ 
+  <div class="rfcmarkup">
+    <div class="noprint" style="height: 6px;">
+      <div onmouseover="this.style.cursor='pointer';"
+         onclick="showLegend();"
+         onmouseout="hideLegend()"
+         style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; "
+         class="meta-info bgred"
+         title="Click for colour legend." >&nbsp;</div>
+      <div id="legend"
+           class="meta-info noprint pre legend"
+           style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; "
+           onmouseover="showLegend();"
+           onmouseout="hideLegend();">
+      </div>
+    </div>
+
+    
+      <div class="noprint">
+	 <pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-jwsreq-34.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-jwsreq-34.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-jwsreq-34.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-jwsreq/34/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-jwsreq/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-jwsreq@ietf.org?subject=draft-ietf-oauth-jwsreq" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&url2=draft-ietf-oauth-jwsreq-34.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-jwsreq-34.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-jwsreq-34.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-sakimura-oauth-requrl">draft-sakimura-oauth-requrl</a>) <a href="/doc/html/draft-ietf-oauth-jwsreq-00">00</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-01">01</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-02">02</a>         Standards Track
+          <a href="/doc/html/draft-ietf-oauth-jwsreq-03">03</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-04">04</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-05">05</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-06">06</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-07">07</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-08">08</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-09">09</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-10">10</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-11">11</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-12">12</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-13">13</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-14">14</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-15">15</a>                        
+          <a href="/doc/html/draft-ietf-oauth-jwsreq-16">16</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-17">17</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-18">18</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-19">19</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-20">20</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-21">21</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-22">22</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-23">23</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-24">24</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-25">25</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-26">26</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-27">27</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-28">28</a>                        
+          <a href="/doc/html/draft-ietf-oauth-jwsreq-29">29</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-30">30</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-31">31</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-32">32</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-33">33</a> <a href="/doc/html/draft-ietf-oauth-jwsreq-34"><b>34</b></a> <a href="/doc/html/rfc9101">rfc9101</a>                                     </pre>
+      </div>
+    
+
+    <div class="draftcontent">
+    <pre>OAuth Working Group                                          N. Sakimura
+Internet-Draft                                            NAT.Consulting
+Intended status: Standards Track                              J. Bradley
+Expires: October 10, 2021                                         Yubico
+                                                                M. Jones
+                                                               Microsoft
+                                                           April 8, 2021
+
+
+The OAuth 2.0 Authorization Framework: JWT Secured Authorization Request
+                                 (JAR)
+                       <a href="/doc/html/draft-ietf-oauth-jwsreq-34">draft-ietf-oauth-jwsreq-34</a>
+
+Abstract
+
+   The authorization request in OAuth 2.0 described in <a href="/doc/html/rfc6749">RFC 6749</a> utilizes
+   query parameter serialization, which means that Authorization Request
+   parameters are encoded in the URI of the request and sent through
+   user agents such as web browsers.  While it is easy to implement, it
+   means that (a) the communication through the user agents is not
+   integrity protected and thus the parameters can be tainted, (b) the
+   source of the communication is not authenticated, and (c) the
+   communication through the user agents can be monitored.  Because of
+   these weaknesses, several attacks to the protocol have now been put
+   forward.
+
+   This document introduces the ability to send request parameters in a
+   JSON Web Token (JWT) instead, which allows the request to be signed
+   with JSON Web Signature (JWS) and encrypted with JSON Web Encryption
+   (JWE) so that the integrity, source authentication and
+   confidentiality property of the Authorization Request is attained.
+   The request can be sent by value or by reference.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as &quot;work in progress.&quot;
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 1]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-2" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   This Internet-Draft will expire on October 10, 2021.
+
+Copyright Notice
+
+   Copyright (c) 2021 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust&#x27;s Legal
+   Provisions Relating to IETF Documents
+   (<a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+     <a href="#section-1.1">1.1</a>.  Requirements Language . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-2">2</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-2.1">2.1</a>.  Request Object  . . . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-2.2">2.2</a>.  Request Object URI  . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#section-3">3</a>.  Symbols and abbreviated terms . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#section-4">4</a>.  Request Object  . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+   <a href="#section-5">5</a>.  Authorization Request . . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+     <a href="#section-5.1">5.1</a>.  Passing a Request Object by Value . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-5.2">5.2</a>.  Passing a Request Object by Reference . . . . . . . . . .  <a href="#page-10">10</a>
+       <a href="#section-5.2.1">5.2.1</a>.  URI Referencing the Request Object  . . . . . . . . .  <a href="#page-11">11</a>
+       <a href="#section-5.2.2">5.2.2</a>.  Request using the &quot;request_uri&quot; Request Parameter . .  <a href="#page-12">12</a>
+       <a href="#section-5.2.3">5.2.3</a>.  Authorization Server Fetches Request Object . . . . .  <a href="#page-12">12</a>
+   <a href="#section-6">6</a>.  Validating JWT-Based Requests . . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-6.1">6.1</a>.  JWE Encrypted Request Object  . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-6.2">6.2</a>.  JWS Signed Request Object . . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-6.3">6.3</a>.  Request Parameter Assembly and Validation . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-7">7</a>.  Authorization Server Response . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-8">8</a>.  TLS Requirements  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-9">9</a>.  IANA  Considerations  . . . . . . . . . . . . . . . . . . . .  <a href="#page-15">15</a>
+     <a href="#section-9.1">9.1</a>.  OAuth Parameters Registration . . . . . . . . . . . . . .  <a href="#page-15">15</a>
+     <a href="#section-9.2">9.2</a>.  OAuth Authorization Server Metadata Registry  . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-9.3">9.3</a>.  OAuth Dynamic Client Registration Metadata Registry . . .  <a href="#page-17">17</a>
+     <a href="#section-9.4">9.4</a>.  Media Type Registration . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+       <a href="#section-9.4.1">9.4.1</a>.  Registry Contents . . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+   <a href="#section-10">10</a>. Security Considerations . . . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+     <a href="#section-10.1">10.1</a>.  Choice of Algorithms . . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+     <a href="#section-10.2">10.2</a>.  Request Source Authentication  . . . . . . . . . . . . .  <a href="#page-18">18</a>
+     <a href="#section-10.3">10.3</a>.  Explicit Endpoints . . . . . . . . . . . . . . . . . . .  <a href="#page-19">19</a>
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 2]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-3" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+     <a href="#section-10.4">10.4</a>.  Risks Associated with request_uri  . . . . . . . . . . .  <a href="#page-19">19</a>
+       <a href="#section-10.4.1">10.4.1</a>.  DDoS Attack on the Authorization Server  . . . . . .  <a href="#page-20">20</a>
+       <a href="#section-10.4.2">10.4.2</a>.  Request URI Rewrite  . . . . . . . . . . . . . . . .  <a href="#page-20">20</a>
+     <a href="#section-10.5">10.5</a>.  Downgrade Attack . . . . . . . . . . . . . . . . . . . .  <a href="#page-20">20</a>
+     <a href="#section-10.6">10.6</a>.  TLS Security Considerations  . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+     <a href="#section-10.7">10.7</a>.  Parameter Mismatches . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+     <a href="#section-10.8">10.8</a>.  Cross-JWT Confusion  . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+   <a href="#section-11">11</a>. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  <a href="#page-22">22</a>
+     <a href="#section-11.1">11.1</a>.  Collection limitation  . . . . . . . . . . . . . . . . .  <a href="#page-22">22</a>
+     <a href="#section-11.2">11.2</a>.  Disclosure Limitation  . . . . . . . . . . . . . . . . .  <a href="#page-23">23</a>
+       <a href="#section-11.2.1">11.2.1</a>.  Request Disclosure . . . . . . . . . . . . . . . . .  <a href="#page-23">23</a>
+       <a href="#section-11.2.2">11.2.2</a>.  Tracking using Request Object URI  . . . . . . . . .  <a href="#page-23">23</a>
+   <a href="#section-12">12</a>. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-24">24</a>
+   <a href="#section-13">13</a>. Revision History  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-24">24</a>
+   <a href="#section-14">14</a>. References  . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-32">32</a>
+     <a href="#section-14.1">14.1</a>.  Normative References . . . . . . . . . . . . . . . . . .  <a href="#page-32">32</a>
+     <a href="#section-14.2">14.2</a>.  Informative References . . . . . . . . . . . . . . . . .  <a href="#page-34">34</a>
+   Authors&#x27; Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-35">35</a>
+
+<span class="h2"><a class="selflink" id="section-1" href="#section-1">1</a>.  Introduction</span>
+
+   The Authorization Request in OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] utilizes query
+   parameter serialization and is typically sent through user agents
+   such as web browsers.
+
+   For example, the parameters &quot;response_type&quot;, &quot;client_id&quot;, &quot;state&quot;,
+   and &quot;redirect_uri&quot; are encoded in the URI of the request:
+
+       GET /authorize?response_type=code&amp;client_id=s6BhdRkqt3&amp;state=xyz
+       &amp;redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb HTTP/1.1
+       Host: server.example.com
+
+   While it is easy to implement, the encoding in the URI does not allow
+   application layer security to be used to provide confidentiality and
+   integrity protection.  While TLS is used to offer communication
+   security between the Client and the user-agent as well as the user-
+   agent and the Authorization Server, TLS sessions are terminated in
+   the user-agent.  In addition, TLS sessions may be terminated
+   prematurely at some middlebox (such as a load balancer).
+
+   As the result, the Authorization Request of [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] has
+   shortcomings in that:
+
+   (a)  the communication through the user agents is not integrity
+        protected and thus the parameters can be tainted (integrity
+        protection failure)
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 3]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-4" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   (b)  the source of the communication is not authenticated (source
+        authentication failure)
+
+   (c)  the communication through the user agents can be monitored
+        (containment / confidentiality failure).
+
+   Due to these inherent weaknesses, several attacks against the
+   protocol, such as Redirection URI rewriting, have been identified.
+
+   The use of application layer security mitigates these issues.
+
+   The use of application layer security allows requests to be prepared
+   by a trusted third party so that a client application cannot request
+   more permissions than previously agreed.
+
+   Furthermore, passing the request by reference allows the reduction of
+   over-the-wire overhead.
+
+   The JWT [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>] encoding has been chosen because of
+
+   (1)  its close relationship with JSON, which is used as OAuth&#x27;s
+        response format
+
+   (2)  its developer friendliness due to its textual nature
+
+   (3)  its relative compactness compared to XML
+
+   (4)  its development status as a Proposed Standard, along with the
+        associated signing and encryption methods [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>] [<a href="/doc/html/rfc7516" title="&quot;JSON Web Encryption (JWE)&quot;">RFC7516</a>]
+
+   (5)  the relative ease of JWS and JWE compared to XML Signature and
+        Encryption.
+
+   The parameters &quot;request&quot; and &quot;request_uri&quot; are introduced as
+   additional authorization request parameters for the OAuth 2.0
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] flows.  The &quot;request&quot; parameter is a JSON Web Token (JWT)
+   [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>] whose JWT Claims Set holds the JSON encoded OAuth 2.0
+   authorization request parameters.  Note that, in contrast to <a href="/doc/html/rfc7519">RFC</a>
+   <a href="/doc/html/rfc7519">7519</a>, the elements of the Claims Set are encoded OAuth Request
+   Parameters [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>], supplemented with only a few of
+   the IANA-managed JSON Web Token Claims [<a href="#ref-IANA.JWT.Claims">IANA.JWT.Claims</a>] - in
+   particular &quot;iss&quot; and &quot;aud&quot;.  The JWT in the &quot;request&quot; parameter is
+   integrity protected and source authenticated using JWS.
+
+   The JWT [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>] can be passed to the authorization endpoint by
+   reference, in which case the parameter &quot;request_uri&quot; is used instead
+   of the &quot;request&quot;.
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 4]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-5" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   Using JWT [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>] as the request encoding instead of query
+   parameters has several advantages:
+
+   (a)  (integrity protection) The request can be signed so that the
+        integrity of the request can be checked.
+
+   (b)  (source authentication) The request can be signed so that the
+        signer can be authenticated.
+
+   (c)  (confidentiality protection) The request can be encrypted so
+        that end-to-end confidentiality can be provided even if the TLS
+        connection is terminated at one point or another (including at
+        and before user-agents).
+
+   (d)  (collection minimization) The request can be signed by a trusted
+        third party attesting that the authorization request is
+        compliant with a certain policy.  For example, a request can be
+        pre-examined by a trusted third party that all the personal data
+        requested is strictly necessary to perform the process that the
+        end-user asked for, and signed by that trusted third party.  The
+        authorization server then examines the signature and shows the
+        conformance status to the end-user, who would have some
+        assurance as to the legitimacy of the request when authorizing
+        it.  In some cases, it may even be desirable to skip the
+        authorization dialogue under such circumstances.
+
+   There are a few cases that request by reference is useful such as:
+
+   1.  When it is desirable to reduce the size of transmitted request.
+       The use of application layer security increases the size of the
+       request, particularly when public key cryptography is used.
+
+   2.  When the client does not want to do the application level
+       cryptography.  The Authorization Server may provide an endpoint
+       to accept the Authorization Request through direct communication
+       with the Client so that the Client is authenticated and the
+       channel is TLS protected.
+
+   This capability is in use by OpenID Connect [<a href="#ref-OpenID.Core">OpenID.Core</a>].
+
+<span class="h3"><a class="selflink" id="section-1.1" href="#section-1.1">1.1</a>.  Requirements Language</span>
+
+   The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
+   &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;NOT RECOMMENDED&quot;, &quot;MAY&quot;, and
+   &quot;OPTIONAL&quot; in this document are to be interpreted as described in <a href="/doc/html/bcp14">BCP</a>
+   <a href="/doc/html/bcp14">14</a> [<a href="/doc/html/rfc2119" title="&quot;Key words for use in RFCs to Indicate Requirement Levels&quot;">RFC2119</a>] [<a href="/doc/html/rfc8174" title="&quot;Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words&quot;">RFC8174</a>] when, and only when, they appear in all
+   capitals, as shown here.
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 5]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-6" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+<span class="h2"><a class="selflink" id="section-2" href="#section-2">2</a>.  Terminology</span>
+
+   For the purposes of this specification, the following terms and
+   definitions in addition to what is defined in OAuth 2.0 Framework
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>], JSON Web Signature [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>], and JSON Web Encryption
+   [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>] apply.
+
+<span class="h3"><a class="selflink" id="section-2.1" href="#section-2.1">2.1</a>.  Request Object</span>
+
+   JSON Web Token (JWT) [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>] whose JWT Claims Set holds the JSON
+   encoded OAuth 2.0 authorization request parameters.
+
+<span class="h3"><a class="selflink" id="section-2.2" href="#section-2.2">2.2</a>.  Request Object URI</span>
+
+   Absolute URI that references the set of parameters comprising an
+   OAuth 2.0 authorization request.  The contents of the resource
+   referenced by the URI are a Request Object (<a href="#section-2.1">Section 2.1</a>), unless the
+   URI was provided to the client by the same Authorization Server, in
+   which case the content is an implementation detail at the discretion
+   the Authorization Server.  The former is to ensure interoperability
+   in cases where the provider of the request_uri is a separate entity
+   from the consumer, such as when a client provides a URI referencing a
+   Request Object stored on the client&#x27;s backend service and made
+   accessible via HTTPS.  In the latter case where the Authorization
+   Server is both provider and consumer of the URI, such as when it
+   offers an endpoint that provides a URI in exchange for a Request
+   Object, this interoperability concern does not apply.
+
+<span class="h2"><a class="selflink" id="section-3" href="#section-3">3</a>.  Symbols and abbreviated terms</span>
+
+   The following abbreviations are common to this specification.
+
+   JSON  JavaScript Object Notation
+
+   JWT  JSON Web Token
+
+   JWS  JSON Web Signature
+
+   JWE  JSON Web Encryption
+
+   URI  Uniform Resource Identifier
+
+   URL  Uniform Resource Locator
+
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 6]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-7" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+<span class="h2"><a class="selflink" id="section-4" href="#section-4">4</a>.  Request Object</span>
+
+   A Request Object (<a href="#section-2.1">Section 2.1</a>) is used to provide authorization
+   request parameters for an OAuth 2.0 authorization request.  It MUST
+   contain all the parameters (including extension parameters) used to
+   process the OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] authorization request except the
+   &quot;request&quot; and &quot;request_uri&quot; parameters that are defined in this
+   document.  The parameters are represented as the JWT claims of the
+   object.  Parameter names and string values MUST be included as JSON
+   strings.  Since Request Objects are handled across domains and
+   potentially outside of a closed ecosystem, per <a href="/doc/html/rfc8259#section-8.1">section&nbsp;8.1 of
+   [RFC8259]</a>, these JSON strings MUST be encoded using UTF-8 [<a href="/doc/html/rfc3629" title="&quot;UTF-8, a transformation format of ISO 10646&quot;">RFC3629</a>].
+   Numerical values MUST be included as JSON numbers.  It MAY include
+   any extension parameters.  This JSON [<a href="/doc/html/rfc8259" title="&quot;The JavaScript Object Notation (JSON) Data Interchange Format&quot;">RFC8259</a>] object constitutes the
+   JWT Claims Set defined in JWT [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>].  The JWT Claims Set is then
+   signed or signed and encrypted.
+
+   To sign, JSON Web Signature (JWS) [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>] is used.  The result is a
+   JWS signed JWT [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>].  If signed, the Authorization Request
+   Object SHOULD contain the Claims &quot;iss&quot; (issuer) and &quot;aud&quot; (audience)
+   as members, with their semantics being the same as defined in the JWT
+   [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>] specification.  The value of &quot;aud&quot; should be the value of
+   the Authorization Server (AS) &quot;issuer&quot; as defined in <a href="/doc/html/rfc8414">RFC8414</a>
+   [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>].
+
+   To encrypt, JWE [<a href="/doc/html/rfc7516" title="&quot;JSON Web Encryption (JWE)&quot;">RFC7516</a>] is used.  When both signature and
+   encryption are being applied, the JWT MUST be signed then encrypted
+   as described in <a href="/doc/html/rfc7519#section-11.2">Section&nbsp;11.2 of [RFC7519]</a>.  The result is a Nested
+   JWT, as defined in [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>].
+
+   The client determines the algorithms used to sign and encrypt Request
+   Objects.  The algorithms chosen need to be supported by both the
+   client and the authorization server.  The client can inform the
+   authorization server of the algorithms that it supports in its
+   dynamic client registration metadata [<a href="/doc/html/rfc7591" title="&quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;">RFC7591</a>], specifically, the
+   metadata values &quot;request_object_signing_alg&quot;,
+   &quot;request_object_encryption_alg&quot;, and &quot;request_object_encryption_enc&quot;.
+   Likewise, the authorization server can inform the client of the
+   algorithms that it supports in its authorization server metadata
+   [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>], specifically, the metadata values
+   &quot;request_object_signing_alg_values_supported&quot;,
+   &quot;request_object_encryption_alg_values_supported&quot;, and
+   &quot;request_object_encryption_enc_values_supported&quot;.
+
+   The Request Object MAY be sent by value as described in <a href="#section-5.1">Section 5.1</a>
+   or by reference as described in <a href="#section-5.2">Section 5.2</a>.  &quot;request&quot; and
+   &quot;request_uri&quot; parameters MUST NOT be included in Request Objects.
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 7]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-8" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   A Request Object (<a href="#section-2.1">Section 2.1</a>) has the media type [<a href="/doc/html/rfc2046" title="&quot;Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types&quot;">RFC2046</a>]
+   &quot;application/oauth-authz-req+jwt&quot;.  Note that some existing
+   deployments may alternatively be using the type &quot;application/jwt&quot;.
+
+   The following is an example of the Claims in a Request Object before
+   base64url [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>] encoding and signing.  Note that it includes the
+   extension parameters &quot;nonce&quot; and &quot;max_age&quot;.
+
+     {
+      &quot;iss&quot;: &quot;s6BhdRkqt3&quot;,
+      &quot;aud&quot;: &quot;https://server.example.com&quot;,
+      &quot;response_type&quot;: &quot;code id_token&quot;,
+      &quot;client_id&quot;: &quot;s6BhdRkqt3&quot;,
+      &quot;redirect_uri&quot;: &quot;https://client.example.org/cb&quot;,
+      &quot;scope&quot;: &quot;openid&quot;,
+      &quot;state&quot;: &quot;af0ifjsldkj&quot;,
+      &quot;nonce&quot;: &quot;n-0S6_WzA2Mj&quot;,
+      &quot;max_age&quot;: 86400
+     }
+
+   Signing it with the &quot;RS256&quot; algorithm [<a href="/doc/html/rfc7518" title="&quot;JSON Web Algorithms (JWA)&quot;">RFC7518</a>] results in this
+   Request Object value (with line wraps within values for display
+   purposes only):
+
+     eyJhbGciOiJSUzI1NiIsImtpZCI6ImsyYmRjIn0.ewogICAgImlzcyI6ICJzNkJoZF
+     JrcXQzIiwKICAgICJhdWQiOiAiaHR0cHM6Ly9zZXJ2ZXIuZXhhbXBsZS5jb20iLAog
+     ICAgInJlc3BvbnNlX3R5cGUiOiAiY29kZSBpZF90b2tlbiIsCiAgICAiY2xpZW50X2
+     lkIjogInM2QmhkUmtxdDMiLAogICAgInJlZGlyZWN0X3VyaSI6ICJodHRwczovL2Ns
+     aWVudC5leGFtcGxlLm9yZy9jYiIsCiAgICAic2NvcGUiOiAib3BlbmlkIiwKICAgIC
+     JzdGF0ZSI6ICJhZjBpZmpzbGRraiIsCiAgICAibm9uY2UiOiAibi0wUzZfV3pBMk1q
+     IiwKICAgICJtYXhfYWdlIjogODY0MDAKfQ.Nsxa_18VUElVaPjqW_ToI1yrEJ67BgK
+     b5xsuZRVqzGkfKrOIX7BCx0biSxYGmjK9KJPctH1OC0iQJwXu5YVY-vnW0_PLJb1C2
+     HG-ztVzcnKZC2gE4i0vgQcpkUOCpW3SEYXnyWnKzuKzqSb1wAZALo5f89B_p6QA6j6
+     JwBSRvdVsDPdulW8lKxGTbH82czCaQ50rLAg3EYLYaCb4ik4I1zGXE4fvim9FIMs8O
+     CMmzwIB5S-ujFfzwFjoyuPEV4hJnoVUmXR_W9typPf846lGwA8h9G9oNTIuX8Ft2jf
+     pnZdFmLg3_wr3Wa5q3a-lfbgF3S9H_8nN3j1i7tLR_5Nz-g
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 8]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-9" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   The following RSA public key, represented in JWK format, can be used
+   to validate the Request Object signature in this and subsequent
+   Request Object examples (with line wraps within values for display
+   purposes only):
+
+     {
+      &quot;kty&quot;:&quot;RSA&quot;,
+      &quot;kid&quot;:&quot;k2bdc&quot;,
+      &quot;n&quot;:&quot;x5RbkAZkmpRxia65qRQ1wwSMSxQUnS7gcpVTV_cdHmfmG2ltd2yabEO9XadD8
+           pJNZubINPpmgHh3J1aD9WRwS05ucmFq3CfFsluLt13_7oX5yDRSKX7poXmT_5
+           ko8k4NJZPMAO8fPToDTH7kHYbONSE2FYa5GZ60CUsFhSonI-dcMDJ0Ary9lxI
+           w5k2z4TAdARVWcS7sD07VhlMMshrwsPHBQgTatlkxyIHXbYdtak8fqvNAwr7O
+           lVEvM_Ipf5OfmdB8Sd-wjzaBsyP4VhJKoi_qdgSzpC694XZeYPq45Sw-q51iF
+           UlcOlTCI7z6jltUtnR6ySn6XDGFnzH5Fe5ypw&quot;,
+      &quot;e&quot;:&quot;AQAB&quot;
+     }
+
+<span class="h2"><a class="selflink" id="section-5" href="#section-5">5</a>.  Authorization Request</span>
+
+   The client constructs the authorization request URI by adding the
+   following parameters to the query component of the authorization
+   endpoint URI using the &quot;application/x-www-form-urlencoded&quot; format:
+
+   request
+      REQUIRED unless &quot;request_uri&quot; is specified.  The Request Object
+      (<a href="#section-2.1">Section 2.1</a>) that holds authorization request parameters stated
+      in <a href="#section-4">section 4</a> of OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].  If this parameter is present
+      in the authorization request, &quot;request_uri&quot; MUST NOT be present.
+
+   request_uri
+      REQUIRED unless &quot;request&quot; is specified.  The absolute URI as
+      defined by <a href="/doc/html/rfc3986">RFC3986</a> [<a href="/doc/html/rfc3986" title="&quot;Uniform Resource Identifier (URI): Generic Syntax&quot;">RFC3986</a>] that is the Request Object URI
+      (<a href="#section-2.2">Section 2.2</a>) referencing the authorization request parameters
+      stated in <a href="#section-4">section 4</a> of OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].  If this parameter is
+      present in the authorization request, &quot;request&quot; MUST NOT be
+      present.
+
+   client_id
+      REQUIRED.  OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] &quot;client_id&quot;.  The value MUST match
+      the &quot;request&quot; or &quot;request_uri&quot; Request Object&#x27;s (<a href="#section-2.1">Section 2.1</a>)
+      &quot;client_id&quot;.
+
+   The client directs the resource owner to the constructed URI using an
+   HTTP redirection response, or by other means available to it via the
+   user-agent.
+
+   For example, the client directs the end user&#x27;s user-agent to make the
+   following HTTPS request:
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021                [Page 9]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-10" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   GET /authz?client_id=s6BhdRkqt3&amp;request=eyJhbG..AlMGzw HTTP/1.1
+   Host: server.example.com
+
+   The value for the request parameter is abbreviated for brevity.
+
+   The authorization request object MUST be one of the following:
+
+   (a)  JWS signed
+
+   (b)  JWS signed and JWE encrypted
+
+   The client MAY send the parameters included in the request object
+   duplicated in the query parameters as well for the backward
+   compatibility etc.  However, the authorization server supporting this
+   specification MUST only use the parameters included in the request
+   object.
+
+<span class="h3"><a class="selflink" id="section-5.1" href="#section-5.1">5.1</a>.  Passing a Request Object by Value</span>
+
+   The Client sends the Authorization Request as a Request Object to the
+   Authorization Endpoint as the &quot;request&quot; parameter value.
+
+   The following is an example of an Authorization Request using the
+   &quot;request&quot; parameter (with line wraps within values for display
+   purposes only):
+
+     https://server.example.com/authorize?client_id=s6BhdRkqt3&amp;
+       request=eyJhbGciOiJSUzI1NiIsImtpZCI6ImsyYmRjIn0.ewogICAgImlzcyI6
+       ICJzNkJoZFJrcXQzIiwKICAgICJhdWQiOiAiaHR0cHM6Ly9zZXJ2ZXIuZXhhbXBs
+       ZS5jb20iLAogICAgInJlc3BvbnNlX3R5cGUiOiAiY29kZSBpZF90b2tlbiIsCiAg
+       ICAiY2xpZW50X2lkIjogInM2QmhkUmtxdDMiLAogICAgInJlZGlyZWN0X3VyaSI6
+       ICJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9jYiIsCiAgICAic2NvcGUiOiAi
+       b3BlbmlkIiwKICAgICJzdGF0ZSI6ICJhZjBpZmpzbGRraiIsCiAgICAibm9uY2Ui
+       OiAibi0wUzZfV3pBMk1qIiwKICAgICJtYXhfYWdlIjogODY0MDAKfQ.Nsxa_18VU
+       ElVaPjqW_ToI1yrEJ67BgKb5xsuZRVqzGkfKrOIX7BCx0biSxYGmjK9KJPctH1OC
+       0iQJwXu5YVY-vnW0_PLJb1C2HG-ztVzcnKZC2gE4i0vgQcpkUOCpW3SEYXnyWnKz
+       uKzqSb1wAZALo5f89B_p6QA6j6JwBSRvdVsDPdulW8lKxGTbH82czCaQ50rLAg3E
+       YLYaCb4ik4I1zGXE4fvim9FIMs8OCMmzwIB5S-ujFfzwFjoyuPEV4hJnoVUmXR_W
+       9typPf846lGwA8h9G9oNTIuX8Ft2jfpnZdFmLg3_wr3Wa5q3a-lfbgF3S9H_8nN3
+       j1i7tLR_5Nz-g
+
+<span class="h3"><a class="selflink" id="section-5.2" href="#section-5.2">5.2</a>.  Passing a Request Object by Reference</span>
+
+   The &quot;request_uri&quot; Authorization Request parameter enables OAuth
+   authorization requests to be passed by reference, rather than by
+   value.  This parameter is used identically to the &quot;request&quot;
+   parameter, other than that the Request Object value is retrieved from
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 10]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-11" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   the resource identified by the specified URI rather than passed by
+   value.
+
+   The entire Request URI SHOULD NOT exceed 512 ASCII characters.  There
+   are two reasons for this restriction:
+
+   1.  Many phones in the market as of this writing still do not accept
+       large payloads.  The restriction is typically either 512 or 1024
+       ASCII characters.
+
+   2.  On a slow connection such as 2G mobile connection, a large URL
+       would cause the slow response and therefore the use of such is
+       not advisable from the user experience point of view.
+
+   The contents of the resource referenced by the &quot;request_uri&quot; MUST be
+   a Request Object and MUST be reachable by the Authorization Server
+   unless the URI was provided to the client by the Authorization
+   Server.  In the first case, the &quot;request_uri&quot; MUST be an &quot;https&quot; URI,
+   as specified in <a href="/doc/html/rfc7230#section-2.7.2">Section&nbsp;2.7.2 of RFC7230</a> [<a href="/doc/html/rfc7230" title="&quot;Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing&quot;">RFC7230</a>].  In the second
+   case, it MUST be a URN, as specified in <a href="/doc/html/rfc8141">RFC8141</a> [<a href="/doc/html/rfc8141" title="&quot;Uniform Resource Names (URNs)&quot;">RFC8141</a>].
+
+   The following is an example of the contents of a Request Object
+   resource that can be referenced by a &quot;request_uri&quot; (with line wraps
+   within values for display purposes only):
+
+     eyJhbGciOiJSUzI1NiIsImtpZCI6ImsyYmRjIn0.ewogICAgImlzcyI6ICJzNkJoZF
+     JrcXQzIiwKICAgICJhdWQiOiAiaHR0cHM6Ly9zZXJ2ZXIuZXhhbXBsZS5jb20iLAog
+     ICAgInJlc3BvbnNlX3R5cGUiOiAiY29kZSBpZF90b2tlbiIsCiAgICAiY2xpZW50X2
+     lkIjogInM2QmhkUmtxdDMiLAogICAgInJlZGlyZWN0X3VyaSI6ICJodHRwczovL2Ns
+     aWVudC5leGFtcGxlLm9yZy9jYiIsCiAgICAic2NvcGUiOiAib3BlbmlkIiwKICAgIC
+     JzdGF0ZSI6ICJhZjBpZmpzbGRraiIsCiAgICAibm9uY2UiOiAibi0wUzZfV3pBMk1q
+     IiwKICAgICJtYXhfYWdlIjogODY0MDAKfQ.Nsxa_18VUElVaPjqW_ToI1yrEJ67BgK
+     b5xsuZRVqzGkfKrOIX7BCx0biSxYGmjK9KJPctH1OC0iQJwXu5YVY-vnW0_PLJb1C2
+     HG-ztVzcnKZC2gE4i0vgQcpkUOCpW3SEYXnyWnKzuKzqSb1wAZALo5f89B_p6QA6j6
+     JwBSRvdVsDPdulW8lKxGTbH82czCaQ50rLAg3EYLYaCb4ik4I1zGXE4fvim9FIMs8O
+     CMmzwIB5S-ujFfzwFjoyuPEV4hJnoVUmXR_W9typPf846lGwA8h9G9oNTIuX8Ft2jf
+     pnZdFmLg3_wr3Wa5q3a-lfbgF3S9H_8nN3j1i7tLR_5Nz-g
+
+<span class="h4"><a class="selflink" id="section-5.2.1" href="#section-5.2.1">5.2.1</a>.  URI Referencing the Request Object</span>
+
+   The Client stores the Request Object resource either locally or
+   remotely at a URI the Authorization Server can access.  Such facility
+   may be provided by the authorization server or a trusted third party.
+   For example, the authorization server may provide a URL to which the
+   client POSTs the request object and obtains the Request URI.  This
+   URI is the Request Object URI, &quot;request_uri&quot;.
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 11]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-12" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   It is possible for the Request Object to include values that are to
+   be revealed only to the Authorization Server.  As such, the
+   &quot;request_uri&quot; MUST have appropriate entropy for its lifetime so that
+   the URI is not guessable if publicly retrievable.  For the guidance,
+   refer to 5.1.4.2.2 of [<a href="/doc/html/rfc6819" title="&quot;OAuth 2.0 Threat Model and Security Considerations&quot;">RFC6819</a>] and Good Practices for Capability
+   URLs [<a href="#ref-CapURLs" title="&quot;Good Practices for Capability URLs&quot;">CapURLs</a>].  It is RECOMMENDED that it be removed after a
+   reasonable timeout unless access control measures are taken.
+
+   The following is an example of a Request Object URI value (with line
+   wraps within values for display purposes only).  In this example, a
+   trusted third-party service hosts the Request Object.
+
+     https://tfp.example.org/request.jwt/
+       GkurKxf5T0Y-mnPFCHqWOMiZi4VS138cQO_V7PZHAdM
+
+<span class="h4"><a class="selflink" id="section-5.2.2" href="#section-5.2.2">5.2.2</a>.  Request using the &quot;request_uri&quot; Request Parameter</span>
+
+   The Client sends the Authorization Request to the Authorization
+   Endpoint.
+
+   The following is an example of an Authorization Request using the
+   &quot;request_uri&quot; parameter (with line wraps within values for display
+   purposes only):
+
+     https://server.example.com/authorize?
+       client_id=s6BhdRkqt3
+       &amp;request_uri=https%3A%2F%2Ftfp.example.org%2Frequest.jwt
+       %2FGkurKxf5T0Y-mnPFCHqWOMiZi4VS138cQO_V7PZHAdM
+
+<span class="h4"><a class="selflink" id="section-5.2.3" href="#section-5.2.3">5.2.3</a>.  Authorization Server Fetches Request Object</span>
+
+   Upon receipt of the Request, the Authorization Server MUST send an
+   HTTP &quot;GET&quot; request to the &quot;request_uri&quot; to retrieve the referenced
+   Request Object, unless it is stored in a way so that it can retrieve
+   it through other mechanism securely, and parse it to recreate the
+   Authorization Request parameters.
+
+   The following is an example of this fetch process.  In this example,
+   a trusted third-party service hosts the Request Object.
+
+   GET /request.jwt/GkurKxf5T0Y-mnPFCHqWOMiZi4VS138cQO_V7PZHAdM HTTP/1.1
+   Host: tfp.example.org
+
+
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 12]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-13" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   The following is an example of the fetch response:
+
+     HTTP/1.1 200 OK
+     Date: Thu, 20 Aug 2020 23:52:39 GMT
+     Server: Apache/2.4.43 (tfp.example.org)
+     Content-type: application/oauth-authz-req+jwt
+     Content-Length: 797
+     Last-Modified: Wed, 19 Aug 2020 23:52:32 GMT
+
+     eyJhbGciOiJSUzI1NiIsImtpZCI6ImsyYmRjIn0.ewogICAgImlzcyI6ICJzNkJoZF
+     JrcXQzIiwKICAgICJhdWQiOiAiaHR0cHM6Ly9zZXJ2ZXIuZXhhbXBsZS5jb20iLAog
+     ICAgInJlc3BvbnNlX3R5cGUiOiAiY29kZSBpZF90b2tlbiIsCiAgICAiY2xpZW50X2
+     lkIjogInM2QmhkUmtxdDMiLAogICAgInJlZGlyZWN0X3VyaSI6ICJodHRwczovL2Ns
+     aWVudC5leGFtcGxlLm9yZy9jYiIsCiAgICAic2NvcGUiOiAib3BlbmlkIiwKICAgIC
+     JzdGF0ZSI6ICJhZjBpZmpzbGRraiIsCiAgICAibm9uY2UiOiAibi0wUzZfV3pBMk1q
+     IiwKICAgICJtYXhfYWdlIjogODY0MDAKfQ.Nsxa_18VUElVaPjqW_ToI1yrEJ67BgK
+     b5xsuZRVqzGkfKrOIX7BCx0biSxYGmjK9KJPctH1OC0iQJwXu5YVY-vnW0_PLJb1C2
+     HG-ztVzcnKZC2gE4i0vgQcpkUOCpW3SEYXnyWnKzuKzqSb1wAZALo5f89B_p6QA6j6
+     JwBSRvdVsDPdulW8lKxGTbH82czCaQ50rLAg3EYLYaCb4ik4I1zGXE4fvim9FIMs8O
+     CMmzwIB5S-ujFfzwFjoyuPEV4hJnoVUmXR_W9typPf846lGwA8h9G9oNTIuX8Ft2jf
+     pnZdFmLg3_wr3Wa5q3a-lfbgF3S9H_8nN3j1i7tLR_5Nz-g
+
+<span class="h2"><a class="selflink" id="section-6" href="#section-6">6</a>.  Validating JWT-Based Requests</span>
+
+<span class="h3"><a class="selflink" id="section-6.1" href="#section-6.1">6.1</a>.  JWE Encrypted Request Object</span>
+
+   If the request object is encrypted, the Authorization Server MUST
+   decrypt the JWT in accordance with the JSON Web Encryption [<a href="/doc/html/rfc7516" title="&quot;JSON Web Encryption (JWE)&quot;">RFC7516</a>]
+   specification.
+
+   The result is a signed request object.
+
+   If decryption fails, the Authorization Server MUST return an
+   &quot;invalid_request_object&quot; error to the client in response to the
+   authorization request.
+
+<span class="h3"><a class="selflink" id="section-6.2" href="#section-6.2">6.2</a>.  JWS Signed Request Object</span>
+
+   The Authorization Server MUST validate the signature of the JSON Web
+   Signature [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>] signed Request Object.  If a &quot;kid&quot; Header
+   Parameter is present, the key identified MUST be the key used, and
+   MUST be a key associated with the client.  The signature MUST be
+   validated using a key associated with the client and the algorithm
+   specified in the &quot;alg&quot; Header Parameter.  Algorithm verification MUST
+   be performed, as specified in Sections <a href="#section-3.1">3.1</a> and <a href="#section-3.2">3.2</a> of [<a href="/doc/html/rfc8725" title="&quot;JSON Web Token Best Current Practices&quot;">RFC8725</a>].
+
+   If the key is not associated with the client or if signature
+   validation fails, the Authorization Server MUST return an
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 13]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-14" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   &quot;invalid_request_object&quot; error to the client in response to the
+   authorization request.
+
+<span class="h3"><a class="selflink" id="section-6.3" href="#section-6.3">6.3</a>.  Request Parameter Assembly and Validation</span>
+
+   The Authorization Server MUST extract the set of Authorization
+   Request parameters from the Request Object value.  The Authorization
+   Server MUST only use the parameters in the Request Object even if the
+   same parameter is provided in the query parameter.  The Client ID
+   values in the &quot;client_id&quot; request parameter and in the Request Object
+   &quot;client_id&quot; claim MUST be identical.  The Authorization Server then
+   validates the request as specified in OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].
+
+   If the Client ID check or the request validation fails, then the
+   Authorization Server MUST return an error to the client in response
+   to the authorization request, as specified in <a href="#section-5.2">Section 5.2</a> of OAuth
+   2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].
+
+<span class="h2"><a class="selflink" id="section-7" href="#section-7">7</a>.  Authorization Server Response</span>
+
+   Authorization Server Response is created and sent to the client as in
+   <a href="#section-4">Section 4</a> of OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].
+
+   In addition, this document uses these additional error values:
+
+   invalid_request_uri
+      The &quot;request_uri&quot; in the Authorization Request returns an error or
+      contains invalid data.
+
+   invalid_request_object
+      The request parameter contains an invalid Request Object.
+
+   request_not_supported
+      The Authorization Server does not support the use of the &quot;request&quot;
+      parameter.
+
+   request_uri_not_supported
+      The Authorization Server does not support the use of the
+      &quot;request_uri&quot; parameter.
+
+<span class="h2"><a class="selflink" id="section-8" href="#section-8">8</a>.  TLS Requirements</span>
+
+   Client implementations supporting the Request Object URI method MUST
+   support TLS following Recommendations for Secure Use of Transport
+   Layer Security (TLS) and Datagram Transport Layer Security (DTLS)
+   [<a href="#ref-BCP195" title="&quot;Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)&quot;">BCP195</a>].
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 14]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-15" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   To protect against information disclosure and tampering,
+   confidentiality protection MUST be applied using TLS with a cipher
+   suite that provides confidentiality and integrity protection.
+
+   HTTP clients MUST also verify the TLS server certificate, using DNS-
+   ID [<a href="/doc/html/rfc6125" title="&quot;Representation and Verification of Domain-Based Application Service Identity within Internet Public Key Infrastructure Using X.509 (PKIX) Certificates in the Context of Transport Layer Security (TLS)&quot;">RFC6125</a>], to avoid man-in-the-middle attacks.  The rules and
+   guidelines defined in [<a href="/doc/html/rfc6125" title="&quot;Representation and Verification of Domain-Based Application Service Identity within Internet Public Key Infrastructure Using X.509 (PKIX) Certificates in the Context of Transport Layer Security (TLS)&quot;">RFC6125</a>] apply here, with the following
+   considerations:
+
+   o  Support for DNS-ID identifier type (that is, the dNSName identity
+      in the subjectAltName extension) is REQUIRED.  Certification
+      authorities which issue server certificates MUST support the DNS-
+      ID identifier type, and the DNS-ID identifier type MUST be present
+      in server certificates.
+
+   o  DNS names in server certificates MAY contain the wildcard
+      character &quot;*&quot;.
+
+   o  Clients MUST NOT use CN-ID identifiers; a CN field may be present
+      in the server certificate&#x27;s subject name, but MUST NOT be used for
+      authentication within the rules described in [<a href="#ref-BCP195" title="&quot;Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)&quot;">BCP195</a>].
+
+   o  SRV-ID and URI-ID as described in <a href="/doc/html/rfc6125#section-6.5">Section&nbsp;6.5 of [RFC6125]</a> MUST
+      NOT be used for comparison.
+
+<span class="h2"><a class="selflink" id="section-9" href="#section-9">9</a>.  IANA Considerations</span>
+
+<span class="h3"><a class="selflink" id="section-9.1" href="#section-9.1">9.1</a>.  OAuth Parameters Registration</span>
+
+   Since the request object is a JWT, the core JWT claims cannot be used
+   for any purpose in the request object other than for what JWT
+   dictates.  Thus, they need to be registered as OAuth Authorization
+   Request parameters to avoid future OAuth extensions using them with
+   different meanings.
+
+   This specification adds the following values to the &quot;OAuth
+   Parameters&quot; registry [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].
+
+   o  Name: &quot;iss&quot;
+   o  Parameter Usage Location: authorization request
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="/doc/html/rfc7519#section-4.1.1">Section&nbsp;4.1.1 of [RFC7519]</a> and this
+      document.
+
+   o  Name: &quot;sub&quot;
+   o  Parameter Usage Location: authorization request
+   o  Change Controller: IETF
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 15]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-16" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   o  Specification Document(s): <a href="/doc/html/rfc7519#section-4.1.2">Section&nbsp;4.1.2 of [RFC7519]</a> and this
+      document.
+
+   o  Name: &quot;aud&quot;
+   o  Parameter Usage Location: authorization request
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="/doc/html/rfc7519#section-4.1.3">Section&nbsp;4.1.3 of [RFC7519]</a> and this
+      document.
+
+   o  Name: &quot;exp&quot;
+   o  Parameter Usage Location: authorization request
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="/doc/html/rfc7519#section-4.1.4">Section&nbsp;4.1.4 of [RFC7519]</a> and this
+      document.
+
+   o  Name: &quot;nbf&quot;
+   o  Parameter Usage Location: authorization request
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="/doc/html/rfc7519#section-4.1.5">Section&nbsp;4.1.5 of [RFC7519]</a> and this
+      document.
+
+   o  Name: &quot;iat&quot;
+   o  Parameter Usage Location: authorization request
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="/doc/html/rfc7519#section-4.1.6">Section&nbsp;4.1.6 of [RFC7519]</a> and this
+      document.
+
+   o  Name: &quot;jti&quot;
+   o  Parameter Usage Location: authorization request
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="/doc/html/rfc7519#section-4.1.7">Section&nbsp;4.1.7 of [RFC7519]</a> and this
+      document.
+
+<span class="h3"><a class="selflink" id="section-9.2" href="#section-9.2">9.2</a>.  OAuth Authorization Server Metadata Registry</span>
+
+   This specification adds the following value to the &quot;OAuth
+   Authorization Server Metadata&quot; registry [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>]
+   established by [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>].
+
+   o  Metadata Name: &quot;require_signed_request_object&quot;
+   o  Metadata Description: Indicates where authorization request needs
+      to be protected as Request Object and provided through either
+      &quot;request&quot; or &quot;request_uri parameter&quot;.
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="#section-10.5">Section 10.5</a> of this document.
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 16]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-17" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+<span class="h3"><a class="selflink" id="section-9.3" href="#section-9.3">9.3</a>.  OAuth Dynamic Client Registration Metadata Registry</span>
+
+   This specification adds the following value to the &quot;OAuth Dynamic
+   Client Registration Metadata&quot; registry [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>]
+   established by [<a href="/doc/html/rfc7591" title="&quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;">RFC7591</a>].
+
+   o  Metadata Name: &quot;require_signed_request_object&quot;
+   o  Metadata Description: Indicates where authorization request needs
+      to be protected as Request Object and provided through either
+      &quot;request&quot; or &quot;request_uri parameter&quot;.
+   o  Change Controller: IETF
+   o  Specification Document(s): <a href="#section-10.5">Section 10.5</a> of this document.
+
+<span class="h3"><a class="selflink" id="section-9.4" href="#section-9.4">9.4</a>.  Media Type Registration</span>
+
+<span class="h4"><a class="selflink" id="section-9.4.1" href="#section-9.4.1">9.4.1</a>.  Registry Contents</span>
+
+   This section registers the &quot;application/oauth-authz-req+jwt&quot; media
+   type [<a href="/doc/html/rfc2046" title="&quot;Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types&quot;">RFC2046</a>] in the &quot;Media Types&quot; registry [<a href="#ref-IANA.MediaTypes">IANA.MediaTypes</a>] in the
+   manner described in [<a href="/doc/html/rfc6838" title="&quot;Media Type Specifications and Registration Procedures&quot;">RFC6838</a>], which can be used to indicate that the
+   content is a JWT containing Request Object claims.
+
+   o  Type name: application
+   o  Subtype name: oauth-authz-req+jwt
+   o  Required parameters: n/a
+   o  Optional parameters: n/a
+   o  Encoding considerations: binary; A Request Object is a JWT; JWT
+      values are encoded as a series of base64url-encoded values (some
+      of which may be the empty string) separated by period (&#x27;.&#x27;)
+      characters.
+   o  Security considerations: See <a href="#section-10">Section 10</a> of [[ this specification
+      ]]
+   o  Interoperability considerations: n/a
+   o  Published specification: <a href="#section-4">Section 4</a> of [[ this specification ]]
+   o  Applications that use this media type: Applications that use
+      Request Objects to make an OAuth 2.0 Authorization Request
+   o  Fragment identifier considerations: n/a
+   o  Additional information:
+
+         Magic number(s): n/a
+         File extension(s): n/a
+         Macintosh file type code(s): n/a
+
+   o  Person &amp; email address to contact for further information:
+      Nat Sakimura, nat@nat.consulting
+   o  Intended usage: COMMON
+   o  Restrictions on usage: none
+   o  Author: Nat Sakimura, nat@nat.consulting
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 17]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-18" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   o  Change controller: IETF
+   o  Provisional registration?  No
+
+<span class="h2"><a class="selflink" id="section-10" href="#section-10">10</a>.  Security Considerations</span>
+
+   In addition to the all the security considerations discussed in OAuth
+   2.0 [<a href="/doc/html/rfc6819" title="&quot;OAuth 2.0 Threat Model and Security Considerations&quot;">RFC6819</a>], the security considerations in [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>], [<a href="/doc/html/rfc7516" title="&quot;JSON Web Encryption (JWE)&quot;">RFC7516</a>],
+   [<a href="/doc/html/rfc7518" title="&quot;JSON Web Algorithms (JWA)&quot;">RFC7518</a>], and [<a href="/doc/html/rfc8725" title="&quot;JSON Web Token Best Current Practices&quot;">RFC8725</a>] need to be considered.  Also, there are
+   several academic papers such as [<a href="#ref-BASIN" title="&quot;Provably Repairing the ISO/IEC 9798 Standard for Entity Authentication&quot;">BASIN</a>] that provide useful insight
+   into the security properties of protocols like OAuth.
+
+   In consideration of the above, this document advises taking the
+   following security considerations into account.
+
+<span class="h3"><a class="selflink" id="section-10.1" href="#section-10.1">10.1</a>.  Choice of Algorithms</span>
+
+   When sending the authorization request object through &quot;request&quot;
+   parameter, it MUST either be signed using JWS [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>] or signed
+   then encrypted using JWS [<a href="/doc/html/rfc7515" title="&quot;JSON Web Signature (JWS)&quot;">RFC7515</a>] and JWE [<a href="/doc/html/rfc7516" title="&quot;JSON Web Encryption (JWE)&quot;">RFC7516</a>] respectively,
+   with then considered appropriate algorithms.
+
+<span class="h3"><a class="selflink" id="section-10.2" href="#section-10.2">10.2</a>.  Request Source Authentication</span>
+
+   The source of the Authorization Request MUST always be verified.
+   There are several ways to do it:
+
+   (a)  Verifying the JWS Signature of the Request Object.
+
+   (b)  Verifying that the symmetric key for the JWE encryption is the
+        correct one if the JWE is using symmetric encryption.  Note
+        however, that if public key encryption is used, no source
+        authentication is enabled by the encryption, as any party can
+        encrypt content to the public key.
+
+   (c)  Verifying the TLS Server Identity of the Request Object URI.  In
+        this case, the Authorization Server MUST know out-of-band that
+        the Client uses Request Object URI and only the Client is
+        covered by the TLS certificate.  In general, it is not a
+        reliable method.
+
+   (d)  When an Authorization Server implements a service that returns a
+        Request Object URI in exchange for a Request Object, the
+        Authorization Server MUST perform Client Authentication to
+        accept the Request Object and bind the Client Identifier to the
+        Request Object URI it is providing.  It MUST validate the
+        signature, per (a).  Since Request Object URI can be replayed,
+        the lifetime of the Request Object URI MUST be short and
+        preferably one-time use.  The entropy of the Request Object URI
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 18]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-19" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+        MUST be sufficiently large.  The adequate shortness of the
+        validity and the entropy of the Request Object URI depends on
+        the risk calculation based on the value of the resource being
+        protected.  A general guidance for the validity time would be
+        less than a minute and the Request Object URI is to include a
+        cryptographic random value of 128bit or more at the time of the
+        writing of this specification.
+
+   (e)  When a trusted third-party service returns a Request Object URI
+        in exchange for a Request Object, it MUST validate the
+        signature, per (a).  In addition, the Authorization Server MUST
+        be trusted by the third-party service and MUST know out-of-band
+        that the client is also trusted by it.
+
+<span class="h3"><a class="selflink" id="section-10.3" href="#section-10.3">10.3</a>.  Explicit Endpoints</span>
+
+   Although this specification does not require them, research such as
+   [<a href="#ref-BASIN" title="&quot;Provably Repairing the ISO/IEC 9798 Standard for Entity Authentication&quot;">BASIN</a>] points out that it is a good practice to explicitly state the
+   intended interaction endpoints and the message position in the
+   sequence in a tamper evident manner so that the intent of the
+   initiator is unambiguous.  The following endpoints defined in
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>], [<a href="/doc/html/rfc6750" title="&quot;The OAuth 2.0 Authorization Framework: Bearer Token Usage&quot;">RFC6750</a>], and [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>] are RECOMMENDED by this
+   specification to use this practice :
+
+   (a)  Protected Resources (&quot;protected_resources&quot;)
+
+   (b)  Authorization Endpoint (&quot;authorization_endpoint&quot;)
+
+   (c)  Redirection URI (&quot;redirect_uri&quot;)
+
+   (d)  Token Endpoint (&quot;token_endpoint&quot;)
+
+   Further, if dynamic discovery is used, then this practice also
+   applies to the discovery related endpoints.
+
+   In [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>], while Redirection URI is included in the Authorization
+   Request, others are not.  As a result, the same applies to
+   Authorization Request Object.
+
+<span class="h3"><a class="selflink" id="section-10.4" href="#section-10.4">10.4</a>.  Risks Associated with request_uri</span>
+
+   The introduction of &quot;request_uri&quot; introduces several attack
+   possibilities.  Consult the security considerations in <a href="/doc/html/rfc3986#section-7">Section&nbsp;7 of
+   RFC3986</a> [<a href="/doc/html/rfc3986" title="&quot;Uniform Resource Identifier (URI): Generic Syntax&quot;">RFC3986</a>] for more information regarding risks associated
+   with URIs.
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 19]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-20" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+<span class="h4"><a class="selflink" id="section-10.4.1" href="#section-10.4.1">10.4.1</a>.  DDoS Attack on the Authorization Server</span>
+
+   A set of malicious client can launch a DoS attack to the
+   authorization server by pointing the &quot;request_uri&quot; to a URI that
+   returns extremely large content or extremely slow to respond.  Under
+   such an attack, the server may use up its resource and start failing.
+
+   Similarly, a malicious client can specify the &quot;request_uri&quot; value
+   that itself points to an authorization request URI that uses
+   &quot;request_uri&quot; to cause the recursive lookup.
+
+   To prevent such attack to succeed, the server should (a) check that
+   the value of &quot;request_uri&quot; parameter does not point to an unexpected
+   location, (b) check the media type of the response is &quot;application/
+   oauth-authz-req+jwt&quot;, (c) implement a time-out for obtaining the
+   content of &quot;request_uri&quot;, and (d) not perform recursive GET on the
+   &quot;request_uri&quot;.
+
+<span class="h4"><a class="selflink" id="section-10.4.2" href="#section-10.4.2">10.4.2</a>.  Request URI Rewrite</span>
+
+   The value of &quot;request_uri&quot; is not signed thus it can be tampered by
+   Man-in-the-browser attacker.  Several attack possibilities rise
+   because of this, e.g., (a) attacker may create another file that the
+   rewritten URI points to making it possible to request extra scope (b)
+   attacker launches a DoS attack to a victim site by setting the value
+   of &quot;request_uri&quot; to be that of the victim.
+
+   To prevent such attack to succeed, the server should (a) check that
+   the value of &quot;request_uri&quot; parameter does not point to an unexpected
+   location, (b) check the media type of the response is &quot;application/
+   oauth-authz-req+jwt&quot;, and (c) implement a time-out for obtaining the
+   content of &quot;request_uri&quot;.
+
+<span class="h3"><a class="selflink" id="section-10.5" href="#section-10.5">10.5</a>.  Downgrade Attack</span>
+
+   Unless the protocol used by client and the server is locked down to
+   use OAuth JAR, it is possible for an attacker to use <a href="/doc/html/rfc6749">RFC6749</a> requests
+   to bypass all the protection provided by this specification.
+
+   To prevent it, this specification defines a new client metadata and
+   server metadata &quot;require_signed_request_object&quot; whose value is a
+   boolean.
+
+   When the value of it as a client metadata is &quot;true&quot;, then the server
+   MUST reject the authorization request from the client that does not
+   conform to this specification.  It MUST also reject the request if
+   the request object uses &quot;alg&quot;:&quot;none&quot; when this client metadata value
+   is &quot;true&quot;.  If omitted, the default value is &quot;false&quot;.
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 20]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-21" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   When the value of it as a server metadata is &quot;true&quot;, then the server
+   MUST reject the authorization request from any client that does not
+   conform to this specification.  It MUST also reject the request if
+   the request object uses &quot;alg&quot;:&quot;none&quot; when this server metadata value
+   is &quot;true&quot;.  If omitted, the default value is &quot;false&quot;.
+
+   Note that even if &quot;require_signed_request_object&quot; metadata values are
+   not present, the client MAY use signed request objects, provided that
+   there are signing algorithms mutually supported by the client and the
+   server.  Use of signing algorithm metadata is described in <a href="#section-4">Section 4</a>.
+
+<span class="h3"><a class="selflink" id="section-10.6" href="#section-10.6">10.6</a>.  TLS Security Considerations</span>
+
+   Current security considerations can be found in Recommendations for
+   Secure Use of TLS and DTLS [<a href="#ref-BCP195" title="&quot;Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)&quot;">BCP195</a>].  This supersedes the TLS version
+   recommendations in OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].
+
+<span class="h3"><a class="selflink" id="section-10.7" href="#section-10.7">10.7</a>.  Parameter Mismatches</span>
+
+   Given that OAuth parameter values are being sent in two different
+   places, as normal OAuth parameters and as Request Object claims,
+   implementations must guard against attacks that could use mismatching
+   parameter values to obtain unintended outcomes.  That is the reason
+   that the two Client ID values MUST match, the reason that only the
+   parameter values from the Request Object are to be used, and the
+   reason that neither &quot;request&quot; nor &quot;request_uri&quot; can appear in a
+   Request Object.
+
+<span class="h3"><a class="selflink" id="section-10.8" href="#section-10.8">10.8</a>.  Cross-JWT Confusion</span>
+
+   As described in <a href="/doc/html/rfc8725#section-2.8">Section&nbsp;2.8 of [RFC8725]</a>, attackers may attempt to
+   use a JWT issued for one purpose in a context that it was not
+   intended for.  The mitigations described for these attacks can be
+   applied to Request Objects.
+
+   One way that an attacker might attempt to repurpose a Request Object
+   is to try to use it as a client authentication JWT, as described in
+   <a href="/doc/html/rfc7523#section-2.2">Section&nbsp;2.2 of [RFC7523]</a>.  A simple way to prevent this is to never
+   use the Client ID as the &quot;sub&quot; value in a Request Object.
+
+   Another way to prevent cross-JWT confusion is to use explicit typing,
+   as described in <a href="/doc/html/rfc8725#section-3.11">Section&nbsp;3.11 of [RFC8725]</a>.  One would explicitly type
+   a Request Object by including a &quot;typ&quot; Header Parameter with the value
+   &quot;oauth-authz-req+jwt&quot; (which is registered in <a href="#section-9.4.1">Section 9.4.1</a>.  Note
+   however, that requiring explicitly typed Requests Objects at existing
+   authorization servers will break most existing deployments, as
+   existing clients are already commonly using untyped Request Objects,
+   especially with OpenID Connect [<a href="#ref-OpenID.Core">OpenID.Core</a>].  However, requiring
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 21]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-22" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   explicit typing would be a good idea for new OAuth deployment
+   profiles where compatibility with existing deployments is not a
+   consideration.
+
+   Finally, yet another way to prevent cross-JWT confusion is to use a
+   key management regime in which keys used to sign Request Objects are
+   identifiably distinct from those used for other purposes.  Then, if
+   an adversary attempts to repurpose the Request Object in another
+   context, a key mismatch will occur, thwarting the attack.
+
+<span class="h2"><a class="selflink" id="section-11" href="#section-11">11</a>.  Privacy Considerations</span>
+
+   When the Client is being granted access to a protected resource
+   containing personal data, both the Client and the Authorization
+   Server need to adhere to Privacy Principles.  <a href="/doc/html/rfc6973">RFC 6973</a> Privacy
+   Considerations for Internet Protocols [<a href="/doc/html/rfc6973" title="&quot;Privacy Considerations for Internet Protocols&quot;">RFC6973</a>] gives excellent
+   guidance on the enhancement of protocol design and implementation.
+   The provision listed in it should be followed.
+
+   Most of the provision would apply to The OAuth 2.0 Authorization
+   Framework [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] and The OAuth 2.0 Authorization Framework: Bearer
+   Token Usage [<a href="/doc/html/rfc6750" title="&quot;The OAuth 2.0 Authorization Framework: Bearer Token Usage&quot;">RFC6750</a>] and are not specific to this specification.  In
+   what follows, only the specific provisions to this specification are
+   noted.
+
+<span class="h3"><a class="selflink" id="section-11.1" href="#section-11.1">11.1</a>.  Collection limitation</span>
+
+   When the Client is being granted access to a protected resource
+   containing personal data, the Client SHOULD limit the collection of
+   personal data to that which is within the bounds of applicable law
+   and strictly necessary for the specified purpose(s).
+
+   It is often hard for the user to find out if the personal data asked
+   for is strictly necessary.  A trusted third-party service can help
+   the user by examining the Client request and comparing to the
+   proposed processing by the Client and certifying the request.  After
+   the certification, the Client, when making an Authorization Request,
+   can submit Authorization Request to the trusted third-party service
+   to obtain the Request Object URI.  This process is two steps:
+
+   (1)  (Certification Process) The trusted third-party service examines
+        the business process of the client and determines what claims
+        they need: This is the certification process.  Once the client
+        is certified, then they are issued a client credential to
+        authenticate against to push request objects to the trusted
+        third-party service to get the &quot;request_uri&quot;.
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 22]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-23" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   (2)  (Translation Process) The client uses the client credential that
+        it got to push the request object to the trusted third-party
+        service to get the &quot;request_uri&quot;.  The trusted third-party
+        service also verifies that the Request Object is consistent with
+        the claims that the client is eligible for, per prior step.
+
+   Upon receiving such Request Object URI in the Authorization Request,
+   the Authorization Server first verifies that the authority portion of
+   the Request Object URI is a legitimate one for the trusted third-
+   party service.  Then, the Authorization Server issues HTTP GET
+   request to the Request Object URI.  Upon connecting, the
+   Authorization Server MUST verify the server identity represented in
+   the TLS certificate is legitimate for the Request Object URI.  Then,
+   the Authorization Server can obtain the Request Object, which
+   includes the &quot;client_id&quot; representing the Client.
+
+   The Consent screen MUST indicate the Client and SHOULD indicate that
+   the request has been vetted by the trusted third-party service for
+   adherence to the Collection Limitation principle.
+
+<span class="h3"><a class="selflink" id="section-11.2" href="#section-11.2">11.2</a>.  Disclosure Limitation</span>
+
+<span class="h4"><a class="selflink" id="section-11.2.1" href="#section-11.2.1">11.2.1</a>.  Request Disclosure</span>
+
+   This specification allows extension parameters.  These may include
+   potentially sensitive information.  Since URI query parameter may
+   leak through various means but most notably through referrer and
+   browser history, if the authorization request contains a potentially
+   sensitive parameter, the Client SHOULD JWE [<a href="/doc/html/rfc7516" title="&quot;JSON Web Encryption (JWE)&quot;">RFC7516</a>] encrypt the
+   request object.
+
+   Where Request Object URI method is being used, if the request object
+   contains personally identifiable or sensitive information, the
+   &quot;request_uri&quot; SHOULD be used only once, have a short validity period,
+   and MUST have large enough entropy deemed necessary with applicable
+   security policy unless the Request Object itself is JWE [<a href="/doc/html/rfc7516" title="&quot;JSON Web Encryption (JWE)&quot;">RFC7516</a>]
+   Encrypted.  The adequate shortness of the validity and the entropy of
+   the Request Object URI depends on the risk calculation based on the
+   value of the resource being protected.  A general guidance for the
+   validity time would be less than a minute and the Request Object URI
+   is to include a cryptographic random value of 128bit or more at the
+   time of the writing of this specification.
+
+<span class="h4"><a class="selflink" id="section-11.2.2" href="#section-11.2.2">11.2.2</a>.  Tracking using Request Object URI</span>
+
+   Even if the protected resource does not include a personally
+   identifiable information, it is sometimes possible to identify the
+   user through the Request Object URI if persistent static per-user
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 23]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-24" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   Request Object URIs are used.  A third party may observe it through
+   browser history etc. and start correlating the user&#x27;s activity using
+   it.  In a way, it is a data disclosure as well and should be avoided.
+
+   Therefore, per-user persistent Request Object URIs should be avoided.
+   Single-use Request Object URIs are one alternative.
+
+<span class="h2"><a class="selflink" id="section-12" href="#section-12">12</a>.  Acknowledgements</span>
+
+   The following people contributed to the creation of this document in
+   the OAuth working group and other IETF roles.  (Affiliations at the
+   time of the contribution are used.)
+
+   Annabelle Backman (Amazon), Dirk Balfanz (Google), Sergey Beryozkin,
+   Ben Campbell (as AD), Brian Campbell (Ping Identity), Roman Danyliw
+   (as AD), Martin Duke (as AD), Vladimir Dzhuvinov (Connect2id), Lars
+   Eggert (as AD), Joel Halpern (as GENART), Benjamin Kaduk (as AD),
+   Stephen Kent (as SECDIR), Murray Kucherawy (as AD), Warren Kumari (as
+   OPSDIR), Watson Ladd (as SECDIR), Torsten Lodderstedt (yes.com), Jim
+   Manico, Axel Nennker (Deutsche Telecom), Hannes Tschofenig (ARM),
+   James H.  Manger (Telstra), Kathleen Moriarty (as AD), John Panzer
+   (Google), Francesca Palombini (as AD), David Recordon (Facebook),
+   Marius Scurtescu (Google), Luke Shepard (Facebook), Filip Skokan
+   (Auth0), Eric Vyncke (as AD), and Robert Wilton (as AD).
+
+   The following people contributed to creating this document through
+   the OpenID Connect Core 1.0 [<a href="#ref-OpenID.Core">OpenID.Core</a>].
+
+   Brian Campbell (Ping Identity), George Fletcher (AOL), Ryo Itou
+   (Mixi), Edmund Jay (Illumila), Breno de Medeiros (Google), Hideki
+   Nara (TACT), Justin Richer (MITRE).
+
+<span class="h2"><a class="selflink" id="section-13" href="#section-13">13</a>.  Revision History</span>
+
+   Note to the RFC Editor: Please remove this section from the final
+   RFC.
+
+   -34
+
+   o  Addressed additional IESG comments by Murray Kucherawy and
+      Francesca Palombini.
+
+   -33
+
+   o  Addressed IESG comments prior to 8-Apr-21 telechat.  Thanks to
+      Martin Duke, Lars Eggert, Benjamin Kaduk, Francesca Palombini, and
+      Eric Vyncke for their reviews.
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 24]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-25" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   -32
+
+   o  Removed outdated JSON reference.
+
+   -31
+
+   o  Addressed SecDir review comments by Watson Ladd.
+
+   -30
+
+   o  Changed the MIME Type from &quot;oauth.authz.req+jwt&quot; to &quot;oauth-authz-
+      req+jwt&quot;, per advice from the designated experts.
+
+   -29
+
+   o  Uniformly use the Change Controller &quot;IETF&quot;.
+
+   -28
+
+   o  Removed unused references, as suggested by Roman Danyliw.
+
+   -27
+
+   o  Edits by Mike Jones to address IESG and working group review
+      comments, including:
+
+   o  Added Security Considerations text saying not to use the Client ID
+      as the &quot;sub&quot; value to prevent Cross-JWT Confusion.
+
+   o  Added Security Considerations text about using explicit typing to
+      prevent Cross-JWT Confusion.
+
+   o  Addressed Eric Vyncke&#x27;s review comments.
+
+   o  Addressed Robert Wilton&#x27;s review comments.
+
+   o  Addressed Murray Kucherawy&#x27;s review comments.
+
+   o  Addressed Benjamin Kaduk&#x27;s review comments.
+
+   o  Applied spelling and grammar corrections.
+
+   -20
+
+   o  BK comments
+
+   o  <a href="#section-3">Section 3</a> Removed WAP
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 25]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-26" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   o  <a href="#section-4">Section 4</a>.  Clarified authorization request object parameters,
+      removed extension parameters from examples
+
+   o  <a href="#section-4">Section 4</a>.  Specifies application/oauth.authz.req+jwt as mime-type
+      fore request objects
+
+   o  <a href="#section-5.2.1">Section 5.2.1</a> Added reference to Capability URLs
+
+   o  <a href="#section-5.2.3">Section 5.2.3</a>.  Added entropy fragment to example request
+
+   o  <a href="#section-8">Section 8</a>.  Replaced &quot;subjectAltName dnsName&quot; with &quot;DNS-ID&quot;
+
+   o  <a href="#section-9">Section 9</a>.  Registers authorization request parameters in JWT
+      Claims Registry.
+
+   o  <a href="#section-9">Section 9</a>.  Registers application/oauth.authz.req in IANA mime-
+      types registry
+
+   o  <a href="#section-10.1">Section 10.1</a>.  Clarified encrypted request objects are &quot;signed
+      then encrypted&quot; to maintain consistency
+
+   o  <a href="#section-10.2">Section 10.2</a>.  Clarifies trust between AS and TFP
+
+   o  <a href="#section-10.3">Section 10.3</a>.  Clarified endpoints subject to the practice
+
+   o  <a href="#section-10.4">Section 10.4</a> Replaced &quot;redirect_uri&quot; to &quot;request_uri&quot;
+
+   o  <a href="#section-10.4">Section 10.4</a>.  Added reference to <a href="/doc/html/rfc3986">RFC 3986</a> for risks
+
+   o  <a href="#section-10.4.1">Section 10.4.1</a>.d Deleted &quot;do&quot; to maintain grammar flow
+
+   o  <a href="#section-10.4.1">Section 10.4.1</a>, 10.4.2 Replaced &quot;application/jose&quot; to
+      &quot;application/jwt&quot;
+
+   o  <a href="#section-12.1">Section 12.1</a>.  Extended description for submitting authorization
+      request to TFP to obtain request object
+
+   o  <a href="#section-12.2.2">Section 12.2.2</a>.  Replaced per-user Request Object URI with static
+      per-user Request URIs
+
+   o  <a href="#section-13">Section 13</a>.  Combined OAuth WG contributors together
+
+   o  Section Whole doc Replaced application/jwt with application/
+      oauth.authz.req+jwt
+
+   -19
+
+   o  AD comments
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 26]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-27" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   o  <a href="#section-5.2.1">Section 5.2.1</a>.  s/Requiest URI/Request URI/
+
+   o  <a href="#section-8">Section 8</a> s/[<a href="#ref-BCP195" title="&quot;Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)&quot;">BCP195</a>] ./[<a href="#ref-BCP195" title="&quot;Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)&quot;">BCP195</a>]./
+
+   o  <a href="#section-10.3">Section 10.3</a>.  s/sited/cited/
+
+   o  <a href="#section-11">Section 11</a>.  Typo.  s/Curent/Current/
+
+   -17
+
+   o  #78 Typos in content-type
+
+   -16
+
+   o  Treated remaining Ben Campbell comments.
+
+   -15
+
+   o  Removed further duplication
+
+   -14
+
+   o  #71 Reiterate dynamic params are included.
+
+   o  #70 Made clear that AS must return error.
+
+   o  #69 Inconsistency of the need to sign.
+
+   o  Fixed Mimetype.
+
+   o  #67 Inconsistence in requiring HTTPS in request URI.
+
+   o  #66 Dropped ISO 29100 reference.
+
+   o  #25 Removed Encrypt only option.
+
+   o  #59 Same with #25.
+
+   -13
+
+   o  add TLS Security Consideration section
+
+   o  replace <a href="/doc/html/rfc7525">RFC7525</a> reference with <a href="/doc/html/bcp195">BCP195</a>
+
+   o  moved front tag in FETT reference to fix XML structure
+
+   o  changes reference from SoK to FETT
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 27]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-28" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   -12
+
+   o  fixes #62 - Alexey Melnikov Discuss
+
+   o  fixes #48 - OPSDIR Review : General - delete semicolons after list
+      items
+
+   o  fixes #58 - DP Comments for the Last Call
+
+   o  fixes #57 - GENART - Remove &quot;non-normative ... &quot; from examples.
+
+   o  fixes #45 - OPSDIR Review : Introduction - are attacks discovered
+      or already opened
+
+   o  fixes #49 - OPSDIR Review : Introduction - Inconsistent colons
+      after initial sentence of list items.
+
+   o  fixes #53 - OPSDIR Review : 6.2 JWS Signed Request Object -
+      Clarify JOSE Header
+
+   o  fixes #42 - OPSDIR Review : Introduction - readability of &#x27;and&#x27; is
+      confusing
+
+   o  fixes #50 - OPSDIR Review : <a href="#section-4">Section 4</a> Request Object - Clarify
+      &#x27;signed, encrypted, or signed and encrypted&#x27;
+
+   o  fixes #39 - OPSDIR Review : Abstract - Explain/Clarify JWS and JWE
+
+   o  fixed #50 - OPSDIR Review : <a href="#section-4">Section 4</a> Request Object - Clarify
+      &#x27;signed, encrypted, or signed and encrypted&#x27;
+
+   o  fixes #43 - OPSDIR Review : Introduction - &#x27;properties&#x27; sounds
+      awkward and are not exactly &#x27;properties&#x27;
+
+   o  fixes #56 - OPSDIR Review : 12 Acknowledgements - &#x27;contribution
+      is&#x27; =&gt; &#x27;contribution are&#x27;
+
+   o  fixes #55 - OPSDIR Review : 11.2.2 Privacy Considerations - &#x27; It
+      is in a way&#x27; =&gt; &#x27;In a way, it is&#x27;
+
+   o  fixes #54 - OPSDIR Review : 11 Privacy Considerations - &#x27;and not
+      specific&#x27; =&gt; &#x27;and are not specific&#x27;
+
+   o  fixes #51 - OPSDIR Review : <a href="#section-4">Section 4</a> Request Object - &#x27;It is
+      fine&#x27; =&gt; &#x27;It is recommended&#x27;
+
+   o  fixes #47 - OPSDIR Review : Introduction - &#x27;over- the- wire&#x27; =&gt;
+      &#x27;over-the-wire&#x27;
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 28]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-29" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   o  fixes #46 - OPSDIR Review : Introduction - &#x27;It allows&#x27; =&gt; &#x27;The use
+      of application security&#x27; for
+
+   o  fixes #44 - OPSDIR Review : Introduction - &#x27;has&#x27; =&gt; &#x27;have&#x27;
+
+   o  fixes #41 - OPSDIR Review : Introduction - missing &#x27;is&#x27; before
+      &#x27;typically sent&#x27;
+
+   o  fixes #38 - OPSDIR Review : <a href="#section-11">Section 11</a> - Delete &#x27;freely
+      accessible&#x27; regarding ISO 29100
+
+   -11
+
+   o  s/bing/being/
+
+   o  Added history for -10
+
+   -10
+
+   o  #20: KM1 -- some wording that is awkward in the TLS section.
+
+   o  #21: KM2 - the additional attacks against OAuth 2.0 should also
+      have a pointer
+
+   o  #22: KM3 -- Nit: in the first line of 10.4:
+
+   o  #23: KM4 -- Mention <a href="/doc/html/rfc6973">RFC6973</a> in <a href="#section-11">Section 11</a> in addition to ISO 29100
+
+   o  #24: SECDIR review: <a href="#section-4">Section 4</a> -- Confusing requirements for
+      sign+encrypt
+
+   o  #25: SECDIR review: <a href="#section-6">Section 6</a> -- authentication and integrity need
+      not be provided if the requestor encrypts the token?
+
+   o  #26: SECDIR Review: <a href="#section-10">Section 10</a> -- why no reference for JWS
+      algorithms?
+
+   o  #27: SECDIR Review: <a href="#section-10.2">Section 10.2</a> - how to do the agreement between
+      client and server &quot;a priori&quot;?
+
+   o  #28: SECDIR Review: <a href="#section-10.3">Section 10.3</a> - Indication on &quot;large entropy&quot;
+      and &quot;short lifetime&quot; should be indicated
+
+   o  #29: SECDIR Review: <a href="#section-10.3">Section 10.3</a> - Typo
+
+   o  #30: SECDIR Review: <a href="#section-10.4">Section 10.4</a> - typos and missing articles
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 29]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-30" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   o  #31: SECDIR Review: <a href="#section-10.4">Section 10.4</a> - Clearer statement on the lack
+      of endpoint identifiers needed
+
+   o  #32: SECDIR Review: <a href="#section-11">Section 11</a> - ISO29100 needs to be moved to
+      normative reference
+
+   o  #33: SECDIR Review: <a href="#section-11">Section 11</a> - Better English and Entropy
+      language needed
+
+   o  #34: <a href="#section-4">Section 4</a>: Typo
+
+   o  #35: More Acknowledgment
+
+   o  #36: DP - More precise qualification on Encryption needed.
+
+   -09
+
+   o  Minor Editorial Nits.
+
+   o  <a href="#section-10.4">Section 10.4</a> added.
+
+   o  Explicit reference to Security consideration (10.2) added in
+      <a href="#section-5">section 5</a> and <a href="#section-5.2">section 5.2</a>.
+
+   o  , (add yourself) removed from the acknowledgment.
+
+   -08
+
+   o  Applied changes proposed by Hannes on 2016-06-29 on IETF OAuth
+      list recorded as <a href="https://bitbucket.org/Nat/oauth-jwsreq/issues/12/">https://bitbucket.org/Nat/oauth-jwsreq/</a>
+      <a href="https://bitbucket.org/Nat/oauth-jwsreq/issues/12/">issues/12/</a>.
+
+   o  TLS requirements added.
+
+   o  Security Consideration reinforced.
+
+   o  Privacy Consideration added.
+
+   o  Introduction improved.
+
+   -07
+
+   o  Changed the abbrev to OAuth JAR from oauth-jar.
+
+   o  Clarified sig and enc methods.
+
+   o  Better English.
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 30]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-31" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   o  Removed claims from one of the example.
+
+   o  Re-worded the URI construction.
+
+   o  Changed the example to use request instead of request_uri.
+
+   o  Clarified that Request Object parameters take precedence
+      regardless of request or request_uri parameters were used.
+
+   o  Generalized the language in 4.2.1 to convey the intent more
+      clearly.
+
+   o  Changed &quot;Server&quot; to &quot;Authorization Server&quot; as a clarification.
+
+   o  Stopped talking about request_object_signing_alg.
+
+   o  IANA considerations now reflect the current status.
+
+   o  Added Brian Campbell to the contributors list.  Made the lists
+      alphabetic order based on the last names.  Clarified that the
+      affiliation is at the time of the contribution.
+
+   o  Added &quot;older versions of &quot; to the reference to IE URI length
+      limitations.
+
+   o  Stopped talking about signed or unsigned JWS etc.
+
+   o  1.Introduction improved.
+
+   -06
+
+   o  Added explanation on the 512 chars URL restriction.
+
+   o  Updated Acknowledgements.
+
+   -05
+
+   o  More alignment with OpenID Connect.
+
+   -04
+
+   o  Fixed typos in examples. (request_url -&gt; request_uri, cliend_id -&gt;
+      client_id)
+
+   o  Aligned the error messages with the OAuth IANA registry.
+
+   o  Added another rationale for having request object.
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 31]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-32" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   -03
+
+   o  Fixed the non-normative description about the advantage of static
+      signature.
+
+   o  Changed the requirement for the parameter values in the request
+      itself and the request object from &#x27;MUST MATCH&quot; to &#x27;Req Obj takes
+      precedence.
+
+   -02
+
+   o  Now that they are RFCs, replaced JWS, JWE, etc. with RFC numbers.
+
+   -01
+
+   o  Copy Edits.
+
+<span class="h2"><a class="selflink" id="section-14" href="#section-14">14</a>.  References</span>
+
+<span class="h3"><a class="selflink" id="section-14.1" href="#section-14.1">14.1</a>.  Normative References</span>
+
+   [<a id="ref-BCP195">BCP195</a>]   Sheffer, Y., Holz, R., and P. Saint-Andre,
+              &quot;Recommendations for Secure Use of Transport Layer
+              Security (TLS) and Datagram Transport Layer Security
+              (DTLS)&quot;, <a href="/doc/html/bcp195">BCP 195</a>, <a href="/doc/html/rfc7525">RFC 7525</a>, May 2015.
+
+   [<a id="ref-IANA.MediaTypes">IANA.MediaTypes</a>]
+              IANA, &quot;Media Types&quot;,
+              &lt;<a href="http://www.iana.org/assignments/media-types">http://www.iana.org/assignments/media-types</a>&gt;.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., &quot;Key words for use in RFCs to Indicate
+              Requirement Levels&quot;, <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC3629">RFC3629</a>]  Yergeau, F., &quot;UTF-8, a transformation format of ISO
+              10646&quot;, STD 63, <a href="/doc/html/rfc3629">RFC 3629</a>, DOI 10.17487/RFC3629, November
+              2003, &lt;<a href="https://www.rfc-editor.org/info/rfc3629">https://www.rfc-editor.org/info/rfc3629</a>&gt;.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, &quot;Uniform
+              Resource Identifier (URI): Generic Syntax&quot;, STD 66,
+              <a href="/doc/html/rfc3986">RFC 3986</a>, DOI 10.17487/RFC3986, January 2005,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc3986">https://www.rfc-editor.org/info/rfc3986</a>&gt;.
+
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 32]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-33" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   [<a id="ref-RFC6125">RFC6125</a>]  Saint-Andre, P. and J. Hodges, &quot;Representation and
+              Verification of Domain-Based Application Service Identity
+              within Internet Public Key Infrastructure Using X.509
+              (PKIX) Certificates in the Context of Transport Layer
+              Security (TLS)&quot;, <a href="/doc/html/rfc6125">RFC 6125</a>, DOI 10.17487/RFC6125, March
+              2011, &lt;<a href="https://www.rfc-editor.org/info/rfc6125">https://www.rfc-editor.org/info/rfc6125</a>&gt;.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., &quot;The OAuth 2.0 Authorization Framework&quot;,
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6749">https://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC6750">RFC6750</a>]  Jones, M. and D. Hardt, &quot;The OAuth 2.0 Authorization
+              Framework: Bearer Token Usage&quot;, <a href="/doc/html/rfc6750">RFC 6750</a>,
+              DOI 10.17487/RFC6750, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6750">https://www.rfc-editor.org/info/rfc6750</a>&gt;.
+
+   [<a id="ref-RFC7230">RFC7230</a>]  Fielding, R., Ed. and J. Reschke, Ed., &quot;Hypertext Transfer
+              Protocol (HTTP/1.1): Message Syntax and Routing&quot;,
+              <a href="/doc/html/rfc7230">RFC 7230</a>, DOI 10.17487/RFC7230, June 2014,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7230">https://www.rfc-editor.org/info/rfc7230</a>&gt;.
+
+   [<a id="ref-RFC7515">RFC7515</a>]  Jones, M., Bradley, J., and N. Sakimura, &quot;JSON Web
+              Signature (JWS)&quot;, <a href="/doc/html/rfc7515">RFC 7515</a>, DOI 10.17487/RFC7515, May
+              2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7515">https://www.rfc-editor.org/info/rfc7515</a>&gt;.
+
+   [<a id="ref-RFC7516">RFC7516</a>]  Jones, M. and J. Hildebrand, &quot;JSON Web Encryption (JWE)&quot;,
+              <a href="/doc/html/rfc7516">RFC 7516</a>, DOI 10.17487/RFC7516, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7516">https://www.rfc-editor.org/info/rfc7516</a>&gt;.
+
+   [<a id="ref-RFC7518">RFC7518</a>]  Jones, M., &quot;JSON Web Algorithms (JWA)&quot;, <a href="/doc/html/rfc7518">RFC 7518</a>,
+              DOI 10.17487/RFC7518, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7518">https://www.rfc-editor.org/info/rfc7518</a>&gt;.
+
+   [<a id="ref-RFC7519">RFC7519</a>]  Jones, M., Bradley, J., and N. Sakimura, &quot;JSON Web Token
+              (JWT)&quot;, <a href="/doc/html/rfc7519">RFC 7519</a>, DOI 10.17487/RFC7519, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7519">https://www.rfc-editor.org/info/rfc7519</a>&gt;.
+
+   [<a id="ref-RFC8141">RFC8141</a>]  Saint-Andre, P. and J. Klensin, &quot;Uniform Resource Names
+              (URNs)&quot;, <a href="/doc/html/rfc8141">RFC 8141</a>, DOI 10.17487/RFC8141, April 2017,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8141">https://www.rfc-editor.org/info/rfc8141</a>&gt;.
+
+   [<a id="ref-RFC8174">RFC8174</a>]  Leiba, B., &quot;Ambiguity of Uppercase vs Lowercase in <a href="/doc/html/rfc2119">RFC</a>
+              <a href="/doc/html/rfc2119">2119</a> Key Words&quot;, <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc8174">RFC 8174</a>, DOI 10.17487/RFC8174,
+              May 2017, &lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;.
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 33]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-34" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   [<a id="ref-RFC8259">RFC8259</a>]  Bray, T., Ed., &quot;The JavaScript Object Notation (JSON) Data
+              Interchange Format&quot;, STD 90, <a href="/doc/html/rfc8259">RFC 8259</a>,
+              DOI 10.17487/RFC8259, December 2017,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>&gt;.
+
+   [<a id="ref-RFC8414">RFC8414</a>]  Jones, M., Sakimura, N., and J. Bradley, &quot;OAuth 2.0
+              Authorization Server Metadata&quot;, <a href="/doc/html/rfc8414">RFC 8414</a>,
+              DOI 10.17487/RFC8414, June 2018,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8414">https://www.rfc-editor.org/info/rfc8414</a>&gt;.
+
+<span class="h3"><a class="selflink" id="section-14.2" href="#section-14.2">14.2</a>.  Informative References</span>
+
+   [<a id="ref-BASIN">BASIN</a>]    Basin, D., Cremers, C., and S. Meier, &quot;Provably Repairing
+              the ISO/IEC 9798 Standard for Entity Authentication&quot;,
+              Journal of Computer Security - Security and Trust
+              Principles Volume 21 Issue 6, Pages 817-846, November
+              2013,
+              &lt;<a href="https://www.cs.ox.ac.uk/people/cas.cremers/downloads/papers/BCM2012-iso9798.pdf">https://www.cs.ox.ac.uk/people/cas.cremers/downloads/</a>
+              <a href="https://www.cs.ox.ac.uk/people/cas.cremers/downloads/papers/BCM2012-iso9798.pdf">papers/BCM2012-iso9798.pdf</a>&gt;.
+
+   [<a id="ref-CapURLs">CapURLs</a>]  Tennison, J., &quot;Good Practices for Capability URLs&quot;,
+              W3C Working Draft, February 2014,
+              &lt;<a href="https://www.w3.org/TR/capability-urls/">https://www.w3.org/TR/capability-urls/</a>&gt;.
+
+   [<a id="ref-IANA.JWT.Claims">IANA.JWT.Claims</a>]
+              IANA, &quot;JSON Web Token Claims&quot;,
+              &lt;<a href="http://www.iana.org/assignments/jwt">http://www.iana.org/assignments/jwt</a>&gt;.
+
+   [<a id="ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>]
+              IANA, &quot;OAuth Parameters&quot;,
+              &lt;<a href="http://www.iana.org/assignments/oauth-parameters">http://www.iana.org/assignments/oauth-parameters</a>&gt;.
+
+   [<a id="ref-OpenID.Core">OpenID.Core</a>]
+              Sakimura, N., Bradley, J., Jones, M., de Medeiros, B., and
+              C. Mortimore, &quot;OpenID Connect Core 1.0&quot;, OpenID
+              Foundation Standards, February 2014,
+              &lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;.
+
+   [<a id="ref-RFC2046">RFC2046</a>]  Freed, N. and N. Borenstein, &quot;Multipurpose Internet Mail
+              Extensions (MIME) Part Two: Media Types&quot;, <a href="/doc/html/rfc2046">RFC 2046</a>,
+              DOI 10.17487/RFC2046, November 1996,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc2046">https://www.rfc-editor.org/info/rfc2046</a>&gt;.
+
+   [<a id="ref-RFC6819">RFC6819</a>]  Lodderstedt, T., Ed., McGloin, M., and P. Hunt, &quot;OAuth 2.0
+              Threat Model and Security Considerations&quot;, <a href="/doc/html/rfc6819">RFC 6819</a>,
+              DOI 10.17487/RFC6819, January 2013,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6819">https://www.rfc-editor.org/info/rfc6819</a>&gt;.
+
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 34]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-35" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   [<a id="ref-RFC6838">RFC6838</a>]  Freed, N., Klensin, J., and T. Hansen, &quot;Media Type
+              Specifications and Registration Procedures&quot;, <a href="/doc/html/bcp13">BCP 13</a>,
+              <a href="/doc/html/rfc6838">RFC 6838</a>, DOI 10.17487/RFC6838, January 2013,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6838">https://www.rfc-editor.org/info/rfc6838</a>&gt;.
+
+   [<a id="ref-RFC6973">RFC6973</a>]  Cooper, A., Tschofenig, H., Aboba, B., Peterson, J.,
+              Morris, J., Hansen, M., and R. Smith, &quot;Privacy
+              Considerations for Internet Protocols&quot;, <a href="/doc/html/rfc6973">RFC 6973</a>,
+              DOI 10.17487/RFC6973, July 2013,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6973">https://www.rfc-editor.org/info/rfc6973</a>&gt;.
+
+   [<a id="ref-RFC7523">RFC7523</a>]  Jones, M., Campbell, B., and C. Mortimore, &quot;JSON Web Token
+              (JWT) Profile for OAuth 2.0 Client Authentication and
+              Authorization Grants&quot;, <a href="/doc/html/rfc7523">RFC 7523</a>, DOI 10.17487/RFC7523, May
+              2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7523">https://www.rfc-editor.org/info/rfc7523</a>&gt;.
+
+   [<a id="ref-RFC7591">RFC7591</a>]  Richer, J., Ed., Jones, M., Bradley, J., Machulak, M., and
+              P. Hunt, &quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;,
+              <a href="/doc/html/rfc7591">RFC 7591</a>, DOI 10.17487/RFC7591, July 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7591">https://www.rfc-editor.org/info/rfc7591</a>&gt;.
+
+   [<a id="ref-RFC8725">RFC8725</a>]  Sheffer, Y., Hardt, D., and M. Jones, &quot;JSON Web Token Best
+              Current Practices&quot;, <a href="/doc/html/bcp225">BCP 225</a>, <a href="/doc/html/rfc8725">RFC 8725</a>,
+              DOI 10.17487/RFC8725, February 2020,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8725">https://www.rfc-editor.org/info/rfc8725</a>&gt;.
+
+Authors&#x27; Addresses
+
+   Nat Sakimura
+   NAT.Consulting
+   2-22-17 Naka
+   Kunitachi, Tokyo  186-0004
+   Japan
+
+   Phone: +81-42-580-7401
+   Email: nat@nat.consulting
+   URI:   <a href="http://nat.sakimura.org/">http://nat.sakimura.org/</a>
+
+
+   John Bradley
+   Yubico
+   Casilla 177, Sucursal Talagante
+   Talagante, RM
+   Chile
+
+   Phone: +1.202.630.5272
+   Email: ve7jtb@ve7jtb.com
+   URI:   <a href="http://www.thread-safe.com/">http://www.thread-safe.com/</a>
+
+
+
+<span class="grey">Sakimura, et al.        Expires October 10, 2021               [Page 35]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-36" ></span>
+<span class="grey">Internet-Draft                  OAuth JAR                     April 2021</span>
+
+
+   Michael B. Jones
+   Microsoft
+   One Microsoft Way
+   Redmond, Washington  98052
+   United States of America
+
+   Email: mbj@microsoft.com
+   URI:   <a href="https://self-issued.info/">https://self-issued.info/</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sakimura, et al.        Expires October 10, 2021               [Page 36]
+</pre>
+    </div>
+
+  </div>
+
+
+        
+	  </div>
+
+	
+
+	
+
+    </div>
+
+      
+      <script>$(".visible-nojs").removeClass("visible-nojs");</script>
+      <script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+      
+    <script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+
+  </body>
+</html>
+

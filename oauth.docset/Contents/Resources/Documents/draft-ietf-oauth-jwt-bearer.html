@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-jwt-bearer-12
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-jwt-bearer/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Internet-Draft, 2014)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-jwt-bearer-12.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-jwt-bearer-12.xml" title="XML source for this document">xml</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-jwt-bearer-12.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-jwt-bearer/12/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-jwt-bearer/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-jwt-bearer@ietf.org?subject=draft-ietf-oauth-jwt-bearer" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-jwt-bearer-12.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-jwt-bearer-12.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-jwt-bearer-12.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: <a href="/doc/html/draft-ietf-oauth-jwt-bearer-00">00</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-01">01</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-02">02</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-03">03</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-04">04</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-05">05</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-06">06</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-07">07</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-08">08</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-09">09</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-10">10</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-11">11</a> <a href="/doc/html/draft-ietf-oauth-jwt-bearer-12"><b>12</b></a>         Standards Track
+          <a href="/doc/html/rfc7523">rfc7523</a>                                                       </pre>
+</div>
+<div class="draftcontent">
+<pre>OAuth Working Group                                             M. Jones
+Internet-Draft                                                 Microsoft
+Intended status: Standards Track                             B. Campbell
+Expires: May 16, 2015                                      Ping Identity
+                                                            C. Mortimore
+                                                              Salesforce
+                                                       November 12, 2014
+
+
+  <span class="h1">JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and</span>
+                          <span class="h1">Authorization Grants</span>
+                     <span class="h1">draft-ietf-oauth-jwt-bearer-12</span>
+
+Abstract
+
+   This specification defines the use of a JSON Web Token (JWT) Bearer
+   Token as a means for requesting an OAuth 2.0 access token as well as
+   for use as a means of client authentication.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on May 16, 2015.
+
+Copyright Notice
+
+   Copyright (c) 2014 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in <a href="#section-4">Section 4</a>.e of
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.1">1.1</a>.  Notational Conventions  . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-1.2">1.2</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+   <a href="#section-2">2</a>.  HTTP Parameter Bindings for Transporting Assertions . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.1">2.1</a>.  Using JWTs as Authorization Grants  . . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.2">2.2</a>.  Using JWTs for Client Authentication  . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-3">3</a>.  JWT Format and Processing Requirements  . . . . . . . . . . .   <a href="#page-5">5</a>
+     <a href="#section-3.1">3.1</a>.  Authorization Grant Processing  . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-3.2">3.2</a>.  Client Authentication Processing  . . . . . . . . . . . .   <a href="#page-8">8</a>
+   <a href="#section-4">4</a>.  Authorization Grant Example . . . . . . . . . . . . . . . . .   <a href="#page-8">8</a>
+   <a href="#section-5">5</a>.  Interoperability Considerations . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+   <a href="#section-6">6</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+   <a href="#section-7">7</a>.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+   <a href="#section-8">8</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     8.1.  Sub-Namespace Registration of urn:ietf:params:oauth
+           :grant-type:jwt-bearer  . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     8.2.  Sub-Namespace Registration of urn:ietf:params:oauth
+           :client-assertion-type:jwt-bearer . . . . . . . . . . . .  <a href="#page-10">10</a>
+   <a href="#section-9">9</a>.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+     <a href="#section-9.1">9.1</a>.  Normative References  . . . . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+     <a href="#section-9.2">9.2</a>.  Informative References  . . . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+   <a href="#appendix-A">Appendix A</a>.  Acknowledgements . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   <a href="#appendix-B">Appendix B</a>.  Document History . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   JSON Web Token (JWT) [<a href="#ref-JWT" title='"JSON Web Token (JWT)"'>JWT</a>] is a JavaScript Object Notation (JSON)
+   [<a href="/doc/html/rfc7159" title='"The JavaScript Object Notation (JSON) Data Interchange Format"'>RFC7159</a>] based security token encoding that enables identity and
+   security information to be shared across security domains.  A
+   security token is generally issued by an identity provider and
+   consumed by a relying party that relies on its content to identify
+   the token's subject for security related purposes.
+
+   The OAuth 2.0 Authorization Framework [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] provides a method for
+   making authenticated HTTP requests to a resource using an access
+   token.  Access tokens are issued to third-party clients by an
+   authorization server (AS) with the (sometimes implicit) approval of
+   the resource owner.  In OAuth, an authorization grant is an abstract
+   term used to describe intermediate credentials that represent the
+   resource owner authorization.  An authorization grant is used by the
+   client to obtain an access token.  Several authorization grant types
+   are defined to support a wide range of client types and user
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   experiences.  OAuth also allows for the definition of new extension
+   grant types to support additional clients or to provide a bridge
+   between OAuth and other trust frameworks.  Finally, OAuth allows the
+   definition of additional authentication mechanisms to be used by
+   clients when interacting with the authorization server.
+
+   The Assertion Framework for OAuth 2.0 Client Authentication and
+   Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification is an
+   abstract extension to OAuth 2.0 that provides a general framework for
+   the use of Assertions (a.k.a.  Security Tokens) as client credentials
+   and/or authorization grants with OAuth 2.0.  This specification
+   profiles the Assertion Framework for OAuth 2.0 Client Authentication
+   and Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification to
+   define an extension grant type that uses a JSON Web Token (JWT)
+   Bearer Token to request an OAuth 2.0 access token as well as for use
+   as client credentials.  The format and processing rules for the JWT
+   defined in this specification are intentionally similar, though not
+   identical, to those in the closely related SAML 2.0 Profile for OAuth
+   2.0 Client Authentication and Authorization Grants
+   [<a href="#ref-I-D.ietf-oauth-saml2-bearer">I-D.ietf-oauth-saml2-bearer</a>] specification.  The differences arise
+   where the structure and semantics of JWTs differ from SAML
+   assertions.  JWTs, for example, have no direct equivalent to the
+   &lt;SubjectConfirmation&gt; or &lt;AuthnStatement&gt; elements of SAML
+   assertions.
+
+   This document defines how a JSON Web Token (JWT) Bearer Token can be
+   used to request an access token when a client wishes to utilize an
+   existing trust relationship, expressed through the semantics of (and
+   digital signature or Message Authentication Code calculated over) the
+   JWT, without a direct user approval step at the authorization server.
+   It also defines how a JWT can be used as a client authentication
+   mechanism.  The use of a security token for client authentication is
+   orthogonal to and separable from using a security token as an
+   authorization grant.  They can be used either in combination or
+   separately.  Client authentication using a JWT is nothing more than
+   an alternative way for a client to authenticate to the token endpoint
+   and must be used in conjunction with some grant type to form a
+   complete and meaningful protocol request.  JWT authorization grants
+   may be used with or without client authentication or identification.
+   Whether or not client authentication is needed in conjunction with a
+   JWT authorization grant, as well as the supported types of client
+   authentication, are policy decisions at the discretion of the
+   authorization server.
+
+   The process by which the client obtains the JWT, prior to exchanging
+   it with the authorization server or using it for client
+   authentication, is out of scope.
+
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Notational%20Conventions"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Notational Conventions</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "<em>MAY</em>", and "<em>OPTIONAL</em>" in this
+   document are to be interpreted as described in <a href="/doc/html/rfc2119">RFC 2119</a> [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>].
+
+   Unless otherwise noted, all the protocol parameter names and values
+   are case sensitive.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.2.%20%20Terminology"></a></body></html><a class="selflink" href="#section-1.2" id="section-1.2">1.2</a>.  Terminology</span>
+
+   All terms are as defined in The OAuth 2.0 Authorization Framework
+   [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>], the Assertion Framework for OAuth 2.0 Client
+   Authentication and Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>],
+   and the JSON Web Token (JWT) [<a href="#ref-JWT" title='"JSON Web Token (JWT)"'>JWT</a>] specifications.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20HTTP%20Parameter%20Bindings%20for%20Transporting%20Assertions"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  HTTP Parameter Bindings for Transporting Assertions</span>
+
+   The Assertion Framework for OAuth 2.0 Client Authentication and
+   Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification
+   defines generic HTTP parameters for transporting Assertions (a.k.a.
+   Security Tokens) during interactions with a token endpoint.  This
+   section defines specific parameters and treatments of those
+   parameters for use with JWT bearer tokens.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.1.%20%20Using%20JWTs%20as%20Authorization%20Grants"></a></body></html><a class="selflink" href="#section-2.1" id="section-2.1">2.1</a>.  Using JWTs as Authorization Grants</span>
+
+   To use a Bearer JWT as an authorization grant, the client uses an
+   access token request as defined in <a href="#section-4">Section 4</a> of the Assertion
+   Framework for OAuth 2.0 Client Authentication and Authorization
+   Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification with the following
+   specific parameter values and encodings.
+
+   The value of the "grant_type" is "urn:ietf:params:oauth:grant-
+   type:jwt-bearer".
+
+   The value of the "assertion" parameter <em>MUST</em> contain a single JWT.
+
+   The "scope" parameter may be used, as defined in the Assertion
+   Framework for OAuth 2.0 Client Authentication and Authorization
+   Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification, to indicate the
+   requested scope.
+
+   Authentication of the client is optional, as described in
+   <a href="#section-3.2.1">Section 3.2.1</a> of OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] and consequently, the
+   "client_id" is only needed when a form of client authentication that
+   relies on the parameter is used.
+
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   The following example demonstrates an Access Token Request with a JWT
+   as an authorization grant (with extra line breaks for display
+   purposes only):
+
+     POST /token.oauth2 HTTP/1.1
+     Host: as.example.com
+     Content-Type: application/x-www-form-urlencoded
+
+     grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
+     &amp;assertion=eyJhbGciOiJFUzI1NiJ9.
+     eyJpc3Mi[...omitted for brevity...].
+     J9l-ZhwP[...omitted for brevity...]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.2.%20%20Using%20JWTs%20for%20Client%20Authentication"></a></body></html><a class="selflink" href="#section-2.2" id="section-2.2">2.2</a>.  Using JWTs for Client Authentication</span>
+
+   To use a JWT Bearer Token for client authentication, the client uses
+   the following parameter values and encodings.
+
+   The value of the "client_assertion_type" is
+   "urn:ietf:params:oauth:client-assertion-type:jwt-bearer".
+
+   The value of the "client_assertion" parameter contains a single JWT.
+   It <em>MUST NOT</em> contain more than one JWT.
+
+   The following example demonstrates client authentication using a JWT
+   during the presentation of an authorization code grant in an Access
+   Token Request (with extra line breaks for display purposes only):
+
+     POST /token.oauth2 HTTP/1.1
+     Host: as.example.com
+     Content-Type: application/x-www-form-urlencoded
+
+     grant_type=authorization_code&amp;
+     code=vAZEIHjQTHuGgaSvyW9hO0RpusLzkvTOww3trZBxZpo&amp;
+     client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3A
+     client-assertion-type%3Ajwt-bearer&amp;
+     client_assertion=eyJhbGciOiJSUzI1NiJ9.
+     eyJpc3Mi[...omitted for brevity...].
+     cC4hiUPo[...omitted for brevity...]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20JWT%20Format%20and%20Processing%20Requirements"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  JWT Format and Processing Requirements</span>
+
+   In order to issue an access token response as described in OAuth 2.0
+   [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] or to rely on a JWT for client authentication, the
+   authorization server <em>MUST</em> validate the JWT according to the criteria
+   below.  Application of additional restrictions and policy are at the
+   discretion of the authorization server.
+
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   1.   The JWT <em>MUST</em> contain an "iss" (issuer) claim that contains a
+        unique identifier for the entity that issued the JWT.  In the
+        absence of an application profile specifying otherwise,
+        compliant applications <em>MUST</em> compare Issuer values using the
+        Simple String Comparison method defined in Section 6.2.1 of <a href="/doc/html/rfc3986">RFC</a>
+        <a href="/doc/html/rfc3986">3986</a> [<a href="/doc/html/rfc3986" title='"Uniform Resource Identifier (URI): Generic Syntax"'>RFC3986</a>].
+
+   2.   The JWT <em>MUST</em> contain a "sub" (subject) claim identifying the
+        principal that is the subject of the JWT.  Two cases need to be
+        differentiated:
+
+        A.  For the authorization grant, the subject typically
+            identifies an authorized accessor for which the access token
+            is being requested (i.e., the resource owner or an
+            authorized delegate), but in some cases, may be a
+            pseudonymous identifier or other value denoting an anonymous
+            user.
+
+        B.  For client authentication, the subject <em>MUST</em> be the
+            "client_id" of the OAuth client.
+
+   3.   The JWT <em>MUST</em> contain an "aud" (audience) claim containing a
+        value that identifies the authorization server as an intended
+        audience.  The token endpoint URL of the authorization server
+        <em>MAY</em> be used as a value for an "aud" element to identify the
+        authorization server as an intended audience of the JWT.  The
+        Authorization Server <em>MUST</em> reject any JWT that does not contain
+        its own identity as the intended audience In the absence of an
+        application profile specifying otherwise, compliant applications
+        <em>MUST</em> compare the audience values using the Simple String
+        Comparison method defined in <a href="/doc/html/rfc3986#section-6.2.1">Section 6.2.1 of RFC 3986</a>
+        [<a href="/doc/html/rfc3986" title='"Uniform Resource Identifier (URI): Generic Syntax"'>RFC3986</a>].  As noted in <a href="#section-5">Section 5</a>, the precise strings to be
+        used as the audience for a given Authorization Server must be
+        configured out-of-band by the Authorization Server and the
+        Issuer of the JWT.
+
+   4.   The JWT <em>MUST</em> contain an "exp" (expiration) claim that limits the
+        time window during which the JWT can be used.  The authorization
+        server <em>MUST</em> reject any JWT with an expiration time that has
+        passed, subject to allowable clock skew between systems.  Note
+        that the authorization server may reject JWTs with an "exp"
+        claim value that is unreasonably far in the future.
+
+   5.   The JWT <em>MAY</em> contain an "nbf" (not before) claim that identifies
+        the time before which the token <em>MUST NOT</em> be accepted for
+        processing.
+
+
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   6.   The JWT <em>MAY</em> contain an "iat" (issued at) claim that identifies
+        the time at which the JWT was issued.  Note that the
+        authorization server may reject JWTs with an "iat" claim value
+        that is unreasonably far in the past.
+
+   7.   The JWT <em>MAY</em> contain a "jti" (JWT ID) claim that provides a
+        unique identifier for the token.  The authorization server <em>MAY</em>
+        ensure that JWTs are not replayed by maintaining the set of used
+        "jti" values for the length of time for which the JWT would be
+        considered valid based on the applicable "exp" instant.
+
+   8.   The JWT <em>MAY</em> contain other claims.
+
+   9.   The JWT <em>MUST</em> be digitally signed or have a Message
+        Authentication Code applied by the issuer.  The authorization
+        server <em>MUST</em> reject JWTs with an invalid signature or Message
+        Authentication Code.
+
+   10.  The authorization server <em>MUST</em> reject a JWT that is not valid in
+        all other respects per JSON Web Token (JWT) [<a href="#ref-JWT" title='"JSON Web Token (JWT)"'>JWT</a>].
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.1.%20%20Authorization%20Grant%20Processing"></a></body></html><a class="selflink" href="#section-3.1" id="section-3.1">3.1</a>.  Authorization Grant Processing</span>
+
+   JWT authorization grants may be used with or without client
+   authentication or identification.  Whether or not client
+   authentication is needed in conjunction with a JWT authorization
+   grant, as well as the supported types of client authentication, are
+   policy decisions at the discretion of the authorization server.
+   However, if client credentials are present in the request, the
+   authorization server <em>MUST</em> validate them.
+
+   If the JWT is not valid, or the current time is not within the
+   token's valid time window for use, the authorization server
+   constructs an error response as defined in OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].  The
+   value of the "error" parameter <em>MUST</em> be the "invalid_grant" error
+   code.  The authorization server <em>MAY</em> include additional information
+   regarding the reasons the JWT was considered invalid using the
+   "error_description" or "error_uri" parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   For example:
+
+     HTTP/1.1 400 Bad Request
+     Content-Type: application/json
+     Cache-Control: no-store
+
+     {
+      "error":"invalid_grant",
+      "error_description":"Audience validation failed"
+     }
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.2.%20%20Client%20Authentication%20Processing"></a></body></html><a class="selflink" href="#section-3.2" id="section-3.2">3.2</a>.  Client Authentication Processing</span>
+
+   If the client JWT is not valid, the authorization server constructs
+   an error response as defined in OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].  The value of
+   the "error" parameter <em>MUST</em> be the "invalid_client" error code.  The
+   authorization server <em>MAY</em> include additional information regarding the
+   reasons the JWT was considered invalid using the "error_description"
+   or "error_uri" parameters.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Authorization%20Grant%20Example"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Authorization Grant Example</span>
+
+   The following examples illustrate what a conforming JWT and an access
+   token request would look like.
+
+   The example shows a JWT issued and signed by the system entity
+   identified as "https://jwt-idp.example.com".  The subject of the JWT
+   is identified by email address as "mike@example.com".  The intended
+   audience of the JWT is "https://jwt-rp.example.net", which is an
+   identifier with which the authorization server identifies itself.
+   The JWT is sent as part of an access token request to the
+   authorization server's token endpoint at "https://authz.example.net/
+   token.oauth2".
+
+   Below is an example JSON object that could be encoded to produce the
+   JWT Claims Object for a JWT:
+
+     {"iss":"https://jwt-idp.example.com",
+      "sub":"mailto:mike@example.com",
+      "aud":"https://jwt-rp.example.net",
+      "nbf":1300815780,
+      "exp":1300819380,
+      "http://claims.example.com/member":true}
+
+
+
+
+
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   The following example JSON object, used as the header of a JWT,
+   declares that the JWT is signed with the ECDSA P-256 SHA-256
+   algorithm.
+
+     {"alg":"ES256"}
+
+   To present the JWT with the claims and header shown in the previous
+   example as part of an access token request, for example, the client
+   might make the following HTTPS request (with extra line breaks for
+   display purposes only):
+
+     POST /token.oauth2 HTTP/1.1
+     Host: authz.example.net
+     Content-Type: application/x-www-form-urlencoded
+
+     grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
+     &amp;assertion=eyJhbGciOiJFUzI1NiJ9.
+     eyJpc3Mi[...omitted for brevity...].
+     J9l-ZhwP[...omitted for brevity...]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20Interoperability%20Considerations"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  Interoperability Considerations</span>
+
+   Agreement between system entities regarding identifiers, keys, and
+   endpoints is required in order to achieve interoperable deployments
+   of this profile.  Specific items that require agreement are as
+   follows: values for the issuer and audience identifiers, the location
+   of the token endpoint, the key used to apply and verify the digital
+   signature or Message Authentication Code over the JWT, one-time use
+   restrictions on the JWT, maximum JWT lifetime allowed, and the
+   specific subject and claim requirements of the JWT.  The exchange of
+   such information is explicitly out of scope for this specification.
+   In some cases, additional profiles may be created that constrain or
+   prescribe these values or specify how they are to be exchanged.
+   Examples of such profiles include the OAuth 2.0 Dynamic Client
+   Registration Core Protocol [<a href="#ref-I-D.ietf-oauth-dyn-reg">I-D.ietf-oauth-dyn-reg</a>], OpenID Connect
+   Dynamic Client Registration 1.0 [<a href="#ref-OpenID.Registration">OpenID.Registration</a>], and OpenID
+   Connect Discovery 1.0 [<a href="#ref-OpenID.Discovery">OpenID.Discovery</a>].
+
+   The "RS256" algorithm, from [<a href="#ref-I-D.ietf-jose-json-web-algorithms">I-D.ietf-jose-json-web-algorithms</a>], is a
+   mandatory to implement JSON Web Signature algorithm for this profile.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Security Considerations</span>
+
+   The security considerations described within the Assertion Framework
+   for OAuth 2.0 Client Authentication and Authorization Grants
+   [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>], The OAuth 2.0 Authorization Framework
+   [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>], and the JSON Web Token (JWT) [<a href="#ref-JWT" title='"JSON Web Token (JWT)"'>JWT</a>] specifications are all
+   applicable to this document.
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                  [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   The specification does not mandate replay protection for the JWT
+   usage for either the authorization grant or for client
+   authentication.  It is an optional feature, which implementations may
+   employ at their own discretion.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Privacy%20Considerations"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Privacy Considerations</span>
+
+   A JWT may contain privacy-sensitive information and, to prevent
+   disclosure of such information to unintended parties, should only be
+   transmitted over encrypted channels, such as TLS.  In cases where it
+   is desirable to prevent disclosure of certain information to the
+   client, the JWT should be be encrypted to the authorization server.
+
+   Deployments should determine the minimum amount of information
+   necessary to complete the exchange and include only such claims in
+   the JWT.  In some cases, the "sub" (subject) claim can be a value
+   representing an anonymous or pseudonymous user, as described in
+   <a href="#section-6.3.1">Section 6.3.1</a> of the Assertion Framework for OAuth 2.0 Client
+   Authentication and Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>].
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  IANA Considerations</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.1.%20%20Sub-Namespace%20Registration%20of%20urn%3Aietf%3Aparams%3Aoauth%3Agrant-"></a></body></html><a class="selflink" href="#section-8.1" id="section-8.1">8.1</a>.  Sub-Namespace Registration of urn:ietf:params:oauth:grant-</span>
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/%20%20%20%20%20%20type%3Ajwt-bearer"></a></body></html>      type:jwt-bearer</span>
+
+   This specification registers the value "grant-type:jwt-bearer" in the
+   IANA urn:ietf:params:oauth registry established in An IETF URN Sub-
+   Namespace for OAuth [<a href="/doc/html/rfc6755" title='"An IETF URN Sub-Namespace for OAuth"'>RFC6755</a>].
+
+   o  URN: urn:ietf:params:oauth:grant-type:jwt-bearer
+
+   o  Common Name: JWT Bearer Token Grant Type Profile for OAuth 2.0
+
+   o  Change controller: IESG
+
+   o  Specification Document: [[this document]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.2.%20%20Sub-Namespace%20Registration%20of%20urn%3Aietf%3Aparams%3Aoauth%3Aclient-"></a></body></html><a class="selflink" href="#section-8.2" id="section-8.2">8.2</a>.  Sub-Namespace Registration of urn:ietf:params:oauth:client-</span>
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/%20%20%20%20%20%20assertion-type%3Ajwt-bearer"></a></body></html>      assertion-type:jwt-bearer</span>
+
+   This specification registers the value "client-assertion-type:jwt-
+   bearer" in the IANA urn:ietf:params:oauth registry established in An
+   IETF URN Sub-Namespace for OAuth [<a href="/doc/html/rfc6755" title='"An IETF URN Sub-Namespace for OAuth"'>RFC6755</a>].
+
+   o  URN: urn:ietf:params:oauth:client-assertion-type:jwt-bearer
+
+   o  Common Name: JWT Bearer Token Profile for OAuth 2.0 Client
+      Authentication
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                 [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   o  Change controller: IESG
+
+   o  Specification Document: [[this document]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20References"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  References</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.1.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-9.1" id="section-9.1">9.1</a>.  Normative References</span>
+
+   [<a id="ref-I-D.ietf-jose-json-web-algorithms">I-D.ietf-jose-json-web-algorithms</a>]
+              Jones, M., "JSON Web Algorithms (JWA)", <a href="/doc/html/draft-ietf-jose-json-web-algorithms-36">draft-ietf-jose-</a>
+              <a href="/doc/html/draft-ietf-jose-json-web-algorithms-36">json-web-algorithms-36</a> (work in progress), October 2014.
+
+   [<a id="ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>]
+              Campbell, B., Mortimore, C., Jones, M., and Y. Goland,
+              "Assertion Framework for OAuth 2.0 Client Authentication
+              and Authorization Grants", <a href="/doc/html/draft-ietf-oauth-assertions">draft-ietf-oauth-assertions</a>
+              (work in progress), October 2014.
+
+   [<a id="ref-JWT">JWT</a>]      Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
+              (JWT)", <a href="/doc/html/draft-ietf-oauth-json-web-token">draft-ietf-oauth-json-web-token</a> (work in
+              progress), October 2014.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>, March 1997.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66, <a href="/doc/html/rfc3986">RFC</a>
+              <a href="/doc/html/rfc3986">3986</a>, January 2005.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., "The OAuth 2.0 Authorization Framework", <a href="/doc/html/rfc6749">RFC</a>
+              <a href="/doc/html/rfc6749">6749</a>, October 2012.
+
+   [<a id="ref-RFC7159">RFC7159</a>]  Bray, T., "The JavaScript Object Notation (JSON) Data
+              Interchange Format", <a href="/doc/html/rfc7159">RFC 7159</a>, March 2014.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.2.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-9.2" id="section-9.2">9.2</a>.  Informative References</span>
+
+   [<a id="ref-I-D.ietf-oauth-dyn-reg">I-D.ietf-oauth-dyn-reg</a>]
+              Richer, J., Jones, M., Bradley, J., Machulak, M., and P.
+              Hunt, "OAuth 2.0 Dynamic Client Registration Protocol",
+              <a href="/doc/html/draft-ietf-oauth-dyn-reg-20">draft-ietf-oauth-dyn-reg-20</a> (work in progress), August
+              2014.
+
+   [<a id="ref-I-D.ietf-oauth-saml2-bearer">I-D.ietf-oauth-saml2-bearer</a>]
+              Campbell, B., Mortimore, C., and M. Jones, "SAML 2.0
+              Profile for OAuth 2.0 Client Authentication and
+              Authorization Grants", <a href="/doc/html/draft-ietf-oauth-saml2-bearer">draft-ietf-oauth-saml2-bearer</a> (work
+              in progress), November 2014.
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                 [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   [<a id="ref-OpenID.Discovery">OpenID.Discovery</a>]
+              Sakimura, N., Bradley, J., Jones, M., and E. Jay, "OpenID
+              Connect Discovery 1.0", February 2014.
+
+   [<a id="ref-OpenID.Registration">OpenID.Registration</a>]
+              Sakimura, N., Bradley, J., and M. Jones, "OpenID Connect
+              Dynamic Client Registration 1.0", February 2014.
+
+   [<a id="ref-RFC6755">RFC6755</a>]  Campbell, B. and H. Tschofenig, "An IETF URN Sub-Namespace
+              for OAuth", <a href="/doc/html/rfc6755">RFC 6755</a>, October 2012.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Acknowledgements</span>
+
+   This profile was derived from SAML 2.0 Profile for OAuth 2.0 Client
+   Authentication and Authorization Grants [<a href="#ref-I-D.ietf-oauth-saml2-bearer">I-D.ietf-oauth-saml2-bearer</a>]
+   by Brian Campbell and Chuck Mortimore.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20B.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-B" id="appendix-B">Appendix B</a>.  Document History</span>
+
+   [[ to be removed by the RFC editor before publication as an RFC ]]
+
+   <a href="/doc/html/draft-ietf-oauth-jwt-bearer-12">draft-ietf-oauth-jwt-bearer-12</a>
+
+   o  Fix typo per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13790.html">http://www.ietf.org/mail-archive/web/oauth/current/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13790.html">msg13790.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-jwt-bearer-11">draft-ietf-oauth-jwt-bearer-11</a>
+
+   o  Changes/suggestions from IESG reviews.
+
+   <a href="/doc/html/draft-ietf-oauth-jwt-bearer-10">draft-ietf-oauth-jwt-bearer-10</a>
+
+   o  Added Privacy Considerations section per AD review discussion
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13148.html">http://www.ietf.org/mail-archive/web/oauth/current/msg13148.html</a>
+      and <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13144.html">http://www.ietf.org/mail-archive/web/oauth/current/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13144.html">msg13144.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-jwt-bearer-09">draft-ietf-oauth-jwt-bearer-09</a>
+
+   o  Clarified some text around the treatment of subject based on the
+      rough rough consensus from the thread staring at
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12630.html">http://www.ietf.org/mail-archive/web/oauth/current/msg12630.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-jwt-bearer-08">draft-ietf-oauth-jwt-bearer-08</a>
+
+   o  Updated references, including replacing references to <a href="/doc/html/rfc4627">RFC 4627</a>
+      with <a href="/doc/html/rfc7159">RFC 7159</a>.
+
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                 [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   <a href="/doc/html/draft-ietf-oauth-jwt-bearer-07">draft-ietf-oauth-jwt-bearer-07</a>
+
+   o  Clean up language around subject per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12250.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12250.html">archive/web/oauth/current/msg12250.html</a>.
+
+   o  As suggested in <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12251.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12251.html">archive/web/oauth/current/msg12251.html</a> stated that "In the
+      absence of an application profile specifying otherwise, compliant
+      applications <em>MUST</em> compare the audience values using the Simple
+      String Comparison method defined in <a href="/doc/html/rfc3986#section-6.2.1">Section 6.2.1 of RFC 3986</a>."
+
+   o  Added one-time use, maximum lifetime, and specific subject and
+      attribute requirements to Interoperability Considerations based on
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12252.html">http://www.ietf.org/mail-archive/web/oauth/current/msg12252.html</a>.
+
+   o  Remove "or its subject confirmation requirements cannot be met"
+      text.
+
+   o  Reword security considerations and mention that replay protection
+      is not mandated based on <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12259.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12259.html">archive/web/oauth/current/msg12259.html</a>.
+
+   -06
+
+   o  Stated that issuer and audience values <em>SHOULD</em> be compared using
+      the Simple String Comparison method defined in <a href="/doc/html/rfc3986#section-6.2.1">Section 6.2.1 of
+      RFC 3986</a> unless otherwise specified by the application.
+
+   -05
+
+   o  Changed title from "JSON Web Token (JWT) Bearer Token Profiles for
+      OAuth 2.0" to "JSON Web Token (JWT) Profile for OAuth 2.0 Client
+      Authentication and Authorization Grants" to be more explicit about
+      the scope of the document per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg11063.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg11063.html">archive/web/oauth/current/msg11063.html</a>.
+
+   o  Numbered the list of processing rules.
+
+   o  Smallish editorial cleanups to try and improve readability and
+      comprehensibility.
+
+   o  Cleaner split out of the processing rules in cases where they
+      differ for client authentication and authorization grants.
+
+   o  Clarified the parameters that are used/available for authorization
+      grants.
+
+   o  Added Interoperability Considerations section.
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                 [Page 13]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-14"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   o  Added more explanatory context to the example in <a href="#section-4">Section 4</a>.
+
+   -04
+
+   o  Changed the name of the "prn" claim to "sub" (subject) both to
+      more closely align with SAML name usage and to use a more
+      intuitive name.
+
+   o  Added seriesInfo information to Internet Draft references.
+
+   -03
+
+   o  Reference <a href="/doc/html/rfc6749">RFC 6749</a> and <a href="/doc/html/rfc6755">RFC 6755</a>.
+
+   -02
+
+   o  Add more text to intro explaining that an assertion/JWT grant type
+      can be used with or without client authentication/identification
+      and that client assertion/JWT authentication is nothing more than
+      an alternative way for a client to authenticate to the token
+      endpoint
+
+   o  Add examples to Sections <a href="#section-2.1">2.1</a> and <a href="#section-2.2">2.2</a>
+
+   o  Update references
+
+   -01
+
+   o  Tracked specification name changes: "The OAuth 2.0 Authorization
+      Protocol" to "The OAuth 2.0 Authorization Framework" and "OAuth
+      2.0 Assertion Profile" to "Assertion Framework for OAuth 2.0".
+
+   o  Merged in changes between <a href="/doc/html/draft-ietf-oauth-saml2-bearer-11">draft-ietf-oauth-saml2-bearer-11</a> and
+      <a href="/doc/html/draft-ietf-oauth-saml2-bearer-13">draft-ietf-oauth-saml2-bearer-13</a>.  All changes were strictly
+      editorial.
+
+   -00
+
+   o  Created the initial IETF draft based upon <a href="/doc/html/draft-jones-oauth-jwt-bearer-04">draft-jones-oauth-jwt-</a>
+      <a href="/doc/html/draft-jones-oauth-jwt-bearer-04">bearer-04</a> with no normative changes.
+
+Authors' Addresses
+
+   Michael B. Jones
+   Microsoft
+
+   Email: mbj@microsoft.com
+   URI:   <a href="http://self-issued.info/">http://self-issued.info/</a>
+
+
+
+<span class="grey">Jones, et al.             Expires May 16, 2015                 [Page 14]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-15"></span>
+<span class="grey">Internet-Draft        OAuth JWT Assertion Profiles         November 2014</span>
+
+
+   Brian Campbell
+   Ping Identity
+
+   Email: brian.d.campbell@gmail.com
+
+
+   Chuck Mortimore
+   Salesforce
+
+   Email: cmortimore@salesforce.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jones, et al.             Expires May 16, 2015                 [Page 15]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-web-delegation-01
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-web-delegation/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="The OAuth Protocol: Web Delegation (Internet-Draft, 2009)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-web-delegation-01.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-web-delegation-01.html" title="HTML version of this document, from XML2RFC">html</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-web-delegation-01.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-web-delegation-01.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-web-delegation/01/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-web-delegation/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-web-delegation@ietf.org?subject=draft-ietf-oauth-web-delegation" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-web-delegation-01.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-web-delegation-01.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-web-delegation-01.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: <a href="/doc/html/draft-ietf-oauth-web-delegation-00">00</a> <a href="/doc/html/draft-ietf-oauth-web-delegation-01"><b>01</b></a>                                                         </pre>
+</div>
+<div class="draftcontent">
+<pre>Network Working Group                               E. Hammer-Lahav, Ed.
+Internet-Draft                                                    Yahoo!
+Intended status: Standards Track                            July 6, 2009
+Expires: January 7, 2010
+
+
+                   <span class="h1">The OAuth Protocol: Web Delegation</span>
+                   <span class="h1">draft-ietf-oauth-web-delegation-01</span>
+
+Status of this Memo
+
+   This Internet-Draft is submitted to IETF in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF), its areas, and its working groups.  Note that
+   other groups may also distribute working documents as Internet-
+   Drafts.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   The list of current Internet-Drafts can be accessed at
+   <a href="http://www.ietf.org/ietf/1id-abstracts.txt">http://www.ietf.org/ietf/1id-abstracts.txt</a>.
+
+   The list of Internet-Draft Shadow Directories can be accessed at
+   <a href="http://www.ietf.org/shadow.html">http://www.ietf.org/shadow.html</a>.
+
+   This Internet-Draft will expire on January 7, 2010.
+
+Copyright Notice
+
+   Copyright (c) 2009 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents in effect on the date of
+   publication of this document (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>).
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.
+
+Abstract
+
+   This document specifies the OAuth protocol web delegation method.
+   OAuth allows clients to access server resources on behalf of another
+   party (such a different client or an end user).  This document
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   defines a redirection-based user-agent process for end users to
+   authorize access to clients by substituting their credentials
+   (typically, a username and password pair) with a different set of
+   delegation-specific credentials.
+
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-3">3</a>
+     <a href="#section-1.1">1.1</a>.  Terminology  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-3">3</a>
+   <a href="#section-2">2</a>.  Notational Conventions . . . . . . . . . . . . . . . . . . . .  <a href="#page-4">4</a>
+   <a href="#section-3">3</a>.  Redirection-Based Authorization  . . . . . . . . . . . . . . .  <a href="#page-4">4</a>
+   <a href="#section-4">4</a>.  Temporary Credentials  . . . . . . . . . . . . . . . . . . . .  <a href="#page-5">5</a>
+   <a href="#section-5">5</a>.  Resource Owner Authorization . . . . . . . . . . . . . . . . .  <a href="#page-6">6</a>
+   <a href="#section-6">6</a>.  Token Credentials  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-8">8</a>
+   <a href="#section-7">7</a>.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . .  <a href="#page-9">9</a>
+   <a href="#section-8">8</a>.  Security Considerations  . . . . . . . . . . . . . . . . . . .  <a href="#page-9">9</a>
+     <a href="#section-8.1">8.1</a>.  Credentials Transmission . . . . . . . . . . . . . . . . .  <a href="#page-9">9</a>
+     <a href="#section-8.2">8.2</a>.  Phishing Attacks . . . . . . . . . . . . . . . . . . . . .  <a href="#page-9">9</a>
+     <a href="#section-8.3">8.3</a>.  Scoping of Access Requests . . . . . . . . . . . . . . . . <a href="#page-10">10</a>
+     <a href="#section-8.4">8.4</a>.  Entropy of Secrets . . . . . . . . . . . . . . . . . . . . <a href="#page-10">10</a>
+     <a href="#section-8.5">8.5</a>.  Denial of Service / Resource Exhaustion Attacks  . . . . . <a href="#page-10">10</a>
+     <a href="#section-8.6">8.6</a>.  Cross-Site Request Forgery (CSRF)  . . . . . . . . . . . . <a href="#page-11">11</a>
+     <a href="#section-8.7">8.7</a>.  User Interface Redress . . . . . . . . . . . . . . . . . . <a href="#page-11">11</a>
+     <a href="#section-8.8">8.8</a>.  Automatic Processing of Repeat Authorizations  . . . . . . <a href="#page-12">12</a>
+   <a href="#appendix-A">Appendix A</a>.     Examples . . . . . . . . . . . . . . . . . . . . . <a href="#page-12">12</a>
+   <a href="#appendix-A.1">Appendix A.1</a>.   Obtaining Temporary Credentials  . . . . . . . . . <a href="#page-13">13</a>
+   <a href="#appendix-A.2">Appendix A.2</a>.   Requesting Resource Owner Authorization  . . . . . <a href="#page-14">14</a>
+   <a href="#appendix-A.3">Appendix A.3</a>.   Obtaining Token Credentials  . . . . . . . . . . . <a href="#page-14">14</a>
+   <a href="#appendix-A.4">Appendix A.4</a>.   Accessing protected resources  . . . . . . . . . . <a href="#page-14">14</a>
+   <a href="#appendix-A.4.1">Appendix A.4.1</a>. Generating Signature Base String . . . . . . . . . <a href="#page-14">14</a>
+   <a href="#appendix-A.4.2">Appendix A.4.2</a>. Calculating Signature Value  . . . . . . . . . . . <a href="#page-16">16</a>
+   <a href="#appendix-A.4.3">Appendix A.4.3</a>. Requesting protected resource  . . . . . . . . . . <a href="#page-16">16</a>
+   <a href="#appendix-B">Appendix B</a>.     Acknowledgments  . . . . . . . . . . . . . . . . . <a href="#page-16">16</a>
+   <a href="#appendix-C">Appendix C</a>.     Document History . . . . . . . . . . . . . . . . . <a href="#page-16">16</a>
+   <a href="#section-9">9</a>.  References . . . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-17">17</a>
+     <a href="#section-9.1">9.1</a>.  Normative References . . . . . . . . . . . . . . . . . . . <a href="#page-17">17</a>
+     <a href="#section-9.2">9.2</a>.  Informative References . . . . . . . . . . . . . . . . . . <a href="#page-18">18</a>
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-18">18</a>
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   The OAuth protocol provides a method for servers to allow third-party
+   access to protected resources, without forcing their end users to
+   share their credentials.  This pattern is common among services that
+   allow third-party developers to extend the service functionality, by
+   building applications using an open API.
+
+   For example, a web user (resource owner) can grant a printing service
+   (client) access to its private photos stored at a photo sharing
+   service (server), without sharing its credentials with the printing
+   service.  Instead, the user authenticates directly with the photo
+   sharing service and issue the printing service delegation-specific
+   credentials.
+
+   OAuth introduces a third role to the traditional client-server
+   authentication model: the resource owner.  In the OAuth model, the
+   client requests access to resources hosted by the server but not
+   controlled by the client, but by the resource owner.  In addition,
+   OAuth allows the server to verify not only the resource owner's
+   credentials, but also those of the client making the request.
+
+   In order for the client to access resources, it first has to obtain
+   permission from the resource owner.  This permission is expressed in
+   the form of a token and matching shared-secret.  The purpose of the
+   token is to substitute the need for the resource owner to share its
+   server credentials (usually a username and password pair) with the
+   client.  Unlike server credentials, tokens can be issued with a
+   restricted scope and limited lifetime.
+
+   This specification consists of two parts.
+   [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>] defines a method for making
+   authenticated HTTP requests using two sets of credentials, one
+   identifying the client making the request, and a second identifying
+   the resource owner on whose behalf the request is being made.
+
+   This document defines a redirection-based user agent process for end
+   users to authorize client access to their resources, by
+   authenticating directly with the server and provisioning tokens to
+   the client for use with the authentication method.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Terminology"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Terminology</span>
+
+   client
+         An HTTP client (per [<a href="/doc/html/rfc2616" title='"Hypertext Transfer Protocol -- HTTP/1.1"'>RFC2616</a>]) capable of making OAuth-
+         authenticated requests per [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>].
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   server
+         An HTTP server (per [<a href="/doc/html/rfc2616" title='"Hypertext Transfer Protocol -- HTTP/1.1"'>RFC2616</a>]) capable of accepting OAuth-
+         authenticated requests per [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>].
+
+   protected resource
+         An access-restricted resource (per [<a href="/doc/html/rfc2616" title='"Hypertext Transfer Protocol -- HTTP/1.1"'>RFC2616</a>]) which can be
+         obtained from the server using an OAuth-authenticated request
+         per [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>].
+
+   resource owner
+         An entity capable of accessing and controlling protected
+         resources by using credentials to authenticate with the server.
+
+   token
+         An unique identifier issued by the server and used by the
+         client to associate authenticated requests with the resource
+         owner whose authorization is requested or has been obtained by
+         the client.  Tokens have a matching shared-secret that is used
+         by the client to establish its ownership of the token, and its
+         authority to represent the resource owner.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Notational%20Conventions"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Notational Conventions</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "<em>MAY</em>", and "<em>OPTIONAL</em>" in this
+   document are to be interpreted as described in [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>].
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Redirection-Based%20Authorization"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Redirection-Based Authorization</span>
+
+   OAuth uses a set of token credentials to represent the authorization
+   granted to the client by the resource owner.  Typically, token
+   credentials are issued by the server at the resource owner's request,
+   after authenticating the resource owner's identity using its server
+   credentials (usually a username and password pair).
+
+   There are many ways in which a resource owner can facilitate the
+   provisioning of token credentials.  This section defines one such
+   way, using HTTP redirections and the resource owner's user agent.
+   This redirection-based authorization method includes three steps:
+
+   1.  The client obtains a set of temporary credentials from the
+       server.
+
+   2.  The resource owner authorizes the server to issue token
+       credentials to the client using the temporary credentials.
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   3.  The client uses the temporary credentials to request a set of
+       token credentials from the server, which will enable it to access
+       the resource owner's protected resources.  The temporary
+       credentials discarded.
+
+   The temporary credentials <em>MUST</em> be revoked after being used once to
+   obtain the token credentials.  It is <em>RECOMMENDED</em> that the temporary
+   credentials have a limited lifetime.  Servers <em>SHOULD</em> enable resource
+   owners to revoke token credentials after they have been issued to
+   clients.
+
+   In order for the client to perform these steps, the server needs to
+   advertise the URIs of these three endpoints, as well as the HTTP
+   method (GET, POST, etc.) used to make each requests.  To assist in
+   communicating these endpoint, each is given a name:
+
+   Temporary Credential Request
+         The endpoint used by the client to obtain temporary credentials
+         as described in <a href="#section-4">Section 4</a>.
+
+   Resource Owner Authorization
+         The endpoint to which the resource owner is redirected to grant
+         authorization as described in <a href="#section-5">Section 5</a>.
+
+   Token Request
+         The endpoint used by the client to request a set of token
+         credentials using the temporary credentials as described in
+         <a href="#section-6">Section 6</a>.
+
+   The three URIs <em>MAY</em> include a query component as defined by <a href="/doc/html/rfc3986#section-3">[RFC3986]
+   section 3</a>, but if present, the query <em>MUST NOT</em> contain any parameters
+   beginning with the "oauth_" prefix.
+
+   The method in which the server advertises its three endpoint is
+   beyond the scope of this specification.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Temporary%20Credentials"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Temporary Credentials</span>
+
+   The client obtains a set of temporary credentials from the server by
+   making an authenticated request per
+   [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>].  The client <em>MUST</em> use the HTTP
+   method advertised by the server.  The HTTP POST method is
+   <em>RECOMMENDED</em>.  The client constructs a request URI by adding the
+   following parameter to the Temporary Credential Request endpoint URI:
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   oauth_callback:  An absolute URL to which the server will redirect
+         the resource owner back when the Resource Owner Authorization
+         step (<a href="#section-5">Section 5</a>) is completed.  If the client is unable to
+         receive callbacks or a callback URI has been established via
+         other means, the parameter value <em>MUST</em> be set to "oob" (case
+         sensitive), to indicate an out-of-band configuration.
+
+   Servers <em>MAY</em> specify additional parameters.
+
+   When making the request, the client authenticates using only the
+   client credentials.  The client <em>MUST</em> omit the "oauth_token" protocol
+   parameter from the request and use an empty string as the token
+   secret value.
+
+   The server <em>MUST</em> verify that the request is valid per
+   [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>] and respond back to the client with
+   a set of temporary credentials.  The temporary credentials are
+   included in the HTTP response body using the
+   "application/x-www-form-urlencoded" content type as defined by
+   [<a href="#ref-W3C.REC-html40-19980424">W3C.REC-html40-19980424</a>].
+
+   The response contains the following parameters:
+
+   oauth_token
+         The temporary credentials identifier.
+
+   oauth_token_secret
+         The temporary credentials shared-secret.
+
+   oauth_callback_confirmed:  <em>MUST</em> be present and set to "true".  The
+         client <em>MAY</em> use this to confirm that the server received the
+         callback value.
+
+   Note that even though the parameter names include the term 'token',
+   these credentials are not token credentials, but are used in the next
+   two steps in a similar manner to token credentials.
+
+   For example (line breaks are for display purposes only):
+
+     oauth_token=ab3cd9j4ks73hf7g&amp;oauth_token_secret=xyz4992k83j47x0b&amp;
+     oauth_callback_confirmed=true
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20Resource%20Owner%20Authorization"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  Resource Owner Authorization</span>
+
+   Before the client requests a set of token credentials from the
+   server, it <em>MUST</em> send the user to the server to authorize the request.
+   The client constructs a request URI by adding the following
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   parameters to the Resource Owner Authorization endpoint URI:
+
+   oauth_token
+         <em>REQUIRED</em>.  The temporary credentials identifier obtained in
+         <a href="#section-4">Section 4</a> in the "oauth_token" parameter.  Servers <em>MAY</em> declare
+         this parameter as <em>OPTIONAL</em>, in which case they <em>MUST</em> provide a
+         way for the resource owner to indicate the identifier through
+         other means.
+
+   Servers <em>MAY</em> specify additional parameters.
+
+   The client redirects the resource owner to the constructed URI using
+   an HTTP redirection response, or by other means available to it via
+   the resource owner's user agent.  The request <em>MUST</em> use the HTTP GET
+   method.
+
+   The way in which the server handles the authorization request is
+   beyond the scope of this specification.  However, the server <em>MUST</em>
+   first verify the identity of the resource owner.
+
+   When asking the resource owner to authorize the requested access, the
+   server <em>SHOULD</em> present to the resource owner information about the
+   client requesting access based on the association of the temporary
+   credentials with the client identity.  When displaying any such
+   information, the server <em>SHOULD</em> indicate if the information has been
+   verified.
+
+   After receiving an authorization decision from the resource owner,
+   the server redirects the resource owner to the callback URI if one
+   was provided in the "oauth_callback" parameter or by other means.
+
+   To make sure that the resource owner granting access is the same
+   resource owner returning back to the client to complete the process,
+   the server <em>MUST</em> generate a verification code: an unguessable value
+   passed to the client via the resource owner and <em>REQUIRED</em> to complete
+   the process.  The server constructs the request URI by adding the
+   following parameter to the callback URI query component:
+
+   oauth_token
+         The temporary credentials identifier the resource owner
+         authorized or denied access to.
+
+   oauth_verifier:  The verification code.
+
+   If the callback URI already includes a query component, the server
+   <em>MUST</em> append the OAuth parameters to the end of the existing query.
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   For example (line breaks are for display purposes only):
+
+     http://client.example.net/cb?state=1&amp;oauth_token=ab3cd9j4ks73hf7g&amp;
+     oauth_verifier=473829k9302sa
+
+   If the client did not provide a callback URI, the server <em>SHOULD</em>
+   display the value of the verification code, and instruct the resource
+   owner to manually inform the client that authorization is completed.
+   If the server knows a client to be running on a limited device it
+   <em>SHOULD</em> ensure that the verifier value is suitable for manual entry.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Token%20Credentials"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Token Credentials</span>
+
+   The client obtains a set of token credentials from the server by
+   making an authenticated request per
+   [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>].  The client <em>MUST</em> use the HTTP
+   method advertised by the server.  The HTTP POST method is
+   <em>RECOMMENDED</em>.  The client constructs a request URI by adding the
+   following parameter to the Token Request endpoint URI:
+
+   oauth_verifier:  The verification code received from the server in
+         the previous step.
+
+   When making the request, the client authenticates using the client
+   credentials as well as the temporary credentials.  The temporary
+   credentials are used as a substitution for token credentials in the
+   authenticated request.
+
+   The server <em>MUST</em> verify the validity of the request per
+   [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>], ensure that the resource owner has
+   authorized the provisioning of token credentials to the client, and
+   that the temporary credentials have not expired or used before.  The
+   server <em>MUST</em> also verify the verification code received from the
+   client.  If the request is valid and authorized, the token
+   credentials are included in the HTTP response body using the
+   "application/x-www-form-urlencoded" content type as defined by
+   [<a href="#ref-W3C.REC-html40-19980424">W3C.REC-html40-19980424</a>].
+
+   The response contains the following parameters:
+
+   oauth_token
+         The token identifier.
+
+   oauth_token_secret
+         The token shared-secret.
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   For example:
+
+     oauth_token=j49ddk933skd9dks&amp;oauth_token_secret=ll399dj47dskfjdk
+
+   The token credentials issued by the server <em>MUST</em> reflect the exact
+   scope, duration, and other attributes approved by the resource owner.
+
+   Once the client receives the token credentials, it can proceed to
+   access protected resources on behalf of the resource owner by making
+   an authenticated request per [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>] using
+   the client credentials and the token credentials received.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  IANA Considerations</span>
+
+   This memo includes no request to IANA.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Security Considerations</span>
+
+   As stated in [<a href="/doc/html/rfc2617" title='"HTTP Authentication: Basic and Digest Access Authentication"'>RFC2617</a>], the greatest sources of risks are usually
+   found not in the core protocol itself but in policies and procedures
+   surrounding its use.  Implementers are strongly encouraged to assess
+   how this protocol addresses their security requirements.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.1.%20%20Credentials%20Transmission"></a></body></html><a class="selflink" href="#section-8.1" id="section-8.1">8.1</a>.  Credentials Transmission</span>
+
+   The OAuth specification does not describe any mechanism for
+   protecting tokens and shared-secrets from eavesdroppers when they are
+   transmitted from the server to the client during the authorization
+   phase.  Servers should ensure that these transmissions are protected
+   using transport-layer mechanisms such as TLS or SSL.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.2.%20%20Phishing%20Attacks"></a></body></html><a class="selflink" href="#section-8.2" id="section-8.2">8.2</a>.  Phishing Attacks</span>
+
+   Wide deployment of OAuth and similar protocols may cause resource
+   owners to become inured to the practice of being redirected to
+   websites where they are asked to enter their passwords.  If resource
+   owners are not careful to verify the authenticity of these websites
+   before entering their credentials, it will be possible for attackers
+   to exploit this practice to steal resource owners' passwords.
+
+   Servers should attempt to educate resource owners about the risks
+   phishing attacks pose, and should provide mechanisms that make it
+   easy for resource owners to confirm the authenticity of their sites.
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.3.%20%20Scoping%20of%20Access%20Requests"></a></body></html><a class="selflink" href="#section-8.3" id="section-8.3">8.3</a>.  Scoping of Access Requests</span>
+
+   By itself, OAuth does not provide any method for scoping the access
+   rights granted to a client.  However, most applications do require
+   greater granularity of access rights.  For example, servers may wish
+   to make it possible to grant access to some protected resources but
+   not others, or to grant only limited access (such as read-only
+   access) to those protected resources.
+
+   When implementing OAuth, servers should consider the types of access
+   resource owners may wish to grant clients, and should provide
+   mechanisms to do so.  Servers should also take care to ensure that
+   resource owners understand the access they are granting, as well as
+   any risks that may be involved.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.4.%20%20Entropy%20of%20Secrets"></a></body></html><a class="selflink" href="#section-8.4" id="section-8.4">8.4</a>.  Entropy of Secrets</span>
+
+   Unless a transport-layer security protocol is used, eavesdroppers
+   will have full access to OAuth requests and signatures, and will thus
+   be able to mount offline brute-force attacks to recover the
+   credentials used.  Servers should be careful to assign shared-secrets
+   which are long enough, and random enough, to resist such attacks for
+   at least the length of time that the shared-secrets are valid.
+
+   For example, if shared-secrets are valid for two weeks, servers
+   should ensure that it is not possible to mount a brute force attack
+   that recovers the shared-secret in less than two weeks.  Of course,
+   servers are urged to err on the side of caution, and use the longest
+   secrets reasonable.
+
+   It is equally important that the pseudo-random number generator
+   (PRNG) used to generate these secrets be of sufficiently high
+   quality.  Many PRNG implementations generate number sequences that
+   may appear to be random, but which nevertheless exhibit patterns or
+   other weaknesses which make cryptanalysis or brute force attacks
+   easier.  Implementers should be careful to use cryptographically
+   secure PRNGs to avoid these problems.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.5.%20%20Denial%20of%20Service%20/%20Resource%20Exhaustion%20Attacks"></a></body></html><a class="selflink" href="#section-8.5" id="section-8.5">8.5</a>.  Denial of Service / Resource Exhaustion Attacks</span>
+
+   The OAuth protocol has a number of features which may make resource
+   exhaustion attacks against servers possible.  For example, if a
+   server includes a nontrivial amount of entropy in token shared-
+   secrets as recommended above, then an attacker may be able to exhaust
+   the server's entropy pool very quickly by repeatedly obtaining
+   temporary credentials from the server.
+
+   Similarly, OAuth requires servers to track used nonces.  If an
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   attacker is able to use many nonces quickly, the resources required
+   to track them may exhaust available capacity.  And again, OAuth can
+   require servers to perform potentially expensive computations in
+   order to verify the signature on incoming requests.  An attacker may
+   exploit this to perform a denial of service attack by sending a large
+   number of invalid requests to the server.
+
+   Resource Exhaustion attacks are by no means specific to OAuth.
+   However, OAuth implementers should be careful to consider the
+   additional avenues of attack that OAuth exposes, and design their
+   implementations accordingly.  For example, entropy starvation
+   typically results in either a complete denial of service while the
+   system waits for new entropy or else in weak (easily guessable)
+   secrets.  When implementing OAuth, servers should consider which of
+   these presents a more serious risk for their application and design
+   accordingly.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.6.%20%20Cross-Site%20Request%20Forgery%20%28CSRF%29"></a></body></html><a class="selflink" href="#section-8.6" id="section-8.6">8.6</a>.  Cross-Site Request Forgery (CSRF)</span>
+
+   Cross-Site Request Forgery (CSRF) is a web-based attack whereby HTTP
+   requests are transmitted from a user that the website trusts or has
+   authenticated.  CSRF attacks on OAuth approvals can allow an attacker
+   to obtain authorization to protected resources without the consent of
+   the User.  Servers <em>SHOULD</em> strongly consider best practices in CSRF
+   prevention at all OAuth endpoints.
+
+   CSRF attacks on OAuth callback URIs hosted by client are also
+   possible.  Clients should prevent CSRF attacks on OAuth callback URIs
+   by verifying that the resource owner at the client site intended to
+   complete the OAuth negotiation with the server.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.7.%20%20User%20Interface%20Redress"></a></body></html><a class="selflink" href="#section-8.7" id="section-8.7">8.7</a>.  User Interface Redress</span>
+
+   Servers should protect the authorization process against UI Redress
+   attacks (also known as "clickjacking").  As of the time of this
+   writing, no complete defenses against UI redress are available.
+   Servers can mitigate the risk of UI redress attacks through the
+   following techniques:
+
+   o  Javascript frame busting.
+
+   o  Javascript frame busting, and requiring that browsers have
+      javascript enabled on the authorization page.
+
+   o  Browser-specific anti-framing techniques.
+
+   o  Requiring password reentry before issuing OAuth tokens.
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.8.%20%20Automatic%20Processing%20of%20Repeat%20Authorizations"></a></body></html><a class="selflink" href="#section-8.8" id="section-8.8">8.8</a>.  Automatic Processing of Repeat Authorizations</span>
+
+   Servers may wish to automatically process authorization requests
+   (<a href="#section-5">Section 5</a>) from clients which have been previously authorized by the
+   resource owner.  When the resource owner is redirected to the server
+   to grant access, the server detects that the resource owner has
+   already granted access to that particular client.  Instead of
+   prompting the resource owner for approval, the server automatically
+   redirects the resource owner back to the client.
+
+   If the client credentials are compromised, automatic processing
+   creates additional security risks.  An attacker can use the stolen
+   client credentials to redirect the resource owner to the server with
+   an authorization request.  The server will then grant access to the
+   resource owner's data without the resource owner's explicit approval,
+   or even awareness of an attack.  If no automatic approval is
+   implemented, an attacker must use social engineering to convince the
+   resource owner to approve access.
+
+   Servers can mitigate the risks associated with automatic processing
+   by limiting the scope of token credentials obtained through automated
+   approvals.  Tokens credentials obtained through explicit resource
+   owner consent can remain unaffected. clients can mitigate the risks
+   associated with automatic processing by protecting their client
+   credentials.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Examples"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Examples</span>
+
+   In this example, photos.example.net is a photo sharing website
+   (server), and printer.example.com is a photo printing service
+   (client).  Jane (resource owner) would like printer.example.com to
+   print a private photo stored at photos.example.net.
+
+   When Jane signs-into photos.example.net using her username and
+   password, she can access the photo by requesting the URI
+   "http://photos.example.net/photo?file=vacation.jpg" (which also
+   supports the optional "size" parameter).  Jane does not want to share
+   her username and password with printer.example.com, but would like it
+   to access the photo and print it.
+
+   The server documentation advertises support for the "HMAC-SHA1" and
+   "PLAINTEXT" methods, with "PLAINTEXT" restricted to secure (HTTPS)
+   requests.  It also advertises the following endpoint URIs:
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   Temporary Credential Request
+         https://photos.example.net/initiate, using HTTP POST
+
+   Resource Owner Authorization URI:
+         http://photos.example.net/authorize, using HTTP GET
+
+   Token Request URI:
+         https://photos.example.net/token, using HTTP POST
+
+   The printer.example.com has already established client credentials
+   with photos.example.net:
+
+   Client Identifier
+         "dpf43f3p2l4k3l03"
+
+   Client Shared-Secret:
+         "kd94hf93k423kf44"
+
+   When printer.example.com attempts to print the request photo, it
+   receives an HTTP response with a 401 (Unauthorized) status code, and
+   a challenge to use OAuth:
+
+     WWW-Authenticate: OAuth realm="http://photos.example.net/"
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.1.%20%20Obtaining%20Temporary%20Credentials"></a></body></html><a class="selflink" href="#appendix-A.1" id="appendix-A.1">Appendix A.1</a>.  Obtaining Temporary Credentials</span>
+
+   The client sends the following HTTPS POST request to the server:
+
+     POST /initiate HTTP/1.1
+     Host: photos.example.net
+     Authorization: OAuth realm="http://photos.example.com/",
+        oauth_consumer_key="dpf43f3p2l4k3l03",
+        oauth_signature_method="PLAINTEXT",
+        oauth_signature="kd94hf93k423kf44%26",
+        oauth_timestamp="1191242090",
+        oauth_nonce="hsu94j3884jdopsl",
+        oauth_version="1.0",
+        oauth_callback="http%3A%2F%2Fprinter.example.com%2Fready"
+
+   The server validates the request and replies with a set of temporary
+   credentials in the body of the HTTP response:
+
+     oauth_token=hh5s93j4hdidpola&amp;oauth_token_secret=hdhd0244k9j7ao03&amp;
+     oauth_callback_confirmed=true
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 13]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-14"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.2.%20%20Requesting%20Resource%20Owner%20Authorization"></a></body></html><a class="selflink" href="#appendix-A.2" id="appendix-A.2">Appendix A.2</a>.  Requesting Resource Owner Authorization</span>
+
+   The client redirects Jane's browser to the server's Resource Owner
+   Authorization endpoint URI to obtain Jane's approval for accessing
+   her private photos.
+
+     http://photos.example.net/authorize?oauth_token=hh5s93j4hdidpola
+
+   The server asks Jane to sign-in using her username and password and
+   if successful, asks her if she approves granting printer.example.com
+   access to her private photos.  Jane approves the request and is
+   redirects her back to the client's callback URI:
+
+     http://printer.example.com/ready?
+     oauth_token=hh5s93j4hdidpola&amp;oauth_verifier=hfdp7dh39dks9884
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.3.%20%20Obtaining%20Token%20Credentials"></a></body></html><a class="selflink" href="#appendix-A.3" id="appendix-A.3">Appendix A.3</a>.  Obtaining Token Credentials</span>
+
+   After being informed by the callback request that Jane approved
+   authorized access, printer.example.com requests a set of token
+   credentials using its temporary credentials:
+
+     POST /token HTTP/1.1
+     Host: photos.example.net
+     Authorization: OAuth realm="http://photos.example.com/",
+        oauth_consumer_key="dpf43f3p2l4k3l03",
+        oauth_token="hh5s93j4hdidpola",
+        oauth_signature_method="PLAINTEXT",
+        oauth_signature="kd94hf93k423kf44%26hdhd0244k9j7ao03",
+        oauth_timestamp="1191242092",
+        oauth_nonce="dji430splmx33448",
+        oauth_version="1.0"
+        oauth_verifier="hfdp7dh39dks9884"
+
+   The server validates the request and replies with a set of token
+   credentials in the body of the HTTP response:
+
+     oauth_token=nnch734d00sl2jdk&amp;oauth_token_secret=pfkkdhi9sl3r4s00
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.4.%20%20Accessing%20protected%20resources"></a></body></html><a class="selflink" href="#appendix-A.4" id="appendix-A.4">Appendix A.4</a>.  Accessing protected resources</span>
+
+   The printer is now ready to request the private photo.  Since the
+   photo URI does not use HTTPS, the "HMAC-SHA1" method is required.
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.4.1.%20%20Generating%20Signature%20Base%20String"></a></body></html><a class="selflink" href="#appendix-A.4.1" id="appendix-A.4.1">Appendix A.4.1</a>.  Generating Signature Base String</span>
+
+   To generate the signature, it first needs to generate the signature
+   base string.  The request contains the following parameters
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 14]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-15"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   ("oauth_signature" excluded) which need to be ordered and
+   concatenated into a normalized string:
+
+   oauth_consumer_key
+         "dpf43f3p2l4k3l03"
+
+   oauth_token
+         "nnch734d00sl2jdk"
+
+   oauth_signature_method
+         "HMAC-SHA1"
+
+   oauth_timestamp
+         "1191242096"
+
+   oauth_nonce
+         "kllo9940pd9333jh"
+
+   oauth_version
+         "1.0"
+
+   file
+         "vacation.jpg"
+
+   size
+         "original"
+
+   The following inputs are used to generate the signature base string:
+
+   1.  The HTTP request method: "GET"
+
+   2.  The request URI: "http://photos.example.net/photos"
+
+   3.  The encoded normalized request parameters string: "file=vacation.
+       jpg&amp;oauth_consumer_key=dpf43f3p2l4k3l03&amp;oauth_nonce=kllo9940pd933
+       3jh&amp;oauth_signature_method=HMAC-SHA1&amp;oauth_timestamp=1191242096&amp;o
+       auth_token=nnch734d00sl2jdk&amp;oauth_version=1.0&amp;size=original"
+
+   The signature base string is (line breaks are for display purposes
+   only):
+
+     GET&amp;http%3A%2F%2Fphotos.example.net%2Fphotos&amp;file%3Dvacation.jpg%26
+     oauth_consumer_key%3Ddpf43f3p2l4k3l03%26oauth_nonce%3Dkllo9940pd933
+     3jh%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D119124
+     2096%26oauth_token%3Dnnch734d00sl2jdk%26oauth_version%3D1.0%26size%
+     3Doriginal
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 15]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-16"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.4.2.%20%20Calculating%20Signature%20Value"></a></body></html><a class="selflink" href="#appendix-A.4.2" id="appendix-A.4.2">Appendix A.4.2</a>.  Calculating Signature Value</span>
+
+   HMAC-SHA1 produces the following "digest" value as a base64-encoded
+   string (using the signature base string as "text" and
+   "kd94hf93k423kf44&amp;pfkkdhi9sl3r4s00" as "key"):
+
+     tR3+Ty81lMeYAr/Fid0kMTYa/WM=
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.4.3.%20%20Requesting%20protected%20resource"></a></body></html><a class="selflink" href="#appendix-A.4.3" id="appendix-A.4.3">Appendix A.4.3</a>.  Requesting protected resource</span>
+
+   All together, the client request for the photo is:
+
+     GET /photos?file=vacation.jpg&amp;size=original HTTP/1.1
+     Host: photos.example.com
+     Authorization: OAuth realm="http://photos.example.net/",
+        oauth_consumer_key="dpf43f3p2l4k3l03",
+        oauth_token="nnch734d00sl2jdk",
+        oauth_signature_method="HMAC-SHA1",
+        oauth_signature="tR3%2BTy81lMeYAr%2FFid0kMTYa%2FWM%3D",
+        oauth_timestamp="1191242096",
+        oauth_nonce="kllo9940pd9333jh",
+        oauth_version="1.0"
+
+   The photos.example.net sever validates the request and responds with
+   the requested photo.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20B.%20%20Acknowledgments"></a></body></html><a class="selflink" href="#appendix-B" id="appendix-B">Appendix B</a>.  Acknowledgments</span>
+
+   This specification is directly based on the [OAuth Core 1.0 Revision
+   A] community specification which was the product of the OAuth
+   community.  OAuth was modeled after existing proprietary protocols
+   and best practices that have been independently implemented by
+   various web sites.  This specification was orignially authored by:
+   Mark Atwood, Dirk Balfanz, Darren Bounds, Richard M. Conlan, Blaine
+   Cook, Leah Culver, Breno de Medeiros, Brian Eaton, Kellan Elliott-
+   McCrea, Larry Halff, Eran Hammer-Lahav, Ben Laurie, Chris Messina,
+   John Panzer, Sam Quigley, David Recordon, Eran Sandler, Jonathan
+   Sergent, Todd Sieling, Brian Slesinsky, and Andy Smith.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20C.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-C" id="appendix-C">Appendix C</a>.  Document History</span>
+
+   [[ To be removed by the RFC editor before publication as an RFC. ]]
+
+   -01
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 16]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-17"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+   o  Moved all subsection from <a href="#section-3">section 3</a> to the document root.
+
+   -00
+
+   o  Transitioned from the individual submission <a href="/doc/html/draft-hammer-oauth-02">draft-hammer-oauth-02</a>
+      to working group draft.
+
+   o  Split <a href="/doc/html/draft-hammer-oauth-02">draft-hammer-oauth-02</a> into two drafts, one dealing with web
+      delegation (this draft) and another dealing with authentication
+      <a href="/doc/html/draft-ietf-oauth-web-authentication">draft-ietf-oauth-web-authentication</a>.
+
+   o  Updated draft with changes from OAuth Core 1.0 Revision A to fix a
+      session fixation exploit.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20References"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  References</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.1.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-9.1" id="section-9.1">9.1</a>.  Normative References</span>
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>, March 1997.
+
+   [<a id="ref-RFC2616">RFC2616</a>]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
+              Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
+              Transfer Protocol -- HTTP/1.1", <a href="/doc/html/rfc2616">RFC 2616</a>, June 1999.
+
+   [<a id="ref-RFC2617">RFC2617</a>]  Franks, J., Hallam-Baker, P., Hostetler, J., Lawrence, S.,
+              Leach, P., Luotonen, A., and L. Stewart, "HTTP
+              Authentication: Basic and Digest Access Authentication",
+              <a href="/doc/html/rfc2617">RFC 2617</a>, June 1999.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              <a href="/doc/html/rfc3986">RFC 3986</a>, January 2005.
+
+   [<a id="ref-W3C.REC-html40-19980424">W3C.REC-html40-19980424</a>]
+              Hors, A., Jacobs, I., and D. Raggett, "HTML 4.0
+              Specification", World Wide Web Consortium
+              Recommendation REC-html40-19980424, April 1998,
+              &lt;<a href="http://www.w3.org/TR/1998/REC-html40-19980424">http://www.w3.org/TR/1998/REC-html40-19980424</a>&gt;.
+
+   [<a href="/doc/html/draft-ietf-oauth-authentication">draft-ietf-oauth-authentication</a>]
+              Hammer-Lahav, E., Ed., "The OAuth Protocol:
+              Authentication".
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 17]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-18"></span>
+<span class="grey">Internet-Draft                    OAuth                        July 2009</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.2.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-9.2" id="section-9.2">9.2</a>.  Informative References</span>
+
+   [OAuth Core 1.0 Revision A]
+              OAuth, OCW., "OAuth Core 1.0".
+
+
+Author's Address
+
+   Eran Hammer-Lahav (editor)
+   Yahoo!
+
+   Email: eran@hueniverse.com
+   URI:   <a href="http://hueniverse.com">http://hueniverse.com</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hammer-Lahav             Expires January 7, 2010               [Page 18]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

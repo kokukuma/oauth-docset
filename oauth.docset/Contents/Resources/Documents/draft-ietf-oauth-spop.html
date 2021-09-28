@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-spop-15
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-spop/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="Proof Key for Code Exchange by OAuth Public Clients (Internet-Draft, 2015)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-spop-15.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-spop-15.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-spop-15.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-spop/15/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-spop/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-spop@ietf.org?subject=draft-ietf-oauth-spop" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-spop-15.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-spop-15.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-spop-15.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-sakimura-oauth-tcse">draft-sakimura-oauth-tcse</a>)   <a href="/doc/html/draft-ietf-oauth-spop-00">00</a> <a href="/doc/html/draft-ietf-oauth-spop-01">01</a> <a href="/doc/html/draft-ietf-oauth-spop-02">02</a>         Standards Track
+          <a href="/doc/html/draft-ietf-oauth-spop-03">03</a> <a href="/doc/html/draft-ietf-oauth-spop-04">04</a> <a href="/doc/html/draft-ietf-oauth-spop-05">05</a> <a href="/doc/html/draft-ietf-oauth-spop-06">06</a> <a href="/doc/html/draft-ietf-oauth-spop-07">07</a> <a href="/doc/html/draft-ietf-oauth-spop-08">08</a> <a href="/doc/html/draft-ietf-oauth-spop-09">09</a> <a href="/doc/html/draft-ietf-oauth-spop-10">10</a> <a href="/doc/html/draft-ietf-oauth-spop-11">11</a> <a href="/doc/html/draft-ietf-oauth-spop-12">12</a> <a href="/doc/html/draft-ietf-oauth-spop-13">13</a> <a href="/doc/html/draft-ietf-oauth-spop-14">14</a> <a href="/doc/html/draft-ietf-oauth-spop-15"><b>15</b></a>                        
+          <a href="/doc/html/rfc7636">rfc7636</a>                                                       </pre>
+</div>
+<div class="draftcontent">
+<pre>OAuth Working Group                                     N. Sakimura, Ed.
+Internet-Draft                                 Nomura Research Institute
+Intended status: Standards Track                              J. Bradley
+Expires: January 9, 2016                                   Ping Identity
+                                                              N. Agarwal
+                                                                  Google
+                                                            July 8, 2015
+
+
+          <span class="h1">Proof Key for Code Exchange by OAuth Public Clients</span>
+                        <span class="h1">draft-ietf-oauth-spop-15</span>
+
+Abstract
+
+   OAuth 2.0 public clients utilizing the Authorization Code Grant are
+   susceptible to the authorization code interception attack.  This
+   specification describes the attack as well as a technique to mitigate
+   against the threat through the use of Proof Key for Code Exchange
+   (PKCE, pronounced "pixy").
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on January 9, 2016.
+
+Copyright Notice
+
+   Copyright (c) 2015 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.1">1.1</a>.  Protocol Flow . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-2">2</a>.  Notational Conventions  . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#section-3">3</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-3.1">3.1</a>.  Abbreviations . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+   <a href="#section-4">4</a>.  Protocol  . . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-4.1">4.1</a>.  Client creates a code verifier  . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-4.2">4.2</a>.  Client creates the code challenge . . . . . . . . . . . .   <a href="#page-8">8</a>
+     4.3.  Client sends the code challenge with the authorization
+           request . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-8">8</a>
+     <a href="#section-4.4">4.4</a>.  Server returns the code . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+       <a href="#section-4.4.1">4.4.1</a>.  Error Response  . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+     4.5.  Client sends the Authorization Code and the Code Verifier
+           to the token endpoint . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+     4.6.  Server verifies code_verifier before returning the tokens  10
+   <a href="#section-5">5</a>.  Compatibility . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+   <a href="#section-6">6</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-6.1">6.1</a>.  OAuth Parameters Registry . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-6.2">6.2</a>.  PKCE Code Challenge Method Registry . . . . . . . . . . .  <a href="#page-11">11</a>
+       <a href="#section-6.2.1">6.2.1</a>.  Registration Template . . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+       <a href="#section-6.2.2">6.2.2</a>.  Initial Registry Contents . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   <a href="#section-7">7</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+     <a href="#section-7.1">7.1</a>.  Entropy of the code_verifier  . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+     <a href="#section-7.2">7.2</a>.  Protection against eavesdroppers  . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-7.3">7.3</a>.  Salting the code_challenge  . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-7.4">7.4</a>.  OAuth security considerations . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+     <a href="#section-7.5">7.5</a>.  TLS security considerations . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-8">8</a>.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-9">9</a>.  Revision History  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-15">15</a>
+   <a href="#section-10">10</a>. References  . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+     <a href="#section-10.1">10.1</a>.  Normative References . . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+     <a href="#section-10.2">10.2</a>.  Informative References . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+   <a href="#appendix-A">Appendix A</a>.  Notes on implementing base64url encoding without
+                padding  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+   <a href="#appendix-B">Appendix B</a>.  Example for the S256 code_challenge_method . . . . .  <a href="#page-19">19</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-20">20</a>
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] public clients are susceptible to the
+   authorization code interception attack.
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   The attacker thereby intercepts the authorization code returned from
+   the authorization endpoint within communication path not protected by
+   TLS, such as inter-app communication within the operating system of
+   the client.
+
+   Once the attacker has gained access to the authorization code it can
+   use it to obtain the access token.
+
+   Figure 1 shows the attack graphically.  In step (1) the native app
+   running on the end device, such as a smart phone, issues an OAuth 2.0
+   Authorization Request via the browser/operating system.  The
+   Redirection Endpoint URI in this case typically uses a custom URI
+   scheme.  Step (1) happens through a secure API that cannot be
+   intercepted, though it may potentially be observed in advanced attack
+   scenarios.  The request then gets forwarded to the OAuth 2.0
+   authorization server in step (2).  Because OAuth requires the use of
+   TLS, this communication is protected by TLS, and also cannot be
+   intercepted.  The authorization server returns the authorization code
+   in step (3).  In step (4), the Authorization Code is returned to the
+   requester via the Redirection Endpoint URI that was provided in step
+   (1).
+
+   A malicious app that has been designed to attack this native app has
+   previously registered itself as a handler for the custom URI scheme
+   is now able to intercept the Authorization Code in step (4).  This
+   allows the attacker to request and obtain an access token in steps
+   (5) and (6), respectively.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+    +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+    | End Device (e.g., Smart Phone) |
+    |                                |
+    | +-------------+   +----------+ | (6) Access Token  +----------+
+    | |Legitimate   |   | Malicious|&lt;--------------------|          |
+    | |OAuth 2.0 App|   | App      |--------------------&gt;|          |
+    | +-------------+   +----------+ | (5) Authorization |          |
+    |        |    ^          ^       |        Grant      |          |
+    |        |     \         |       |                   |          |
+    |        |      \   (4)  |       |                   |          |
+    |    (1) |       \  Authz|       |                   |          |
+    |   Authz|        \ Code |       |                   |  Authz   |
+    | Request|         \     |       |                   |  Server  |
+    |        |          \    |       |                   |          |
+    |        |           \   |       |                   |          |
+    |        v            \  |       |                   |          |
+    | +----------------------------+ |                   |          |
+    | |                            | | (3) Authz Code    |          |
+    | |     Operating System/      |&lt;--------------------|          |
+    | |         Browser            |--------------------&gt;|          |
+    | |                            | | (2) Authz Request |          |
+    | +----------------------------+ |                   +----------+
+    +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+
+             Figure 1: Authorization Code Interception Attack.
+
+   A number of pre-conditions need to hold in order for this attack to
+   work:
+
+   1) The attacker manages to register a malicious application on the
+      client device and registers a custom URI scheme that is also used
+      by another application.
+      The operating systems must allow a custom URI schemes to be
+      registered by multiple applications.
+   2) The OAuth 2.0 authorization code grant is used.
+   3) The attacker has access to the OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] client_id and
+      client_secret(if provisioned).  All OAuth 2.0 native app client-
+      instances use the same client_id.  Secrets provisioned in client
+      binary applications cannot be considered confidential.
+   4a)  The attacker (via the installed app) is able to observe only the
+      responses from the authorization endpoint.  The plain
+      code_challenge_method mitigates only this attack.
+   4b)  A more sophisticated attack scenario allows the attacker to
+      observe requests (in addition to responses) to the authorization
+      endpoint.  The attacker is, however, not able to act as a man-in-
+      the-middle.  This has been caused by leaking http log information
+      in the OS.  To mitigate this the S256 code_challenge_method or
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+      cryptographically secure code_challenge_method extension must be
+      used.
+
+   While this is a long list of pre-conditions the described attack has
+   been observed in the wild and has to be considered in OAuth 2.0
+   deployments.
+   While the OAuth 2.0 Threat Model <a href="/doc/html/rfc6819#section-4.4.1">Section 4.4.1 [RFC6819]</a> describes
+   mitigation techniques they are, unfortunately, not applicable since
+   they rely on a per-client instance secret or aper client instance
+   redirect URI.
+
+   To mitigate this attack, this extension utilizes a dynamically
+   created cryptographically random key called "code verifier".  A
+   unique code verifier is created for every authorization request and
+   its transformed value, called "code challenge", is sent to the
+   authorization server to obtain the authorization code.  The
+   authorization code obtained is then sent to the token endpoint with
+   the "code verifier" and the server compares it with the previously
+   received request code so that it can perform the proof of possession
+   of the "code verifier" by the client.  This works as the mitigation
+   since the attacker would not know this one-time key, since it is sent
+   over TLS and cannot be intercepted.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Protocol%20Flow"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Protocol Flow</span>
+
+                                                 +-------------------+
+                                                 |   Authz Server    |
+       +--------+                                | +---------------+ |
+       |        |--(A)- Authorization Request ----&gt;|               | |
+       |        |       + t(code_verifier), t_m  | | Authorization | |
+       |        |                                | |    Endpoint   | |
+       |        |&lt;-(B)---- Authorization Code -----|               | |
+       |        |                                | +---------------+ |
+       | Client |                                |                   |
+       |        |                                | +---------------+ |
+       |        |--(C)-- Access Token Request ----&gt;|               | |
+       |        |          + code_verifier       | |    Token      | |
+       |        |                                | |   Endpoint    | |
+       |        |&lt;-(D)------ Access Token ---------|               | |
+       +--------+                                | +---------------+ |
+                                                 +-------------------+
+
+                     Figure 2: Abstract Protocol Flow
+
+   This specification adds additional parameters to the OAuth 2.0
+   Authorization and Access Token Requests, shown in abstract form in
+   Figure 1.
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   A. The client creates and records a secret named the "code_verifier",
+      and derives a transformed version "t(code_verifier)" (referred to
+      as the "code_challenge") which is sent in the OAuth 2.0
+      Authorization Request, along with the transformation method "t_m".
+   B. The Authorization Endpoint responds as usual, but records
+      "t(code_verifier)" and the transformation method.
+   C. The client then sends the authorization code in the Access Token
+      Request as usual, but includes the "code_verifier" secret
+      generated at (A).
+   D. The authorization server transforms "code_verifier" and compares
+      it to "t(code_verifier)" from (B).  Access is denied if they are
+      not equal.
+
+   An attacker who intercepts the Authorization Grant at (B) is unable
+   to redeem it for an Access Token, as they are not in possession of
+   the "code_verifier" secret.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Notational%20Conventions"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Notational Conventions</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "NOT <em>RECOMMENDED</em>", "<em>MAY</em>", and
+   "<em>OPTIONAL</em>" in this document are to be interpreted as described in Key
+   words for use in RFCs to Indicate Requirement Levels [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>].  If
+   these words are used without being spelled in uppercase then they are
+   to be interpreted with their normal natural language meanings.
+
+   This specification uses the Augmented Backus-Naur Form (ABNF)
+   notation of [<a href="/doc/html/rfc5234" title='"Augmented BNF for Syntax Specifications: ABNF"'>RFC5234</a>].
+
+   STRING denotes a sequence of zero or more ASCII [<a href="/doc/html/rfc0020" title='"ASCII format for network interchange"'>RFC0020</a>] characters.
+
+   OCTETS denotes a sequence of zero or more octets.
+
+   ASCII(STRING) denotes the octets of the ASCII [<a href="/doc/html/rfc0020" title='"ASCII format for network interchange"'>RFC0020</a>]
+   representation of STRING where STRING is a sequence of zero or more
+   ASCII characters.
+
+   BASE64URL-ENCODE(OCTETS) denotes the base64url encoding of OCTETS,
+   per <a href="#section-3">Section 3</a> producing a STRING.
+
+   BASE64URL-DECODE(STRING) denotes the base64url decoding of STRING,
+   per <a href="#section-3">Section 3</a>, producing a sequence of octets.
+
+   SHA256(OCTETS) denotes a SHA2 256bit hash [<a href="/doc/html/rfc6234" title='"US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)"'>RFC6234</a>] of OCTETS.
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Terminology"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Terminology</span>
+
+   In addition to the terms defined in OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>], this
+   specification defines the following terms:
+
+   code verifier
+      A cryptographically random string that is used to correlate the
+      authorization request to the token request.
+   code challenge
+      A challenge derived from the code verifier that is sent in the
+      authorization request, to be verified against later.
+   Base64url Encoding
+      Base64 encoding using the URL- and filename-safe character set
+      defined in <a href="/doc/html/rfc4648#section-5">Section 5 of [RFC4648]</a>, with all trailing '='
+      characters omitted (as permitted by <a href="/doc/html/rfc4648#section-3.2">Section 3.2 of [RFC4648]</a>) and
+      without the inclusion of any line breaks, whitespace, or other
+      additional characters.  (See <a href="#appendix-A">Appendix A</a> for notes on implementing
+      base64url encoding without padding.)
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.1.%20%20Abbreviations"></a></body></html><a class="selflink" href="#section-3.1" id="section-3.1">3.1</a>.  Abbreviations</span>
+
+   ABNF  Augmented Backus-Naur Form
+   Authz  Authorization
+   PKCE  Proof Key for Code Exchange
+   MITM  Man-in-the-middle
+   MTI  Mandatory To Implement
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Protocol"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Protocol</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.1.%20%20Client%20creates%20a%20code%20verifier"></a></body></html><a class="selflink" href="#section-4.1" id="section-4.1">4.1</a>.  Client creates a code verifier</span>
+
+   The client first creates a code verifier, "code_verifier", for each
+   OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] Authorization Request, in the following manner:
+
+   code_verifier = high entropy cryptographic random STRING using the
+   Unreserved Characters [A-Z] / [a-z] / [0-9] / "-" / "." / "_" / "~"
+   from Sec 2.3 of [<a href="/doc/html/rfc3986" title='"Uniform Resource Identifier (URI): Generic Syntax"'>RFC3986</a>], with a minimum length of 43 characters and
+   a maximum length of 128 characters.
+
+   ABNF for "code_verifier" is as follows.
+
+   code-verifier = 43*128unreserved
+   unreserved = ALPHA / DIGIT / "-" / "." / "_" / "~"
+   ALPHA = %x41-5A / %x61-7A
+   DIGIT = %x30-39
+
+   NOTE: code verifier <em>SHOULD</em> have enough entropy to make it impractical
+   to guess the value.  It is <em>RECOMMENDED</em> that the output of a suitable
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   random number generator be used to create a 32-octet sequence.  The
+   Octet sequence is then base64url encoded to produce a 43-octet URL
+   safe string to use as the code verifier.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.2.%20%20Client%20creates%20the%20code%20challenge"></a></body></html><a class="selflink" href="#section-4.2" id="section-4.2">4.2</a>.  Client creates the code challenge</span>
+
+   The client then creates a code challenge derived from the code
+   verifier by using one of the following transformations on the code
+   verifier:
+
+   plain
+      code_challenge = code_verifier
+   S256
+      code_challenge = BASE64URL-ENCODE(SHA256(ASCII(code_verifier)))
+
+   If the client is capable of using "S256", it <em>MUST</em> use "S256", as
+   "S256" is Mandatory To Implement (MTI) on the server.  Clients are
+   permitted to use "plain" only if they cannot support "S256" for some
+   technical reason and know via out of band configuration that the
+   server supports "plain".
+
+   The plain transformation is for compatibility with existing
+   deployments and for constrained environments that can't use the S256
+   transformation.
+
+   ABNF for "code_challenge" is as follows.
+
+   code-challenge = 43*128unreserved
+   unreserved = ALPHA / DIGIT / "-" / "." / "_" / "~"
+   ALPHA = %x41-5A / %x61-7A
+   DIGIT = %x30-39
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.3.%20%20Client%20sends%20the%20code%20challenge%20with%20the%20authorization%20request"></a></body></html><a class="selflink" href="#section-4.3" id="section-4.3">4.3</a>.  Client sends the code challenge with the authorization request</span>
+
+   The client sends the code challenge as part of the OAuth 2.0
+   Authorization Request (<a href="/doc/html/rfc6749#section-4.1.1">Section 4.1.1 of [RFC6749]</a>.) using the
+   following additional parameters:
+
+   code_challenge  <em>REQUIRED</em>.  Code challenge.
+
+   code_challenge_method  <em>OPTIONAL</em>, defaults to "plain" if not present
+      in the request.  Code verifier transformation method, "S256" or
+      "plain".
+
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.4.%20%20Server%20returns%20the%20code"></a></body></html><a class="selflink" href="#section-4.4" id="section-4.4">4.4</a>.  Server returns the code</span>
+
+   When the server issues the authorization code in the authorization
+   response, it <em>MUST</em> associate the "code_challenge" and
+   "code_challenge_method" values with the authorization code so it can
+   be verified later.
+
+   Typically, the "code_challenge" and "code_challenge_method" values
+   are stored in encrypted form in the "code" itself, but could
+   alternatively be stored on the server, associated with the code.  The
+   server <em>MUST NOT</em> include the "code_challenge" value in client requests
+   in a form that other entities can extract.
+
+   The exact method that the server uses to associate the
+   "code_challenge" with the issued "code" is out of scope for this
+   specification.
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.4.1.%20%20Error%20Response"></a></body></html><a class="selflink" href="#section-4.4.1" id="section-4.4.1">4.4.1</a>.  Error Response</span>
+
+   If the server requires Proof Key for Code Exchange (PKCE) by OAuth
+   Public Clients, and the client does not send the "code_challenge" in
+   the request, the authorization endpoint <em>MUST</em> return the authorization
+   error response with "error" value set to "invalid_request".  The
+   "error_description" or the response of "error_uri" <em>SHOULD</em> explain the
+   nature of error, e.g., code challenge required.
+
+   If the server supporting PKCE does not support the requested
+   transform, the authorization endpoint <em>MUST</em> return the authorization
+   error response with "error" value set to "invalid_request".  The
+   "error_description" or the response of "error_uri" <em>SHOULD</em> explain the
+   nature of error, e.g., transform algorithm not supported.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.5.%20%20Client%20sends%20the%20Authorization%20Code%20and%20the%20Code%20Verifier%20to%20the"></a></body></html><a class="selflink" href="#section-4.5" id="section-4.5">4.5</a>.  Client sends the Authorization Code and the Code Verifier to the</span>
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/%20%20%20%20%20%20token%20endpoint"></a></body></html>      token endpoint</span>
+
+   Upon receipt of the Authorization Code, the client sends the Access
+   Token Request to the token endpoint.  In addition to the parameters
+   defined in the OAuth 2.0 Access Token Request (<a href="/doc/html/rfc6749#section-4.1.3">Section 4.1.3 of
+   [RFC6749]</a>), it sends the following parameter:
+
+   code_verifier  <em>REQUIRED</em>.  Code verifier
+
+   The code_challenge_method is bound to the Authorization Code when the
+   Authorization Code is issued.  That is the method that the token
+   endpoint <em>MUST</em> use to verify the code_verifier.
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016                [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.6.%20%20Server%20verifies%20code_verifier%20before%20returning%20the%20tokens"></a></body></html><a class="selflink" href="#section-4.6" id="section-4.6">4.6</a>.  Server verifies code_verifier before returning the tokens</span>
+
+   Upon receipt of the request at the Access Token endpoint, the server
+   verifies it by calculating the code challenge from received
+   "code_verifier" and comparing it with the previously associated
+   "code_challenge", after first transforming it according to the
+   "code_challenge_method" method specified by the client.
+
+   If the "code_challenge_method" from <a href="#section-4.2">Section 4.2</a> was "S256", the
+   received "code_verifier" is hashed by SHA-256, then base64url
+   encoded, and then compared to the "code_challenge". i.e.,
+
+   BASE64URL-ENCODE(SHA256(ASCII("code_verifier" ))) == "code_challenge"
+
+   If the "code_challenge_method" from <a href="#section-4.2">Section 4.2</a> was "plain", they are
+   compared directly. i.e.,
+
+   "code_verifier" == "code_challenge".
+
+   If the values are equal, the Access Token endpoint <em>MUST</em> continue
+   processing as normal (as defined by OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>]).  If the
+   values are not equal, an error response indicating "invalid_grant" as
+   described in <a href="/doc/html/rfc6749#section-5.2">section 5.2 of [RFC6749]</a> <em>MUST</em> be returned.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20Compatibility"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  Compatibility</span>
+
+   Server implementations of this specification <em>MAY</em> accept OAuth2.0
+   Clients that do not implement this extension.  If the "code_verifier"
+   is not received from the client in the Authorization Request, servers
+   supporting backwards compatibility revert to a normal OAuth 2.0
+   [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] protocol.
+
+   As the OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] server responses are unchanged by this
+   specification, client implementations of this specification do not
+   need to know if the server has implemented this specification or not,
+   and <em>SHOULD</em> send the additional parameters as defined in <a href="#section-3">Section 3</a>. to
+   all servers.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  IANA Considerations</span>
+
+   This specification makes a registration request as follows:
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.%20%20OAuth%20Parameters%20Registry"></a></body></html><a class="selflink" href="#section-6.1" id="section-6.1">6.1</a>.  OAuth Parameters Registry</span>
+
+   This specification registers the following parameters in the IANA
+   OAuth Parameters registry defined in OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+   o  Parameter name: code_verifier
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   o  Parameter usage location: token request
+   o  Change controller: IESG
+   o  Specification document(s): this document
+
+   o  Parameter name: code_challenge
+   o  Parameter usage location: authorization request
+   o  Change controller: IESG
+   o  Specification document(s): this document
+
+   o  Parameter name: code_challenge_method
+   o  Parameter usage location: authorization request
+   o  Change controller: IESG
+   o  Specification document(s): this document
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.2.%20%20PKCE%20Code%20Challenge%20Method%20Registry"></a></body></html><a class="selflink" href="#section-6.2" id="section-6.2">6.2</a>.  PKCE Code Challenge Method Registry</span>
+
+   This specification establishes the PKCE Code Challenge Method
+   registry.  The new registry should be a sub-registry of OAuth
+   Parameters registry.
+
+   Additional code_challenge_method types for use with the authorization
+   endpoint are registered using the Specification Required policy
+   [<a href="/doc/html/rfc5226" title="">RFC5226</a>], which includes review of the request by one or more
+   Designated Experts.  The DEs will ensure there is at least a two-week
+   review of the request on the oauth-ext-review@ietf.org mailing list,
+   and that any discussion on that list converges before they respond to
+   the request.  To allow for the allocation of values prior to
+   publication, the Designated Expert(s) may approve registration once
+   they are satisfied that an acceptable specification will be
+   published.
+
+   Registration requests and discussion on the oauth-ext-review@ietf.org
+   mailing list should use an appropriate subject, such as "Request for
+   PKCE code_challenge_method: example").
+
+   The Designated Expert(s) should consider the discussion on the
+   mailing list, as well as the overall security properties of the
+   challenge Method when evaluating registration requests.  New methods
+   should not disclose the value of the code_verifier in the request to
+   the Authorization endpoint.  Denials should include an explanation
+   and, if applicable, suggestions as to how to make the request
+   successful.
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.2.1.%20%20Registration%20Template"></a></body></html><a class="selflink" href="#section-6.2.1" id="section-6.2.1">6.2.1</a>.  Registration Template</span>
+
+   Code Challenge Method Parameter Name:
+      The name requested (e.g., "example").  Because a core goal of this
+      specification is for the resulting representations to be compact,
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+      it is <em>RECOMMENDED</em> that the name be short -- not to exceed 8
+      characters without a compelling reason to do so.  This name is
+      case-sensitive.  Names may not match other registered names in a
+      case-insensitive manner unless the Designated Expert(s) state that
+      there is a compelling reason to allow an exception in this
+      particular case.
+   Change Controller:
+      For Standards Track RFCs, state "IESG".  For others, give the name
+      of the responsible party.  Other details (e.g., postal address,
+      email address, home page URI) may also be included.
+   Specification Document(s):
+      Reference to the document(s) that specify the parameter,
+      preferably including URI(s) that can be used to retrieve copies of
+      the document(s).  An indication of the relevant sections may also
+      be included but is not required.
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.2.2.%20%20Initial%20Registry%20Contents"></a></body></html><a class="selflink" href="#section-6.2.2" id="section-6.2.2">6.2.2</a>.  Initial Registry Contents</span>
+
+   This specification registers the Code Challenge Method Parameter
+   names defined in <a href="#section-4.2">Section 4.2</a> in this registry.
+
+   o  Code Challenge Method Parameter Name: "plain"
+   o  Change Controller: IESG
+   o  Specification Document(s): <a href="#section-4.2">Section 4.2</a> of [[ this document ]]
+
+   o  Code Challenge Method Parameter Name: "S256"
+   o  Change Controller: IESG
+   o  Specification Document(s): <a href="#section-4.2">Section 4.2</a> of [[ this document ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Security Considerations</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.%20%20Entropy%20of%20the%20code_verifier"></a></body></html><a class="selflink" href="#section-7.1" id="section-7.1">7.1</a>.  Entropy of the code_verifier</span>
+
+   The security model relies on the fact that the code verifier is not
+   learned or guessed by the attacker.  It is vitally important to
+   adhere to this principle.  As such, the code verifier has to be
+   created in such a manner that it is cryptographically random and has
+   high entropy that it is not practical for the attacker to guess.
+
+   The client <em>SHOULD</em> create a code_verifier with a minimum of 256bits of
+   entropy.  This can be done by having a suitable random number
+   generator create a 32-octet sequence.  The Octet sequence can then be
+   base64url encoded to produce a 43-octet URL safe string to use as a
+   code_challenge that has the required entropy.
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.2.%20%20Protection%20against%20eavesdroppers"></a></body></html><a class="selflink" href="#section-7.2" id="section-7.2">7.2</a>.  Protection against eavesdroppers</span>
+
+   Clients <em>MUST NOT</em> downgrade to "plain" after trying "S256" method.
+   Servers that support PKCE are required to support "S256", and servers
+   that do not support PKCE will simply ignore the unknown
+   "code_verifier" OAuth 2.0 (see <a href="/doc/html/rfc6749#section-3.2">Section 3.2 of [RFC6749]</a>.  Because of
+   that, an error when "S256" is presented can only mean that the server
+   is faulty or that a MITM attacker is trying a downgrade attack.
+
+   "S256" method protects against eavesdroppers observing or
+   intercepting the "code_challenge", because the challenge cannot be
+   used without the verifier.  With the "plain" method, there is a
+   chance that "code_challenge" will be observed by the attacker on the
+   device, or in the http request.  Since the code challenge is the same
+   as the code verifier in this case, "plain" method does not protect
+   against the eavesdropping of the initial request.
+
+   The use of "S256" protects against disclosure of "code_verifier"
+   value to an attacker.
+
+   Because of this, "plain" <em>SHOULD NOT</em> be used, and exists only for
+   compatibility with deployed implementations where the request path is
+   already protected.  The "plain" method <em>SHOULD NOT</em> be used in new
+   implementations, unless they cannot support "S256" for some technical
+   reason.
+
+   The "S256" code_challenge_method or other cryptographically secure
+   code_challenge_method extension <em>SHOULD</em> be used.  The plain
+   code_challenge_method relies on the operating system and transport
+   security not to disclose the request to an attacker.
+
+   If the code_challenge_method is plain, and the "code_challenge" is to
+   be returned inside authorization "code" to achieve a stateless
+   server, it <em>MUST</em> be encrypted in such a manner that only the server
+   can decrypt and extract it.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.3.%20%20Salting%20the%20code_challenge"></a></body></html><a class="selflink" href="#section-7.3" id="section-7.3">7.3</a>.  Salting the code_challenge</span>
+
+   In order to reduce implementation complexity Salting is not used in
+   the production of the code_challenge, as the code_verifier contains
+   sufficient entropy to prevent brute force attacks.  Concatenating a
+   publicly known value to a code_verifier (containing 256 bits of
+   entropy) and then hashing it with SHA256 to produce a code_challenge
+   would not increase the number of attempts necessary to brute force a
+   valid value for code_verifier.
+
+   While the S256 transformation is like hashing a password there are
+   important differences.  Passwords tend to be relatively low entropy
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 13]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-14"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   words that can be hashed offline and the hash looked up in a
+   dictionary.  By concatenating a unique though public value to each
+   password prior to hashing, the dictionary space that an attacker
+   needs to search is greatly expanded.
+
+   Modern graphics processors now allow attackers to calculate hashes in
+   real time faster than they could be looked up from a disk.  This
+   eliminates the value of the salt in increasing the complexity of a
+   brute force attack for even low entropy passwords.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.4.%20%20OAuth%20security%20considerations"></a></body></html><a class="selflink" href="#section-7.4" id="section-7.4">7.4</a>.  OAuth security considerations</span>
+
+   All the OAuth security analysis presented in [<a href="/doc/html/rfc6819" title='"OAuth 2.0 Threat Model and Security Considerations"'>RFC6819</a>] applies so
+   readers <em>SHOULD</em> carefully follow it.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.5.%20%20TLS%20security%20considerations"></a></body></html><a class="selflink" href="#section-7.5" id="section-7.5">7.5</a>.  TLS security considerations</span>
+
+   Curent security considerations can be found in Recommendations for
+   Secure Use of TLS and DTLS [<a href="#ref-BCP195" title='"Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"'>BCP195</a>].  This supersedes the TLS version
+   recommendations in OAuth 2.0 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Acknowledgements</span>
+
+   The initial draft of this specification was created by the OpenID AB/
+   Connect Working Group of the OpenID Foundation.
+
+   This specification is the work of the OAuth Working Group, which
+   includes dozens of active and dedicated participants.  In particular,
+   the following individuals contributed ideas, feedback, and wording
+   that shaped and formed the final specification:
+
+      Anthony Nadalin, Microsoft
+      Axel Nenker, Deutsche Telekom
+      Breno de Medeiros, Google
+      Brian Campbell, Ping Identity
+      Chuck Mortimore, Salesforce
+      Dirk Balfanz, Google
+      Eduardo Gueiros, Jive Communications
+      Hannes Tschonfenig, ARM
+      James Manger, Telstra
+      John Bradley, Ping Identity
+      Justin Richer, MIT Kerberos
+      Josh Mandel, Boston Children's Hospital
+      Lewis Adam, Motorola Solutions
+      Madjid Nakhjiri, Samsung
+      Michael B.  Jones, Microsoft
+      Nat Sakimura, Nomura Research Institute
+      Naveen Agarwal, Google
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 14]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-15"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+      Paul Madsen, Ping Identity
+      Phil Hunt, Oracle
+      Prateek Mishra, Oracle
+      Ryo Ito, mixi
+      Scott Tomilson, Ping Identity
+      Sergey Beryozkin
+      Takamichi Saito
+      Torsten Lodderstedt, Deutsche Telekom
+      William Denniss, Google
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20Revision%20History"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  Revision History</span>
+
+   -15
+
+   o  Addressed Barry's IESG comments around IANA Registration
+   o  Addressed Barry's IESG comments around Sec 7.2 downgrade attack
+   o  fix a typo for William and make a small change to Fig 1.1
+      clarifying t_m
+   o  more wording changes to sec 7.2 re Barry
+   o  made the two <em>SHOULD NOT</em> use plain recommendations consistent.
+   o  slightly cleaned up grammer in Sec 7.2
+
+   -14
+
+   o  #38.  Expanded <a href="#section-7.2">Section 7.2</a> to explain why plain should not be
+      used.
+   o  #39.  Modified <a href="#section-4.4.1">Section 4.4.1</a> to discourage the use of plain.
+   o  #40.  Modified Intro text to explain the attack better.
+   o  #41.  Added explanation that the token request is protected in the
+      Last paragraph of the Introduction.
+   o  #42.  Sec 4.2: Removed redundant double quotes caused by spanx.
+   o  #43.  Sec 4.4: Replaced code with authorization code.
+   o  #44.  Sec 4.5: say "code_verifier" rather than "secret"
+   o  #45.  Sec 4.4.1: Expanded PKCE.
+   o  #46.  Sec 5: <em>SHOULD</em> in para 1 removed.
+   o  Added abbreviations section.
+
+   -13
+
+   o  Fix the parameter usage locations for the OAuth Parameters
+      Registry per Hannes response.
+   o  Clarify for IANA that the new registry is a sub-registry of OAuth
+      Parameters registry
+   o  aded text on why the code_challenge_method is not sent to the
+      token endpoint.
+
+   -12
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 15]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-16"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   o  clarify that the client secret we are talking about in the
+      Introduction is a OAuth 2 client_secret.
+   o  Update salting security consideration based on Ben's feedback
+
+   -11
+
+   o  add spanx for plain in sec 4.4 RE Kathleen's comment
+   o  Add security consideration on TLS and reference <a href="/doc/html/bcp195">BCP195</a>
+   o  Update to make clearer that plain can only be used for backwards
+      compatibility and constrained environments
+
+   -10
+
+   o  re #33 specify lower limit to code_verifier in prose
+   o  remove base64url decode from draft, all steps now use encode only
+   o  Expanded MTI
+   o  re #33 change length of 32 octet base64url encoded string back to
+      43 octets
+
+   -09
+
+   o  clean up some external references so they don't point at internal
+      sections
+
+   -08
+
+   o  changed BASE64URL to BASE64URL-ENCODE to be more consistent with
+      <a href="#appendix-A">appendix A</a> Fixed lowercase base64url in <a href="#appendix-B">appendix B</a>
+   o  Added <a href="#appendix-B">appendix B</a> as an example of S256 processing
+   o  Change reference for unreserved characters to <a href="/doc/html/rfc3986">RFC3986</a> from
+      base64URL
+
+   -07
+
+   o  removed unused discovery reference and UTF8
+   o  re #32 added ASCII(STRING) to make clear that it is the byte array
+      that is being hashed
+   o  re #2 Remove discovery requirement section.
+   o  updated Acknowledgement
+   o  re #32 remove unneeded UTF8(STRING) definition, and define STRING
+      for ASCII(STRING)
+   o  re #32 remove unneeded utf8 reference from BASE64URL-
+      DECODE(STRING) def
+   o  resolves #31 unused definition of concatenation
+   o  re #30 Update figure text call out the endpoints
+   o  re #30 Update figure to call out the endpoints
+   o  small wording change to the introduction
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 16]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-17"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   -06
+
+   o  fix date
+   o  replace spop with pkce for registry and other references
+   o  re #29 change name again
+   o  re #27 removed US-ASCII reference
+   o  re #27 updated ABNF for code_verifier
+   o  resolves #24 added security consideration for salting
+   o  resolves #29 Changed title
+   o  updated reference to <a href="/doc/html/rfc4634">RFC4634</a> to <a href="/doc/html/rfc6234">RFC6234</a> re #27
+   o  changed reference for US-ASCII to <a href="/doc/html/rfc20">RFC20</a> re #27
+   o  resolves #28 added Acknowledgements
+   o  resolves #27 updated ABNF
+   o  resolves #26 updated abstract and added Hannes figure
+
+   -05
+
+   o  Added IANA registry for code_challenge_method + fixed some broken
+      internal references.
+
+   -04
+
+   o  Added error response to authorization response.
+
+   -03
+
+   o  Added an abstract protocol diagram and explanation
+
+   -02
+
+   o  Copy edits
+
+   -01
+
+   o  Specified exactly two supported transformations
+   o  Moved discovery steps to security considerations.
+   o  Incorporated readability comments by Eduardo Gueiros.
+   o  Changed <em>MUST</em> in 3.1 to <em>SHOULD</em>.
+
+   -00
+
+   o  Initial IETF version.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.%20%20References"></a></body></html><a class="selflink" href="#section-10" id="section-10">10</a>.  References</span>
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 17]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-18"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.1.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-10.1" id="section-10.1">10.1</a>.  Normative References</span>
+
+   [<a id="ref-BCP195">BCP195</a>]   Sheffer, Y., Holz, R., and P. Saint-Andre,
+              "Recommendations for Secure Use of Transport Layer
+              Security (TLS) and Datagram Transport Layer Security
+              (DTLS)", <a href="/doc/html/bcp195">BCP 195</a>, <a href="/doc/html/rfc7525">RFC 7525</a>, May 2015.
+
+   [<a id="ref-RFC0020">RFC0020</a>]  Cerf, V., "ASCII format for network interchange", <a href="/doc/html/rfc20">RFC 20</a>,
+              October 1969.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>, March 1997.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66, <a href="/doc/html/rfc3986">RFC</a>
+              <a href="/doc/html/rfc3986">3986</a>, January 2005.
+
+   [<a id="ref-RFC4648">RFC4648</a>]  Josefsson, S., "The Base16, Base32, and Base64 Data
+              Encodings", <a href="/doc/html/rfc4648">RFC 4648</a>, October 2006.
+
+   [<a id="ref-RFC5226">RFC5226</a>]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
+              IANA Considerations Section in RFCs", <a href="/doc/html/bcp26">BCP 26</a>, <a href="/doc/html/rfc5226">RFC 5226</a>,
+              May 2008.
+
+   [<a id="ref-RFC5234">RFC5234</a>]  Crocker, D. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, <a href="/doc/html/rfc5234">RFC 5234</a>, January 2008.
+
+   [<a id="ref-RFC6234">RFC6234</a>]  Eastlake, D. and T. Hansen, "US Secure Hash Algorithms
+              (SHA and SHA-based HMAC and HKDF)", <a href="/doc/html/rfc6234">RFC 6234</a>, May 2011.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., "The OAuth 2.0 Authorization Framework", <a href="/doc/html/rfc6749">RFC</a>
+              <a href="/doc/html/rfc6749">6749</a>, October 2012.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.2.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-10.2" id="section-10.2">10.2</a>.  Informative References</span>
+
+   [<a id="ref-RFC6819">RFC6819</a>]  Lodderstedt, T., McGloin, M., and P. Hunt, "OAuth 2.0
+              Threat Model and Security Considerations", <a href="/doc/html/rfc6819">RFC 6819</a>,
+              January 2013.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Notes%20on%20implementing%20base64url%20encoding%20without%20padding"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Notes on implementing base64url encoding without padding</span>
+
+   This appendix describes how to implement a base64url encoding
+   function without padding based upon standard base64 encoding function
+   that uses padding.
+
+   To be concrete, example C# code implementing these functions is shown
+   below.  Similar code could be used in other languages.
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 18]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-19"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+     static string base64urlencode(byte [] arg)
+     {
+       string s = Convert.ToBase64String(arg); // Regular base64 encoder
+       s = s.Split('=')[0]; // Remove any trailing '='s
+       s = s.Replace('+', '-'); // 62nd char of encoding
+       s = s.Replace('/', '_'); // 63rd char of encoding
+       return s;
+     }
+
+
+   An example correspondence between unencoded and encoded values
+   follows.  The octet sequence below encodes into the string below,
+   which when decoded, reproduces the octet sequence.
+
+   3 236 255 224 193
+
+   A-z_4ME
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20B.%20%20Example%20for%20the%20S256%20code_challenge_method"></a></body></html><a class="selflink" href="#appendix-B" id="appendix-B">Appendix B</a>.  Example for the S256 code_challenge_method</span>
+
+   The client uses output of a suitable random number generator to
+   create a 32-octet sequence.  The octets representing the value in
+   this example (using JSON array notation) are:"
+
+      [116, 24, 223, 180, 151, 153, 224, 37, 79, 250, 96, 125, 216, 173,
+      187, 186, 22, 212, 37, 77, 105, 214, 191, 240, 91, 88, 5, 88, 83,
+      132, 141, 121]
+
+   Encoding this octet sequence as a Base64url provides the value of the
+   code_verifier:
+
+       dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+
+   The code_verifier is then hashed via the SHA256 hash function to
+   produce:
+
+     [19, 211, 30, 150, 26, 26, 216, 236, 47, 22, 177, 12, 76, 152, 46,
+      8, 118, 168, 120, 173, 109, 241, 68, 86, 110, 225, 137, 74, 203,
+      112, 249, 195]
+
+   Encoding this octet sequence as a base64url provides the value of the
+   code_challenge:
+
+       E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
+
+   The authorization request includes:
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 19]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-20"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+       code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
+       &amp;code_challange_method=S256
+
+   The Authorization server then records the code_challenge and
+   code_challenge_method along with the code that is granted to the
+   client.
+
+   in the request to the token_endpoint the client includes the code
+   received in the authorization response as well as the additional
+   paramater:
+
+       code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+
+   The Authorization server retrieves the information for the code
+   grant.  Based on the recorded code_challange_method being S256, it
+   then hashes and base64url encodes the value of code_verifier.
+   BASE64URL-ENCODE(SHA256(ASCII("code_verifier" )))
+
+   The calculated value is then compared with the value of
+   "code_challenge":
+
+   BASE64URL-ENCODE(SHA256(ASCII("code_verifier" ))) == code_challenge
+
+   If the two values are equal then the Authorization server can provide
+   the tokens as long as there are no other errors in the request.  If
+   the values are not equal then the request must be rejected, and an
+   error returned.
+
+Authors' Addresses
+
+   Nat Sakimura (editor)
+   Nomura Research Institute
+   1-6-5 Marunouchi, Marunouchi Kitaguchi Bldg.
+   Chiyoda-ku, Tokyo  100-0005
+   Japan
+
+   Phone: +81-3-5533-2111
+   Email: n-sakimura@nri.co.jp
+   URI:   <a href="http://nat.sakimura.org/">http://nat.sakimura.org/</a>
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Sakimura, et al.         Expires January 9, 2016               [Page 20]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-21"></span>
+<span class="grey">Internet-Draft                 oauth_pkce                      July 2015</span>
+
+
+   John Bradley
+   Ping Identity
+   Casilla 177, Sucursal Talagante
+   Talagante, RM
+   Chile
+
+   Phone: +44 20 8133 3718
+   Email: ve7jtb@ve7jtb.com
+   URI:   <a href="http://www.thread-safe.com/">http://www.thread-safe.com/</a>
+
+
+   Naveen Agarwal
+   Google
+   1600 Amphitheatre Pkwy
+   Mountain View, CA  94043
+   USA
+
+   Phone: +1 650-253-0000
+   Email: naa@google.com
+   URI:   <a href="http://google.com/">http://google.com/</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sakimura, et al.         Expires January 9, 2016               [Page 21]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

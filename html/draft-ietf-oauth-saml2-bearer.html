@@ -1,0 +1,1414 @@
+<!DOCTYPE html> 
+
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+  
+    draft-ietf-oauth-saml2-bearer-23
+  
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+
+    <!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    
+  <link rel="alternate" type="application/atom+xml" title="Document changes" href="/feed/document-changes/draft-ietf-oauth-saml2-bearer/">
+  <meta name="description" content="SAML 2.0 Profile for OAuth 2.0 Client Authentication and Authorization Grants (Internet-Draft, 2014)">
+  <script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+  <script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+
+
+    
+    <link rel="shortcut icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png">
+    
+    <link rel="apple-touch-icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png">
+  </head>
+
+  <body style="padding-top: 0;">
+
+	  <div class="content" id="content">
+        
+  <!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+ 
+  <div class="rfcmarkup">
+    <div class="noprint" style="height: 6px;">
+      <div onmouseover="this.style.cursor='pointer';"
+         onclick="showLegend();"
+         onmouseout="hideLegend()"
+         style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; "
+         class="meta-info bgred"
+         title="Click for colour legend." >&nbsp;</div>
+      <div id="legend"
+           class="meta-info noprint pre legend"
+           style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; "
+           onmouseover="showLegend();"
+           onmouseout="hideLegend();">
+      </div>
+    </div>
+
+    
+      <div class="noprint">
+	 <pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-saml2-bearer-23.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-saml2-bearer-23.xml" title="XML source for this document">xml</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-saml2-bearer-23.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-saml2-bearer/23/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-saml2-bearer/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-saml2-bearer@ietf.org?subject=draft-ietf-oauth-saml2-bearer" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&url2=draft-ietf-oauth-saml2-bearer-23.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-saml2-bearer-23.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-saml2-bearer-23.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-campbell-oauth-saml">draft-campbell-oauth-saml</a>)   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-00">00</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-01">01</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-02">02</a>         Standards Track
+          <a href="/doc/html/draft-ietf-oauth-saml2-bearer-03">03</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-04">04</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-05">05</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-06">06</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-07">07</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-08">08</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-09">09</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-10">10</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-11">11</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-12">12</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-13">13</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-14">14</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-15">15</a>                        
+          <a href="/doc/html/draft-ietf-oauth-saml2-bearer-16">16</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-17">17</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-18">18</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-19">19</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-20">20</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-21">21</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-22">22</a> <a href="/doc/html/draft-ietf-oauth-saml2-bearer-23"><b>23</b></a> <a href="/doc/html/rfc7522">rfc7522</a>                               </pre>
+      </div>
+    
+
+    <div class="draftcontent">
+    <pre>OAuth Working Group                                          B. Campbell
+Internet-Draft                                             Ping Identity
+Intended status: Standards Track                            C. Mortimore
+Expires: May 16, 2015                                         Salesforce
+                                                                M. Jones
+                                                               Microsoft
+                                                       November 12, 2014
+
+
+ <span class="h1">SAML 2.0 Profile for OAuth 2.0 Client Authentication and Authorization</span>
+                                 <span class="h1">Grants</span>
+                    <span class="h1">draft-ietf-oauth-saml2-bearer-23</span>
+
+Abstract
+
+   This specification defines the use of a Security Assertion Markup
+   Language (SAML) 2.0 Bearer Assertion as a means for requesting an
+   OAuth 2.0 access token as well as for use as a means of client
+   authentication.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as &quot;work in progress.&quot;
+
+   This Internet-Draft will expire on May 16, 2015.
+
+Copyright Notice
+
+   Copyright (c) 2014 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust&#x27;s Legal
+   Provisions Relating to IETF Documents
+   (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 1]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-2" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.1">1.1</a>.  Notational Conventions  . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-1.2">1.2</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+   <a href="#section-2">2</a>.  HTTP Parameter Bindings for Transporting Assertions . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.1">2.1</a>.  Using SAML Assertions as Authorization Grants . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.2">2.2</a>.  Using SAML Assertions for Client Authentication . . . . .   <a href="#page-5">5</a>
+   <a href="#section-3">3</a>.  Assertion Format and Processing Requirements  . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-3.1">3.1</a>.  Authorization Grant Processing  . . . . . . . . . . . . .   <a href="#page-8">8</a>
+     <a href="#section-3.2">3.2</a>.  Client Authentication Processing  . . . . . . . . . . . .   <a href="#page-9">9</a>
+   <a href="#section-4">4</a>.  Authorization Grant Example . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+   <a href="#section-5">5</a>.  Interoperability Considerations . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+   <a href="#section-6">6</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+   <a href="#section-7">7</a>.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   <a href="#section-8">8</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+     8.1.  Sub-Namespace Registration of urn:ietf:params:oauth
+           :grant-type:saml2-bearer  . . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+     8.2.  Sub-Namespace Registration of urn:ietf:params:oauth
+           :client-assertion-type:saml2-bearer . . . . . . . . . . .  <a href="#page-12">12</a>
+   <a href="#section-9">9</a>.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-9.1">9.1</a>.  Normative References  . . . . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-9.2">9.2</a>.  Informative References  . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#appendix-A">Appendix A</a>.  Acknowledgements . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#appendix-B">Appendix B</a>.  Document History . . . . . . . . . . . . . . . . . .  <a href="#page-15">15</a>
+   Authors&#x27; Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+
+<span class="h2"><a class="selflink" id="section-1" href="#section-1">1</a>.  Introduction</span>
+
+   The Security Assertion Markup Language (SAML) 2.0
+   [<a href="#ref-OASIS.saml-core-2.0-os">OASIS.saml-core-2.0-os</a>] is an XML-based framework that allows
+   identity and security information to be shared across security
+   domains.  The SAML specification, while primarily targeted at
+   providing cross domain Web browser single sign-on, was also designed
+   to be modular and extensible to facilitate use in other contexts.
+
+   The Assertion, an XML security token, is a fundamental construct of
+   SAML that is often adopted for use in other protocols and
+   specifications.  (Some examples include [<a href="#ref-OASIS.WSS-SAMLTokenProfile">OASIS.WSS-SAMLTokenProfile</a>]
+   and [<a href="#ref-OASIS.WS-Fed">OASIS.WS-Fed</a>].)  An Assertion is generally issued by an identity
+   provider and consumed by a service provider who relies on its content
+   to identify the Assertion&#x27;s subject for security related purposes.
+
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 2]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-3" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   The OAuth 2.0 Authorization Framework [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] provides a method for
+   making authenticated HTTP requests to a resource using an access
+   token.  Access tokens are issued to third-party clients by an
+   authorization server (AS) with the (sometimes implicit) approval of
+   the resource owner.  In OAuth, an authorization grant is an abstract
+   term used to describe intermediate credentials that represent the
+   resource owner authorization.  An authorization grant is used by the
+   client to obtain an access token.  Several authorization grant types
+   are defined to support a wide range of client types and user
+   experiences.  OAuth also allows for the definition of new extension
+   grant types to support additional clients or to provide a bridge
+   between OAuth and other trust frameworks.  Finally, OAuth allows the
+   definition of additional authentication mechanisms to be used by
+   clients when interacting with the authorization server.
+
+   The Assertion Framework for OAuth 2.0 Client Authentication and
+   Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification is an
+   abstract extension to OAuth 2.0 that provides a general framework for
+   the use of Assertions as client credentials and/or authorization
+   grants with OAuth 2.0.  This specification profiles the Assertion
+   Framework for OAuth 2.0 Client Authentication and Authorization
+   Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification to define an
+   extension grant type that uses a SAML 2.0 Bearer Assertion to request
+   an OAuth 2.0 access token as well as for use as client credentials.
+   The format and processing rules for the SAML Assertion defined in
+   this specification are intentionally similar, though not identical,
+   to those in the Web Browser SSO Profile defined in the SAML Profiles
+   [<a href="#ref-OASIS.saml-profiles-2.0-os">OASIS.saml-profiles-2.0-os</a>] specification.  This specification is
+   reusing, to the extent reasonable, concepts and patterns from that
+   well-established Profile.
+
+   This document defines how a SAML Assertion can be used to request an
+   access token when a client wishes to utilize an existing trust
+   relationship, expressed through the semantics of (and digital
+   signature or keyed message digest calculated over) the SAML
+   Assertion, without a direct user approval step at the authorization
+   server.  It also defines how a SAML Assertion can be used as a client
+   authentication mechanism.  The use of an Assertion for client
+   authentication is orthogonal to and separable from using an Assertion
+   as an authorization grant.  They can be used either in combination or
+   separately.  Client assertion authentication is nothing more than an
+   alternative way for a client to authenticate to the token endpoint
+   and must be used in conjunction with some grant type to form a
+   complete and meaningful protocol request.  Assertion authorization
+   grants may be used with or without client authentication or
+   identification.  Whether or not client authentication is needed in
+   conjunction with an assertion authorization grant, as well as the
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 3]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-4" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   supported types of client authentication, are policy decisions at the
+   discretion of the authorization server.
+
+   The process by which the client obtains the SAML Assertion, prior to
+   exchanging it with the authorization server or using it for client
+   authentication, is out of scope.
+
+<span class="h3"><a class="selflink" id="section-1.1" href="#section-1.1">1.1</a>.  Notational Conventions</span>
+
+   The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
+   &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this
+   document are to be interpreted as described in <a href="/doc/html/rfc2119">RFC 2119</a> [<a href="/doc/html/rfc2119" title="&quot;Key words for use in RFCs to Indicate Requirement Levels&quot;">RFC2119</a>].
+
+   Unless otherwise noted, all the protocol parameter names and values
+   are case sensitive.
+
+<span class="h3"><a class="selflink" id="section-1.2" href="#section-1.2">1.2</a>.  Terminology</span>
+
+   All terms are as defined in The OAuth 2.0 Authorization Framework
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>], the Assertion Framework for OAuth 2.0 Client
+   Authentication and Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>],
+   and the Security Assertion Markup Language (SAML) 2.0
+   [<a href="#ref-OASIS.saml-core-2.0-os">OASIS.saml-core-2.0-os</a>] specifications.
+
+<span class="h2"><a class="selflink" id="section-2" href="#section-2">2</a>.  HTTP Parameter Bindings for Transporting Assertions</span>
+
+   The Assertion Framework for OAuth 2.0 Client Authentication and
+   Authorization Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification
+   defines generic HTTP parameters for transporting Assertions during
+   interactions with a token endpoint.  This section defines specific
+   parameters and treatments of those parameters for use with SAML 2.0
+   Bearer Assertions.
+
+<span class="h3"><a class="selflink" id="section-2.1" href="#section-2.1">2.1</a>.  Using SAML Assertions as Authorization Grants</span>
+
+   To use a SAML Bearer Assertion as an authorization grant, the client
+   uses an access token request as defined in <a href="#section-4">Section 4</a> of the Assertion
+   Framework for OAuth 2.0 Client Authentication and Authorization
+   Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification with the following
+   specific parameter values and encodings.
+
+   The value of the &quot;grant_type&quot; parameter is
+   &quot;urn:ietf:params:oauth:grant-type:saml2-bearer&quot;.
+
+   The value of the &quot;assertion&quot; parameter contains a single SAML 2.0
+   Assertion.  It MUST NOT contain more than one SAML 2.0 assertion.
+   The SAML Assertion XML data MUST be encoded using base64url, where
+   the encoding adheres to the definition in <a href="/doc/html/rfc4648#section-5">Section&nbsp;5 of RFC 4648</a>
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 4]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-5" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   [<a id="ref-RFC4648">RFC4648</a>] and where the padding bits are set to zero.  To avoid the
+   need for subsequent encoding steps (by &quot;application/x-www-form-
+   urlencoded&quot; [<a href="#ref-W3C.REC-html401-19991224">W3C.REC-html401-19991224</a>], for example), the base64url
+   encoded data MUST NOT be line wrapped and pad characters (&quot;=&quot;) MUST
+   NOT be included.
+
+   The &quot;scope&quot; parameter may be used, as defined in the Assertion
+   Framework for OAuth 2.0 Client Authentication and Authorization
+   Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>] specification, to indicate the
+   requested scope.
+
+   Authentication of the client is optional, as described in
+   <a href="#section-3.2.1">Section 3.2.1</a> of OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] and consequently, the
+   &quot;client_id&quot; is only needed when a form of client authentication that
+   relies on the parameter is used.
+
+   The following example demonstrates an Access Token Request with an
+   assertion as an authorization grant (with extra line breaks for
+   display purposes only):
+
+     POST /token.oauth2 HTTP/1.1
+     Host: as.example.com
+     Content-Type: application/x-www-form-urlencoded
+
+     grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Asaml2-bearer&amp;
+     assertion=PHNhbWxwOl...[omitted for brevity]...ZT4
+
+<span class="h3"><a class="selflink" id="section-2.2" href="#section-2.2">2.2</a>.  Using SAML Assertions for Client Authentication</span>
+
+   To use a SAML Bearer Assertion for client authentication, the client
+   uses the following parameter values and encodings.
+
+   The value of the &quot;client_assertion_type&quot; parameter is
+   &quot;urn:ietf:params:oauth:client-assertion-type:saml2-bearer&quot;.
+
+   The value of the &quot;client_assertion&quot; parameter MUST contain a single
+   SAML 2.0 Assertion.  The SAML Assertion XML data MUST be encoded
+   using base64url, where the encoding adheres to the definition in
+   <a href="/doc/html/rfc4648#section-5">Section&nbsp;5 of RFC 4648</a> [<a href="/doc/html/rfc4648" title="&quot;The Base16, Base32, and Base64 Data Encodings&quot;">RFC4648</a>] and where the padding bits are set to
+   zero.  To avoid the need for subsequent encoding steps (by
+   &quot;application/x-www-form-urlencoded&quot; [<a href="#ref-W3C.REC-html401-19991224">W3C.REC-html401-19991224</a>], for
+   example), the base64url encoded data SHOULD NOT be line wrapped and
+   pad characters (&quot;=&quot;) SHOULD NOT be included.
+
+   The following example demonstrates a client authenticating using an
+   assertion during the presentation of an authorization code grant in
+   an Access Token Request (with extra line breaks for display purposes
+   only):
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 5]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-6" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+     POST /token.oauth2 HTTP/1.1
+     Host: as.example.com
+     Content-Type: application/x-www-form-urlencoded
+
+     grant_type=authorization_code&amp;
+     code=vAZEIHjQTHuGgaSvyW9hO0RpusLzkvTOww3trZBxZpo&amp;
+     client_assertion_type=urn%3Aietf%3Aparams%3Aoauth
+     %3Aclient-assertion-type%3Asaml2-bearer&amp;
+     client_assertion=PHNhbW...[omitted for brevity]...ZT
+
+<span class="h2"><a class="selflink" id="section-3" href="#section-3">3</a>.  Assertion Format and Processing Requirements</span>
+
+   In order to issue an access token response as described in OAuth 2.0
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] or to rely on an Assertion for client authentication, the
+   authorization server MUST validate the Assertion according to the
+   criteria below.  Application of additional restrictions and policy
+   are at the discretion of the authorization server.
+
+   1.   The Assertion&#x27;s &lt;Issuer&gt; element MUST contain a unique
+        identifier for the entity that issued the Assertion.  In the
+        absence of an application profile specifying otherwise,
+        compliant applications MUST compare Issuer values using the
+        Simple String Comparison method defined in Section 6.2.1 of <a href="/doc/html/rfc3986">RFC</a>
+        <a href="/doc/html/rfc3986">3986</a> [<a href="/doc/html/rfc3986" title="&quot;Uniform Resource Identifier (URI): Generic Syntax&quot;">RFC3986</a>].
+
+   2.   The Assertion MUST contain a &lt;Conditions&gt; element with an
+        &lt;AudienceRestriction&gt; element with an &lt;Audience&gt; element that
+        identifies the authorization server as an intended audience.
+        <a href="#section-2.5.1.4">Section 2.5.1.4</a> of Assertions and Protocols for the OASIS
+        Security Assertion Markup Language [<a href="#ref-OASIS.saml-core-2.0-os">OASIS.saml-core-2.0-os</a>]
+        defines the &lt;AudienceRestriction&gt; and &lt;Audience&gt; elements and,
+        in addition to the URI references discussed there, the token
+        endpoint URL of the authorization server MAY be used as a URI
+        that identifies the authorization server as an intended
+        audience.  The Authorization Server MUST reject any assertion
+        that does not contain its own identity as the intended audience.
+        In the absence of an application profile specifying otherwise,
+        compliant applications MUST compare the audience values using
+        the Simple String Comparison method defined in <a href="/doc/html/rfc3986#section-6.2.1">Section&nbsp;6.2.1 of
+        RFC 3986</a> [<a href="/doc/html/rfc3986" title="&quot;Uniform Resource Identifier (URI): Generic Syntax&quot;">RFC3986</a>].  As noted in <a href="#section-5">Section 5</a>, the precise strings
+        to be used as the audience for a given Authorization Server must
+        be configured out-of-band by the Authorization Server and the
+        Issuer of the assertion.
+
+   3.   The Assertion MUST contain a &lt;Subject&gt; element identifying the
+        principal that is the subject of the Assertion.  Additional
+        information identifying the subject/principal MAY be included in
+        an &lt;AttributeStatement&gt;.
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 6]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-7" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+        A.  For the authorization grant, the Subject typically
+            identifies an authorized accessor for which the access token
+            is being requested (i.e., the resource owner or an
+            authorized delegate), but in some cases, may be a
+            pseudonymous identifier or other value denoting an anonymous
+            user.
+
+        B.  For client authentication, the Subject MUST be the
+            &quot;client_id&quot; of the OAuth client.
+
+   4.   The Assertion MUST have an expiry that limits the time window
+        during which it can be used.  The expiry can be expressed either
+        as the NotOnOrAfter attribute of the &lt;Conditions&gt; element or as
+        the NotOnOrAfter attribute of a suitable
+        &lt;SubjectConfirmationData&gt; element.
+
+   5.   The &lt;Subject&gt; element MUST contain at least one
+        &lt;SubjectConfirmation&gt; element that has a Method attribute with a
+        value of &quot;urn:oasis:names:tc:SAML:2.0:cm:bearer&quot;.  If the
+        Assertion does not have a suitable NonOnOrAfter attribute on the
+        &lt;Conditions&gt; element, the &lt;SubjectConfirmation&gt; element MUST
+        contain a &lt;SubjectConfirmationData&gt; element.  When present, the
+        &lt;SubjectConfirmationData&gt; element MUST have a Recipient
+        attribute with a value indicating the token endpoint URL of the
+        authorization server (or an acceptable alias).  The
+        authorization server MUST verify that the value of the Recipient
+        attribute matches the token endpoint URL (or an acceptable
+        alias) to which the Assertion was delivered.  The
+        &lt;SubjectConfirmationData&gt; element MUST have a NotOnOrAfter
+        attribute that limits the window during which the Assertion can
+        be confirmed.  The &lt;SubjectConfirmationData&gt; element MAY also
+        contain an Address attribute limiting the client address from
+        which the Assertion can be delivered.  Verification of the
+        Address is at the discretion of the authorization server.
+
+   6.   The authorization server MUST reject the entire Assertion if the
+        NotOnOrAfter instant on the &lt;Conditions&gt; element has passed
+        (subject to allowable clock skew between systems).  The
+        authorization server MUST reject the &lt;SubjectConfirmation&gt; (but
+        MAY still use the rest of the Assertion) if the NotOnOrAfter
+        instant on the &lt;SubjectConfirmationData&gt; has passed (subject to
+        allowable clock skew).  Note that the authorization server may
+        reject Assertions with a NotOnOrAfter instant that is
+        unreasonably far in the future.  The authorization server MAY
+        ensure that Bearer Assertions are not replayed, by maintaining
+        the set of used ID values for the length of time for which the
+        Assertion would be considered valid based on the applicable
+        NotOnOrAfter instant.
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 7]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-8" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   7.   If the Assertion issuer directly authenticated the subject, the
+        Assertion SHOULD contain a single &lt;AuthnStatement&gt; representing
+        that authentication event.  If the Assertion was issued with the
+        intention that the client act autonomously on behalf of the
+        subject, an &lt;AuthnStatement&gt; SHOULD NOT be included and the
+        client presenting the assertion SHOULD be identified in the
+        &lt;NameID&gt; or similar element in the &lt;SubjectConfirmation&gt;
+        element, or by other available means like SAML V2.0 Condition
+        for Delegation Restriction [<a href="#ref-OASIS.saml-deleg-cs">OASIS.saml-deleg-cs</a>].
+
+   8.   Other statements, in particular &lt;AttributeStatement&gt; elements,
+        MAY be included in the Assertion.
+
+   9.   The Assertion MUST be digitally signed or have a Message
+        Authentication Code applied by the issuer.  The authorization
+        server MUST reject assertions with an invalid signature or
+        Message Authentication Code.
+
+   10.  Encrypted elements MAY appear in place of their plain text
+        counterparts as defined in [<a href="#ref-OASIS.saml-core-2.0-os">OASIS.saml-core-2.0-os</a>].
+
+   11.  The authorization server MUST reject an Assertion that is not
+        valid in all other respects per [<a href="#ref-OASIS.saml-core-2.0-os">OASIS.saml-core-2.0-os</a>], such
+        as (but not limited to) all content within the Conditions
+        element including the NotOnOrAfter and NotBefore attributes,
+        unknown condition types, etc.
+
+<span class="h3"><a class="selflink" id="section-3.1" href="#section-3.1">3.1</a>.  Authorization Grant Processing</span>
+
+   Assertion authorization grants may be used with or without client
+   authentication or identification.  Whether or not client
+   authentication is needed in conjunction with an assertion
+   authorization grant, as well as the supported types of client
+   authentication, are policy decisions at the discretion of the
+   authorization server.  However, if client credentials are present in
+   the request, the authorization server MUST validate them.
+
+   If the Assertion is not valid (including if its subject confirmation
+   requirements cannot be met), the authorization server constructs an
+   error response as defined in OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].  The value of the
+   &quot;error&quot; parameter MUST be the &quot;invalid_grant&quot; error code.  The
+   authorization server MAY include additional information regarding the
+   reasons the Assertion was considered invalid using the
+   &quot;error_description&quot; or &quot;error_uri&quot; parameters.
+
+
+
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 8]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-9" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   For example:
+
+     HTTP/1.1 400 Bad Request
+     Content-Type: application/json
+     Cache-Control: no-store
+
+     {
+       &quot;error&quot;:&quot;invalid_grant&quot;,
+       &quot;error_description&quot;:&quot;Audience validation failed&quot;
+     }
+
+<span class="h3"><a class="selflink" id="section-3.2" href="#section-3.2">3.2</a>.  Client Authentication Processing</span>
+
+   If the client Assertion is not valid (including if its subject
+   confirmation requirements cannot be met), the authorization server
+   constructs an error response as defined in OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].  The
+   value of the &quot;error&quot; parameter MUST be the &quot;invalid_client&quot; error
+   code.  The authorization server MAY include additional information
+   regarding the reasons the Assertion was considered invalid using the
+   &quot;error_description&quot; or &quot;error_uri&quot; parameters.
+
+<span class="h2"><a class="selflink" id="section-4" href="#section-4">4</a>.  Authorization Grant Example</span>
+
+   The following examples illustrate what a conforming Assertion and an
+   access token request would look like.
+
+   The example shows an assertion issued and signed by the SAML Identity
+   Provider identified as &quot;https://saml-idp.example.com&quot;.  The subject
+   of the assertion is identified by email address as
+   &quot;brian@example.com&quot;, who authenticated to the Identity Provider by
+   means of a digital signature where the key was validated as part of
+   an X.509 Public Key Infrastructure.  The intended audience of the
+   assertion is &quot;https://saml-sp.example.net&quot;, which is an identifier
+   for a SAML Service Provider with which the authorization server
+   identifies itself.  The assertion is sent as part of an access token
+   request to the authorization server&#x27;s token endpoint at
+   &quot;https://authz.example.net/token.oauth2&quot;.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                  [Page 9]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-10" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   Below is an example SAML 2.0 Assertion (whitespace formatting is for
+   display purposes only):
+
+     &lt;Assertion IssueInstant=&quot;2010-10-01T20:07:34.619Z&quot;
+       ID=&quot;ef1xsbZxPV2oqjd7HTLRLIBlBb7&quot;
+       Version=&quot;2.0&quot;
+       xmlns=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;&gt;
+      &lt;Issuer&gt;https://saml-idp.example.com&lt;/Issuer&gt;
+      &lt;ds:Signature xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
+       [...omitted for brevity...]
+      &lt;/ds:Signature&gt;
+      &lt;Subject&gt;
+       &lt;NameID
+        Format=&quot;urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress&quot;&gt;
+        brian@example.com
+       &lt;/NameID&gt;
+       &lt;SubjectConfirmation
+         Method=&quot;urn:oasis:names:tc:SAML:2.0:cm:bearer&quot;&gt;
+        &lt;SubjectConfirmationData
+          NotOnOrAfter=&quot;2010-10-01T20:12:34.619Z&quot;
+          Recipient=&quot;https://authz.example.net/token.oauth2&quot;/&gt;
+        &lt;/SubjectConfirmation&gt;
+       &lt;/Subject&gt;
+       &lt;Conditions&gt;
+         &lt;AudienceRestriction&gt;
+           &lt;Audience&gt;https://saml-sp.example.net&lt;/Audience&gt;
+         &lt;/AudienceRestriction&gt;
+       &lt;/Conditions&gt;
+       &lt;AuthnStatement AuthnInstant=&quot;2010-10-01T20:07:34.371Z&quot;&gt;
+         &lt;AuthnContext&gt;
+           &lt;AuthnContextClassRef&gt;
+             urn:oasis:names:tc:SAML:2.0:ac:classes:X509
+           &lt;/AuthnContextClassRef&gt;
+         &lt;/AuthnContext&gt;
+       &lt;/AuthnStatement&gt;
+     &lt;/Assertion&gt;
+
+                   Figure 1: Example SAML 2.0 Assertion
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 10]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-11" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   To present the Assertion shown in the previous example as part of an
+   access token request, for example, the client might make the
+   following HTTPS request (with extra line breaks for display purposes
+   only):
+
+     POST /token.oauth2 HTTP/1.1
+     Host: authz.example.net
+     Content-Type: application/x-www-form-urlencoded
+
+     grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Asaml2-
+     bearer&amp;assertion=PEFzc2VydGlvbiBJc3N1ZUluc3RhbnQ9IjIwMTEtMDU
+     [...omitted for brevity...]aG5TdGF0ZW1lbnQ-PC9Bc3NlcnRpb24-
+
+                         Figure 2: Example Request
+
+<span class="h2"><a class="selflink" id="section-5" href="#section-5">5</a>.  Interoperability Considerations</span>
+
+   Agreement between system entities regarding identifiers, keys, and
+   endpoints is required in order to achieve interoperable deployments
+   of this profile.  Specific items that require agreement are as
+   follows: values for the issuer and audience identifiers, the location
+   of the token endpoint, the key used to apply and verify the digital
+   signature over the assertion, one-time use restrictions on
+   assertions, maximum assertion lifetime allowed, and the specific
+   subject and attribute requirements of the assertion.  The exchange of
+   such information is explicitly out of scope for this specification
+   and typical deployment of it will be done alongside existing SAML Web
+   SSO deployments that have already established a means of exchanging
+   such information.  Metadata for the OASIS Security Assertion Markup
+   Language (SAML) V2.0 [<a href="#ref-OASIS.saml-metadata-2.0-os">OASIS.saml-metadata-2.0-os</a>] is one common
+   method of exchanging SAML related information about system entities.
+
+   The RSA-SHA256 algorithm, from [<a href="/doc/html/rfc6931" title="&quot;Additional XML Security Uniform Resource Identifiers (URIs)&quot;">RFC6931</a>], is a mandatory to implement
+   XML signature algorithm for this profile.
+
+<span class="h2"><a class="selflink" id="section-6" href="#section-6">6</a>.  Security Considerations</span>
+
+   The security considerations described within the Assertion Framework
+   for OAuth 2.0 Client Authentication and Authorization Grants
+   [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>], The OAuth 2.0 Authorization Framework
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>], and the Security and Privacy Considerations for the OASIS
+   Security Assertion Markup Language (SAML) V2.0
+   [<a href="#ref-OASIS.saml-sec-consider-2.0-os">OASIS.saml-sec-consider-2.0-os</a>] specifications are all applicable to
+   this document.
+
+   The specification does not mandate replay protection for the SAML
+   assertion usage for either the authorization grant or for client
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 11]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-12" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   authentication.  It is an optional feature, which implementations may
+   employ at their own discretion.
+
+<span class="h2"><a class="selflink" id="section-7" href="#section-7">7</a>.  Privacy Considerations</span>
+
+   A SAML Assertion may contain privacy-sensitive information and, to
+   prevent disclosure of such information to unintended parties, should
+   only be transmitted over encrypted channels, such as TLS.  In cases
+   where it is desirable to prevent disclosure of certain information to
+   the client, the Subject and/or individual attributes of a SAML
+   Assertion should be encrypted to the authorization server.
+
+   Deployments should determine the minimum amount of information
+   necessary to complete the exchange and include only that information
+   in an Assertion (typically by limiting what information is included
+   in an &lt;AttributeStatement&gt; or omitting it altogether).  In some
+   cases, the Subject can be a value representing an anonymous or
+   pseudonymous user, as described in <a href="#section-6.3.1">Section 6.3.1</a> of the Assertion
+   Framework for OAuth 2.0 Client Authentication and Authorization
+   Grants [<a href="#ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>].
+
+<span class="h2"><a class="selflink" id="section-8" href="#section-8">8</a>.  IANA Considerations</span>
+
+<span class="h3"><a class="selflink" id="section-8.1" href="#section-8.1">8.1</a>.  Sub-Namespace Registration of urn:ietf:params:oauth:grant-</span>
+<span class="h3">      type:saml2-bearer</span>
+
+   This is a request to IANA to please register the value &quot;grant-
+   type:saml2-bearer&quot; in the registry urn:ietf:params:oauth established
+   in An IETF URN Sub-Namespace for OAuth [<a href="/doc/html/rfc6755" title="&quot;An IETF URN Sub-Namespace for OAuth&quot;">RFC6755</a>].
+
+   o  URN: urn:ietf:params:oauth:grant-type:saml2-bearer
+
+   o  Common Name: SAML 2.0 Bearer Assertion Grant Type Profile for
+      OAuth 2.0
+
+   o  Change controller: IESG
+
+   o  Specification Document: [[this document]]
+
+<span class="h3"><a class="selflink" id="section-8.2" href="#section-8.2">8.2</a>.  Sub-Namespace Registration of urn:ietf:params:oauth:client-</span>
+<span class="h3">      assertion-type:saml2-bearer</span>
+
+   This is a request to IANA to please register the value &quot;client-
+   assertion-type:saml2-bearer&quot; in the registry urn:ietf:params:oauth
+   established in An IETF URN Sub-Namespace for OAuth [<a href="/doc/html/rfc6755" title="&quot;An IETF URN Sub-Namespace for OAuth&quot;">RFC6755</a>].
+
+   o  URN: urn:ietf:params:oauth:client-assertion-type:saml2-bearer
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 12]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-13" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   o  Common Name: SAML 2.0 Bearer Assertion Profile for OAuth 2.0
+      Client Authentication
+
+   o  Change controller: IESG
+
+   o  Specification Document: [[this document]]
+
+<span class="h2"><a class="selflink" id="section-9" href="#section-9">9</a>.  References</span>
+
+<span class="h3"><a class="selflink" id="section-9.1" href="#section-9.1">9.1</a>.  Normative References</span>
+
+   [<a id="ref-I-D.ietf-oauth-assertions">I-D.ietf-oauth-assertions</a>]
+              Campbell, B., Mortimore, C., Jones, M., and Y. Goland,
+              &quot;Assertion Framework for OAuth 2.0 Client Authentication
+              and Authorization Grants&quot;, <a href="/doc/html/draft-ietf-oauth-assertions">draft-ietf-oauth-assertions</a>
+              (work in progress), October 2014.
+
+   [<a id="ref-OASIS.saml-core-2.0-os">OASIS.saml-core-2.0-os</a>]
+              Cantor, S., Kemp, J., Philpott, R., and E. Maler,
+              &quot;Assertions and Protocol for the OASIS Security Assertion
+              Markup Language (SAML) V2.0&quot;, OASIS Standard saml-core-
+              2.0-os, March 2005, &lt;<a href="http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">http://docs.oasis-</a>
+              <a href="http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">open.org/security/saml/v2.0/saml-core-2.0-os.pdf</a>&gt;.
+
+   [<a id="ref-OASIS.saml-deleg-cs">OASIS.saml-deleg-cs</a>]
+              Cantor, S., Ed., &quot;SAML V2.0 Condition for Delegation
+              Restriction&quot;, Nov 2009.
+
+   [<a id="ref-OASIS.saml-sec-consider-2.0-os">OASIS.saml-sec-consider-2.0-os</a>]
+              Hirsch, F., Philpott, R., and E. Maler, &quot;Security and
+              Privacy Considerations for the OASIS Security Markup
+              Language (SAML) V2.0&quot;, OASIS Standard saml-sec-consider-
+              2.0-os, March 2005, &lt;<a href="http://docs.oasis-open.org/security/saml/v2.0/saml-sec-consider-2.0-os.pdf">http://docs.oasis-</a>
+              <a href="http://docs.oasis-open.org/security/saml/v2.0/saml-sec-consider-2.0-os.pdf">open.org/security/saml/v2.0/saml-sec-consider-2.0-os.pdf</a>&gt;.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., &quot;Key words for use in RFCs to Indicate
+              Requirement Levels&quot;, <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>, March 1997.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, &quot;Uniform
+              Resource Identifier (URI): Generic Syntax&quot;, STD 66, <a href="/doc/html/rfc3986">RFC</a>
+              <a href="/doc/html/rfc3986">3986</a>, January 2005.
+
+   [<a id="ref-RFC4648">RFC4648</a>]  Josefsson, S., &quot;The Base16, Base32, and Base64 Data
+              Encodings&quot;, <a href="/doc/html/rfc4648">RFC 4648</a>, October 2006.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., &quot;The OAuth 2.0 Authorization Framework&quot;, <a href="/doc/html/rfc6749">RFC</a>
+              <a href="/doc/html/rfc6749">6749</a>, October 2012.
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 13]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-14" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   [<a id="ref-RFC6931">RFC6931</a>]  Eastlake, D., &quot;Additional XML Security Uniform Resource
+              Identifiers (URIs)&quot;, <a href="/doc/html/rfc6931">RFC 6931</a>, April 2013.
+
+<span class="h3"><a class="selflink" id="section-9.2" href="#section-9.2">9.2</a>.  Informative References</span>
+
+   [<a id="ref-OASIS.WS-Fed">OASIS.WS-Fed</a>]
+              Goodner, M. and T. Nadalin, &quot;Web Services Federation
+              Language (WS-Federation) Version 1.2&quot;, May 2009,
+              &lt;<a href="http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html">http://docs.oasis-open.org/wsfed/federation/v1.2/os/</a>
+              <a href="http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html">ws-federation-1.2-spec-os.html</a>&gt;.
+
+   [<a id="ref-OASIS.WSS-SAMLTokenProfile">OASIS.WSS-SAMLTokenProfile</a>]
+              Monzillo, R., Kaler, C., Nadalin, T., Hallam-Baker, P.,
+              and C. Milono, &quot;Web Services Security SAML Token Profile
+              Version 1.1.1&quot;, May 2012, &lt;<a href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-SAMLTokenProfile-v1.1.1.html">http://docs.oasis-open.org/wss-</a>
+              <a href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-SAMLTokenProfile-v1.1.1.html">m/wss/v1.1.1/wss-SAMLTokenProfile-v1.1.1.html</a>&gt;.
+
+   [<a id="ref-OASIS.saml-metadata-2.0-os">OASIS.saml-metadata-2.0-os</a>]
+              Cantor, S., Moreh, J., Philpott, R., and E. Maler,
+              &quot;Metadata for the Security Assertion Markup Language
+              (SAML) V2.0&quot;, OASIS Standard saml-metadata-2.0-os, March
+              2005, &lt;<a href="http://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf">http://docs.oasis-open.org/security/saml/v2.0/</a>
+              <a href="http://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf">saml-metadata-2.0-os.pdf</a>&gt;.
+
+   [<a id="ref-OASIS.saml-profiles-2.0-os">OASIS.saml-profiles-2.0-os</a>]
+              Hughes, J., Cantor, S., Hodges, J., Hirsch, F., Mishra,
+              P., Philpott, R., and E. Maler, &quot;Profiles for the OASIS
+              Security Assertion Markup Language (SAML) V2.0&quot;, OASIS
+              Standard OASIS.saml-profiles-2.0-os, March 2005,
+              &lt;<a href="http://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf">http://docs.oasis-open.org/security/saml/v2.0/</a>
+              <a href="http://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf">saml-profiles-2.0-os.pdf</a>&gt;.
+
+   [<a id="ref-RFC6755">RFC6755</a>]  Campbell, B. and H. Tschofenig, &quot;An IETF URN Sub-Namespace
+              for OAuth&quot;, <a href="/doc/html/rfc6755">RFC 6755</a>, October 2012.
+
+   [<a id="ref-W3C.REC-html401-19991224">W3C.REC-html401-19991224</a>]
+              Raggett, D., Hors, A., and I. Jacobs, &quot;HTML 4.01
+              Specification&quot;, World Wide Web Consortium Recommendation
+              REC-html401-19991224, December 1999,
+              &lt;<a href="http://www.w3.org/TR/1999/REC-html401-19991224">http://www.w3.org/TR/1999/REC-html401-19991224</a>&gt;.
+
+<span class="h2"><a class="selflink" id="appendix-A" href="#appendix-A">Appendix A</a>.  Acknowledgements</span>
+
+   The following people contributed wording and concepts to this
+   document: Paul Madsen, Patrick Harding, Peter Motykowski, Eran
+   Hammer, Peter Saint-Andre, Ian Barnett, Eric Fazendin, Torsten
+   Lodderstedt, Susan Harper, Scott Tomilson, Scott Cantor, Hannes
+   Tschofenig, David Waite, Phil Hunt, and Mukesh Bhatnagar.
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 14]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-15" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+<span class="h2"><a class="selflink" id="appendix-B" href="#appendix-B">Appendix B</a>.  Document History</span>
+
+   [[ to be removed by RFC editor before publication as an RFC ]]
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-23">draft-ietf-oauth-saml2-bearer-23</a>
+
+   o  Fix typo per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13790.html">http://www.ietf.org/mail-archive/web/oauth/current/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13790.html">msg13790.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-22">draft-ietf-oauth-saml2-bearer-22</a>
+
+   o  Changes/suggestions from IESG reviews.
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-21">draft-ietf-oauth-saml2-bearer-21</a>
+
+   o  Added Privacy Considerations section per AD review discussion
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13148.html">http://www.ietf.org/mail-archive/web/oauth/current/msg13148.html</a>
+      and <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13144.html">http://www.ietf.org/mail-archive/web/oauth/current/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg13144.html">msg13144.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-20">draft-ietf-oauth-saml2-bearer-20</a>
+
+   o  Clarified some text around the treatment of subject based on the
+      rough rough consensus from the thread staring at
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12630.html">http://www.ietf.org/mail-archive/web/oauth/current/msg12630.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-19">draft-ietf-oauth-saml2-bearer-19</a>
+
+   o  Updated references.
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-18">draft-ietf-oauth-saml2-bearer-18</a>
+
+   o  Clean up language around subject per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12254.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12254.html">archive/web/oauth/current/msg12254.html</a>.
+
+   o  As suggested in <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12253.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12253.html">archive/web/oauth/current/msg12253.html</a> stated that &quot;In the
+      absence of an application profile specifying otherwise, compliant
+      applications MUST compare the audience/issuer values using the
+      Simple String Comparison method defined in Section 6.2.1 of <a href="/doc/html/rfc3986">RFC</a>
+      <a href="/doc/html/rfc3986">3986</a>.&quot;
+
+   o  Clarify the potentially confusing language about the AS confirming
+      the assertion <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12255.html">http://www.ietf.org/mail-archive/web/oauth/current/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12255.html">msg12255.html</a>.
+
+
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 15]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-16" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   o  Combine the two items about AuthnStatement and drop the word
+      presenter as discussed in <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12257.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12257.html">archive/web/oauth/current/msg12257.html</a>.
+
+   o  Added one-time use, maximum lifetime, and specific subject and
+      attribute requirements to Interoperability Considerations based on
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12252.html">http://www.ietf.org/mail-archive/web/oauth/current/msg12252.html</a>.
+
+   o  Reword security considerations and mention that replay protection
+      is not mandated based on <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12259.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg12259.html">archive/web/oauth/current/msg12259.html</a>.
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-17">draft-ietf-oauth-saml2-bearer-17</a>
+
+   o  Stated that issuer and audience values SHOULD be compared using
+      the Simple String Comparison method defined in <a href="/doc/html/rfc3986#section-6.2.1">Section&nbsp;6.2.1 of
+      RFC 3986</a> unless otherwise specified by the application.
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-16">draft-ietf-oauth-saml2-bearer-16</a>
+
+   o  Changed title from &quot;SAML 2.0 Bearer Assertion Profiles for OAuth
+      2.0&quot; to &quot;SAML 2.0 Profile for OAuth 2.0 Client Authentication and
+      Authorization Grants&quot; to be more explicit about the scope of the
+      document per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg11063.html">http://www.ietf.org/mail-archive/web/oauth/current/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg11063.html">msg11063.html</a>.
+
+   o  Fixed typo in text identifying the presenter from &quot;or similar
+      element, the&quot; to &quot;or similar element in the&quot;.
+
+   o  Numbered the list of processing rules.
+
+   o  Smallish editorial cleanups to try and improve readability and
+      comprehensibility.
+
+   o  Cleaner split out of the processing rules in cases where they
+      differ for client authentication and authorization grants.
+
+   o  Clarified the parameters that are used/available for authorization
+      grants.
+
+   o  Added Interoperability Considerations section and info reference
+      to SAML Metadata.
+
+   o  Added more explanatory context to the example in <a href="#section-4">Section 4</a>.
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-15">draft-ietf-oauth-saml2-bearer-15</a>
+
+   o  Reference <a href="/doc/html/rfc6749">RFC 6749</a> and <a href="/doc/html/rfc6755">RFC 6755</a>.
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 16]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-17" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   o  Update <a href="/doc/html/draft-ietf-oauth-assertions">draft-ietf-oauth-assertions</a> reference to -06.
+
+   o  Remove extraneous word per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg10055.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg10055.html">archive/web/oauth/current/msg10055.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-14">draft-ietf-oauth-saml2-bearer-14</a>
+
+   o  Add more text to intro explaining that an assertion grant type can
+      be used with or without client authentication/identification and
+      that client assertion authentication is nothing more than an
+      alternative way for a client to authenticate to the token endpoint
+
+   o  Add examples to Sections <a href="#section-2.1">2.1</a> and <a href="#section-2.2">2.2</a>
+
+   o  Update references
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-13">draft-ietf-oauth-saml2-bearer-13</a>
+
+   o  Update references: oauth-assertions-04, oauth-urn-sub-ns-05, oauth
+      -28
+
+   o  Changed &quot;Description&quot; to &quot;Specification Document&quot; in both
+      registration requests in IANA Considerations per changes to the
+      template in ietf-oauth-urn-sub-ns(-03)
+
+   o  Added &quot;(or an acceptable alias)&quot; so that it&#x27;s in both sentences
+      about Recipient and the token endpoint URL so there&#x27;s no ambiguity
+
+   o  Update area and workgroup (now Security and OAuth was Internet and
+      nothing)
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-12">draft-ietf-oauth-saml2-bearer-12</a>
+
+   o  updated reference to <a href="/doc/html/draft-ietf-oauth-v2">draft-ietf-oauth-v2</a> from -25 to -26 and
+      <a href="/doc/html/draft-ietf-oauth-assertions">draft-ietf-oauth-assertions</a> from -02 to -03
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-11">draft-ietf-oauth-saml2-bearer-11</a>
+
+   o  Removed text about limited lifetime access tokens and the SHOULD
+      NOT on issuing refresh tokens.  The text was moved to <a href="/doc/html/draft-ietf-oauth-assertions-02">draft-ietf-</a>
+      <a href="/doc/html/draft-ietf-oauth-assertions-02">oauth-assertions-02</a> and somewhat modified per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg08298.html">http://www.ietf.org/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg08298.html">mail-archive/web/oauth/current/msg08298.html</a>.
+
+   o  Fixed typo/missing word per <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg08733.html">http://www.ietf.org/mail-</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg08733.html">archive/web/oauth/current/msg08733.html</a>.
+
+   o  Added Terminology section.
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 17]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-18" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-10">draft-ietf-oauth-saml2-bearer-10</a>
+
+   o  fix a spelling mistake
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-09">draft-ietf-oauth-saml2-bearer-09</a>
+
+   o  Attempt to address an ambiguity around validation requirements
+      when the Conditions element contain a NotOnOrAfter and
+      SubjectConfirmation/SubjectConfirmationData does too.  Basically
+      it needs to have at least one bearer SubjectConfirmation element
+      but that element can omit SubjectConfirmationData, if Conditions
+      has an expiry on it.  Otherwise, a valid SubjectConfirmation must
+      have a SubjectConfirmationData with Recipient and NotOnOrAfter.
+      And any SubjectConfirmationData that has those elements needs to
+      have them checked.
+
+   o  clarified that AudienceRestriction is under Conditions (even
+      though it&#x27;s implied by schema)
+
+   o  fix a typo
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-08">draft-ietf-oauth-saml2-bearer-08</a>
+
+   o  fix some typos
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-07">draft-ietf-oauth-saml2-bearer-07</a>
+
+   o  update reference from <a href="/doc/html/draft-campbell-oauth-urn-sub-ns">draft-campbell-oauth-urn-sub-ns</a> to <a href="/doc/html/draft-ietf-oauth-urn-sub-ns">draft-</a>
+      <a href="/doc/html/draft-ietf-oauth-urn-sub-ns">ietf-oauth-urn-sub-ns</a>
+
+   o  Updated to reference <a href="/doc/html/draft-ietf-oauth-v2-20">draft-ietf-oauth-v2-20</a>
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-06">draft-ietf-oauth-saml2-bearer-06</a>
+
+   o  Fix three typos NamseID-&gt;NameID and (2x) Namspace-&gt;Namespace
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-05">draft-ietf-oauth-saml2-bearer-05</a>
+
+   o  Allow for subject confirmation data to be optional when Conditions
+      contain audience and NotOnOrAfter
+
+   o  Rework most of the spec to profile <a href="/doc/html/draft-ietf-oauth-assertions">draft-ietf-oauth-assertions</a> for
+      both authn and authz including (but not limited to):
+
+      *  remove requirement for issuer to be
+         urn:oasis:names:tc:SAML:2.0:nameid-format:entity
+
+      *  change wording on Subject requirements
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 18]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-19" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   o  using a MAY, explicitly say that the Audience can be token
+      endpoint URL of the authorization server
+
+   o  Change title to be more generic (allowing for client authn too)
+
+   o  added client authentication to the abstract
+
+   o  register and use urn:ietf:params:oauth:grant-type:saml2-bearer for
+      grant type rather than <a href="http://oauth.net/grant_type/saml/2.0/bearer">http://oauth.net/grant_type/saml/2.0/bearer</a>
+
+   o  register urn:ietf:params:oauth:client-assertion-type:saml2-bearer
+
+   o  remove scope parameter as it is defined in
+      <a href="http://tools.ietf.org/html/draft-ietf-oauth-assertions">http://tools.ietf.org/html/draft-ietf-oauth-assertions</a>
+
+   o  remove assertion param registration because it [should] be in
+      <a href="http://tools.ietf.org/html/draft-ietf-oauth-assertions">http://tools.ietf.org/html/draft-ietf-oauth-assertions</a>
+
+   o  fix typo(s) and update/add references
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-04">draft-ietf-oauth-saml2-bearer-04</a>
+
+   o  Changed the grant_type URI from
+      &quot;http://oauth.net/grant_type/assertion/saml/2.0/bearer&quot; to
+      &quot;http://oauth.net/grant_type/saml/2.0/bearer&quot; - dropping the word
+      assertion from the path.  Recent versions of <a href="/doc/html/draft-ietf-oauth-v2">draft-ietf-oauth-v2</a>
+      no longer refer to extension grants using the word assertion so
+      this URI is more reflective of that.  It also more closely aligns
+      with the grant type URI in <a href="/doc/html/draft-jones-oauth-jwt-bearer-00">draft-jones-oauth-jwt-bearer-00</a> which
+      is &quot;http://oauth.net/grant_type/jwt/1.0/bearer&quot;.
+
+   o  Added &quot;case sensitive&quot; to scope definition to align with <a href="/doc/html/draft-ietf-oauth-v2-15">draft-</a>
+      <a href="/doc/html/draft-ietf-oauth-v2-15">ietf-oauth-v2-15</a>/16.
+
+   o  Updated to reference <a href="/doc/html/draft-ietf-oauth-v2-16">draft-ietf-oauth-v2-16</a>
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-03">draft-ietf-oauth-saml2-bearer-03</a>
+
+   o  Cleanup of some editorial issues.
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-02">draft-ietf-oauth-saml2-bearer-02</a>
+
+   o  Added scope parameter with text copied from <a href="/doc/html/draft-ietf-oauth-v2-12">draft-ietf-oauth-v2-12</a>
+      (the reorg of <a href="/doc/html/draft-ietf-oauth-v2-12">draft-ietf-oauth-v2-12</a> made it so scope wasn&#x27;t
+      really inherited by this spec anymore)
+
+
+
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 19]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-20" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   o  Change definition of the assertion parameter to be more generally
+      applicable per the suggestion near the end of <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg05253.html">http://www.ietf.org/</a>
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg05253.html">mail-archive/web/oauth/current/msg05253.html</a>
+
+   o  Editorial changes based on feedback
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-01">draft-ietf-oauth-saml2-bearer-01</a>
+
+   o  Update spec name when referencing <a href="/doc/html/draft-ietf-oauth-v2">draft-ietf-oauth-v2</a> (The OAuth
+      2.0 Protocol Framework -&gt; The OAuth 2.0 Authorization Protocol)
+
+   o  Update wording in Introduction to talk about extension grant types
+      rather than the assertion grant type which is a term no longer
+      used in OAuth 2.0
+
+   o  Updated to reference <a href="/doc/html/draft-ietf-oauth-v2-12">draft-ietf-oauth-v2-12</a> and denote as work in
+      progress
+
+   o  Update Parameter Registration Request to use similar terms as
+      <a href="/doc/html/draft-ietf-oauth-v2-12">draft-ietf-oauth-v2-12</a> and remove Related information part
+
+   o  Add some text giving discretion to AS on rejecting assertions with
+      unreasonably long validity window.
+
+   <a href="/doc/html/draft-ietf-oauth-saml2-bearer-00">draft-ietf-oauth-saml2-bearer-00</a>
+
+   o  Added Parameter Registration Request for &quot;assertion&quot; to IANA
+      Considerations.
+
+   o  Changed document name to <a href="/doc/html/draft-ietf-oauth-saml2-bearer">draft-ietf-oauth-saml2-bearer</a> in
+      anticipation of becoming an OAUTH WG item.
+
+   o  Attempt to move the entire definition of the &#x27;assertion&#x27; parameter
+      into this draft (it will no longer be defined in OAuth 2 Protocol
+      Framework).
+
+   <a href="/doc/html/draft-campbell-oauth-saml-01">draft-campbell-oauth-saml-01</a>
+
+   o  Updated to reference <a href="/doc/html/draft-ietf-oauth-v2-11">draft-ietf-oauth-v2-11</a> and reflect changes
+      from -10 to -11.
+
+   o  Updated examples.
+
+   o  Relaxed processing rules to allow for more than one
+      SubjectConfirmation element.
+
+   o  Removed the &#x27;MUST NOT contain a NotBefore attribute&#x27; on
+      SubjectConfirmationData.
+
+
+
+<span class="grey">Campbell, et al.          Expires May 16, 2015                 [Page 20]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-21" ></span>
+<span class="grey">Internet-Draft        OAuth SAML Assertion Profiles        November 2014</span>
+
+
+   o  Relaxed wording that ties the subject of the Assertion to the
+      resource owner.
+
+   o  Added some wording about identifying the client when the subject
+      hasn&#x27;t directly authenticated including an informative reference
+      to SAML V2.0 Condition for Delegation Restriction.
+
+   o  Added a few examples to the language about verifying that the
+      Assertion is valid in all other respects.
+
+   o  Added some wording to the introduction about the similarities to
+      Web SSO in the format and processing rules
+
+   o  Changed the grant_type (was assertion_type) URI from
+      <a href="http://oauth.net/assertion_type/saml/2.0/bearer">http://oauth.net/assertion_type/saml/2.0/bearer</a> to
+      <a href="http://oauth.net/grant_type/assertion/saml/2.0/bearer">http://oauth.net/grant_type/assertion/saml/2.0/bearer</a>
+
+   o  Changed title to include &quot;Grant Type&quot; in it.
+
+   o  Editorial updates based on feedback from the WG and others
+      (including capitalization of Assertion when referring to SAML).
+
+   <a href="/doc/html/draft-campbell-oauth-saml-00">draft-campbell-oauth-saml-00</a>
+
+   o  Initial I-D
+
+Authors&#x27; Addresses
+
+   Brian Campbell
+   Ping Identity
+
+   Email: brian.d.campbell@gmail.com
+
+
+   Chuck Mortimore
+   Salesforce.com
+
+   Email: cmortimore@salesforce.com
+
+
+   Michael B. Jones
+   Microsoft
+
+   Email: mbj@microsoft.com
+   URI:   <a href="http://self-issued.info/">http://self-issued.info/</a>
+
+
+
+
+
+
+Campbell, et al.          Expires May 16, 2015                 [Page 21]
+</pre>
+    </div>
+
+  </div>
+
+
+        
+	  </div>
+
+	
+
+	
+
+    </div>
+
+      
+      <script>$(".visible-nojs").removeClass("visible-nojs");</script>
+      <script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+      
+    <script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+
+  </body>
+</html>
+

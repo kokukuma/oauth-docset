@@ -1,0 +1,629 @@
+<!DOCTYPE html> 
+
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+  
+    draft-ietf-oauth-urn-sub-ns-06
+  
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+
+    <!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    
+  <link rel="alternate" type="application/atom+xml" title="Document changes" href="/feed/document-changes/draft-ietf-oauth-urn-sub-ns/">
+  <meta name="description" content="An IETF URN Sub-Namespace for OAuth (Internet-Draft, 2012)">
+  <script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+  <script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+
+
+    
+    <link rel="shortcut icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png">
+    
+    <link rel="apple-touch-icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png">
+  </head>
+
+  <body style="padding-top: 0;">
+
+	  <div class="content" id="content">
+        
+  <!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+ 
+  <div class="rfcmarkup">
+    <div class="noprint" style="height: 6px;">
+      <div onmouseover="this.style.cursor='pointer';"
+         onclick="showLegend();"
+         onmouseout="hideLegend()"
+         style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; "
+         class="meta-info bgred"
+         title="Click for colour legend." >&nbsp;</div>
+      <div id="legend"
+           class="meta-info noprint pre legend"
+           style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; "
+           onmouseover="showLegend();"
+           onmouseout="hideLegend();">
+      </div>
+    </div>
+
+    
+      <div class="noprint">
+	 <pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-urn-sub-ns-06.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-urn-sub-ns-06.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-urn-sub-ns-06.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-urn-sub-ns/06/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-urn-sub-ns/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-urn-sub-ns@ietf.org?subject=draft-ietf-oauth-urn-sub-ns" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&url2=draft-ietf-oauth-urn-sub-ns-06.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-urn-sub-ns-06.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-urn-sub-ns-06.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-campbell-oauth-urn-sub-ns">draft-campbell-oauth-urn-sub-ns</a>)   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-00">00</a>           Informational
+          <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-01">01</a> <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-02">02</a> <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-03">03</a> <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-04">04</a> <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-05">05</a> <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-06"><b>06</b></a> <a href="/doc/html/rfc6755">rfc6755</a>                                     </pre>
+      </div>
+    
+
+    <div class="draftcontent">
+    <pre>OAuth Working Group                                          B. Campbell
+Internet-Draft                                       Ping Identity Corp.
+Intended status: Standards Track                           H. Tschofenig
+Expires: January 17, 2013                         Nokia Siemens Networks
+                                                           July 16, 2012
+
+
+                  <span class="h1">An IETF URN Sub-Namespace for OAuth</span>
+                     <span class="h1">draft-ietf-oauth-urn-sub-ns-06</span>
+
+Abstract
+
+   This document establishes an IETF URN Sub-namespace for use with
+   OAuth related specifications.
+
+Status of this Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as &quot;work in progress.&quot;
+
+   This Internet-Draft will expire on January 17, 2013.
+
+Copyright Notice
+
+   Copyright (c) 2012 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust&#x27;s Legal
+   Provisions Relating to IETF Documents
+   (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+
+
+
+
+<span class="grey">Campbell &amp; Tschofenig   Expires January 17, 2013                [Page 1]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-2" ></span>
+<span class="grey">Internet-Draft     An IETF URN Sub-Namespace for OAuth         July 2012</span>
+
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-3">3</a>
+   <a href="#section-2">2</a>.  Registration Template . . . . . . . . . . . . . . . . . . . . . <a href="#page-3">3</a>
+     <a href="#section-2.1">2.1</a>.  Example Registration Request  . . . . . . . . . . . . . . . <a href="#page-3">3</a>
+   <a href="#section-3">3</a>.  Security Considerations . . . . . . . . . . . . . . . . . . . . <a href="#page-4">4</a>
+   <a href="#section-4">4</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . . . <a href="#page-4">4</a>
+     4.1.  IETF URN Sub-namespace Registration
+           urn:ietf:params:oauth . . . . . . . . . . . . . . . . . . . <a href="#page-4">4</a>
+   <a href="#section-5">5</a>.  References  . . . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-5">5</a>
+     <a href="#section-5.1">5.1</a>.  Normative References  . . . . . . . . . . . . . . . . . . . <a href="#page-5">5</a>
+     <a href="#section-5.2">5.2</a>.  Informative References  . . . . . . . . . . . . . . . . . . <a href="#page-5">5</a>
+   <a href="#appendix-A">Appendix A</a>.  Acknowledgements . . . . . . . . . . . . . . . . . . . <a href="#page-5">5</a>
+   <a href="#appendix-B">Appendix B</a>.  Document History . . . . . . . . . . . . . . . . . . . <a href="#page-5">5</a>
+   Authors&#x27; Addresses  . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-7">7</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Campbell &amp; Tschofenig   Expires January 17, 2013                [Page 2]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-3" ></span>
+<span class="grey">Internet-Draft     An IETF URN Sub-Namespace for OAuth         July 2012</span>
+
+
+<span class="h2"><a class="selflink" id="section-1" href="#section-1">1</a>.  Introduction</span>
+
+   Various extensions and companion specifications to The OAuth 2.0
+   Authorization Framework [<a href="#ref-I-D.ietf-oauth-v2">I-D.ietf-oauth-v2</a>] utilize URIs to identify
+   the extension in use or other relevant context.  This document
+   creates and registers an IETF URN Sub-namespace, as documented in <a href="/doc/html/rfc3553">RFC</a>
+   <a href="/doc/html/rfc3553">3553</a> [<a href="/doc/html/rfc3553" title="&quot;An IETF URN Sub-namespace for Registered Protocol Parameters&quot;">RFC3553</a>], for use with such specifications.  The new &#x27;oauth&#x27;
+   sub-namespace is urn:ietf:params:oauth and OAuth relevant parameters
+   will be established underneath it.
+
+
+<span class="h2"><a class="selflink" id="section-2" href="#section-2">2</a>.  Registration Template</span>
+
+   If a registrant wishes to have a OAuth URI registered, then a URN of
+   the form urn:ietf:params:oauth:&lt;value&gt; will be requested where
+   &lt;value&gt; is a suitable representation of the functionality or concept
+   being registered.
+
+   The registration procedure for new entries requires a request in the
+   form of the following template and is Specification Required per <a href="/doc/html/rfc5226">RFC</a>
+   <a href="/doc/html/rfc5226">5226</a> [<a href="/doc/html/rfc5226" title="">RFC5226</a>].
+
+   URN:
+      The URI that identifies the registered functionality.
+
+   Common Name:
+      The name by which the functionality being registered is generally
+      known.
+
+   Change Controller:  For standards-track RFCs, state &quot;IETF&quot;.  For
+      others, give the name of the responsible party.  Other details
+      (e.g., postal address, e-mail address, home page URI) may also be
+      included.
+
+   Specification Document(s):  Reference to the document that specifies
+      the URI, preferably including a URI that can be used to retrieve a
+      copy of the document.  An indication of the relevant sections may
+      also be included, but is not required.
+
+   The registration request for the urn:ietf:params:oauth URN Sub-
+   namespace is found in the IANA Considerations (<a href="#section-4">Section 4</a>) section of
+   this document.
+
+<span class="h3"><a class="selflink" id="section-2.1" href="#section-2.1">2.1</a>.  Example Registration Request</span>
+
+   The following is an example registration request for a URI underneath
+   the urn:ietf:params:oauth sub-namespece.  The requested URI
+   represents a new OAuth 2.0 grant type.
+
+
+
+<span class="grey">Campbell &amp; Tschofenig   Expires January 17, 2013                [Page 3]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-4" ></span>
+<span class="grey">Internet-Draft     An IETF URN Sub-Namespace for OAuth         July 2012</span>
+
+
+   This is a request to IANA to please register the value
+   &quot;grant-type:example&quot; in the registry urn:ietf:params:oauth
+   established in An IETF URN Sub-Namespace for OAuth.
+
+   o  URN: urn:ietf:params:oauth:grant-type:example
+
+   o  Common Name: An Example Grant Type for OAuth 2.0
+
+   o  Change controller: IETF
+
+   o  Specification Document: [[the document URI]]
+
+
+<span class="h2"><a class="selflink" id="section-3" href="#section-3">3</a>.  Security Considerations</span>
+
+   There are no additional security considerations beyond those already
+   inherent to using URNs.  Security considerations for URNs in general
+   can be found in <a href="/doc/html/rfc2141">RFC 2141</a> [<a href="/doc/html/rfc2141" title="&quot;URN Syntax&quot;">RFC2141</a>].
+
+   Any work that is related to OAuth would benefit from familiarity with
+   the security considerations of The OAuth 2.0 Authorization Framework
+   [<a href="#ref-I-D.ietf-oauth-v2">I-D.ietf-oauth-v2</a>].
+
+
+<span class="h2"><a class="selflink" id="section-4" href="#section-4">4</a>.  IANA Considerations</span>
+
+   This document makes two requests of IANA:
+
+   o  Registration of a new IANA URN sub-namespace,
+      urn:ietf:params:oauth:, per <a href="/doc/html/rfc3553">RFC 3553</a> [<a href="/doc/html/rfc3553" title="&quot;An IETF URN Sub-namespace for Registered Protocol Parameters&quot;">RFC3553</a>].  The registration
+      request can be found in <a href="#section-4.1">Section 4.1</a> below.
+
+   o  Establishment of a new registry for URNs subordinate to
+      urn:ietf:params:oauth.  Instructions for a registrant to request
+      the registration of such a URN are in <a href="#section-2">Section 2</a>.
+
+<span class="h3"><a class="selflink" id="section-4.1" href="#section-4.1">4.1</a>.  IETF URN Sub-namespace Registration urn:ietf:params:oauth</span>
+
+   Per <a href="/doc/html/rfc3553">RFC 3553</a> [<a href="/doc/html/rfc3553" title="&quot;An IETF URN Sub-namespace for Registered Protocol Parameters&quot;">RFC3553</a>], IANA is requested to please register a new
+   URN sub-namespace, urn:ietf:params:oauth.
+
+   o  Registry name: oauth
+
+   o  Specification: [[this document]]
+
+   o  Repository: [[The registry created in <a href="#section-3">Section 3</a>.]]
+
+
+
+
+
+<span class="grey">Campbell &amp; Tschofenig   Expires January 17, 2013                [Page 4]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-5" ></span>
+<span class="grey">Internet-Draft     An IETF URN Sub-Namespace for OAuth         July 2012</span>
+
+
+   o  Index value: values subordinate to urn:ietf:params:oauth are of
+      the form urn:ietf:params:oauth:&lt;value&gt; with &lt;value&gt; as the index
+      value.  It is suggested that &lt;value&gt; include both a &quot;class&quot; and an
+      &quot;identifier-within-class&quot; component, with the two components being
+      separated by a colon (&quot;:&quot;); other compositions of the &lt;value&gt; may
+      also be used.
+
+
+<span class="h2"><a class="selflink" id="section-5" href="#section-5">5</a>.  References</span>
+
+<span class="h3"><a class="selflink" id="section-5.1" href="#section-5.1">5.1</a>.  Normative References</span>
+
+   [<a id="ref-RFC2141">RFC2141</a>]  Moats, R., &quot;URN Syntax&quot;, <a href="/doc/html/rfc2141">RFC 2141</a>, May 1997.
+
+   [<a id="ref-RFC3553">RFC3553</a>]  Mealling, M., Masinter, L., Hardie, T., and G. Klyne, &quot;An
+              IETF URN Sub-namespace for Registered Protocol
+              Parameters&quot;, <a href="/doc/html/bcp73">BCP 73</a>, <a href="/doc/html/rfc3553">RFC 3553</a>, June 2003.
+
+   [<a id="ref-RFC5226">RFC5226</a>]  Narten, T. and H. Alvestrand, &quot;Guidelines for Writing an
+              IANA Considerations Section in RFCs&quot;, <a href="/doc/html/bcp26">BCP 26</a>, <a href="/doc/html/rfc5226">RFC 5226</a>,
+              May 2008.
+
+<span class="h3"><a class="selflink" id="section-5.2" href="#section-5.2">5.2</a>.  Informative References</span>
+
+   [<a id="ref-I-D.ietf-oauth-v2">I-D.ietf-oauth-v2</a>]
+              Hardt, D. and D. Recordon, &quot;The OAuth 2.0 Authorization
+              Framework&quot;, <a href="/doc/html/draft-ietf-oauth-v2-30">draft-ietf-oauth-v2-30</a> (work in progress),
+              July 2012.
+
+
+<span class="h2"><a class="selflink" id="appendix-A" href="#appendix-A">Appendix A</a>.  Acknowledgements</span>
+
+   The authors thank the following for their helpful contributions:
+   Stephen Farrell, Barry Leiba, Peter Saint-Andre, Eran Hammer, John
+   Bradley, Ben Campbell and Michael B. Jones.
+
+
+<span class="h2"><a class="selflink" id="appendix-B" href="#appendix-B">Appendix B</a>.  Document History</span>
+
+   [[ to be removed by RFC editor before publication as an RFC ]]
+
+   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-06">draft-ietf-oauth-urn-sub-ns-06</a>
+
+   o  Address editorial comments from Gen-ART LC Review:
+      <a href="http://www.ietf.org/mail-archive/web/gen-art/current/msg07576.html">http://www.ietf.org/mail-archive/web/gen-art/current/msg07576.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-05">draft-ietf-oauth-urn-sub-ns-05</a>
+
+
+
+
+<span class="grey">Campbell &amp; Tschofenig   Expires January 17, 2013                [Page 5]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-6" ></span>
+<span class="grey">Internet-Draft     An IETF URN Sub-Namespace for OAuth         July 2012</span>
+
+
+   o  Change the registration procedure from Expert Review to
+      Specification Required per WG discussion
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg09445.html">http://www.ietf.org/mail-archive/web/oauth/current/msg09445.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-04">draft-ietf-oauth-urn-sub-ns-04</a>
+
+   o  Changed the Index value (and Registration Template into paragraph)
+      from &lt;class&gt;&lt;id&gt; to just &lt;value&gt; with a suggestion that it have
+      both a &quot;class&quot; and an &quot;identifier-within-class&quot; parts per
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg09381.html">http://www.ietf.org/mail-archive/web/oauth/current/msg09381.html</a>
+      so as to be less restrictive
+
+   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-03">draft-ietf-oauth-urn-sub-ns-03</a>
+
+   o  Changes to address comments in the message &quot;AD review of
+      <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-02">draft-ietf-oauth-urn-sub-ns-02</a>&quot; at
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg09350.html">http://www.ietf.org/mail-archive/web/oauth/current/msg09350.html</a>
+      and subsequent messages in that thread
+
+   o  Update area and workgroup (now Security and OAuth was Internet and
+      nothing)
+
+   o  Change from informational to standards-track
+
+   o  Requesting new URNs now more lightweight by changing from &#x27;RFC
+      Required&#x27; to &#x27;Expert Review&#x27; (<a href="/doc/html/rfc5226">RFC5226</a>)
+
+   o  Rework much of the document to be more clear about it registering
+      the urn:ietf:params:oauth URN sub-namespace and separately how
+      other documents are to request URNs under that sub-namespace.
+
+   o  Removed everything about asking the IANA to generate any part of
+      the URN.
+
+   o  Added an Example Registration Request
+
+   o  Added reference to OAuth security considerations in security
+      considerations.
+
+   o  Added Acknowledgements
+
+   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-02">draft-ietf-oauth-urn-sub-ns-02</a>
+
+   o  fix typo: &quot;The registration procedure for new entries to the
+      requires a request ...&quot; --&gt; &quot;The registration procedure for new
+      entries requires a request ...&quot;
+
+   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-01">draft-ietf-oauth-urn-sub-ns-01</a>
+
+
+
+<span class="grey">Campbell &amp; Tschofenig   Expires January 17, 2013                [Page 6]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-7" ></span>
+<span class="grey">Internet-Draft     An IETF URN Sub-Namespace for OAuth         July 2012</span>
+
+
+   o  security considerations now points to <a href="/doc/html/rfc2141">RFC 2141</a> rather than <a href="/doc/html/rfc3553">RFC</a>
+      <a href="/doc/html/rfc3553">3553</a> per
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg07880.html">http://www.ietf.org/mail-archive/web/oauth/current/msg07880.html</a>
+
+   <a href="/doc/html/draft-ietf-oauth-urn-sub-ns-00">draft-ietf-oauth-urn-sub-ns-00</a>
+
+   o  change doc name from <a href="/doc/html/draft-campbell-oauth-urn-sub-ns">draft-campbell-oauth-urn-sub-ns</a> to
+      <a href="/doc/html/draft-ietf-oauth-urn-sub-ns">draft-ietf-oauth-urn-sub-ns</a> per
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg07384.html">http://www.ietf.org/mail-archive/web/oauth/current/msg07384.html</a>
+
+   <a href="/doc/html/draft-campbell-oauth-urn-sub-ns-01">draft-campbell-oauth-urn-sub-ns-01</a>
+
+   o  minor editorial changes
+
+   <a href="/doc/html/draft-campbell-oauth-urn-sub-ns-00">draft-campbell-oauth-urn-sub-ns-00</a>
+
+   o  initial draft based on
+      <a href="http://www.ietf.org/mail-archive/web/oauth/current/msg06949.html">http://www.ietf.org/mail-archive/web/oauth/current/msg06949.html</a>
+
+
+Authors&#x27; Addresses
+
+   Brian Campbell
+   Ping Identity Corp.
+
+   Email: brian.d.campbell@gmail.com
+
+
+   Hannes Tschofenig
+   Nokia Siemens Networks
+
+   Email: hannes.tschofenig@gmx.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Campbell &amp; Tschofenig   Expires January 17, 2013                [Page 7]
+</pre>
+    </div>
+
+  </div>
+
+
+        
+	  </div>
+
+	
+
+	
+
+    </div>
+
+      
+      <script>$(".visible-nojs").removeClass("visible-nojs");</script>
+      <script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+      
+    <script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+
+  </body>
+</html>
+

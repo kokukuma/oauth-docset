@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-authentication-01
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-authentication/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="The OAuth Protocol: Authentication (Internet-Draft, 2009)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-authentication-01.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-authentication-01.html" title="HTML version of this document, from XML2RFC">html</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-authentication-01.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-authentication-01.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-authentication/01/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-authentication/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-authentication@ietf.org?subject=draft-ietf-oauth-authentication" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-authentication-01.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-authentication-01.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-authentication-01.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: <a href="/doc/html/draft-ietf-oauth-authentication-00">00</a> <a href="/doc/html/draft-ietf-oauth-authentication-01"><b>01</b></a>                                                         </pre>
+</div>
+<div class="draftcontent">
+<pre>Network Working Group                               E. Hammer-Lahav, Ed.
+Internet-Draft                                                    Yahoo!
+Intended status: Standards Track                            July 6, 2009
+Expires: January 7, 2010
+
+
+                   <span class="h1">The OAuth Protocol: Authentication</span>
+                   <span class="h1">draft-ietf-oauth-authentication-01</span>
+
+Status of this Memo
+
+   This Internet-Draft is submitted to IETF in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF), its areas, and its working groups.  Note that
+   other groups may also distribute working documents as Internet-
+   Drafts.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   The list of current Internet-Drafts can be accessed at
+   <a href="http://www.ietf.org/ietf/1id-abstracts.txt">http://www.ietf.org/ietf/1id-abstracts.txt</a>.
+
+   The list of Internet-Draft Shadow Directories can be accessed at
+   <a href="http://www.ietf.org/shadow.html">http://www.ietf.org/shadow.html</a>.
+
+   This Internet-Draft will expire on January 7, 2010.
+
+Copyright Notice
+
+   Copyright (c) 2009 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents in effect on the date of
+   publication of this document (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>).
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.
+
+Abstract
+
+   This document specifies the OAuth protocol authentication method.
+   OAuth allows clients to access server resources on behalf of another
+   party (such a different client or an end user).  This document
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   defines an HTTP authentication method which supports the ability to
+   include two sets of credential with each request, one identifying the
+   client and another identifying the resource owner on whose behalf the
+   request is made.
+
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-3">3</a>
+     <a href="#section-1.1">1.1</a>.  Terminology  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-3">3</a>
+   <a href="#section-2">2</a>.  Notational Conventions . . . . . . . . . . . . . . . . . . . .  <a href="#page-4">4</a>
+   <a href="#section-3">3</a>.  Authenticated Requests . . . . . . . . . . . . . . . . . . . .  <a href="#page-4">4</a>
+   <a href="#section-4">4</a>.  Protocol Parameters  . . . . . . . . . . . . . . . . . . . . .  <a href="#page-5">5</a>
+   <a href="#section-5">5</a>.  Nonce and Timestamp  . . . . . . . . . . . . . . . . . . . . .  <a href="#page-6">6</a>
+   <a href="#section-6">6</a>.  Signature  . . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-6">6</a>
+     <a href="#section-6.1">6.1</a>.  Signature Base String  . . . . . . . . . . . . . . . . . .  <a href="#page-7">7</a>
+       <a href="#section-6.1.1">6.1.1</a>.  Collect Request Parameters . . . . . . . . . . . . . .  <a href="#page-7">7</a>
+       <a href="#section-6.1.2">6.1.2</a>.  Normalize Request Parameters . . . . . . . . . . . . .  <a href="#page-9">9</a>
+       <a href="#section-6.1.3">6.1.3</a>.  Construct Base String URI  . . . . . . . . . . . . . . <a href="#page-10">10</a>
+       <a href="#section-6.1.4">6.1.4</a>.  Concatenate Base String Elements . . . . . . . . . . . <a href="#page-11">11</a>
+     <a href="#section-6.2">6.2</a>.  HMAC-SHA1  . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-11">11</a>
+     <a href="#section-6.3">6.3</a>.  RSA-SHA1 . . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-12">12</a>
+     <a href="#section-6.4">6.4</a>.  PLAINTEXT  . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-13">13</a>
+   <a href="#section-7">7</a>.  Parameter Transmission . . . . . . . . . . . . . . . . . . . . <a href="#page-13">13</a>
+     <a href="#section-7.1">7.1</a>.  Authorization Header . . . . . . . . . . . . . . . . . . . <a href="#page-14">14</a>
+     <a href="#section-7.2">7.2</a>.  Form-Encoded Body  . . . . . . . . . . . . . . . . . . . . <a href="#page-15">15</a>
+     <a href="#section-7.3">7.3</a>.  Request URI Query  . . . . . . . . . . . . . . . . . . . . <a href="#page-15">15</a>
+   <a href="#section-8">8</a>.  Server Response  . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-15">15</a>
+   <a href="#section-9">9</a>.  Percent Encoding . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-16">16</a>
+   <a href="#section-10">10</a>. IANA Considerations  . . . . . . . . . . . . . . . . . . . . . <a href="#page-17">17</a>
+   <a href="#section-11">11</a>. Security Considerations  . . . . . . . . . . . . . . . . . . . <a href="#page-17">17</a>
+     <a href="#section-11.1">11.1</a>. RSA-SHA1 Signature Method  . . . . . . . . . . . . . . . . <a href="#page-17">17</a>
+     <a href="#section-11.2">11.2</a>. PLAINTEXT Signature Method . . . . . . . . . . . . . . . . <a href="#page-17">17</a>
+     <a href="#section-11.3">11.3</a>. Confidentiality of Requests  . . . . . . . . . . . . . . . <a href="#page-17">17</a>
+     <a href="#section-11.4">11.4</a>. Spoofing by Counterfeit Servers  . . . . . . . . . . . . . <a href="#page-18">18</a>
+     <a href="#section-11.5">11.5</a>. Proxying and Caching of Authenticated Content  . . . . . . <a href="#page-18">18</a>
+     <a href="#section-11.6">11.6</a>. Plaintext Storage of Credentials . . . . . . . . . . . . . <a href="#page-18">18</a>
+     <a href="#section-11.7">11.7</a>. Secrecy of the Client Credentials  . . . . . . . . . . . . <a href="#page-18">18</a>
+     <a href="#section-11.8">11.8</a>. Cryptographic Attacks  . . . . . . . . . . . . . . . . . . <a href="#page-19">19</a>
+     <a href="#section-11.9">11.9</a>. Signature Base String Limitations  . . . . . . . . . . . . <a href="#page-19">19</a>
+   <a href="#appendix-A">Appendix A</a>.  Examples  . . . . . . . . . . . . . . . . . . . . . . <a href="#page-19">19</a>
+   <a href="#appendix-B">Appendix B</a>.  Acknowledgments . . . . . . . . . . . . . . . . . . . <a href="#page-19">19</a>
+   <a href="#appendix-C">Appendix C</a>.  Document History  . . . . . . . . . . . . . . . . . . <a href="#page-20">20</a>
+   <a href="#section-12">12</a>. References . . . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-20">20</a>
+     <a href="#section-12.1">12.1</a>. Normative References . . . . . . . . . . . . . . . . . . . <a href="#page-20">20</a>
+     <a href="#section-12.2">12.2</a>. Informative References . . . . . . . . . . . . . . . . . . <a href="#page-21">21</a>
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . <a href="#page-21">21</a>
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   The OAuth protocol provides a method for servers to allow third-party
+   access to protected resources, without forcing their end users to
+   share their credentials.  This pattern is common among services that
+   allow third-party developers to extend the service functionality, by
+   building applications using an open API.
+
+   For example, a web user (resource owner) can grant a printing service
+   (client) access to its private photos stored at a photo sharing
+   service (server), without sharing its credentials with the printing
+   service.  Instead, the user authenticates directly with the photo
+   sharing service and issue the printing service delegation-specific
+   credentials.
+
+   OAuth introduces a third role to the traditional client-server
+   authentication model: the resource owner.  In the OAuth model, the
+   client requests access to resources hosted by the server but not
+   controlled by the client, but by the resource owner.  In addition,
+   OAuth allows the server to verify not only the resource owner's
+   credentials, but also those of the client making the request.
+
+   In order for the client to access resources, it first has to obtain
+   permission from the resource owner.  This permission is expressed in
+   the form of a token and matching shared-secret.  The purpose of the
+   token is to substitute the need for the resource owner to share its
+   server credentials (usually a username and password pair) with the
+   client.  Unlike server credentials, tokens can be issued with a
+   restricted scope and limited lifetime.
+
+   This specification consists of two parts.  This document defines a
+   method for making authenticated HTTP requests using two sets of
+   credentials, one identifying the client making the request, and a
+   second identifying the resource owner on whose behalf the request is
+   being made.
+
+   [<a href="/doc/html/draft-ietf-oauth-web-delegation">draft-ietf-oauth-web-delegation</a>] defines a redirection-based user
+   agent process for end users to authorize client access to their
+   resources, by authenticating directly with the server and
+   provisioning tokens to the client for use with the authentication
+   method.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Terminology"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Terminology</span>
+
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   client
+         An HTTP client (per [<a href="/doc/html/rfc2616" title='"Hypertext Transfer Protocol -- HTTP/1.1"'>RFC2616</a>]) capable of making OAuth-
+         authenticated requests.
+
+   server
+         An HTTP server (per [<a href="/doc/html/rfc2616" title='"Hypertext Transfer Protocol -- HTTP/1.1"'>RFC2616</a>]) capable of accepting OAuth-
+         authenticated requests.
+
+   protected resource
+         An access-restricted resource (per [<a href="/doc/html/rfc2616" title='"Hypertext Transfer Protocol -- HTTP/1.1"'>RFC2616</a>]) which can be
+         obtained from the server using an OAuth-authenticated request.
+
+   resource owner
+         An entity capable of accessing and controlling protected
+         resources by using credentials to authenticate with the server.
+
+   token
+         An unique identifier issued by the server and used by the
+         client to associate authenticated requests with the resource
+         owner whose authorization is requested or has been obtained by
+         the client.  Tokens have a matching shared-secret that is used
+         by the client to establish its ownership of the token, and its
+         authority to represent the resource owner.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Notational%20Conventions"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Notational Conventions</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "<em>MAY</em>", and "<em>OPTIONAL</em>" in this
+   document are to be interpreted as described in [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>].
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Authenticated%20Requests"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Authenticated Requests</span>
+
+   The HTTP authentication methods defined by [<a href="/doc/html/rfc2617" title='"HTTP Authentication: Basic and Digest Access Authentication"'>RFC2617</a>], enable clients
+   to make authenticated HTTP requests.  Clients using these methods
+   gain access to protected resource by using their server credentials
+   (typically a username and password pair), which allows the server to
+   verify their authenticity.  Using these methods for delegation
+   requires the client to pretend it was the resource owner.
+
+   OAuth provides a method designed to include two sets of credentials
+   with each request, one to identify the client, and another to
+   identify the resource owner.  Before a client can make authenticated
+   requests on behalf of the resource owner, it must obtain a token
+   authorized by the resource owner. [<a href="/doc/html/draft-ietf-oauth-web-delegation">draft-ietf-oauth-web-delegation</a>]
+   provides one such method in which the client can obtain a token
+   authorized by the resource owner.
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   The client credentials take the form of a unique identifier, and an
+   associated share-secret or RSA key pair.  Prior to making
+   authenticated requests, the client establishes a set of credentials
+   with the server.  The process and requirements for provisioning these
+   are outside the scope of this specification.  Implementers are urged
+   to consider the security ramification of using client credentials,
+   some of which are described in <a href="#section-11.7">Section 11.7</a>.
+
+   Making authenticated requests requires prior knowledge of the
+   server's configuration.  OAuth provides multiple methods for
+   including protocol parameters in requests (<a href="#section-7">Section 7</a>), as well as
+   multiple methods for the client to prove its rightful ownership of
+   the credentials used (<a href="#section-6">Section 6</a>).  The way in which clients discovery
+   the required configuration is outside the scope of this
+   specification.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Protocol%20Parameters"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Protocol Parameters</span>
+
+   An OAuth-authenticated request includes several protocol parameters.
+   Each parameter name begins with the "oauth_" prefix, and the
+   parameter names and values are case sensitive.  Protocol parameters
+   <em>MUST NOT</em> appear more than once per request.  The parameters are:
+
+   oauth_consumer_key
+         The identifier portion of the client credentials (equivalent to
+         a username).  The parameter name reflects a deprecated term
+         (Consumer Key) used in previous revisions of the specification,
+         and has been retained to maintain backward compatibility.
+
+   oauth_token
+         The token value used to associate the request with the resource
+         owner.  If the request is not associated with a resource owner
+         (no token), clients <em>MAY</em> omit the parameter.
+
+   oauth_signature_method
+         The name of the signature method used by the client to sign the
+         request, as defined in <a href="#section-6">Section 6</a>.
+
+   oauth_signature
+         The signature value as defined in <a href="#section-6">Section 6</a>.
+
+   oauth_timestamp
+         The timestamp value as defined in <a href="#section-5">Section 5</a>.
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   oauth_nonce
+         The nonce value as defined in <a href="#section-5">Section 5</a>.
+
+   oauth_version
+         The protocol version.  If omitted, the protocol version
+         defaults to "1.0".
+
+   Server-specific request parameters <em>MUST NOT</em> begin with the "oauth_"
+   prefix.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20Nonce%20and%20Timestamp"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  Nonce and Timestamp</span>
+
+   Unless otherwise specified by the server, the timestamp is expressed
+   in the number of seconds since January 1, 1970 00:00:00 GMT.  The
+   timestamp value <em>MUST</em> be a positive integer and <em>MUST</em> be equal or
+   greater than the timestamp used in previous requests with the same
+   client credentials and token credentials combination.
+
+   A nonce is a random string, uniquely generated to allows the server
+   to verify that a request has never been made before and helps prevent
+   replay attacks when requests are made over a non-secure channel.  The
+   nonce value <em>MUST</em> be unique across all requests with the same
+   timestamp, client credentials, and token combinations.
+
+   To avoid the need to retain an infinite number of nonce values for
+   future checks, servers <em>MAY</em> choose to restrict the time period after
+   which a request with an old timestamp is rejected.  Server applying
+   such restriction <em>SHOULD</em> provide a way for the client to sync its
+   clock with the server's clock.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Signature"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Signature</span>
+
+   OAuth-authenticated requests can have two sets of credentials
+   included via the "oauth_consumer_key" parameter and the "oauth_token"
+   parameter.  In order for the server to verify the authenticity of the
+   request and prevent unauthorized access, the client needs to prove it
+   is the rightful owner of the credentials.  This is accomplished using
+   the shared-secret (or RSA key) part of each set of credentials.
+
+   OAuth provides three methods for the client to prove its rightful
+   ownership of the credentials: "HMAC-SHA1", "RSA-SHA1", and
+   "PLAINTEXT".  These methods are generally referred to as signature
+   methods, even though "PLAINTEXT" does not involve a signature.  In
+   addition, "RSA-SHA1" utilizes an RSA key instead of the shared-
+   secrets associated with the client credentials.
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   OAuth does not mandate a particular signature method, as each
+   implementation can have its own unique requirements.  Servers are
+   free to implement and document their own custom methods.
+   Recommending any particular method is beyond the scope of this
+   specification.
+
+   The client declares which signature method is used via the
+   "oauth_signature_method" parameter.  It then generates a signature
+   (or a sting of an equivalent value), and includes it in the
+   "oauth_signature" parameter.  The server verifies the signature as
+   specified for each method.
+
+   The signature process does not change the request or its parameter,
+   with the exception of the "oauth_signature" parameter.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.%20%20Signature%20Base%20String"></a></body></html><a class="selflink" href="#section-6.1" id="section-6.1">6.1</a>.  Signature Base String</span>
+
+   The signature base string is a consistent, reproducible concatenation
+   of several request elements into a single string.  The string is used
+   as an input to the "HMAC-SHA1" and "RSA-SHA1" signature methods, or
+   potential future extension.
+
+   The signature base string does not cover the entire HTTP request.
+   Most notably, it does not include the entity-body in most requests,
+   nor does it include most HTTP entity-headers.  The importance of the
+   signature base string scope is that the authenticity of the excluded
+   components cannot be verified using the signature.
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.1.%20%20Collect%20Request%20Parameters"></a></body></html><a class="selflink" href="#section-6.1.1" id="section-6.1.1">6.1.1</a>.  Collect Request Parameters</span>
+
+   The signature base string includes a specific set of request
+   parameters.  In order for the parameter to be included in the
+   signature base string, they <em>MUST</em> be used in their unencoded form.
+
+   For example, the URI:
+
+     http://example.com/request?b5=%3D%253D&amp;a3=a&amp;c%40=&amp;a2=r%20b&amp;c2&amp;a3=2q
+
+   contains the following raw-form parameters:
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+                             +------+-------+
+                             | Name | Value |
+                             +------+-------+
+                             |  b5  |  =%3D |
+                             |  a3  |   a   |
+                             |  c@  |       |
+                             |  a2  |  r b  |
+                             |  c2  |       |
+                             |  a3  |   2q  |
+                             +------+-------+
+
+   Note that the value of "b5" is "=%3D" and not "==".  Both "c@" and
+   "c2" have empty values.
+
+   The request parameters, which include both protocol parameters and
+   request-specific parameters, are extracted and restored to their
+   original unencoded form, from the following sources:
+
+   o  The OAuth HTTP Authorization header (<a href="#section-7.1">Section 7.1</a>).  The "realm"
+      parameter <em>MUST</em> be excluded if present.
+
+   o  The HTTP request entity-body, but only if:
+
+      *  The entity-body is single-part.
+
+      *  The entity-body follows the encoding requirements of the
+         "application/x-www-form-urlencoded" content-type as defined by
+         [<a href="#ref-W3C.REC-html40-19980424">W3C.REC-html40-19980424</a>].
+
+      *  The HTTP request entity-header includes the "Content-Type"
+         header set to "application/x-www-form-urlencoded".
+
+   o  The query component of the HTTP request URI as defined by
+      <a href="/doc/html/rfc3986#section-3">[RFC3986] section 3</a>.
+
+   The "oauth_signature" parameter <em>MUST</em> be excluded if present.
+
+   In many cases, clients have direct access to the parameters in their
+   original, unencoded form.  In such cases, clients <em>SHOULD</em> use the
+   unencoded values instead of extracting them.  This option is not
+   available for servers when validating incoming requests.  Even though
+   the parameters are encoded again in the process, they are decoded
+   because each of the three sources uses a different encoding
+   algorithm.
+
+   The output of this step is a list of unencoded parameter name / value
+   pairs.
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.2.%20%20Normalize%20Request%20Parameters"></a></body></html><a class="selflink" href="#section-6.1.2" id="section-6.1.2">6.1.2</a>.  Normalize Request Parameters</span>
+
+   The parameter collected in <a href="#section-6.1.1">Section 6.1.1</a> are normalized into a single
+   string as follows:
+
+   1.  First, the name and value of each parameter are encoded
+       (<a href="#section-9">Section 9</a>).
+
+   2.  The parameters are sorted by name, using lexicographical byte
+       value ordering.  If two or more parameters share the same name,
+       they are sorted by their value.
+
+   3.  The name of each parameter is concatenated to its corresponding
+       value using an "=" character (ASCII code 61) as separator, even
+       if the value is empty.
+
+   4.  The sorted name / value pairs are concatenated together into a
+       single string by using an "&amp;" character (ASCII code 38) as
+       separator.
+
+   For example, the list of parameters from the previous section would
+   be normalized as follows:
+
+                                 Encoded:
+
+                            +------+----------+
+                            | Name |   Value  |
+                            +------+----------+
+                            |  b5  | %3D%253D |
+                            |  a3  |     a    |
+                            | c%40 |          |
+                            |  a2  |   r%20b  |
+                            |  c2  |          |
+                            |  a3  |    2q    |
+                            +------+----------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010                [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+                                  Sorted:
+
+                            +------+----------+
+                            | Name |   Value  |
+                            +------+----------+
+                            |  a2  |   r%20b  |
+                            |  a3  |    2q    |
+                            |  a3  |     a    |
+                            |  b5  | %3D%253D |
+                            | c%40 |          |
+                            |  c2  |          |
+                            +------+----------+
+
+                            Concatenated Pairs:
+
+                              +-------------+
+                              |  Name=Value |
+                              +-------------+
+                              |   a2=r%20b  |
+                              |    a3=2q    |
+                              |     a3=a    |
+                              | b5=%3D%253D |
+                              |    c%40=    |
+                              |     c2=     |
+                              +-------------+
+
+   And concatenated together into a single string:
+
+     a2=r%20b&amp;a3=2q&amp;a3=a&amp;b5=%3D%253D&amp;c%40=&amp;c2=
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.3.%20%20Construct%20Base%20String%20URI"></a></body></html><a class="selflink" href="#section-6.1.3" id="section-6.1.3">6.1.3</a>.  Construct Base String URI</span>
+
+   The signature base string incorporates the scheme, authority, and
+   path of the request URI as defined by <a href="/doc/html/rfc3986#section-3">[RFC3986] section 3</a>.  The
+   request URI query component is included through the normalized
+   parameters string (<a href="#section-6.1.2">Section 6.1.2</a>), and the fragment component is
+   excluded.
+
+   This is done by constructing a base string URI representing the
+   request without the query or fragment components.  The base string
+   URI is constructed as follows:
+
+   1.  The scheme and host <em>MUST</em> be in lowercase.
+
+   2.  The host and port values <em>MUST</em> match the content of the HTTP
+       request "Host" header, if present.  If the "Host" header is not
+       present, the client <em>MUST</em> use the hostname and port used to make
+       the request.  Servers <em>SHOULD</em> remove potential ambiguity in such
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+       cases by specifying the expected host value.
+
+   3.  The port <em>MUST</em> be included if it is not the default port for the
+       scheme, and <em>MUST</em> be excluded if it is the default.  Specifically,
+       the port <em>MUST</em> be excluded when an "http" request uses port 80 or
+       when an "https" request uses port 443.  All other non-default
+       port numbers <em>MUST</em> be included.
+
+   4.  If the URI includes an empty path, it <em>MUST</em> be included as "/".
+
+   For example:
+
+   +----------------------------------+-------------------------------+
+   | The request URI                  | Is included in base string as |
+   +----------------------------------+-------------------------------+
+   | <a href="HTTP://EXAMPLE.com:80/r/x?id=123">HTTP://EXAMPLE.com:80/r/x?id=123</a> | http://example.com/r/x        |
+   | <a href="https://example.net:8080?q=1#top">https://example.net:8080?q=1#top</a> | <a href="https://example.net:8080/">https://example.net:8080/</a>     |
+   +----------------------------------+-------------------------------+
+
+<span class="h4"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.4.%20%20Concatenate%20Base%20String%20Elements"></a></body></html><a class="selflink" href="#section-6.1.4" id="section-6.1.4">6.1.4</a>.  Concatenate Base String Elements</span>
+
+   Finally, the signature base string is put together by concatenating
+   its elements together.  The elements <em>MUST</em> be concatenated in the
+   following order:
+
+   1.  The HTTP request method in uppercase.  For example: "HEAD",
+       "GET", "POST", etc.  If the request uses a custom HTTP method, it
+       <em>MUST</em> be encoded (<a href="#section-9">Section 9</a>).
+
+   2.  An "&amp;" character (ASCII code 38).
+
+   3.  The base string URI from <a href="#section-6.1.3">Section 6.1.3</a>, after being encoded
+       (<a href="#section-9">Section 9</a>).
+
+   4.  An "&amp;" character (ASCII code 38).
+
+   5.  The normalized request parameters string from <a href="#section-6.1.2">Section 6.1.2</a>,
+       after being encoded (<a href="#section-9">Section 9</a>).
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.2.%20%20HMAC-SHA1"></a></body></html><a class="selflink" href="#section-6.2" id="section-6.2">6.2</a>.  HMAC-SHA1</span>
+
+   The "HMAC-SHA1" signature method uses the HMAC-SHA1 signature
+   algorithm as defined in [<a href="/doc/html/rfc2104" title='"HMAC: Keyed- Hashing for Message Authentication"'>RFC2104</a>]:
+
+     digest = HMAC-SHA1 (key, text)
+
+   The HMAC-SHA1 function variables are used in following way:
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   text
+         is set to the value of the signature base string from
+         <a href="#section-6.1.4">Section 6.1.4</a>.
+
+   key
+         is set to the concatenated values of:
+
+         1.    The client shared-secret, after being encoded
+               (<a href="#section-9">Section 9</a>).
+
+         2.    An "&amp;" character (ASCII code 38), which <em>MUST</em> be included
+               even when either secret is empty.
+
+         3.    The token shared-secret, after being encoded (<a href="#section-9">Section 9</a>).
+
+   digest
+         is used to set the value of the "oauth_signature" protocol
+         parameter, after the result octet string is base64-encoded per
+         <a href="/doc/html/rfc2045#section-6.8">[RFC2045] section 6.8</a>.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.3.%20%20RSA-SHA1"></a></body></html><a class="selflink" href="#section-6.3" id="section-6.3">6.3</a>.  RSA-SHA1</span>
+
+   The "RSA-SHA1" signature method uses the RSASSA-PKCS1-v1_5 signature
+   algorithm as defined in <a href="/doc/html/rfc3447#section-8.2">[RFC3447] section 8.2</a> (also known as PKCS#1),
+   using SHA-1 as the hash function for EMSA-PKCS1-v1_5.  To use this
+   method, the client <em>MUST</em> have established client credentials with the
+   server which included its RSA public key (in a manner which is beyond
+   the scope of this specification).
+
+   The signature base string is signed using the client's RSA private
+   key per <a href="/doc/html/rfc3447#section-8.2.1">[RFC3447] section 8.2.1</a>:
+
+     S = RSASSA-PKCS1-V1_5-SIGN (K, M)
+
+   Where:
+
+   K
+         is set to the client's RSA private key,
+
+   M
+         is set to the value of the signature base string from
+         <a href="#section-6.1.4">Section 6.1.4</a>, and
+
+   S
+         is the result signature used to set the value of the
+         "oauth_signature" protocol parameter, after the result octet
+         string is base64-encoded per <a href="/doc/html/rfc2045#section-6.8">[RFC2045] section 6.8</a>.
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   The server verifies the signature per <a href="/doc/html/rfc3447#section-8.2.2">[RFC3447] section 8.2.2</a>:
+
+     RSASSA-PKCS1-V1_5-VERIFY ((n, e), M, S)
+
+   Where:
+
+   (n, e)
+         is set to the client's RSA public key,
+
+   M
+         is set to the value of the signature base string from
+         <a href="#section-6.1.4">Section 6.1.4</a>, and
+
+   S
+         is set to the octet string value of the "oauth_signature"
+         protocol parameter received from the client.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.4.%20%20PLAINTEXT"></a></body></html><a class="selflink" href="#section-6.4" id="section-6.4">6.4</a>.  PLAINTEXT</span>
+
+   The "PLAINTEXT" method does not employ a signature algorithm and does
+   not provide any security as it transmits secrets in the clear.  It
+   <em>SHOULD</em> only be used with a transport-layer mechanisms such as TLS or
+   SSL.  It does not use the signature base string.
+
+   The "oauth_signature" protocol parameter is set to the concatenated
+   value of:
+
+   1.  The client shared-secret, after being encoded (<a href="#section-9">Section 9</a>).
+
+   2.  An "&amp;" character (ASCII code 38), which <em>MUST</em> be included even
+       when either secret is empty.
+
+   3.  The token shared-secret, after being encoded (<a href="#section-9">Section 9</a>).
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Parameter%20Transmission"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Parameter Transmission</span>
+
+   When making an OAuth-authenticated request, protocol parameters <em>SHALL</em>
+   be included in the request using one and only one of the following
+   locations, listed in order of decreasing preference:
+
+   1.  The HTTP "Authorization" header as described in <a href="#section-7.1">Section 7.1</a>.
+
+   2.  The HTTP request entity-body as described in <a href="#section-7.2">Section 7.2</a>.
+
+   3.  The HTTP request URI query as described in <a href="#section-7.3">Section 7.3</a>.
+
+   In addition to these three methods, future extensions may provide
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 13]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-14"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   other methods for including protocol parameters in the request.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.%20%20Authorization%20Header"></a></body></html><a class="selflink" href="#section-7.1" id="section-7.1">7.1</a>.  Authorization Header</span>
+
+   Protocol parameters can be transmitted using the HTTP "Authorization"
+   header as defined by [<a href="/doc/html/rfc2617" title='"HTTP Authentication: Basic and Digest Access Authentication"'>RFC2617</a>] with the auth-scheme name set to
+   "OAuth" (case-insensitive).
+
+   For example:
+
+     Authorization: OAuth realm="http://server.example.com/",
+        oauth_consumer_key="0685bd9184jfhq22",
+        oauth_token="ad180jjd733klru7",
+        oauth_signature_method="HMAC-SHA1",
+        oauth_signature="wOJIO9A2W5mFwDgiDvZbTSMK%2FPY%3D",
+        oauth_timestamp="137131200",
+        oauth_nonce="4572616e48616d6d65724c61686176",
+        oauth_version="1.0"
+
+   Protocol parameters <em>SHALL</em> be included in the "Authorization" header
+   as follows:
+
+   1.  Parameter names and values are encoded per Parameter Encoding
+       (<a href="#section-9">Section 9</a>).
+
+   2.  Each parameter's name is immediately followed by an "=" character
+       (ASCII code 61), a """ character (ASCII code 34), the parameter
+       value (<em>MAY</em> be empty), and another """ character (ASCII code 34).
+
+   3.  Parameters are separated by a "," character (ASCII code 44) and
+       <em>OPTIONAL</em> linear whitespace per [<a href="/doc/html/rfc2617" title='"HTTP Authentication: Basic and Digest Access Authentication"'>RFC2617</a>].
+
+   4.  The <em>OPTIONAL</em> "realm" parameter <em>MAY</em> be added and interpreted per
+       <a href="/doc/html/rfc2617#section-1.2">[RFC2617], section 1.2</a>.
+
+   Servers <em>MAY</em> indicate their support for the "OAuth" auth-scheme by
+   returning the HTTP "WWW-Authenticate" response header upon client
+   requests for protected resources.  As per [<a href="/doc/html/rfc2617" title='"HTTP Authentication: Basic and Digest Access Authentication"'>RFC2617</a>] such a response
+   <em>MAY</em> include additional HTTP "WWW-Authenticate" headers:
+
+   For example:
+
+     WWW-Authenticate: OAuth realm="http://server.example.com/"
+
+   The realm parameter defines a protection realm per [<a href="/doc/html/rfc2617" title='"HTTP Authentication: Basic and Digest Access Authentication"'>RFC2617</a>], <a href="#section-1.2">section</a>
+   <a href="#section-1.2">1.2</a>.
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 14]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-15"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.2.%20%20Form-Encoded%20Body"></a></body></html><a class="selflink" href="#section-7.2" id="section-7.2">7.2</a>.  Form-Encoded Body</span>
+
+   Protocol parameters can be transmitted in the HTTP request entity-
+   body, but only if the following <em>REQUIRED</em> conditions are met:
+
+   o  The entity-body is single-part.
+
+   o  The entity-body follows the encoding requirements of the
+      "application/x-www-form-urlencoded" content-type as defined by
+      [<a href="#ref-W3C.REC-html40-19980424">W3C.REC-html40-19980424</a>].
+
+   o  The HTTP request entity-header includes the "Content-Type" header
+      set to "application/x-www-form-urlencoded".
+
+   For example (line breaks are for display purposes only):
+
+     oauth_consumer_key=0685bd9184jfhq22&amp;oauth_token=ad180jjd733klr
+     u7&amp;oauth_signature_method=HMAC-SHA1&amp;oauth_signature=wOJIO9A2W5
+     mFwDgiDvZbTSMK%2FPY%3D&amp;oauth_timestamp=137131200&amp;oauth_nonce=4
+     572616e48616d6d65724c61686176&amp;oauth_version=1.0
+
+   The entity-body <em>MAY</em> include other request-specific parameters, in
+   which case, the protocol parameters <em>SHOULD</em> be appended following the
+   request-specific parameters, properly separated by an "&amp;" character
+   (ASCII code 38).
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.3.%20%20Request%20URI%20Query"></a></body></html><a class="selflink" href="#section-7.3" id="section-7.3">7.3</a>.  Request URI Query</span>
+
+   Protocol parameters can be transmitted by being added to the HTTP
+   request URI as a query parameter as defined by <a href="/doc/html/rfc3986#section-3">[RFC3986] section 3</a>.
+
+   For example (line breaks are for display purposes only):
+
+     GET /example/path?oauth_consumer_key=0685bd9184jfhq22&amp;
+     oauth_token=ad180jjd733klru7&amp;oauth_signature_method=HM
+     AC-SHA1&amp;oauth_signature=wOJIO9A2W5mFwDgiDvZbTSMK%2FPY%
+     3D&amp;oauth_timestamp=137131200&amp;oauth_nonce=4572616e48616
+     d6d65724c61686176&amp;oauth_version=1.0 HTTP/1.1
+
+   The request URI <em>MAY</em> include other request-specific query parameters,
+   in which case, the protocol parameters <em>SHOULD</em> be appended following
+   the request-specific parameters, properly separated by an "&amp;"
+   character (ASCII code 38).
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Server%20Response"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Server Response</span>
+
+   Servers receiving an authenticated request <em>MUST</em>:
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 15]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-16"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   o  Recalculate the request signature independently and compare it to
+      the value received from the client.
+
+   o  Ensure that the nonce / timestamp / token combination has not been
+      used before, and <em>MAY</em> reject requests with stale timestamps.
+
+   o  If a token is present, verify the scope and status of the client
+      authorization by using the token, and <em>MAY</em> choose to restrict token
+      usage to the client to which it was issued.
+
+   o  Ensure that the protocol version used is "1.0".
+
+   If the request fails verification, the server <em>SHOULD</em> respond with the
+   appropriate HTTP response status code.  The server <em>MAY</em> include
+   further details about why the request was rejected in the response
+   body.  The following status codes <em>SHOULD</em> be used:
+
+   o  400 (Bad Request)
+
+      *  Unsupported parameters
+
+      *  Unsupported signature method
+
+      *  Missing parameters
+
+      *  Duplicated protocol parameters
+
+   o  401 (Unauthorized)
+
+      *  Invalid client credentials
+
+      *  Invalid or expired token
+
+      *  Invalid signature
+
+      *  Invalid or used nonce
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20Percent%20Encoding"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  Percent Encoding</span>
+
+   OAuth uses the following percent-encoding rules:
+
+   1.  Text values are first encoded as UTF-8 octets per [<a href="/doc/html/rfc3629" title='"UTF-8, a transformation format of ISO 10646"'>RFC3629</a>] if
+       they are not already.  This does not include binary values which
+       are not intended for human consumption.
+
+   2.  The values are then escaped using the [<a href="/doc/html/rfc3986" title='"Uniform Resource Identifier (URI): Generic Syntax"'>RFC3986</a>] percent-encoding
+       (%XX) mechanism as follows:
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 16]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-17"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+       *  Characters in the unreserved character set as defined by
+          <a href="/doc/html/rfc3986#section-2.3">[RFC3986] section 2.3</a> (ALPHA, DIGIT, "-", ".", "_", "~") <em>MUST</em>
+          NOT be encoded.
+
+       *  All other characters <em>MUST</em> be encoded.
+
+       *  The two hexadecimal characters use to represent encoded
+          characters <em>MUST</em> be upper case.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-10" id="section-10">10</a>.  IANA Considerations</span>
+
+   This memo includes no request to IANA.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-11" id="section-11">11</a>.  Security Considerations</span>
+
+   As stated in [<a href="/doc/html/rfc2617" title='"HTTP Authentication: Basic and Digest Access Authentication"'>RFC2617</a>], the greatest sources of risks are usually
+   found not in the core protocol itself but in policies and procedures
+   surrounding its use.  Implementers are strongly encouraged to assess
+   how this protocol addresses their security requirements.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.1.%20%20RSA-SHA1%20Signature%20Method"></a></body></html><a class="selflink" href="#section-11.1" id="section-11.1">11.1</a>.  RSA-SHA1 Signature Method</span>
+
+   When used with "RSA-SHA1" signatures, the OAuth protocol does not use
+   the token shared-secret, or any provisioned client shared-secret.
+   This means the protocol relies completely on the secrecy of the
+   private key used by the client to sign requests.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.2.%20%20PLAINTEXT%20Signature%20Method"></a></body></html><a class="selflink" href="#section-11.2" id="section-11.2">11.2</a>.  PLAINTEXT Signature Method</span>
+
+   When used with the "PLAINTEXT" method, the protocol makes no attempts
+   to protect credentials from eavesdroppers or man-in-the-middle
+   attacks.  The "PLAINTEXT" method is only intended to be used in
+   conjunction with a transport-layer security mechanism such as TLS or
+   SSL which does provide such protection.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.3.%20%20Confidentiality%20of%20Requests"></a></body></html><a class="selflink" href="#section-11.3" id="section-11.3">11.3</a>.  Confidentiality of Requests</span>
+
+   While OAuth provides a mechanism for verifying the integrity of
+   requests, it provides no guarantee of request confidentiality.
+   Unless further precautions are taken, eavesdroppers will have full
+   access to request content.  Servers should carefully consider the
+   kinds of data likely to be sent as part of such requests, and should
+   employ transport-layer security mechanisms to protect sensitive
+   resources.
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 17]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-18"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.4.%20%20Spoofing%20by%20Counterfeit%20Servers"></a></body></html><a class="selflink" href="#section-11.4" id="section-11.4">11.4</a>.  Spoofing by Counterfeit Servers</span>
+
+   OAuth makes no attempt to verify the authenticity of the server.  A
+   hostile party could take advantage of this by intercepting the
+   client's requests and returning misleading or otherwise incorrect
+   responses.  Service providers should consider such attacks when
+   developing services based on OAuth, and should require transport-
+   layer security for any requests where the authenticity of the server
+   or of request responses is an issue.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.5.%20%20Proxying%20and%20Caching%20of%20Authenticated%20Content"></a></body></html><a class="selflink" href="#section-11.5" id="section-11.5">11.5</a>.  Proxying and Caching of Authenticated Content</span>
+
+   The HTTP Authorization scheme (<a href="#section-7.1">Section 7.1</a>) is optional.  However,
+   [<a href="/doc/html/rfc2616" title='"Hypertext Transfer Protocol -- HTTP/1.1"'>RFC2616</a>] relies on the "Authorization" and "WWW-Authenticate"
+   headers to distinguish authenticated content so that it can be
+   protected.  Proxies and caches, in particular, may fail to adequately
+   protect requests not using these headers.
+
+   For example, private authenticated content may be stored in (and thus
+   retrievable from) publicly-accessible caches.  Servers not using the
+   HTTP Authorization header (<a href="#section-7.1">Section 7.1</a>) should take care to use other
+   mechanisms, such as the "Cache-Control" header, to ensure that
+   authenticated content is protected.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.6.%20%20Plaintext%20Storage%20of%20Credentials"></a></body></html><a class="selflink" href="#section-11.6" id="section-11.6">11.6</a>.  Plaintext Storage of Credentials</span>
+
+   The client shared-secret and token shared-secret function the same
+   way passwords do in traditional authentication systems.  In order to
+   compute the signatures used in methods other than "RSA-SHA1", the
+   server must have access to these secrets in plaintext form.  This is
+   in contrast, for example, to modern operating systems, which store
+   only a one-way hash of user credentials.
+
+   If an attacker were to gain access to these secrets - or worse, to
+   the server's database of all such secrets - he or she would be able
+   to perform any action on behalf of any resource owner.  Accordingly,
+   it is critical that servers protect these secrets from unauthorized
+   access.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.7.%20%20Secrecy%20of%20the%20Client%20Credentials"></a></body></html><a class="selflink" href="#section-11.7" id="section-11.7">11.7</a>.  Secrecy of the Client Credentials</span>
+
+   In many cases, the client application will be under the control of
+   potentially untrusted parties.  For example, if the client is a
+   freely available desktop application, an attacker may be able to
+   download a copy for analysis.  In such cases, attackers will be able
+   to recover the client credentials.
+
+   Accordingly, servers should not use the client credentials alone to
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 18]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-19"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   verify the identity of the client.  Where possible, other factors
+   such as IP address should be used as well.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.8.%20%20Cryptographic%20Attacks"></a></body></html><a class="selflink" href="#section-11.8" id="section-11.8">11.8</a>.  Cryptographic Attacks</span>
+
+   SHA-1, the hash algorithm used in "HMAC-SHA1" signatures, has been
+   shown [<a href="#ref-SHA1-CHARACTERISTICS">SHA1-CHARACTERISTICS</a>] to have a number of cryptographic
+   weaknesses that significantly reduce its resistance to collision
+   attacks.  Practically speaking, these weaknesses are difficult to
+   exploit, and by themselves do not pose a significant risk to users of
+   OAuth.  They may, however, make more efficient attacks possible, and
+   NIST has announced [<a href="#ref-SHA-COMMENTS">SHA-COMMENTS</a>] that it will phase out use of SHA-1
+   by 2010.  Servers should take this into account when considering
+   whether SHA-1 provides an adequate level of security for their
+   applications.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.9.%20%20Signature%20Base%20String%20Limitations"></a></body></html><a class="selflink" href="#section-11.9" id="section-11.9">11.9</a>.  Signature Base String Limitations</span>
+
+   The signature base string has been designed to support the signature
+   methods defined in this specification.  When designing additional
+   signature methods, the signature base string should be evaluated to
+   ensure compatibility with the algorithms used.
+
+   Since the signature base string does not cover the entire HTTP
+   request, such as most request entity-body, most entity-headers, and
+   the order in which parameters are sent, servers should employ
+   additional mechanisms to protect such elements.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Examples"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Examples</span>
+
+   [[ TODO ]]
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20B.%20%20Acknowledgments"></a></body></html><a class="selflink" href="#appendix-B" id="appendix-B">Appendix B</a>.  Acknowledgments</span>
+
+   This specification is directly based on the [OAuth Core 1.0 Revision
+   A] community specification which was the product of the OAuth
+   community.  OAuth was modeled after existing proprietary protocols
+   and best practices that have been independently implemented by
+   various web sites.  This specification was orignially authored by:
+   Mark Atwood, Dirk Balfanz, Darren Bounds, Richard M. Conlan, Blaine
+   Cook, Leah Culver, Breno de Medeiros, Brian Eaton, Kellan Elliott-
+   McCrea, Larry Halff, Eran Hammer-Lahav, Ben Laurie, Chris Messina,
+   John Panzer, Sam Quigley, David Recordon, Eran Sandler, Jonathan
+   Sergent, Todd Sieling, Brian Slesinsky, and Andy Smith.
+
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 19]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-20"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20C.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-C" id="appendix-C">Appendix C</a>.  Document History</span>
+
+   [[ To be removed by the RFC editor before publication as an RFC. ]]
+
+   -01
+
+   o  Moved all subsection from <a href="#section-3">section 3</a> to the document root.
+
+   o  Synced acknoledgments section with web-delegation draft.
+
+   -00
+
+   o  Transitioned from the individual submission <a href="/doc/html/draft-hammer-oauth-02">draft-hammer-oauth-02</a>
+      to working group draft.
+
+   o  Split <a href="/doc/html/draft-hammer-oauth-02">draft-hammer-oauth-02</a> into two drafts, one dealing with
+      authentication (this draft) and another dealing with web
+      delegation <a href="/doc/html/draft-ietf-oauth-web-delegation">draft-ietf-oauth-web-delegation</a>.
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.%20%20References"></a></body></html><a class="selflink" href="#section-12" id="section-12">12</a>.  References</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.1.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-12.1" id="section-12.1">12.1</a>.  Normative References</span>
+
+   [<a id="ref-RFC2045">RFC2045</a>]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part One: Format of Internet Message
+              Bodies", <a href="/doc/html/rfc2045">RFC 2045</a>, November 1996.
+
+   [<a id="ref-RFC2104">RFC2104</a>]  Krawczyk, H., Bellare, M., and R. Canetti, "HMAC: Keyed-
+              Hashing for Message Authentication", <a href="/doc/html/rfc2104">RFC 2104</a>,
+              February 1997.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>, March 1997.
+
+   [<a id="ref-RFC2616">RFC2616</a>]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
+              Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
+              Transfer Protocol -- HTTP/1.1", <a href="/doc/html/rfc2616">RFC 2616</a>, June 1999.
+
+   [<a id="ref-RFC2617">RFC2617</a>]  Franks, J., Hallam-Baker, P., Hostetler, J., Lawrence, S.,
+              Leach, P., Luotonen, A., and L. Stewart, "HTTP
+              Authentication: Basic and Digest Access Authentication",
+              <a href="/doc/html/rfc2617">RFC 2617</a>, June 1999.
+
+   [<a id="ref-RFC3447">RFC3447</a>]  Jonsson, J. and B. Kaliski, "Public-Key Cryptography
+              Standards (PKCS) #1: RSA Cryptography Specifications
+              Version 2.1", <a href="/doc/html/rfc3447">RFC 3447</a>, February 2003.
+
+
+
+
+<span class="grey">Hammer-Lahav             Expires January 7, 2010               [Page 20]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-21"></span>
+<span class="grey">Internet-Draft            OAuth Authentication                 July 2009</span>
+
+
+   [<a id="ref-RFC3629">RFC3629</a>]  Yergeau, F., "UTF-8, a transformation format of ISO
+              10646", STD 63, <a href="/doc/html/rfc3629">RFC 3629</a>, November 2003.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              <a href="/doc/html/rfc3986">RFC 3986</a>, January 2005.
+
+   [<a id="ref-W3C.REC-html40-19980424">W3C.REC-html40-19980424</a>]
+              Hors, A., Jacobs, I., and D. Raggett, "HTML 4.0
+              Specification", World Wide Web Consortium
+              Recommendation REC-html40-19980424, April 1998,
+              &lt;<a href="http://www.w3.org/TR/1998/REC-html40-19980424">http://www.w3.org/TR/1998/REC-html40-19980424</a>&gt;.
+
+   [<a href="/doc/html/draft-ietf-oauth-web-delegation">draft-ietf-oauth-web-delegation</a>]
+              Hammer-Lahav, E., Ed., "The OAuth Protocol: Web
+              Delegation".
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.2.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-12.2" id="section-12.2">12.2</a>.  Informative References</span>
+
+   [OAuth Core 1.0 Revision A]
+              OAuth, OCW., "OAuth Core 1.0".
+
+   [<a id="ref-SHA-COMMENTS">SHA-COMMENTS</a>]
+              National Institute of Standards and Technology, NIST.,
+              "NIST Brief Comments on Recent Cryptanalytic Attacks on
+              Secure Hashing Functions and the Continued Security
+              Provided by SHA-1, August, 2004.".
+
+   [<a id="ref-SHA1-CHARACTERISTICS">SHA1-CHARACTERISTICS</a>]
+              De Canniere, C. and C. Rechberger, "Finding SHA-1
+              Characteristics: General Results and Applications".
+
+
+Author's Address
+
+   Eran Hammer-Lahav (editor)
+   Yahoo!
+
+   Email: eran@hueniverse.com
+   URI:   <a href="http://hueniverse.com">http://hueniverse.com</a>
+
+
+
+
+
+
+
+
+
+
+
+Hammer-Lahav             Expires January 7, 2010               [Page 21]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

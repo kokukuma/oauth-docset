@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-richer-oauth-httpsig-00
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-richer-oauth-httpsig/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="OAuth Proof of Possession Tokens with HTTP Message Signatures (Internet-Draft, 2021)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-richer-oauth-httpsig-00.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-richer-oauth-httpsig-00.html" title="HTML version of this document, from XML2RFC">html</a>|<a href="https://www.ietf.org/archive/id/draft-richer-oauth-httpsig-00.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-richer-oauth-httpsig-00.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-richer-oauth-httpsig/00/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-richer-oauth-httpsig/" title="Datatracker information for this document">Tracker</a>] [<a href="mailto:draft-richer-oauth-httpsig@ietf.org?subject=draft-richer-oauth-httpsig" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-richer-oauth-httpsig-00.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: <a href="/doc/html/draft-richer-oauth-httpsig-00"><b>00</b></a>                                                            </pre>
+</div>
+<div class="draftcontent">
+<pre>OAUTH                                                     J. Richer, Ed.
+Internet-Draft                                       Bespoke Engineering
+Intended status: Standards Track                            21 June 2021
+Expires: 23 December 2021
+
+
+     <span class="h1">OAuth Proof of Possession Tokens with HTTP Message Signatures</span>
+                     <span class="h1">draft-richer-oauth-httpsig-00</span>
+
+Abstract
+
+   This extension to the OAuth 2.0 authorization framework defines a
+   method for using HTTP Message Signatures to bind access tokens to
+   keys held by OAuth 2.0 clients.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 23 December 2021.
+
+Copyright Notice
+
+   Copyright (c) 2021 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (<a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/</a>
+   <a href="https://trustee.ietf.org/license-info">license-info</a>) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the <a href="https://trustee.ietf.org/license-info">Trust Legal Provisions</a> and are
+   provided without warranty as described in the Simplified BSD License.
+
+
+
+
+
+
+<span class="grey">Richer                  Expires 23 December 2021                [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft  OAuth Proof of Possession Tokens with HT       June 2021</span>
+
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.1">1.1</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+   <a href="#section-2">2</a>.  Token Response  . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+   <a href="#section-3">3</a>.  Presenting an HTTP Message Signature Bound Access Token . . .   <a href="#page-3">3</a>
+   <a href="#section-4">4</a>.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-5">5</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-6">6</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-7">7</a>.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-8">8</a>.  Normative References  . . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#appendix-A">Appendix A</a>.  Document History . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   The OAuth 2.0 framework provides methods for clients to get delegated
+   access tokens from an authorization server for accessing protected
+   resources.  The access tokens at the center of OAuth 2.0 can be bound
+   to a variety of different mechanisms, including bearer tokens, mutual
+   TLS, or other presentation mechanisms.
+
+   Bearer tokens are simple to implement but also have the significant
+   security downside of allowing anyone who sees the access token to use
+   that token.  This extension defines a token type that binds the token
+   to a presentation key known to the client.  The client uses HTTP
+   Message Signatures (I-D.ietf-httpbis-message-signatures) to sign
+   requests using its key, thereby proving its right to present the
+   associated access token.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Terminology"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Terminology</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "NOT <em>RECOMMENDED</em>", "<em>MAY</em>", and
+   "<em>OPTIONAL</em>" in this document are to be interpreted as described in
+   <a href="/doc/html/bcp14">BCP 14</a> [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>] [<a href="/doc/html/rfc8174" title='"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"'>RFC8174</a>] when, and only when, they appear in all
+   capitals, as shown here.
+
+   This document contains non-normative examples of partial and complete
+   HTTP messages, JSON structures, URLs, query components, keys, and
+   other elements.  Some examples use a single trailing backslash '' to
+   indicate line wrapping for long values, as per [<a href="/doc/html/rfc8792" title='"Handling Long Lines in Content of Internet-Drafts and RFCs"'>RFC8792</a>].  The "\"
+   character and leading spaces on wrapped lines are not part of the
+   value.
+
+
+
+
+
+
+
+<span class="grey">Richer                  Expires 23 December 2021                [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft  OAuth Proof of Possession Tokens with HT       June 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Token%20Response"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Token Response</span>
+
+   When the client makes an access token request, the AS associates the
+   generated access token with the client's registered key from the
+   client's "jwks" or "jwks_uri" field.  All presentations of this token
+   at any RS <em>MUST</em> contain an HTTP message signature as described in
+   <a href="#section-3">Section 3</a>.
+
+   A bound access token <em>MUST</em> have a "token_type" value of "httpsig".
+   The response <em>MUST</em> contain a "keyid" value which indicates the key the
+   client <em>MUST</em> use when presenting the access token <a href="#section-3">Section 3</a>.  The
+   value of this "keyid" field <em>MUST</em> uniquely identify a key from the
+   client's registered key set by its "kid" value.
+
+   {
+       "access_token": "2340897.34j123-134uh2345n",
+       "token_type": "httpsig",
+       "keyid": "test-key-rsa-pss"
+   }
+
+   [[ Editor's note: while this document deals only with using a pre-
+   registered key, it would be possible to have different key binding
+   mechanisms, such as the client presenting an ephemeral key during the
+   token request or the AS generating and assigning a key alongside the
+   token.  The WG needs to decide if this is in scope of this document
+   or not.  The presentation mechanisms would be the same. ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Presenting%20an%20HTTP%20Message%20Signature%20Bound%20Access%20Token"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Presenting an HTTP Message Signature Bound Access Token</span>
+
+   The algorithm and key used for the HTTP Message Signature are derived
+   from the client's registered information.  The key is taken from the
+   client's registered "jwks" or "jwks_uri" field, identified by the
+   "keyid" field of the token response <a href="#section-2">Section 2</a>.  The signature
+   algorithm is determined by the "alg" field of the identified key,
+   following the method for JSON Web Algorithm selection described in
+   [<a href="#ref-I-D.ietf-httpbis-message-signatures">I-D.ietf-httpbis-message-signatures</a>].
+
+   The client <em>MUST</em> include the access token value in an "Authorization"
+   header using scheme "HTTPSig".  Note that the scheme value "HTTPSig"
+   is not case sensitive.
+
+   Authorization: HTTPSig 2340897.34j123-134uh2345n
+
+   The client <em>MUST</em> include an HTTP Message Signature that covers, at
+   minimum:
+
+   *  The request target of the RS being called
+
+
+
+
+<span class="grey">Richer                  Expires 23 December 2021                [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft  OAuth Proof of Possession Tokens with HT       June 2021</span>
+
+
+   *  The "Host" header of the RS being called
+
+   *  The "Authorization" header containing the access token value.
+
+   The signature parameters <em>MUST</em> include a "created" signature
+   parameter.  The RS <em>SHOULD</em> use this field to ensure freshness of the
+   signed request, appropriate to the API being protected.
+
+   The client <em>MUST NOT</em> include an "alg" signature parameter, since the
+   algorithm is determined by the client's registered key.  The client
+   <em>MUST</em> include the "keyid" signature parameter set to the value
+   returned in the token response <a href="#section-2">Section 2</a>.
+
+   In this example, the client has a key with the "kid" value of "test-
+   key-rsa-pss" which uses the JWA "alg" value of "PS512".  The
+   signature input string is:
+
+   "@request-target": get /foo
+   "host": example.org
+   "authorization": HTTPSig 2340897.34j123-134uh2345n
+   "@signature-params": ("@request-target" "host" "authorization")\
+     ;created=1618884475;keyid="test-key-rsa-pss"
+
+   This results in the following signed HTTP message, including the
+   access token.
+
+   GET /foo HTTP/1.1
+   Host: example.com
+   Date: Tue, 20 Apr 2021 02:07:55 GMT
+   Authorization: HTTPSig 2340897.34j123-134uh2345n
+   Signature-Input: sig1=("@request-target" "host" "authorization")\
+     ;created=1618884475;keyid="test-key-rsa-pss"
+   Signature: sig1=:o+Fy/a6IIWhHwnMFhsHqfXEpheWGBMOU3pheT50zA8rL5F8Nur\
+     xBKAPylMGBWYCKH5Bd+TB0Co6vqANlXyOCM9Zr5c/UmR5WGex5/OgJJmfN7gOVOH5\
+     pB2Zxa233xsohfwo9liBlctukN5//E3F04rKjIkoeTFJiS+hMcOzn29esgFSEl4Jy\
+     oO5Q8snMIsC56ZAPYwU7rJis1Wvl6Y9/9tpW6gIn/SHwArhPQSAb0zZy6mCiw654n\
+     CaKw5NYJ9S0DZlnV4T7nJtdZsHOkddF6kH4WVka3ev0xONI5kYkEdR1Gw0VAE9thi\
+     p+3/aFoUVTJ/1J6JfehZpXqehwv3KNoQ==:
+
+   An RS receiving such a signed message and a bound access token <em>MUST</em>
+   verify the HTTP Message Signature as described in
+   [<a href="#ref-I-D.ietf-httpbis-message-signatures">I-D.ietf-httpbis-message-signatures</a>].  The RS <em>MUST</em> verify that all
+   required portions of the HTTP request are covered by the signature by
+   examining the contents of the signature parameters.
+
+
+
+
+
+
+
+<span class="grey">Richer                  Expires 23 December 2021                [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft  OAuth Proof of Possession Tokens with HT       June 2021</span>
+
+
+   [[ Editor's note: we should define confirmation methods for access
+   tokens here, including JWT values and introspection response values
+   to allow the RS to verify the signature w/o the client's registration
+   information. ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Acknowledgements</span>
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  IANA Considerations</span>
+
+   [[ TBD: register the token type and new parameters into their
+   appropriate registries, as well as the JWT and introspection
+   parameters. ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Security Considerations</span>
+
+   [[ TBD: There are a lot of security considerations to add. ]]
+
+   All requests have to be over TLS or equivalent as per [<a href="#ref-BCP195" title='"Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"'>BCP195</a>].
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Privacy%20Considerations"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Privacy Considerations</span>
+
+   [[ TBD: There are a lot of privacy considerations to add. ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Normative References</span>
+
+   [<a id="ref-BCP195">BCP195</a>]   Sheffer, Y., Holz, R., and P. Saint-Andre,
+              "Recommendations for Secure Use of Transport Layer
+              Security (TLS) and Datagram Transport Layer Security
+              (DTLS)", May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/bcp195">https://www.rfc-editor.org/info/bcp195</a>&gt;.
+
+   [<a id="ref-I-D.ietf-httpbis-message-signatures">I-D.ietf-httpbis-message-signatures</a>]
+              Backman, A., Richer, J., and M. Sporny, "Signing HTTP
+              Messages", Work in Progress, Internet-Draft, <a href="/doc/html/draft-ietf-httpbis-message-signatures-05">draft-ietf-</a>
+              <a href="/doc/html/draft-ietf-httpbis-message-signatures-05">httpbis-message-signatures-05</a>, 8 June 2021,
+              &lt;<a href="https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-05.txt">https://www.ietf.org/archive/id/draft-ietf-httpbis-</a>
+              <a href="https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-05.txt">message-signatures-05.txt</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-dpop">I-D.ietf-oauth-dpop</a>]
+              Fett, D., Campbell, B., Bradley, J., Lodderstedt, T.,
+              Jones, M., and D. Waite, "OAuth 2.0 Demonstrating Proof-
+              of-Possession at the Application Layer (DPoP)", Work in
+              Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-dpop-03">draft-ietf-oauth-dpop-03</a>, 7
+              April 2021, &lt;<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-dpop-03.txt">https://www.ietf.org/archive/id/draft-ietf-</a>
+              <a href="https://www.ietf.org/archive/id/draft-ietf-oauth-dpop-03.txt">oauth-dpop-03.txt</a>&gt;.
+
+
+
+
+
+
+<span class="grey">Richer                  Expires 23 December 2021                [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft  OAuth Proof of Possession Tokens with HT       June 2021</span>
+
+
+   [<a id="ref-I-D.ietf-oauth-rar">I-D.ietf-oauth-rar</a>]
+              Lodderstedt, T., Richer, J., and B. Campbell, "OAuth 2.0
+              Rich Authorization Requests", Work in Progress, Internet-
+              Draft, <a href="/doc/html/draft-ietf-oauth-rar-05">draft-ietf-oauth-rar-05</a>, 15 May 2021,
+              &lt;<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-rar-05.txt">https://www.ietf.org/archive/id/draft-ietf-oauth-rar-</a>
+              <a href="https://www.ietf.org/archive/id/draft-ietf-oauth-rar-05.txt">05.txt</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-signed-http-request">I-D.ietf-oauth-signed-http-request</a>]
+              Richer, J., Bradley, J., and H. Tschofenig, "A Method for
+              Signing HTTP Requests for OAuth", Work in Progress,
+              Internet-Draft, <a href="/doc/html/draft-ietf-oauth-signed-http-request-03">draft-ietf-oauth-signed-http-request-03</a>, 8
+              August 2016, &lt;<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-signed-http-request-03.txt">https://www.ietf.org/archive/id/draft-ietf-</a>
+              <a href="https://www.ietf.org/archive/id/draft-ietf-oauth-signed-http-request-03.txt">oauth-signed-http-request-03.txt</a>&gt;.
+
+   [<a id="ref-I-D.ietf-secevent-subject-identifiers">I-D.ietf-secevent-subject-identifiers</a>]
+              Backman, A. and M. Scurtescu, "Subject Identifiers for
+              Security Event Tokens", Work in Progress, Internet-Draft,
+              <a href="/doc/html/draft-ietf-secevent-subject-identifiers-08">draft-ietf-secevent-subject-identifiers-08</a>, 24 May 2021,
+              &lt;<a href="https://www.ietf.org/archive/id/draft-ietf-secevent-subject-identifiers-08.txt">https://www.ietf.org/archive/id/draft-ietf-secevent-</a>
+              <a href="https://www.ietf.org/archive/id/draft-ietf-secevent-subject-identifiers-08.txt">subject-identifiers-08.txt</a>&gt;.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC3230">RFC3230</a>]  Mogul, J. and A. Van Hoff, "Instance Digests in HTTP",
+              <a href="/doc/html/rfc3230">RFC 3230</a>, DOI 10.17487/RFC3230, January 2002,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc3230">https://www.rfc-editor.org/info/rfc3230</a>&gt;.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              <a href="/doc/html/rfc3986">RFC 3986</a>, DOI 10.17487/RFC3986, January 2005,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc3986">https://www.rfc-editor.org/info/rfc3986</a>&gt;.
+
+   [<a id="ref-RFC5646">RFC5646</a>]  Phillips, A., Ed. and M. Davis, Ed., "Tags for Identifying
+              Languages", <a href="/doc/html/bcp47">BCP 47</a>, <a href="/doc/html/rfc5646">RFC 5646</a>, DOI 10.17487/RFC5646,
+              September 2009, &lt;<a href="https://www.rfc-editor.org/info/rfc5646">https://www.rfc-editor.org/info/rfc5646</a>&gt;.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6749">https://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC6750">RFC6750</a>]  Jones, M. and D. Hardt, "The OAuth 2.0 Authorization
+              Framework: Bearer Token Usage", <a href="/doc/html/rfc6750">RFC 6750</a>,
+              DOI 10.17487/RFC6750, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6750">https://www.rfc-editor.org/info/rfc6750</a>&gt;.
+
+
+
+
+<span class="grey">Richer                  Expires 23 December 2021                [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft  OAuth Proof of Possession Tokens with HT       June 2021</span>
+
+
+   [<a id="ref-RFC7234">RFC7234</a>]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
+              <a href="/doc/html/rfc7234">RFC 7234</a>, DOI 10.17487/RFC7234, June 2014,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7234">https://www.rfc-editor.org/info/rfc7234</a>&gt;.
+
+   [<a id="ref-RFC7468">RFC7468</a>]  Josefsson, S. and S. Leonard, "Textual Encodings of PKIX,
+              PKCS, and CMS Structures", <a href="/doc/html/rfc7468">RFC 7468</a>, DOI 10.17487/RFC7468,
+              April 2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7468">https://www.rfc-editor.org/info/rfc7468</a>&gt;.
+
+   [<a id="ref-RFC7515">RFC7515</a>]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web
+              Signature (JWS)", <a href="/doc/html/rfc7515">RFC 7515</a>, DOI 10.17487/RFC7515, May
+              2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7515">https://www.rfc-editor.org/info/rfc7515</a>&gt;.
+
+   [<a id="ref-RFC7517">RFC7517</a>]  Jones, M., "JSON Web Key (JWK)", <a href="/doc/html/rfc7517">RFC 7517</a>,
+              DOI 10.17487/RFC7517, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7517">https://www.rfc-editor.org/info/rfc7517</a>&gt;.
+
+   [<a id="ref-RFC8174">RFC8174</a>]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in <a href="/doc/html/rfc2119">RFC</a>
+              <a href="/doc/html/rfc2119">2119</a> Key Words", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc8174">RFC 8174</a>, DOI 10.17487/RFC8174,
+              May 2017, &lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;.
+
+   [<a id="ref-RFC8259">RFC8259</a>]  Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
+              Interchange Format", STD 90, <a href="/doc/html/rfc8259">RFC 8259</a>,
+              DOI 10.17487/RFC8259, December 2017,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>&gt;.
+
+   [<a id="ref-RFC8705">RFC8705</a>]  Campbell, B., Bradley, J., Sakimura, N., and T.
+              Lodderstedt, "OAuth 2.0 Mutual-TLS Client Authentication
+              and Certificate-Bound Access Tokens", <a href="/doc/html/rfc8705">RFC 8705</a>,
+              DOI 10.17487/RFC8705, February 2020,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8705">https://www.rfc-editor.org/info/rfc8705</a>&gt;.
+
+   [<a id="ref-RFC8792">RFC8792</a>]  Watsen, K., Auerswald, E., Farrel, A., and Q. Wu,
+              "Handling Long Lines in Content of Internet-Drafts and
+              RFCs", <a href="/doc/html/rfc8792">RFC 8792</a>, DOI 10.17487/RFC8792, June 2020,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8792">https://www.rfc-editor.org/info/rfc8792</a>&gt;.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Document History</span>
+
+   *  -00
+
+      -  Initial individual draft.
+
+Author's Address
+
+   Justin Richer (editor)
+   Bespoke Engineering
+
+
+
+
+<span class="grey">Richer                  Expires 23 December 2021                [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft  OAuth Proof of Possession Tokens with HT       June 2021</span>
+
+
+   Email: ietf@justin.richer.org
+   URI:   <a href="https://bspk.io/">https://bspk.io/</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Richer                  Expires 23 December 2021                [Page 8]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

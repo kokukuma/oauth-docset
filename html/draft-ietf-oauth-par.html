@@ -1,0 +1,1581 @@
+<!DOCTYPE html> 
+
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+  
+    draft-ietf-oauth-par-10
+  
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+
+    <!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    
+  <link rel="alternate" type="application/atom+xml" title="Document changes" href="/feed/document-changes/draft-ietf-oauth-par/">
+  <meta name="description" content="OAuth 2.0 Pushed Authorization Requests (Internet-Draft, 2021)">
+  <script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+  <script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+
+
+    
+    <link rel="shortcut icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png">
+    
+    <link rel="apple-touch-icon" href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png">
+  </head>
+
+  <body style="padding-top: 0;">
+
+	  <div class="content" id="content">
+        
+  <!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+ 
+  <div class="rfcmarkup">
+    <div class="noprint" style="height: 6px;">
+      <div onmouseover="this.style.cursor='pointer';"
+         onclick="showLegend();"
+         onmouseout="hideLegend()"
+         style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; "
+         class="meta-info bgred"
+         title="Click for colour legend." >&nbsp;</div>
+      <div id="legend"
+           class="meta-info noprint pre legend"
+           style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; "
+           onmouseover="showLegend();"
+           onmouseout="hideLegend();">
+      </div>
+    </div>
+
+    
+      <div class="noprint">
+	 <pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-par-10.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-par-10.html" title="HTML version of this document, from XML2RFC">html</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-par-10.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-par-10.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-par/10/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-par/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-par@ietf.org?subject=draft-ietf-oauth-par" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&url2=draft-ietf-oauth-par-10.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-par-10.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-par-10.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-lodderstedt-oauth-par">draft-lodderstedt-oauth-par</a>) <a href="/doc/html/draft-ietf-oauth-par-00">00</a> <a href="/doc/html/draft-ietf-oauth-par-01">01</a> <a href="/doc/html/draft-ietf-oauth-par-02">02</a>         Standards Track
+          <a href="/doc/html/draft-ietf-oauth-par-03">03</a> <a href="/doc/html/draft-ietf-oauth-par-04">04</a> <a href="/doc/html/draft-ietf-oauth-par-05">05</a> <a href="/doc/html/draft-ietf-oauth-par-06">06</a> <a href="/doc/html/draft-ietf-oauth-par-07">07</a> <a href="/doc/html/draft-ietf-oauth-par-08">08</a> <a href="/doc/html/draft-ietf-oauth-par-09">09</a> <a href="/doc/html/draft-ietf-oauth-par-10"><b>10</b></a> <a href="/doc/html/rfc9126">rfc9126</a>                               </pre>
+      </div>
+    
+
+    <div class="draftcontent">
+    <pre>Web Authorization Protocol                                T. Lodderstedt
+Internet-Draft                                                   yes.com
+Intended status: Standards Track                             B. Campbell
+Expires: 30 January 2022                                   Ping Identity
+                                                             N. Sakimura
+                                                          NAT.Consulting
+                                                                D. Tonge
+                                           Moneyhub Financial Technology
+                                                               F. Skokan
+                                                                   Auth0
+                                                            29 July 2021
+
+
+                <span class="h1">OAuth 2.0 Pushed Authorization Requests</span>
+                        <span class="h1">draft-ietf-oauth-par-10</span>
+
+Abstract
+
+   This document defines the pushed authorization request (PAR)
+   endpoint, which allows clients to push the payload of an OAuth 2.0
+   authorization request to the authorization server via a direct
+   request and provides them with a request URI that is used as
+   reference to the data in a subsequent call to the authorization
+   endpoint.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as &quot;work in progress.&quot;
+
+   This Internet-Draft will expire on 30 January 2022.
+
+Copyright Notice
+
+   Copyright (c) 2021 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 1]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-2" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust&#x27;s Legal
+   Provisions Relating to IETF Documents (<a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/</a>
+   <a href="https://trustee.ietf.org/license-info">license-info</a>) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the <a href="https://trustee.ietf.org/license-info">Trust Legal Provisions</a> and are
+   provided without warranty as described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.1">1.1</a>.  Introductory Example  . . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-1.2">1.2</a>.  Conventions and Terminology . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-2">2</a>.  Pushed Authorization Request Endpoint . . . . . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-2.1">2.1</a>.  Request . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-2.2">2.2</a>.  Successful Response . . . . . . . . . . . . . . . . . . .   <a href="#page-9">9</a>
+     <a href="#section-2.3">2.3</a>.  Error Response  . . . . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-2.4">2.4</a>.  Management of Client Redirect URIs  . . . . . . . . . . .  <a href="#page-11">11</a>
+   <a href="#section-3">3</a>.  The &quot;request&quot; Request Parameter . . . . . . . . . . . . . . .  <a href="#page-12">12</a>
+   <a href="#section-4">4</a>.  Authorization Request . . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-5">5</a>.  Authorization Server Metadata . . . . . . . . . . . . . . . .  <a href="#page-15">15</a>
+   <a href="#section-6">6</a>.  Client Metadata . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-16">16</a>
+   <a href="#section-7">7</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-7.1">7.1</a>.  Request URI Guessing  . . . . . . . . . . . . . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-7.2">7.2</a>.  Open Redirection  . . . . . . . . . . . . . . . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-7.3">7.3</a>.  Request Object Replay . . . . . . . . . . . . . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-7.4">7.4</a>.  Client Policy Change  . . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+     <a href="#section-7.5">7.5</a>.  Request URI Swapping  . . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+   <a href="#section-8">8</a>.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+   <a href="#section-9">9</a>.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+   <a href="#section-10">10</a>. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+     <a href="#section-10.1">10.1</a>.  OAuth Authorization Server Metadata  . . . . . . . . . .  <a href="#page-18">18</a>
+     <a href="#section-10.2">10.2</a>.  OAuth Dynamic Client Registration Metadata . . . . . . .  <a href="#page-18">18</a>
+     <a href="#section-10.3">10.3</a>.  OAuth URI Registration . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+   <a href="#section-11">11</a>. Normative References  . . . . . . . . . . . . . . . . . . . .  <a href="#page-18">18</a>
+   <a href="#section-12">12</a>. Informative References  . . . . . . . . . . . . . . . . . . .  <a href="#page-19">19</a>
+   <a href="#appendix-A">Appendix A</a>.  Document History . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+   Authors&#x27; Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-23">23</a>
+
+<span class="h2"><a class="selflink" id="section-1" href="#section-1">1</a>.  Introduction</span>
+
+   A pushed authorization request (PAR), defined by this document,
+   enables an OAuth [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] client to push the payload of an
+   authorization request directly to the authorization server.  A
+   request URI value is received in in exchange, which is used as
+   reference to the authorization request payload data in a subsequent
+   call to the authorization endpoint via the user agent.
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 2]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-3" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   In OAuth [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] authorization request parameters are typically
+   sent as URI query parameters via redirection in the user agent.  This
+   is simple but also yields challenges:
+
+   *  There is no cryptographic integrity and authenticity protection.
+      An attacker could, for example, modify the scope of access
+      requested or swap the context of a payment transaction by changing
+      scope values.  Although protocol facilities exist to enable
+      clients or users to detect some such changes, preventing
+      modifications early in the process is a more robust solution.
+
+   *  There is no mechanism to ensure confidentiality of the request
+      parameters.  Although HTTPS is required for the authorization
+      endpoint, the request data passes through the user agent in the
+      clear and query string data can inadvertently leak to web server
+      logs and to other sites via referer.  The impact of such leakage
+      can be significant, if personally identifiable information or
+      other regulated data is sent in the authorization request (which
+      might well be the case in identity, open banking, and similar
+      scenarios).
+
+   *  Authorization request URLs can become quite large, especially in
+      scenarios requiring fine-grained authorization data, which might
+      cause errors in request processing.
+
+   JWT Secured Authorization Request (JAR) [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>]
+   provides solutions for the security challenges by allowing OAuth
+   clients to wrap authorization request parameters in a request object,
+   which is a signed and optionally encrypted JSON Web Token (JWT)
+   [<a href="/doc/html/rfc7519" title="&quot;JSON Web Token (JWT)&quot;">RFC7519</a>].  In order to cope with the size restrictions, JAR
+   introduces the &quot;request_uri&quot; parameter that allows clients to send a
+   reference to a request object instead of the request object itself.
+
+   This document complements JAR by providing an interoperable way to
+   push the payload of an authorization request directly to the
+   authorization server in exchange for a &quot;request_uri&quot; value usable at
+   the authorization server in a subsequent authorization request.
+
+   PAR fosters OAuth security by providing clients a simple means for a
+   confidential and integrity protected authorization request.  Clients
+   requiring an even higher security level, especially cryptographically
+   confirmed non-repudiation, are able to use JWT-based request objects
+   as defined by [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>] in conduction with PAR.
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 3]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-4" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   PAR allows the authorization server to authenticate the client before
+   any user interaction happens.  The increased confidence in the
+   identity of the client during the authorization process allows the
+   authorization server to refuse illegitimate requests much earlier in
+   the process, which can prevent attempts to spoof clients or otherwise
+   tamper with or misuse an authorization request.
+
+   Note that HTTP &quot;POST&quot; requests to the authorization endpoint via the
+   user agent, as described in <a href="/doc/html/rfc6749#section-3.1">Section&nbsp;3.1 of [RFC6749]</a> and
+   Section 3.1.2.1 of [<a href="#ref-OIDC" title="&quot;OpenID Connect Core 1.0 incorporating errata set 1&quot;">OIDC</a>], could also be used to cope with the
+   request size limitations described above.  However, it&#x27;s only
+   optional per [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] and, even when supported, it is a viable
+   option for traditional web applications but is prohibitively
+   difficult to use with native mobile applications.  As described in
+   [<a href="/doc/html/rfc8252" title="&quot;OAuth 2.0 for Native Apps&quot;">RFC8252</a>] those apps use platform-specific APIs to open the
+   authorization request URI in the system browser.  When a native app
+   launches a browser, however, the resultant initial request is
+   constrained to use the &quot;GET&quot; method.  Using &quot;POST&quot; for the
+   authorization request would require the app to first direct the
+   browser to open a URI that the app controls via &quot;GET&quot; while somehow
+   conveying the sizable authorization request payload and then have the
+   resultant response contain content and script to initiate a cross-
+   site form &quot;POST&quot; towards the authorization server.  PAR is simpler to
+   use and has additional security benefits described above.
+
+<span class="h3"><a class="selflink" id="section-1.1" href="#section-1.1">1.1</a>.  Introductory Example</span>
+
+   In traditional OAuth 2.0, a client typically initiates an
+   authorization request by directing the user agent to make an HTTP
+   request like the following to the authorization server&#x27;s
+   authorization endpoint (extra line breaks and indentation for display
+   purposes only):
+
+    GET /authorize?response_type=code
+     &amp;client_id=CLIENT1234&amp;state=duk681S8n00GsJpe7n9boxdzen
+     &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb HTTP/1.1
+    Host: as.example.com
+
+   Such a request could instead be pushed directly to the authorization
+   server by the client with a &quot;POST&quot; request to the PAR endpoint as
+   illustrated in the following example (extra line breaks and
+   whitespace for display purposes only).  The client can authenticate
+   (e.g., using JWT client assertion based authentication as shown)
+   because the request is made directly to the authorization server.
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 4]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-5" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+    POST /as/par HTTP/1.1
+    Host: as.example.com
+    Content-Type: application/x-www-form-urlencoded
+
+    &amp;response_type=code
+    &amp;client_id=CLIENT1234&amp;state=duk681S8n00GsJpe7n9boxdzen
+    &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+    &amp;client_assertion_type=
+     urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+    &amp;client_assertion=eyJraWQiOiI0MiIsImFsZyI6IkVTMjU2In0.eyJpc3MiOiJDTE
+     lFTlQxMjM0Iiwic3ViIjoiQ0xJRU5UMTIzNCIsImF1ZCI6Imh0dHBzOi8vc2VydmVyL
+     mV4YW1wbGUuY29tIiwiZXhwIjoxNjI1ODY4ODc4fQ.Igw8QrpAWRNPDGoWGRmJumLBM
+     wbLjeIYwqWUu-ywgvvufl_0sQJftNs3bzjIrP0BV9rRG-3eI1Ksh0kQ1CwvzA
+
+   The authorization server responds with a request URI:
+
+    HTTP/1.1 201 Created
+    Cache-Control: no-cache, no-store
+    Content-Type: application/json
+
+    {
+      &quot;request_uri&quot;: &quot;urn:example:bwc4JK-ESC0w8acc191e-Y1LTC2&quot;,
+      &quot;expires_in&quot;: 90
+    }
+
+   The client uses the request URI value to create the subsequent
+   authorization request by directing the user agent to make an HTTP
+   request to the authorization server&#x27;s authorization endpoint like the
+   following (extra line breaks and indentation for display purposes
+   only):
+
+    GET /authorize?client_id=CLIENT1234
+     &amp;request_uri=urn%3Aexample%3Abwc4JK-ESC0w8acc191e-Y1LTC2 HTTP/1.1
+    Host: as.example.com
+
+<span class="h3"><a class="selflink" id="section-1.2" href="#section-1.2">1.2</a>.  Conventions and Terminology</span>
+
+   The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
+   &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;NOT RECOMMENDED&quot;, &quot;MAY&quot;, and
+   &quot;OPTIONAL&quot; in this document are to be interpreted as described in <a href="/doc/html/bcp14">BCP</a>
+   <a href="/doc/html/bcp14">14</a> [<a href="/doc/html/rfc2119" title="&quot;Key words for use in RFCs to Indicate Requirement Levels&quot;">RFC2119</a>] [<a href="/doc/html/rfc8174" title="&quot;Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words&quot;">RFC8174</a>] when, and only when, they appear in all
+   capitals, as shown here.
+
+   This specification uses the terms &quot;access token&quot;, &quot;authorization
+   server&quot;, &quot;authorization endpoint&quot;, &quot;authorization request&quot;, &quot;token
+   endpoint&quot;, and &quot;client&quot; defined by The OAuth 2.0 Authorization
+   Framework [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>].
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 5]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-6" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+<span class="h2"><a class="selflink" id="section-2" href="#section-2">2</a>.  Pushed Authorization Request Endpoint</span>
+
+   The pushed authorization request endpoint is an HTTP API at the
+   authorization server that accepts HTTP &quot;POST&quot; requests with
+   parameters in the HTTP request message body using the &quot;application/x-
+   www-form-urlencoded&quot; format with a character encoding of UTF-8 as
+   described in <a href="/doc/html/rfc6749#appendix-B">Appendix&nbsp;B of [RFC6749]</a>.  The PAR endpoint URL MUST use
+   the &quot;https&quot; scheme.
+
+   Authorization servers supporting PAR SHOULD include the URL of their
+   pushed authorization request endpoint in their authorization server
+   metadata document [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>] using the
+   &quot;pushed_authorization_request_endpoint&quot; parameter as defined in
+   <a href="#section-5">Section 5</a>.
+
+   The endpoint accepts the authorization request parameters defined in
+   [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] for the authorization endpoint as well as all applicable
+   extensions defined for the authorization endpoint.  Some examples of
+   such extensions include PKCE [<a href="/doc/html/rfc7636" title="&quot;Proof Key for Code Exchange by OAuth Public Clients&quot;">RFC7636</a>], Resource Indicators
+   [<a href="/doc/html/rfc8707" title="&quot;Resource Indicators for OAuth 2.0&quot;">RFC8707</a>], and OpenID Connect [<a href="#ref-OIDC" title="&quot;OpenID Connect Core 1.0 incorporating errata set 1&quot;">OIDC</a>].  The endpoint MAY also support
+   sending the set of authorization request parameters as a request
+   object according to [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>] and <a href="#section-3">Section 3</a>.
+
+   The rules for client authentication as defined in [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] for token
+   endpoint requests, including the applicable authentication methods,
+   apply for the PAR endpoint as well.  If applicable, the
+   &quot;token_endpoint_auth_method&quot; client metadata [<a href="/doc/html/rfc7591" title="&quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;">RFC7591</a>] parameter
+   indicates the registered authentication method for the client to use
+   when making direct requests to the authorization server, including
+   requests to the PAR endpoint.  Similarly, the
+   &quot;token_endpoint_auth_methods_supported&quot; authorization server metadata
+   [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>] parameter lists client authentication methods supported by
+   the authorization server when accepting direct requests from clients,
+   including requests to the PAR endpoint.
+
+   Due to historical reasons there is potential ambiguity regarding the
+   appropriate audience value to use when employing JWT client assertion
+   based authentication (defined in <a href="/doc/html/rfc7523#section-2.2">Section&nbsp;2.2 of [RFC7523]</a> with
+   &quot;private_key_jwt&quot; or &quot;client_secret_jwt&quot; authentication method names
+   per Section 9 of [<a href="#ref-OIDC" title="&quot;OpenID Connect Core 1.0 incorporating errata set 1&quot;">OIDC</a>]).  To address that ambiguity the issuer
+   identifier URL of the authorization server according to [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>]
+   SHOULD be used as the value of the audience.  In order to facilitate
+   interoperability the authorization server MUST accept its issuer
+   identifier, token endpoint URL, or pushed authorization request
+   endpoint URL as values that identify it as an intended audience.
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 6]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-7" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+<span class="h3"><a class="selflink" id="section-2.1" href="#section-2.1">2.1</a>.  Request</span>
+
+   A client sends the parameters that comprise an authorization request
+   directly to the PAR endpoint.  A typical parameter set might include:
+   &quot;client_id&quot;, &quot;response_type&quot;, &quot;redirect_uri&quot;, &quot;scope&quot;, &quot;state&quot;,
+   &quot;code_challenge&quot;, and &quot;code_challenge_method&quot; as shown in the example
+   below.  However, the pushed authorization request can be composed of
+   any of the parameters applicable for use at authorization endpoint
+   including those defined in [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] as well as all applicable
+   extensions.  The &quot;request_uri&quot; authorization request parameter is one
+   exception, which MUST NOT be provided.
+
+   The request also includes, as appropriate for the given client, any
+   additional parameters necessary for client authentication (e.g.,
+   &quot;client_secret&quot;, or &quot;client_assertion&quot; and &quot;client_assertion_type&quot;).
+   Such parameters are defined and registered for use at the token
+   endpoint but are applicable only for client authentication.  When
+   present in a pushed authorization request, they are relied upon only
+   for client authentication and are not germane to the authorization
+   request itself.  Any token endpoint parameters that are not related
+   to client authentication have no defined meaning for a pushed
+   authorization request.  The &quot;client_id&quot; parameter is defined with the
+   same semantics for both authorization requests and requests to the
+   token endpoint; as a required authorization request parameter, it is
+   similarly required in a pushed authorization request.
+
+   The client constructs the message body of an HTTP &quot;POST&quot; request with
+   &quot;x-www-form-urlencoded&quot; formatted parameters using a character
+   encoding of UTF-8 as described in <a href="/doc/html/rfc6749#appendix-B">Appendix&nbsp;B of [RFC6749]</a>.  If
+   applicable, the client also adds its authentication credentials to
+   the request header or the request body using the same rules as for
+   token endpoint requests.
+
+   This is illustrated by the following example (extra line breaks in
+   the message body for display purposes only):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 7]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-8" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+    POST /as/par HTTP/1.1
+    Host: as.example.com
+    Content-Type: application/x-www-form-urlencoded
+
+    response_type=code&amp;state=af0ifjsldkj&amp;client_id=s6BhdRkqt3
+    &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+    &amp;code_challenge=K2-ltc83acc4h0c9w6ESC_rEMTJ3bww-uCHaoeK1t8U
+    &amp;code_challenge_method=S256&amp;scope=account-information
+    &amp;client_assertion_type=
+     urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+    &amp;client_assertion=eyJraWQiOiJrMmJkYyIsImFsZyI6IlJTMjU2In0.eyJpc3Mi
+     OiJzNkJoZFJrcXQzIiwic3ViIjoiczZCaGRSa3F0MyIsImF1ZCI6Imh0dHBzOi8vc
+     2VydmVyLmV4YW1wbGUuY29tIiwiZXhwIjoxNjI1ODY5Njc3fQ.te4IdnP_DK4hWrh
+     TWA6fyhy3fxlAQZAhfA4lmzRdpoP5uZb-E90R5YxzN1YDA8mnVdpgj_Bx1lG5r6se
+     f5TlckApA3hahhC804dcqlE4naEmLISmN1pds2WxTMOUzZY8aKKSDzNTDqhyTgE-K
+     dTb3RafRj7tdZb09zWs7c_moOvfVcQIoy5zz1BvLQKW1Y8JsYvdpu2AvpxRPbcP8W
+     yeW9B6PL6_fy3pXYKG3e-qUcvPa9kan-mo9EoSgt-YTDQjK1nZMdXIqTluK9caVJE
+     RWW0fD1Y11_tlOcJn-ya7v7d8YmFyJpkhZfm8x1FoeH0djEicXTixEkdRuzsgUCm6
+     GQ
+
+   The authorization server MUST process the request as follows:
+
+   1.  Authenticate the client in the same way as at the token endpoint
+       (<a href="/doc/html/rfc6749#section-2.3">Section&nbsp;2.3 of [RFC6749]</a>).
+
+   2.  Reject the request if the &quot;request_uri&quot; authorization request
+       parameter is provided.
+
+   3.  Validate the pushed request as it would an authorization request
+       sent to the authorization endpoint.  For example, the
+       authorization server checks whether the redirect URI matches one
+       of the redirect URIs configured for the client and also checks
+       whether the client is authorized for the scope for which it is
+       requesting access.  This validation allows the authorization
+       server to refuse unauthorized or fraudulent requests early.  The
+       authorization server MAY omit validation steps that it is unable
+       to perform when processing the pushed request, however, such
+       checks MUST then be performed when processing the authorization
+       request at the authorization endpoint.
+
+   The authorization server MAY allow clients with authentication
+   credentials to establish per-authorization-request redirect URIs with
+   every pushed authorization request.  Described in more detail in
+   <a href="#section-2.4">Section 2.4</a>, this is possible since, in contrast to [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>], this
+   specification gives the authorization server the ability to
+   authenticate clients and validate client requests before the actual
+   authorization request is performed.
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 8]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-9" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+<span class="h3"><a class="selflink" id="section-2.2" href="#section-2.2">2.2</a>.  Successful Response</span>
+
+   If the verification is successful, the server MUST generate a request
+   URI and provide it in the response with a &quot;201&quot; HTTP status code.
+   The following parameters are included as top-level members in the
+   message body of the HTTP response using the &quot;application/json&quot; media
+   type as defined by [<a href="/doc/html/rfc8259" title="&quot;The JavaScript Object Notation (JSON) Data Interchange Format&quot;">RFC8259</a>].
+
+   *  &quot;request_uri&quot; : The request URI corresponding to the authorization
+      request posted.  This URI is a single-use reference to the
+      respective request data in the subsequent authorization request.
+      The way the authorization process obtains the authorization
+      request data is at the discretion of the authorization server and
+      out of scope of this specification.  There is no need to make the
+      authorization request data available to other parties via this
+      URI.
+
+   *  &quot;expires_in&quot; : A JSON number that represents the lifetime of the
+      request URI in seconds as a positive integer.  The request URI
+      lifetime is at the discretion of the authorization server but will
+      typically be relatively short (e.g., between 5 and 600 seconds).
+
+   The format of the &quot;request_uri&quot; value is at the discretion of the
+   authorization server but it MUST contain some part generated using a
+   cryptographically strong pseudorandom algorithm such that it is
+   computationally infeasible to predict or guess a valid value (see
+   <a href="/doc/html/rfc6749#section-10.10">Section&nbsp;10.10 of [RFC6749]</a> for specifics).  The authorization server
+   MAY construct the &quot;request_uri&quot; value using the form
+   &quot;urn:ietf:params:oauth:request_uri:&lt;reference-value&gt;&quot; with
+   &quot;&lt;reference-value&gt;&quot; as the random part of the URI that references the
+   respective authorization request data.
+
+   The &quot;request_uri&quot; value MUST be bound to the client that posted the
+   authorization request.
+
+   The following is an example of such a response:
+
+    HTTP/1.1 201 Created
+    Content-Type: application/json
+    Cache-Control: no-cache, no-store
+
+    {
+     &quot;request_uri&quot;:
+       &quot;urn:ietf:params:oauth:request_uri:6esc_11ACC5bwc014ltc14eY22c&quot;,
+     &quot;expires_in&quot;: 60
+    }
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022                [Page 9]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-10" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+<span class="h3"><a class="selflink" id="section-2.3" href="#section-2.3">2.3</a>.  Error Response</span>
+
+   The authorization server returns an error response with the same
+   format as is specified for error responses from the token endpoint in
+   <a href="/doc/html/rfc6749#section-5.2">Section&nbsp;5.2 of [RFC6749]</a> using the appropriate error code from
+   therein or from <a href="/doc/html/rfc6749#section-4.1.2.1">Section&nbsp;4.1.2.1 of [RFC6749]</a>.  In those cases where
+   <a href="/doc/html/rfc6749#section-4.1.2.1">Section&nbsp;4.1.2.1 of [RFC6749]</a> prohibits automatic redirection with an
+   error back to the requesting client and hence doesn&#x27;t define an error
+   code, for example when the request fails due to a missing, invalid,
+   or mismatching redirection URI, the &quot;invalid_request&quot; error code can
+   be used as the default error code.  Error codes defined by OAuth
+   extension can also be used when such an extension is involved in the
+   initial processing of authorization request that was pushed.  Since
+   initial processing of the pushed authorization request does not
+   involve resource owner interaction, error codes related to user
+   interaction, such as &quot;consent_required&quot; defined by [<a href="#ref-OIDC" title="&quot;OpenID Connect Core 1.0 incorporating errata set 1&quot;">OIDC</a>], are never
+   returned.
+
+   If the client is required to use signed request objects, either by
+   authorization server or client policy (see [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>],
+   section 10.5), the authorization server MUST only accept requests
+   complying with the definition given in <a href="#section-3">Section 3</a> and MUST refuse any
+   other request with HTTP status code 400 and error code
+   &quot;invalid_request&quot;.
+
+   In addition to the above, the PAR endpoint can also make use of the
+   following HTTP status codes:
+
+   *  405: If the request did not use the &quot;POST&quot; method, the
+      authorization server responds with an HTTP 405 (Method Not
+      Allowed) status code.
+
+   *  413: If the request size was beyond the upper bound that the
+      authorization server allows, the authorization server responds
+      with an HTTP 413 (Payload Too Large) status code.
+
+   *  429: If the number of requests from a client during a particular
+      time period exceeds the number the authorization server allows,
+      the authorization server responds with an HTTP 429 (Too Many
+      Requests) status code.
+
+   The following is an example of an error response from the PAR
+   endpoint:
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 10]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-11" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+    HTTP/1.1 400 Bad Request
+    Content-Type: application/json
+    Cache-Control: no-cache, no-store
+
+    {
+      &quot;error&quot;: &quot;invalid_request&quot;,
+      &quot;error_description&quot;:
+        &quot;The redirect_uri is not valid for the given client&quot;
+    }
+
+<span class="h3"><a class="selflink" id="section-2.4" href="#section-2.4">2.4</a>.  Management of Client Redirect URIs</span>
+
+   OAuth 2.0 [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>] allows clients to use unregistered &quot;redirect_uri&quot;
+   values in certain circumstances or for the authorization server to
+   apply its own matching semantics to the &quot;redirect_uri&quot; value
+   presented by the client at the authorization endpoint.  However, the
+   OAuth Security BCP [<a href="#ref-I-D.ietf-oauth-security-topics">I-D.ietf-oauth-security-topics</a>] as well as OAuth
+   2.1 [<a href="#ref-I-D.ietf-oauth-v2-1">I-D.ietf-oauth-v2-1</a>] require an authorization server exactly
+   match the &quot;redirect_uri&quot; parameter against the set of redirect URIs
+   previously established for a particular client.  This is a means for
+   early detection of client impersonation attempts and prevents token
+   leakage and open redirection.  As a downside, this can make client
+   management more cumbersome since the redirect URI is typically the
+   most volatile part of a client policy.
+
+   The exact matching requirement MAY be relaxed when using PAR for
+   clients that have established authentication credentials with the
+   authorization server.  This is possible since, in contrast to a
+   traditional authorization request, the authorization server
+   authenticates the client before the authorization process starts and
+   thus ensures it is interacting with the legitimate client.  The
+   authorization server MAY allow such clients to specify &quot;redirect_uri&quot;
+   values that were not previously registered with the authorization
+   server.  This will give the client more flexibility (e.g., to mint
+   distinct redirect URI values per authorization server at runtime) and
+   can simplify client management.  It is at the discretion of the
+   authorization server to apply restrictions on supplied &quot;redirect_uri&quot;
+   values, e.g., the authorization server MAY require a certain URI
+   prefix or allow only a query parameter to vary at runtime.
+
+   Note: The ability to set up transaction specific redirect URIs is
+   also useful in situations where client ids and corresponding
+   credentials and policies are managed by a trusted 3rd party, e.g. via
+   client certificates containing client permissions.  Such an
+   externally managed client could interact with an authorization server
+   trusting the respective 3rd party without the need for an additional
+   registration step.
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 11]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-12" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+<span class="h2"><a class="selflink" id="section-3" href="#section-3">3</a>.  The &quot;request&quot; Request Parameter</span>
+
+   Clients MAY use the &quot;request&quot; parameter as defined in JAR
+   [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>] to push a request object JWT to the
+   authorization server.  The rules for processing, signing, and
+   encryption of the request object as defined in JAR
+   [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>] apply.  Request parameters required by a
+   given client authentication method are included in the &quot;application/
+   x-www-form-urlencoded&quot; request directly, and are the only parameters
+   other than &quot;request&quot; in the form body (e.g.  Mutual TLS client
+   authentication [<a href="/doc/html/rfc8705" title="&quot;OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens&quot;">RFC8705</a>] uses the &quot;client_id&quot; HTTP request parameter
+   while JWT assertion based client authentication [<a href="/doc/html/rfc7523" title="&quot;JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants&quot;">RFC7523</a>] uses
+   &quot;client_assertion&quot; and &quot;client_assertion_type&quot;).  All other request
+   parameters, i.e., those pertaining to the authorization request
+   itself, MUST appear as claims of the JWT representing the
+   authorization request.
+
+   The following is an example of a pushed authorization request using a
+   signed request object with the same authorization request payload as
+   the example in <a href="#section-2.1">Section 2.1</a>.  The client is authenticated with JWT
+   client assertion based authentication [<a href="/doc/html/rfc7523" title="&quot;JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants&quot;">RFC7523</a>] (extra line breaks
+   and whitespace for display purposes only):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 12]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-13" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+    POST /as/par HTTP/1.1
+    Host: as.example.com
+    Content-Type: application/x-www-form-urlencoded
+
+    client_assertion_type=
+     urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+    &amp;client_assertion=eyJraWQiOiJrMmJkYyIsImFsZyI6IlJTMjU2In0.eyJpc3Mi
+     OiJzNkJoZFJrcXQzIiwic3ViIjoiczZCaGRSa3F0MyIsImF1ZCI6Imh0dHBzOi8vc
+     2VydmVyLmV4YW1wbGUuY29tIiwiZXhwIjoxNjI1ODY5Njc3fQ.te4IdnP_DK4hWrh
+     TWA6fyhy3fxlAQZAhfA4lmzRdpoP5uZb-E90R5YxzN1YDA8mnVdpgj_Bx1lG5r6se
+     f5TlckApA3hahhC804dcqlE4naEmLISmN1pds2WxTMOUzZY8aKKSDzNTDqhyTgE-K
+     dTb3RafRj7tdZb09zWs7c_moOvfVcQIoy5zz1BvLQKW1Y8JsYvdpu2AvpxRPbcP8W
+     yeW9B6PL6_fy3pXYKG3e-qUcvPa9kan-mo9EoSgt-YTDQjK1nZMdXIqTluK9caVJE
+     RWW0fD1Y11_tlOcJn-ya7v7d8YmFyJpkhZfm8x1FoeH0djEicXTixEkdRuzsgUCm6
+     GQ
+    &amp;request=eyJraWQiOiJrMmJkYyIsImFsZyI6IlJTMjU2In0.eyJpc3MiOiJzNkJoZ
+     FJrcXQzIiwiYXVkIjoiaHR0cHM6Ly9zZXJ2ZXIuZXhhbXBsZS5jb20iLCJleHAiOj
+     E2MjU4Njk2NzcsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwiY2xpZW50X2lkIjoiczZ
+     CaGRSa3F0MyIsInJlZGlyZWN0X3VyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUu
+     b3JnL2NiIiwic2NvcGUiOiJhY2NvdW50LWluZm9ybWF0aW9uIiwic3RhdGUiOiJhZ
+     jBpZmpzbGRraiIsImNvZGVfY2hhbGxlbmdlIjoiSzItbHRjODNhY2M0aDBjOXc2RV
+     NDX3JFTVRKM2J3dy11Q0hhb2VLMXQ4VSIsImNvZGVfY2hhbGxlbmdlX21ldGhvZCI
+     6IlMyNTYifQ.l9R3RC9bFBHry_8acObQjEf4fX5yfJkWUPfak3J3iiBm0aaQznPw5
+     BZ0B3VQZ9_KYdPt5bTkaflS5fSDklM3_7my9MyOSKFYmf46INk6ju_qUuC2crkOQX
+     ZWYJB-0bnYEbdHpUjazFSUvN49cEGstNQeE-dKDWHNgEojgcuNA_pjKfL9VYp1dEA
+     6-WjXZ_OlJ7R_mBWpjFAzc0UkQwqX5hfOJoGTqB2tE4a4aB2z8iYlUJp0DeeYp_hP
+     N6svtmdvte73p5bLGDFpRIlmrBQIAQuxiS0skORpXlS0cBcgHimXVnXOJG7E-A_lS
+     _5y54dVLQPA1jKYx-fxbYSG7dp2fw
+    &amp;client_id=s6BhdRkqt3
+
+   The authorization server MUST take the following steps beyond the
+   processing rules defined in <a href="#section-2.1">Section 2.1</a>:
+
+   1.  If applicable, decrypt the request object as specified in JAR
+       [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>], section 6.1.
+
+   2.  Validate the request object signature as specified in JAR
+       [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>], section 6.2.
+
+   3.  If the client has authentication credentials established with the
+       authorization server, reject the request if the authenticated
+       &quot;client_id&quot; does not match the &quot;client_id&quot; claim in the request
+       object.  Additionally requiring the &quot;iss&quot; claim to match the
+       &quot;client_id&quot; is at the discretion of authorization server.
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 13]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-14" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   The following RSA key pair, represented in JWK [<a href="/doc/html/rfc7517" title="&quot;JSON Web Key (JWK)&quot;">RFC7517</a>] format, can
+   be used to validate or recreate the request object signature in the
+   above example (extra line breaks and indentation within values for
+   display purposes only):
+
+    {
+      &quot;kty&quot;: &quot;RSA&quot;,
+      &quot;kid&quot;:&quot;k2bdc&quot;,
+      &quot;n&quot;: &quot;y9Lqv4fCp6Ei-u2-ZCKq83YvbFEk6JMs_pSj76eMkddWRuWX2aBKGHAtKlE
+            5P7_vn__PCKZWePt3vGkB6ePgzAFu08NmKemwE5bQI0e6kIChtt_6KzT5Oa
+            aXDFI6qCLJmk51Cc4VYFaxgqevMncYrzaW_50mZ1yGSFIQzLYP8bijAHGVj
+            dEFgZaZEN9lsn_GdWLaJpHrB3ROlS50E45wxrlg9xMncVb8qDPuXZarvghL
+            L0HzOuYRadBJVoWZowDNTpKpk2RklZ7QaBO7XDv3uR7s_sf2g-bAjSYxYUG
+            sqkNA9b3xVW53am_UZZ3tZbFTIh557JICWKHlWj5uzeJXaw&quot;,
+      &quot;e&quot;: &quot;AQAB&quot;,
+      &quot;d&quot;: &quot;LNwG_pCKrwowALpCpRdcOKlSVqylSurZhE6CpkRiE9cpDgGKIkO9CxPlXOL
+            zjqxXuQc8MdMqRQZTnAwgd7HH0B6gncrruV3NewI-XQV0ckldTjqNfOTz1V
+            Rs-jE-57KAXI3YBIhu-_0YpIDzdk_wBuAk661Svn0GsPQe7m9DoxdzenQu9
+            O_soewUhlPzRrTH0EeIqYI715rwI3TYaSzoWBmEPD2fICyj18FF0MPy_SQz
+            k3noVUUIzfzLnnJiWy_p63QBCMqjRoSHHdMnI4z9iVpIwJWQ3jO5n_2lC2-
+            cSgwjmKsFzDBbQNJc7qMG1N6EssJUwgGJxz1eAUFf0w4YAQ&quot;,
+      &quot;qi&quot;: &quot;J-mG0swR4FTy3atrcQ7dd0hhYn1E9QndN-
+            -sDG4EQO0RnFj6wIefCvwIc4
+            7hCtVeFnCTPYJNc_JyV-mU-9vlzS5GSNuyR5qdpsMZXUMpEvQcwKt23ffPZ
+            YGaqfKyEesmf_Wi8fFcE68H9REQjnniKrXm7w2-IuG_IrVJA9Ox-uU&quot;,
+      &quot;q&quot;: &quot;4hlMYAGa0dvogdK1jnxQ7J_Lqpqi99e-AeoFvoYpMPhthChTzwFZO9lQmUo
+            BpMqVQTws_s7vWGmt7ZAB3ywkurf0pV7BD0fweJiUzrWk4KJjxtmP_auuxr
+            jvm3s2FUGn6f0wRY9Z8Hj9A7C72DnYCjuZiJQMYCWDsZ8-d-L1a-s&quot;,
+      &quot;p&quot;: &quot;5sd9Er3I2FFT9R-gy84_oakEyCmgw036B_nfYEEOCwpSvi2z7UcIVK3bSEL
+            5WCW6BNgB3HDWhq8aYPirwQnqm0K9mX1E-4xM10WWZ-rP3XjYpQeS0Snru5
+            LFVWsAzi-FX7BOqBibSAXLdEGXcXa44l08iec_bPD3xduq5V_1YoE&quot;,
+      &quot;dq&quot;: &quot;Nz2PF3XM6bEc4XsluKZO70ErdYdKgdtIJReUR7Rno_tOZpejwlPGBYVW19
+            zpAeYtCT82jxroB2XqhLxGeMxEPQpsz2qTKLSe4BgHY2ml2uxSDGdjcsrbb
+            NoKUKaN1CuyZszhWl1n0AT_bENl4bJgQj_Fh0UEsQj5YBBUJt5gr_k&quot;,
+      &quot;dp&quot;: &quot;Zc877jirkkLOtyTs2vxyNe9KnMNAmOidlUc2tE_-0gAL4Lpo1hSwKCtKwe
+            ZJ-gkqt1hT-dwNx_0Xtg_-NXsadMRMwJnzBMYwYAfjApUkfqABc0yUCJJl3
+            KozRCugf1WXkU9GZAH2_x8PUopdNUEa70ISowPRh04HANKX4fkjWAE&quot;
+     }
+
+<span class="h2"><a class="selflink" id="section-4" href="#section-4">4</a>.  Authorization Request</span>
+
+   The client uses the &quot;request_uri&quot; value returned by the authorization
+   server to build an authorization request as defined in
+   [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>].  This is shown in the following example
+   where the client directs the user agent to make the following HTTP
+   request (extra line breaks and indentation for display purposes
+   only):
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 14]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-15" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+    GET /authorize?client_id=s6BhdRkqt3&amp;request_uri=urn%3Aietf%3Aparams
+     %3Aoauth%3Arequest_uri%3A6esc_11ACC5bwc014ltc14eY22c HTTP/1.1
+    Host: as.example.com
+
+   Since parts of the authorization request content, e.g. the
+   &quot;code_challenge&quot; parameter value, are unique to a particular
+   authorization request, the client MUST only use a &quot;request_uri&quot; value
+   once.  Authorization servers SHOULD treat &quot;request_uri&quot; values as
+   one-time use but MAY allow for duplicate requests due to a user
+   reloading/refreshing their user agent.  An expired &quot;request_uri&quot; MUST
+   be rejected as invalid.
+
+   The authorization server MUST validate authorization requests arising
+   from a pushed request as it would any other authorization request.
+   The authorization server MAY omit validation steps that it performed
+   when the request was pushed, provided that it can validate that the
+   request was a pushed request, and that the request or the
+   authorization server&#x27;s policy has not been modified in a way that
+   would affect the outcome of the omitted steps.
+
+   Authorization server policy MAY dictate, either globally or on a per-
+   client basis, that PAR is the only means for a client to pass
+   authorization request data.  In this case, the authorization server
+   will refuse, using the &quot;invalid_request&quot; error code, to process any
+   request to the authorization endpoint that does not have a
+   &quot;request_uri&quot; parameter with a value obtained from the PAR endpoint.
+
+   Note: authorization server and clients MAY use metadata as defined in
+   <a href="#section-5">Section 5</a> and <a href="#section-6">Section 6</a> to signal the desired behavior.
+
+<span class="h2"><a class="selflink" id="section-5" href="#section-5">5</a>.  Authorization Server Metadata</span>
+
+   The following authorization server metadata [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>] parameters are
+   introduced to signal the server&#x27;s capability and policy with respect
+   to PAR.
+
+   &quot;pushed_authorization_request_endpoint&quot;  The URL of the pushed
+      authorization request endpoint at which a client can post an
+      authorization request to exchange for a &quot;request_uri&quot; value usable
+      at the authorization server.
+
+   &quot;require_pushed_authorization_requests&quot;  Boolean parameter indicating
+      whether the authorization server accepts authorization request
+      data only via PAR.  If omitted, the default value is &quot;false&quot;.
+
+   Note that the presence of &quot;pushed_authorization_request_endpoint&quot; is
+   sufficient for a client to determine that it may use the PAR flow.  A
+   &quot;request_uri&quot; value obtained from the PAR endpoint is usable at the
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 15]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-16" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   authorization endpoint regardless of other authorization server
+   metadata such as &quot;request_uri_parameter_supported&quot; or
+   &quot;require_request_uri_registration&quot; [<a href="#ref-OIDC.Disco">OIDC.Disco</a>].
+
+<span class="h2"><a class="selflink" id="section-6" href="#section-6">6</a>.  Client Metadata</span>
+
+   The Dynamic Client Registration Protocol [<a href="/doc/html/rfc7591" title="&quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;">RFC7591</a>] defines an API for
+   dynamically registering OAuth 2.0 client metadata with authorization
+   servers.  The metadata defined by [<a href="/doc/html/rfc7591" title="&quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;">RFC7591</a>], and registered
+   extensions to it, also imply a general data model for clients that is
+   useful for authorization server implementations even when the Dynamic
+   Client Registration Protocol isn&#x27;t in play.  Such implementations
+   will typically have some sort of user interface available for
+   managing client configuration.  The following client metadata
+   parameter is introduced by this document to indicate whether pushed
+   authorization requests are required for the given client.
+
+   &quot;require_pushed_authorization_requests&quot;  Boolean parameter indicating
+      whether the only means of initiating an authorization request the
+      client is allowed to use is PAR.  If omitted, the default value is
+      &quot;false&quot;.
+
+<span class="h2"><a class="selflink" id="section-7" href="#section-7">7</a>.  Security Considerations</span>
+
+<span class="h3"><a class="selflink" id="section-7.1" href="#section-7.1">7.1</a>.  Request URI Guessing</span>
+
+   An attacker could attempt to guess and replay a valid request URI
+   value and try to impersonate the respective client.  The
+   authorization server MUST consider the considerations given in JAR
+   [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>], section 10.2, clause (d) on request URI
+   entropy.
+
+<span class="h3"><a class="selflink" id="section-7.2" href="#section-7.2">7.2</a>.  Open Redirection</span>
+
+   An attacker could try to register a redirect URI pointing to a site
+   under his control in order to obtain authorization codes or launch
+   other attacks towards the user.  The authorization server MUST only
+   accept new redirect URIs in the pushed authorization request from
+   authenticated clients.
+
+<span class="h3"><a class="selflink" id="section-7.3" href="#section-7.3">7.3</a>.  Request Object Replay</span>
+
+   An attacker could replay a request URI captured from a legitimate
+   authorization request.  In order to cope with such attacks, the
+   authorization server SHOULD make the request URIs one-time use.
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 16]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-17" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+<span class="h3"><a class="selflink" id="section-7.4" href="#section-7.4">7.4</a>.  Client Policy Change</span>
+
+   The client policy might change between the lodging of the request
+   object and the authorization request using a particular request
+   object.  It is therefore recommended that the authorization server
+   check the request parameter against the client policy when processing
+   the authorization request.
+
+<span class="h3"><a class="selflink" id="section-7.5" href="#section-7.5">7.5</a>.  Request URI Swapping</span>
+
+   An attacker could capture the request URI from one request and then
+   substitute it into a different authorization request.  For example,
+   in the context of OpenID Connect, an attacker could replace a request
+   URI asking for a high level of authentication assurance with one that
+   requires a lower level of assurance.  Clients SHOULD make use of PKCE
+   [<a href="/doc/html/rfc7636" title="&quot;Proof Key for Code Exchange by OAuth Public Clients&quot;">RFC7636</a>], a unique &quot;state&quot; parameter [<a href="/doc/html/rfc6749" title="&quot;The OAuth 2.0 Authorization Framework&quot;">RFC6749</a>], or the OIDC &quot;nonce&quot;
+   parameter [<a href="#ref-OIDC" title="&quot;OpenID Connect Core 1.0 incorporating errata set 1&quot;">OIDC</a>] in the pushed request object to prevent this attack.
+
+<span class="h2"><a class="selflink" id="section-8" href="#section-8">8</a>.  Privacy Considerations</span>
+
+   OAuth 2.0 is a complex and flexible framework with broad-ranging
+   privacy implications due to the very nature of it having one entity
+   intermediate user authorization to data access between two other
+   entities.  The privacy considerations of all of OAuth are beyond the
+   scope of this document, which only defines an alternative way of
+   initiating one message sequence in the larger framework.  Using PAR,
+   however, may improve privacy by reducing the potential for
+   inadvertent information disclosure since it passes the authorization
+   request data directly between client and authorization server over a
+   secure connection in the message body of an HTTP request, rather than
+   in the query component of a URL that passes through the user agent in
+   the clear.
+
+<span class="h2"><a class="selflink" id="section-9" href="#section-9">9</a>.  Acknowledgements</span>
+
+   This specification is based on the work towards Pushed Request Object
+   (<a href="https://bitbucket.org/openid/fapi/src/master/Financial_API_Pushed_Request_Object.md">https://bitbucket.org/openid/fapi/src/master/</a>
+   <a href="https://bitbucket.org/openid/fapi/src/master/Financial_API_Pushed_Request_Object.md">Financial_API_Pushed_Request_Object.md</a>) conducted at the Financial-
+   grade API working group at the OpenID Foundation.  We would like to
+   thank the members of the WG for their valuable contributions.
+
+   We would like to thank Vladimir Dzhuvinov, Aaron Parecki, Justin
+   Richer, Sascha Preibisch, Daniel Fett, Michael B.  Jones, Annabelle
+   Backman, Joseph Heenan, Sean Glencross, Maggie Hung, Neil Madden,
+   Karsten Meyer zu Selhausen, Roman Danyliw, Meral Shirazipour, and
+   Takahiko Kawasaki for their valuable feedback on this draft.
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 17]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-18" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+<span class="h2"><a class="selflink" id="section-10" href="#section-10">10</a>.  IANA Considerations</span>
+
+<span class="h3"><a class="selflink" id="section-10.1" href="#section-10.1">10.1</a>.  OAuth Authorization Server Metadata</span>
+
+   This specification requests registration of the following values in
+   the IANA &quot;OAuth Authorization Server Metadata&quot; registry of
+   [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by [<a href="/doc/html/rfc8414" title="&quot;OAuth 2.0 Authorization Server Metadata&quot;">RFC8414</a>].
+
+   Metadata Name:  &quot;pushed_authorization_request_endpoint&quot;
+   Metadata Description:  URL of the authorization server&#x27;s pushed
+      authorization request endpoint
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-5">Section 5</a> of [[ this document ]]
+
+   Metadata Name:  &quot;require_pushed_authorization_requests&quot;
+   Metadata Description:  Indicates whether the authorization server
+      accepts authorization requests only via PAR.
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-5">Section 5</a> of [[ this document ]]
+
+<span class="h3"><a class="selflink" id="section-10.2" href="#section-10.2">10.2</a>.  OAuth Dynamic Client Registration Metadata</span>
+
+   This specification requests registration of the following value in
+   the IANA &quot;OAuth Dynamic Client Registration Metadata&quot; registry of
+   [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by [<a href="/doc/html/rfc7591" title="&quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;">RFC7591</a>].
+
+   Client Metadata Name:  &quot;require_pushed_authorization_requests&quot;
+   Client Metadata Description:  Indicates whether the client is
+      required to use the PAR to initiate authorization requests.
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-6">Section 6</a> of [[ this document ]]
+
+<span class="h3"><a class="selflink" id="section-10.3" href="#section-10.3">10.3</a>.  OAuth URI Registration</span>
+
+   This specification requests registration of the following value in
+   the &quot;OAuth URI&quot; registry of [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by
+   [<a href="/doc/html/rfc6755" title="&quot;An IETF URN Sub-Namespace for OAuth&quot;">RFC6755</a>].
+
+   URN:  &quot;urn:ietf:params:oauth:request_uri:&quot;
+   Common Name:  A URN Sub-Namespace for OAuth Request URIs.
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-2.2">Section 2.2</a> of [[ this document ]]
+
+<span class="h2"><a class="selflink" id="section-11" href="#section-11">11</a>.  Normative References</span>
+
+   [<a id="ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>]
+              Sakimura, N., Bradley, J., and M. B. Jones, &quot;The OAuth 2.0
+              Authorization Framework: JWT Secured Authorization Request
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 18]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-19" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+              (JAR)&quot;, Work in Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-jwsreq-34">draft-ietf-</a>
+              <a href="/doc/html/draft-ietf-oauth-jwsreq-34">oauth-jwsreq-34</a>, 8 April 2021,
+              &lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-jwsreq-34">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-</a>
+              <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-jwsreq-34">jwsreq-34</a>&gt;.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., &quot;Key words for use in RFCs to Indicate
+              Requirement Levels&quot;, <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., &quot;The OAuth 2.0 Authorization Framework&quot;,
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6749">https://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC8174">RFC8174</a>]  Leiba, B., &quot;Ambiguity of Uppercase vs Lowercase in <a href="/doc/html/rfc2119">RFC</a>
+              <a href="/doc/html/rfc2119">2119</a> Key Words&quot;, <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc8174">RFC 8174</a>, DOI 10.17487/RFC8174,
+              May 2017, &lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;.
+
+   [<a id="ref-RFC8259">RFC8259</a>]  Bray, T., Ed., &quot;The JavaScript Object Notation (JSON) Data
+              Interchange Format&quot;, STD 90, <a href="/doc/html/rfc8259">RFC 8259</a>,
+              DOI 10.17487/RFC8259, December 2017,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>&gt;.
+
+   [<a id="ref-RFC8414">RFC8414</a>]  Jones, M., Sakimura, N., and J. Bradley, &quot;OAuth 2.0
+              Authorization Server Metadata&quot;, <a href="/doc/html/rfc8414">RFC 8414</a>,
+              DOI 10.17487/RFC8414, June 2018,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8414">https://www.rfc-editor.org/info/rfc8414</a>&gt;.
+
+<span class="h2"><a class="selflink" id="section-12" href="#section-12">12</a>.  Informative References</span>
+
+   [<a id="ref-I-D.ietf-oauth-security-topics">I-D.ietf-oauth-security-topics</a>]
+              Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
+              &quot;OAuth 2.0 Security Best Current Practice&quot;, Work in
+              Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-security-topics-18">draft-ietf-oauth-security-</a>
+              <a href="/doc/html/draft-ietf-oauth-security-topics-18">topics-18</a>, 13 April 2021,
+              &lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-18">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-</a>
+              <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-18">security-topics-18</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-v2-1">I-D.ietf-oauth-v2-1</a>]
+              Hardt, D., Parecki, A., and T. Lodderstedt, &quot;The OAuth 2.1
+              Authorization Framework&quot;, Work in Progress, Internet-
+              Draft, <a href="/doc/html/draft-ietf-oauth-v2-1-02">draft-ietf-oauth-v2-1-02</a>, 15 March 2021,
+              &lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-02">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-</a>
+              <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-02">v2-1-02</a>&gt;.
+
+   [<a id="ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>]
+              IANA, &quot;OAuth Parameters&quot;,
+              &lt;<a href="http://www.iana.org/assignments/oauth-parameters">http://www.iana.org/assignments/oauth-parameters</a>&gt;.
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 19]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-20" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   [<a id="ref-OIDC">OIDC</a>]     Sakimura, N., Bradley, J., Jones, M., de Medeiros, B., and
+              C. Mortimore, &quot;OpenID Connect Core 1.0 incorporating
+              errata set 1&quot;, 8 November 2014,
+              &lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;.
+
+   [<a id="ref-OIDC.Disco">OIDC.Disco</a>]
+              Sakimura, N., Bradley, J., Jones, M.B., and E. Jay,
+              &quot;OpenID Connect Discovery 1.0&quot;, 8 November 2014,
+              &lt;<a href="http://openid.net/specs/openid-connect-discovery-1_0.html">http://openid.net/specs/openid-connect-discovery-</a>
+              <a href="http://openid.net/specs/openid-connect-discovery-1_0.html">1_0.html</a>&gt;.
+
+   [<a id="ref-RFC6755">RFC6755</a>]  Campbell, B. and H. Tschofenig, &quot;An IETF URN Sub-Namespace
+              for OAuth&quot;, <a href="/doc/html/rfc6755">RFC 6755</a>, DOI 10.17487/RFC6755, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6755">https://www.rfc-editor.org/info/rfc6755</a>&gt;.
+
+   [<a id="ref-RFC7517">RFC7517</a>]  Jones, M., &quot;JSON Web Key (JWK)&quot;, <a href="/doc/html/rfc7517">RFC 7517</a>,
+              DOI 10.17487/RFC7517, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7517">https://www.rfc-editor.org/info/rfc7517</a>&gt;.
+
+   [<a id="ref-RFC7519">RFC7519</a>]  Jones, M., Bradley, J., and N. Sakimura, &quot;JSON Web Token
+              (JWT)&quot;, <a href="/doc/html/rfc7519">RFC 7519</a>, DOI 10.17487/RFC7519, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7519">https://www.rfc-editor.org/info/rfc7519</a>&gt;.
+
+   [<a id="ref-RFC7523">RFC7523</a>]  Jones, M., Campbell, B., and C. Mortimore, &quot;JSON Web Token
+              (JWT) Profile for OAuth 2.0 Client Authentication and
+              Authorization Grants&quot;, <a href="/doc/html/rfc7523">RFC 7523</a>, DOI 10.17487/RFC7523, May
+              2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7523">https://www.rfc-editor.org/info/rfc7523</a>&gt;.
+
+   [<a id="ref-RFC7591">RFC7591</a>]  Richer, J., Ed., Jones, M., Bradley, J., Machulak, M., and
+              P. Hunt, &quot;OAuth 2.0 Dynamic Client Registration Protocol&quot;,
+              <a href="/doc/html/rfc7591">RFC 7591</a>, DOI 10.17487/RFC7591, July 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7591">https://www.rfc-editor.org/info/rfc7591</a>&gt;.
+
+   [<a id="ref-RFC7636">RFC7636</a>]  Sakimura, N., Ed., Bradley, J., and N. Agarwal, &quot;Proof Key
+              for Code Exchange by OAuth Public Clients&quot;, <a href="/doc/html/rfc7636">RFC 7636</a>,
+              DOI 10.17487/RFC7636, September 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7636">https://www.rfc-editor.org/info/rfc7636</a>&gt;.
+
+   [<a id="ref-RFC8252">RFC8252</a>]  Denniss, W. and J. Bradley, &quot;OAuth 2.0 for Native Apps&quot;,
+              <a href="/doc/html/bcp212">BCP 212</a>, <a href="/doc/html/rfc8252">RFC 8252</a>, DOI 10.17487/RFC8252, October 2017,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8252">https://www.rfc-editor.org/info/rfc8252</a>&gt;.
+
+   [<a id="ref-RFC8705">RFC8705</a>]  Campbell, B., Bradley, J., Sakimura, N., and T.
+              Lodderstedt, &quot;OAuth 2.0 Mutual-TLS Client Authentication
+              and Certificate-Bound Access Tokens&quot;, <a href="/doc/html/rfc8705">RFC 8705</a>,
+              DOI 10.17487/RFC8705, February 2020,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8705">https://www.rfc-editor.org/info/rfc8705</a>&gt;.
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 20]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-21" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   [<a id="ref-RFC8707">RFC8707</a>]  Campbell, B., Bradley, J., and H. Tschofenig, &quot;Resource
+              Indicators for OAuth 2.0&quot;, <a href="/doc/html/rfc8707">RFC 8707</a>, DOI 10.17487/RFC8707,
+              February 2020, &lt;<a href="https://www.rfc-editor.org/info/rfc8707">https://www.rfc-editor.org/info/rfc8707</a>&gt;.
+
+<span class="h2"><a class="selflink" id="appendix-A" href="#appendix-A">Appendix A</a>.  Document History</span>
+
+   [[ To be removed from the final specification ]]
+
+   -10
+
+   *  Updates from mistakenly overlooked IESG evaluation comments
+
+   -09
+
+   *  Editorial fixes from Genart last call review
+
+   *  Updates from IESG evaluation comments
+
+   -08
+
+   *  Updates to address feedback from AD Review
+      <a href="https://mailarchive.ietf.org/arch/msg/oauth/bGSyonUqsvJ1vtY7l_ohwov25SA/">https://mailarchive.ietf.org/arch/msg/oauth/</a>
+      <a href="https://mailarchive.ietf.org/arch/msg/oauth/bGSyonUqsvJ1vtY7l_ohwov25SA/">bGSyonUqsvJ1vtY7l_ohwov25SA/</a>
+      (<a href="https://mailarchive.ietf.org/arch/msg/oauth/bGSyonUqsvJ1vtY7l_ohwov25SA/">https://mailarchive.ietf.org/arch/msg/oauth/</a>
+      <a href="https://mailarchive.ietf.org/arch/msg/oauth/bGSyonUqsvJ1vtY7l_ohwov25SA/">bGSyonUqsvJ1vtY7l_ohwov25SA/</a>)
+
+   -07
+
+   *  updated references (however they did not actually update due to
+      tooling issues - some info in this thread:
+      <a href="https://mailarchive.ietf.org/arch/msg/xml2rfc/zqYiMxZ070SCIi7CRNF9vbDeYno/">https://mailarchive.ietf.org/arch/msg/xml2rfc/</a>
+      <a href="https://mailarchive.ietf.org/arch/msg/xml2rfc/zqYiMxZ070SCIi7CRNF9vbDeYno/">zqYiMxZ070SCIi7CRNF9vbDeYno/</a>
+      (<a href="https://mailarchive.ietf.org/arch/msg/xml2rfc/zqYiMxZ070SCIi7CRNF9vbDeYno/">https://mailarchive.ietf.org/arch/msg/xml2rfc/</a>
+      <a href="https://mailarchive.ietf.org/arch/msg/xml2rfc/zqYiMxZ070SCIi7CRNF9vbDeYno/">zqYiMxZ070SCIi7CRNF9vbDeYno/</a>) )
+
+   -06
+
+   *  Add a note clarifying that the presence of
+      &quot;pushed_authorization_request_endpoint&quot; is sufficient for a client
+      to know that it can use the PAR flow
+
+   -05
+
+   *  Mention use of &quot;invalid_request&quot; error code for cases, like a bad
+      &quot;redirect_uri&quot;, that don&#x27;t have a more specific one
+
+   -04
+
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 21]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-22" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   *  Edits to address WGLC comments
+
+   *  Replace I-D.ietf-oauth-mtls reference with now published <a href="/doc/html/rfc8705">RFC8705</a>
+
+   *  Moved text about redirect URI management from introduction into
+      separate section
+
+   -03
+
+   *  Editorial updates
+
+   *  Mention that https is required for the PAR endpoint
+
+   *  Add some discussion of browser form posting an authz request vs.
+      the benefits of PAR for any application
+
+   *  Added text about motivations behind PAR - integrity,
+      confidentiality and early client auth
+
+   *  Better explain one-time use recommendation of the request_uri
+
+   *  Drop the section on special error responses for request objects
+
+   *  Clarify authorization request examples to say that the client
+      directs the user agent to make the HTTP GET request (vs. making
+      the request itself)
+
+   -02
+
+   *  Update Resource Indicators reference to the somewhat recently
+      published <a href="/doc/html/rfc8707">RFC 8707</a>
+
+   *  Added metadata in support of pushed authorization requests only
+      feature
+
+   *  Update to comply with <a href="/doc/html/draft-ietf-oauth-jwsreq-21">draft-ietf-oauth-jwsreq-21</a>, which requires
+      &quot;client_id&quot; in the authorization request in addition to the
+      &quot;request_uri&quot;
+
+   *  Clarified timing of request validation
+
+   *  Add some guidance/options on the request URI structure
+
+   *  Add the key used in the request object example so that a reader
+      could validate or recreate the request object signature
+
+   *  Update to <a href="/doc/html/draft-ietf-oauth-jwsreq-25">draft-ietf-oauth-jwsreq-25</a> and added note regarding
+      &quot;require_signed_request_object&quot;
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 22]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-23" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   -01
+
+   *  Use the newish RFC v3 XML and HTML format
+   *  Added IANA registration request for
+      &quot;pushed_authorization_request_endpoint&quot;
+   *  Changed abbrev to &quot;OAuth PAR&quot;
+
+   -00 (WG draft)
+
+   *  Reference <a href="/doc/html/rfc6749">RFC6749</a> sec 2.3.1 for client secret basic rather than
+      <a href="/doc/html/rfc7617">RFC7617</a>
+   *  further clarify that a request object JWT contains all the
+      authorization request parameters while client authentication
+      params, if applicable, are outside that JWT as regular form
+      encoded params in HTTP body
+
+   -01
+
+   *  List &quot;client_id&quot; as one of the basic parameters
+   *  Explicitly forbid &quot;request_uri&quot; in the processing rules
+   *  Clarification regarding client authentication and that public
+      clients are allowed
+   *  Added option to let clients register per-authorization request
+      redirect URIs
+   *  General clean up and wording improvements
+
+   -00
+
+   *  first draft
+
+Authors&#x27; Addresses
+
+   Torsten Lodderstedt
+   yes.com
+
+   Email: torsten@lodderstedt.net
+
+
+   Brian Campbell
+   Ping Identity
+
+   Email: bcampbell@pingidentity.com
+
+
+   Nat Sakimura
+   NAT.Consulting
+
+   Email: nat@sakimura.org
+
+
+
+<span class="grey">Lodderstedt, et al.      Expires 30 January 2022               [Page 23]</span></pre>
+<hr class='noprint'/><!--NewPage--><pre class='newpage'><span id="page-24" ></span>
+<span class="grey">Internet-Draft                  OAuth PAR                      July 2021</span>
+
+
+   Dave Tonge
+   Moneyhub Financial Technology
+
+   Email: dave@tonge.org
+
+
+   Filip Skokan
+   Auth0
+
+   Email: panva.ip@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lodderstedt, et al.      Expires 30 January 2022               [Page 24]
+</pre>
+    </div>
+
+  </div>
+
+
+        
+	  </div>
+
+	
+
+	
+
+    </div>
+
+      
+      <script>$(".visible-nojs").removeClass("visible-nojs");</script>
+      <script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+      
+    <script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+
+  </body>
+</html>
+

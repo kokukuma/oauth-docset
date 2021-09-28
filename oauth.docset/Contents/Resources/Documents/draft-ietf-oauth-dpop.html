@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-dpop-03
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-dpop/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="OAuth 2.0 Demonstrating Proof-of-Possession at the Application Layer (DPoP) (Internet-Draft, 2021)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-dpop-03.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-dpop-03.html" title="HTML version of this document, from XML2RFC">html</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-dpop-03.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-dpop-03.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-dpop/03/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-dpop/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-dpop@ietf.org?subject=draft-ietf-oauth-dpop" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-dpop-03.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-dpop-03.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-dpop-03.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: (<a href="/doc/html/draft-fett-oauth-dpop">draft-fett-oauth-dpop</a>) <a href="/doc/html/draft-ietf-oauth-dpop-00">00</a> <a href="/doc/html/draft-ietf-oauth-dpop-01">01</a> <a href="/doc/html/draft-ietf-oauth-dpop-02">02</a> <a href="/doc/html/draft-ietf-oauth-dpop-03"><b>03</b></a>                           </pre>
+</div>
+<div class="draftcontent">
+<pre>Web Authorization Protocol                                       D. Fett
+Internet-Draft                                                   yes.com
+Intended status: Standards Track                             B. Campbell
+Expires: 9 October 2021                                    Ping Identity
+                                                              J. Bradley
+                                                                  Yubico
+                                                          T. Lodderstedt
+                                                                 yes.com
+                                                                M. Jones
+                                                               Microsoft
+                                                                D. Waite
+                                                           Ping Identity
+                                                            7 April 2021
+
+
+  <span class="h1">OAuth 2.0 Demonstrating Proof-of-Possession at the Application Layer</span>
+                                 <span class="h1">(DPoP)</span>
+                        <span class="h1">draft-ietf-oauth-dpop-03</span>
+
+Abstract
+
+   This document describes a mechanism for sender-constraining OAuth 2.0
+   tokens via a proof-of-possession mechanism on the application level.
+   This mechanism allows for the detection of replay attacks with access
+   and refresh tokens.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 9 October 2021.
+
+Copyright Notice
+
+   Copyright (c) 2021 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (<a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/</a>
+   <a href="https://trustee.ietf.org/license-info">license-info</a>) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the <a href="https://trustee.ietf.org/license-info">Trust Legal Provisions</a> and are
+   provided without warranty as described in the Simplified BSD License.
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+     <a href="#section-1.1">1.1</a>.  Conventions and Terminology . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+   <a href="#section-2">2</a>.  Objectives  . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+   <a href="#section-3">3</a>.  Concept . . . . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-5">5</a>
+   <a href="#section-4">4</a>.  DPoP Proof JWTs . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-4.1">4.1</a>.  The DPoP HTTP Header  . . . . . . . . . . . . . . . . . .   <a href="#page-7">7</a>
+     <a href="#section-4.2">4.2</a>.  DPoP Proof JWT Syntax . . . . . . . . . . . . . . . . . .   <a href="#page-8">8</a>
+     <a href="#section-4.3">4.3</a>.  Checking DPoP Proofs  . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+   <a href="#section-5">5</a>.  DPoP Access Token Request . . . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+     <a href="#section-5.1">5.1</a>.  Authorization Server Metadata . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+   <a href="#section-6">6</a>.  Public Key Confirmation . . . . . . . . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-6.1">6.1</a>.  JWK Thumbprint Confirmation Method  . . . . . . . . . . .  <a href="#page-14">14</a>
+     6.2.  JWK Thumbprint Confirmation Method in Token
+           Introspection . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-7">7</a>.  Protected Resource Access . . . . . . . . . . . . . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-7.1">7.1</a>.  The DPoP Authorization Request Header Scheme  . . . . . .  <a href="#page-16">16</a>
+     <a href="#section-7.2">7.2</a>.  The Bearer Authorization Request Header Scheme  . . . . .  <a href="#page-19">19</a>
+   <a href="#section-8">8</a>.  Security Considerations . . . . . . . . . . . . . . . . . . .  <a href="#page-19">19</a>
+     <a href="#section-8.1">8.1</a>.  DPoP Proof Replay . . . . . . . . . . . . . . . . . . . .  <a href="#page-19">19</a>
+     <a href="#section-8.2">8.2</a>.  Untrusted Code in the Client Context  . . . . . . . . . .  <a href="#page-20">20</a>
+     <a href="#section-8.3">8.3</a>.  Signed JWT Swapping . . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+     <a href="#section-8.4">8.4</a>.  Signature Algorithms  . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+     <a href="#section-8.5">8.5</a>.  Message Integrity . . . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+     <a href="#section-8.6">8.6</a>.  Access Token and Public Key Binding . . . . . . . . . . .  <a href="#page-22">22</a>
+   <a href="#section-9">9</a>.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <a href="#page-22">22</a>
+     <a href="#section-9.1">9.1</a>.  OAuth Access Token Type Registration  . . . . . . . . . .  <a href="#page-22">22</a>
+     <a href="#section-9.2">9.2</a>.  HTTP Authentication Scheme Registration . . . . . . . . .  <a href="#page-22">22</a>
+     <a href="#section-9.3">9.3</a>.  Media Type Registration . . . . . . . . . . . . . . . . .  <a href="#page-23">23</a>
+     <a href="#section-9.4">9.4</a>.  JWT Confirmation Methods Registration . . . . . . . . . .  <a href="#page-23">23</a>
+     <a href="#section-9.5">9.5</a>.  JSON Web Token Claims Registration  . . . . . . . . . . .  <a href="#page-23">23</a>
+     <a href="#section-9.6">9.6</a>.  HTTP Message Header Field Names Registration  . . . . . .  <a href="#page-24">24</a>
+     <a href="#section-9.7">9.7</a>.  Authorization Server Metadata Registration  . . . . . . .  <a href="#page-24">24</a>
+   <a href="#section-10">10</a>. Normative References  . . . . . . . . . . . . . . . . . . . .  <a href="#page-25">25</a>
+   <a href="#section-11">11</a>. Informative References  . . . . . . . . . . . . . . . . . . .  <a href="#page-25">25</a>
+   <a href="#appendix-A">Appendix A</a>.  Acknowledgements . . . . . . . . . . . . . . . . . .  <a href="#page-29">29</a>
+   <a href="#appendix-B">Appendix B</a>.  Document History . . . . . . . . . . . . . . . . . .  <a href="#page-29">29</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-31">31</a>
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   DPoP, an abbreviation for Demonstrating Proof-of-Possession at the
+   Application Layer, is an application-level mechanism for sender-
+   constraining OAuth access and refresh tokens.  It enables a client to
+   demonstrate proof-of-possession of a public/private key pair by
+   including a "DPoP" header in an HTTP request.  The value of the
+   header is a JWT [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>] that enables the authorization server to
+   bind issued tokens to the public part of a client's key pair.
+   Recipients of such tokens are then able to verify the binding of the
+   token to the key pair that the client has demonstrated that it holds
+   via the "DPoP" header, thereby providing some assurance that the
+   client presenting the token also possesses the private key.  In other
+   words, the legitimate presenter of the token is constrained to be the
+   sender that holds and can prove possession of the private part of the
+   key pair.
+
+   The mechanism described herein can be used in cases where other
+   methods of sender-constraining tokens that utilize elements of the
+   underlying secure transport layer, such as [<a href="/doc/html/rfc8705" title='"OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens"'>RFC8705</a>] or
+   [<a href="#ref-I-D.ietf-oauth-token-binding">I-D.ietf-oauth-token-binding</a>], are not available or desirable.  For
+   example, due to a sub-par user experience of TLS client
+   authentication in user agents and a lack of support for HTTP token
+   binding, neither mechanism can be used if an OAuth client is a Single
+   Page Application (SPA) running in a web browser.  Native applications
+   installed and run on a user's device, which often have dedicated
+   protected storage for cryptographic keys are another example well
+   positioned to benefit from DPoP-bound tokens to guard against misuse
+   of tokens by a compromised or malicious resource.
+
+   DPoP can be used to sender-constrain access tokens regardless of the
+   client authentication method employed.  Furthermore, DPoP can also be
+   used to sender-constrain refresh tokens issued to public clients
+   (those without authentication credentials associated with the
+   "client_id").
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Conventions%20and%20Terminology"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Conventions and Terminology</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "NOT <em>RECOMMENDED</em>", "<em>MAY</em>", and
+   "<em>OPTIONAL</em>" in this document are to be interpreted as described in <a href="/doc/html/bcp14">BCP</a>
+   <a href="/doc/html/bcp14">14</a> [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>] [<a href="/doc/html/rfc8174" title='"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"'>RFC8174</a>] when, and only when, they appear in all
+   capitals, as shown here.
+
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   This specification uses the terms "access token", "refresh token",
+   "authorization server", "resource server", "authorization endpoint",
+   "authorization request", "authorization response", "token endpoint",
+   "grant type", "access token request", "access token response", and
+   "client" defined by The OAuth 2.0 Authorization Framework [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Objectives"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Objectives</span>
+
+   The primary aim of DPoP is to prevent unauthorized or illegitimate
+   parties from using leaked or stolen access tokens by binding a token
+   to a public key upon issuance and requiring that the client
+   demonstrate possession of the corresponding private key when using
+   the token.  This constrains the legitimate sender of the token to
+   only the party with access to the private key and gives the server
+   receiving the token added assurances that the sender is legitimately
+   authorized to use it.
+
+   Access tokens that are sender-constrained via DPoP thus stand in
+   contrast to the typical bearer token, which can be used by any party
+   in possession of such a token.  Although protections generally exist
+   to prevent unintended disclosure of bearer tokens, unforeseen vectors
+   for leakage have occurred due to vulnerabilities and implementation
+   issues in other layers in the protocol or software stack (CRIME,
+   BREACH, Heartbleed, and the Cloudflare parser bug are some examples).
+   There have also been numerous published token theft attacks on OAuth
+   implementations themselves.  DPoP provides a general defense in depth
+   against the impact of unanticipated token leakage.  DPoP is not,
+   however, a substitute for a secure transport and <em>MUST</em> always be used
+   in conjunction with HTTPS.
+
+   The very nature of the typical OAuth protocol interaction
+   necessitates that the client disclose the access token to the
+   protected resources that it accesses.  The attacker model in
+   [<a href="#ref-I-D.ietf-oauth-security-topics">I-D.ietf-oauth-security-topics</a>] describes cases where a protected
+   resource might be counterfeit, malicious or compromised and play
+   received tokens against other protected resources to gain
+   unauthorized access.  Properly audience restricting access tokens can
+   prevent such misuse, however, doing so in practice has proven to be
+   prohibitively cumbersome (even despite extensions such as [<a href="/doc/html/rfc8707" title='"Resource Indicators for OAuth 2.0"'>RFC8707</a>])
+   for many deployments.  Sender-constraining access tokens is a more
+   robust and straightforward mechanism to prevent such token replay at
+   a different endpoint and DPoP is an accessible application layer
+   means of doing so.
+
+   Due to the potential for cross-site scripting (XSS), browser-based
+   OAuth clients bring to bear added considerations with respect to
+   protecting tokens.  The most straightforward XSS-based attack is for
+   an attacker to exfiltrate a token and use it themselves completely
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   independent from the legitimate client.  A stolen access token is
+   used for protected resource access and a stolen refresh token for
+   obtaining new access tokens.  If the private key is non-extractable
+   (as is possible with [<a href="#ref-W3C.WebCryptoAPI">W3C.WebCryptoAPI</a>]), DPoP renders exfiltrated
+   tokens alone unusable.
+
+   XXS vulnerabilities also allow an attacker to execute code in the
+   context of the browser-based client application and maliciously use a
+   token indirectly through the client.  That execution context has
+   access to utilize the signing key and thus can produce DPoP proofs to
+   use in conjunction with the token.  At this application layer there
+   is most likely no feasible defense against this threat except
+   generally preventing XSS, therefore it is considered out of scope for
+   DPoP.
+
+   Malicious XSS code executed in the context of the browser-based
+   client application is also in a position to create DPoP proofs with
+   timestamp values in the future and exfiltrate them in conjunction
+   with a token.  These stolen artifacts can later be used together
+   independent of the client application to access protected resources.
+   The impact of such precomputed DPoP proofs is limited somewhat by the
+   proof being bound to an access token on protected resource access.
+   Because a proof covering an access token that don't yet exist cannot
+   feasibly be created, access tokens obtained with an exfiltrated
+   refresh token and pre-computed proofs will be unusable.
+
+   Additional security considerations are discussed in <a href="#section-8">Section 8</a>.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Concept"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Concept</span>
+
+   The main data structure introduced by this specification is a DPoP
+   proof JWT, described in detail below, which is sent as a header in an
+   HTTP request.  A client uses a DPoP proof JWT to prove the possession
+   of a private key corresponding to a certain public key.  Roughly
+   speaking, a DPoP proof is a signature over a timestamp and some data
+   of the HTTP request to which it is attached.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   +--------+                                          +---------------+
+   |        |--(A)-- Token Request -------------------&gt;|               |
+   | Client |        (DPoP Proof)                      | Authorization |
+   |        |                                          |     Server    |
+   |        |&lt;-(B)-- DPoP-bound Access Token ----------|               |
+   |        |        (token_type=DPoP)                 +---------------+
+   |        |
+   |        |
+   |        |                                          +---------------+
+   |        |--(C)-- DPoP-bound Access Token ---------&gt;|               |
+   |        |        (DPoP Proof)                      |    Resource   |
+   |        |                                          |     Server    |
+   |        |&lt;-(D)-- Protected Resource ---------------|               |
+   |        |                                          +---------------+
+   +--------+
+
+                         Figure 1: Basic DPoP Flow
+
+   The basic steps of an OAuth flow with DPoP are shown in Figure 1:
+
+   *  (A) In the Token Request, the client sends an authorization grant
+      (e.g., an authorization code, refresh token, etc.)
+      to the authorization server in order to obtain an access token
+      (and potentially a refresh token).  The client attaches a DPoP
+      proof to the request in an HTTP header.
+
+   *  (B) The authorization server binds (sender-constrains) the access
+      token to the public key claimed by the client in the DPoP proof;
+      that is, the access token cannot be used without proving
+      possession of the respective private key.  If a refresh token is
+      issued to a public client, it too is bound to the public key of
+      the DPoP proof.
+
+   *  (C) To use the access token the client has to prove possession of
+      the private key by, again, adding a header to the request that
+      carries a DPoP proof for that request.  The resource server needs
+      to receive information about the public key to which the access
+      token is bound.  This information may be encoded directly into the
+      access token (for JWT structured access tokens) or provided via
+      token introspection endpoint (not shown).  The resource server
+      verifies that the public key to which the access token is bound
+      matches the public key of the DPoP proof.
+
+   *  (D) The resource server refuses to serve the request if the
+      signature check fails or the data in the DPoP proof is wrong,
+      e.g., the request URI does not match the URI claim in the DPoP
+      proof JWT.  The access token itself, of course, must also be valid
+      in all other respects.
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   The DPoP mechanism presented herein is not a client authentication
+   method.  In fact, a primary use case of DPoP is for public clients
+   (e.g., single page applications and native applications) that do not
+   use client authentication.  Nonetheless, DPoP is designed such that
+   it is compatible with "private_key_jwt" and all other client
+   authentication methods.
+
+   DPoP does not directly ensure message integrity but relies on the TLS
+   layer for that purpose.  See <a href="#section-8">Section 8</a> for details.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20DPoP%20Proof%20JWTs"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  DPoP Proof JWTs</span>
+
+   DPoP introduces the concept of a DPoP proof, which is a JWT created
+   by the client and sent with an HTTP request using the "DPoP" header
+   field.  Each HTTP request requires a unique DPoP proof.  A valid DPoP
+   proof demonstrates to the server that the client holds the private
+   key that was used to sign the DPoP proof JWT.  This enables
+   authorization servers to bind issued tokens to the corresponding
+   public key (as described in <a href="#section-5">Section 5</a>) and for resource servers to
+   verify the key-binding of tokens that it receives (see <a href="#section-7.1">Section 7.1</a>),
+   which prevents said tokens from being used by any entity that does
+   not have access to the private key.
+
+   The DPoP proof demonstrates possession of a key and, by itself, is
+   not an authentication or access control mechanism.  When presented in
+   conjunction with a key-bound access token as described in
+   <a href="#section-7.1">Section 7.1</a>, the DPoP proof provides additional assurance about the
+   legitimacy of the client to present the access token.  However, a
+   valid DPoP proof JWT is not sufficient alone to make access control
+   decisions.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.1.%20%20The%20DPoP%20HTTP%20Header"></a></body></html><a class="selflink" href="#section-4.1" id="section-4.1">4.1</a>.  The DPoP HTTP Header</span>
+
+   A DPoP proof is included in an HTTP request using the following
+   message header field.
+
+   "DPoP"  A JWT that adheres to the structure and syntax of
+      <a href="#section-4.2">Section 4.2</a>.
+
+   Figure 2 shows an example DPoP HTTP header field (line breaks and
+   extra whitespace for display purposes only).
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik
+    VDIiwieCI6Imw4dEZyaHgtMzR0VjNoUklDUkRZOXpDa0RscEJoRjQyVVFVZldWQVdCR
+    nMiLCJ5IjoiOVZFNGpmX09rX282NHpiVFRsY3VOSmFqSG10NnY5VERWclUwQ2R2R1JE
+    QSIsImNydiI6IlAtMjU2In19.eyJqdGkiOiItQndDM0VTYzZhY2MybFRjIiwiaHRtIj
+    oiUE9TVCIsImh0dSI6Imh0dHBzOi8vc2VydmVyLmV4YW1wbGUuY29tL3Rva2VuIiwia
+    WF0IjoxNTYyMjYyNjE2fQ.2-GxA6T8lP4vfrg8v-FdWP0A0zdrj8igiMLvqRMUvwnQg
+    4PtFLbdLXiOSsX0x7NVY-FNyJK70nfbV37xRZT3Lg
+
+                      Figure 2: Example "DPoP" header
+
+   Note that per [<a href="/doc/html/rfc7230" title='"Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing"'>RFC7230</a>] header field names are case-insensitive; so
+   "DPoP", "DPOP", "dpop", etc., are all valid and equivalent header
+   field names.  Case is significant in the header field value, however.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.2.%20%20DPoP%20Proof%20JWT%20Syntax"></a></body></html><a class="selflink" href="#section-4.2" id="section-4.2">4.2</a>.  DPoP Proof JWT Syntax</span>
+
+   A DPoP proof is a JWT ([<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>]) that is signed (using JWS,
+   [<a href="/doc/html/rfc7515" title='"JSON Web Signature (JWS)"'>RFC7515</a>]) with a private key chosen by the client (see below).  The
+   header of a DPoP JWT contains at least the following parameters:
+
+   *  "typ": type header, value "dpop+jwt" (<em>REQUIRED</em>).
+
+   *  "alg": a digital signature algorithm identifier as per [<a href="/doc/html/rfc7518" title='"JSON Web Algorithms (JWA)"'>RFC7518</a>]
+      (<em>REQUIRED</em>).  <em>MUST NOT</em> be "none" or an identifier for a symmetric
+      algorithm (MAC).
+
+   *  "jwk": representing the public key chosen by the client, in JWK
+      format, as defined in <a href="/doc/html/rfc7515#section-4.1.3">Section 4.1.3 of [RFC7515]</a> (<em>REQUIRED</em>).  <em>MUST</em>
+      NOT contain the private key.
+
+   The payload of a DPoP proof contains at least the following claims:
+
+   *  "jti": Unique identifier for the DPoP proof JWT (<em>REQUIRED</em>).  The
+      value <em>MUST</em> be assigned such that there is a negligible probability
+      that the same value will be assigned to any other DPoP proof used
+      in the same context during the time window of validity.  Such
+      uniqueness can be accomplished by encoding (base64url or any other
+      suitable encoding) at least 96 bits of pseudorandom data or by
+      using a version 4 UUID string according to [<a href="/doc/html/rfc4122" title='"A Universally Unique IDentifier (UUID) URN Namespace"'>RFC4122</a>].  The "jti"
+      can be used by the server for replay detection and prevention, see
+      <a href="#section-8.1">Section 8.1</a>.
+
+   *  "htm": The HTTP method for the request to which the JWT is
+      attached, as defined in [<a href="/doc/html/rfc7231" title='"Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content"'>RFC7231</a>] (<em>REQUIRED</em>).
+
+   *  "htu": The HTTP URI used for the request, without query and
+      fragment parts (<em>REQUIRED</em>).
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   *  "iat": Time at which the JWT was created (<em>REQUIRED</em>).
+
+   When the DPoP proof is used in conjunction with the presentation of
+   an access token, see <a href="#section-7">Section 7</a>, the DPoP proof also contains the
+   following claim:
+
+   *  "ath": hash of the access token (<em>REQUIRED</em>).  The value <em>MUST</em> be the
+      result of a base64url encoding (with no padding) the SHA-256 hash
+      of the ASCII encoding of the associated access token's value.
+
+   Figure 3 is a conceptual example showing the decoded content of the
+   DPoP proof in Figure 2.  The JSON of the JOSE header and payload are
+   shown but the signature part is omitted.  As usual, line breaks and
+   extra whitespace are included for formatting and readability.
+
+   {
+     "typ":"dpop+jwt",
+     "alg":"ES256",
+     "jwk": {
+       "kty":"EC",
+       "x":"l8tFrhx-34tV3hRICRDY9zCkDlpBhF42UQUfWVAWBFs",
+       "y":"9VE4jf_Ok_o64zbTTlcuNJajHmt6v9TDVrU0CdvGRDA",
+       "crv":"P-256"
+     }
+   }
+   .
+   {
+     "jti":"-BwC3ESc6acc2lTc",
+     "htm":"POST",
+     "htu":"https://server.example.com/token",
+     "iat":1562262616
+   }
+
+              Figure 3: Example JWT content of a "DPoP" proof
+
+   Of the HTTP content in the request, only the HTTP method and URI are
+   included in the DPoP JWT, and therefore only these 2 headers of the
+   request are covered by the DPoP proof and its signature.  The idea is
+   sign just enough of the HTTP data to provide reasonable proof-of-
+   possession with respect to the HTTP request.  But that it be a
+   minimal subset of the HTTP data so as to avoid the substantial
+   difficulties inherent in attempting to normalize HTTP messages.
+   Nonetheless, DPoP proofs can be extended to contain other information
+   of the HTTP request (see also <a href="#section-8.5">Section 8.5</a>).
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                 [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.3.%20%20Checking%20DPoP%20Proofs"></a></body></html><a class="selflink" href="#section-4.3" id="section-4.3">4.3</a>.  Checking DPoP Proofs</span>
+
+   To check if a string that was received as part of an HTTP Request is
+   a valid DPoP proof, the receiving server <em>MUST</em> ensure that
+
+   1.  the string value is a well-formed JWT,
+
+   2.  all required claims per <a href="#section-4.2">Section 4.2</a> are contained in the JWT,
+
+   3.  the "typ" field in the header has the value "dpop+jwt",
+
+   4.  the algorithm in the header of the JWT indicates an asymmetric
+       digital signature algorithm, is not "none", is supported by the
+       application, and is deemed secure,
+
+   5.  the JWT signature verifies with the public key contained in the
+       "jwk" header of the JWT,
+
+   6.  the "htm" claim matches the HTTP method value of the HTTP request
+       in which the JWT was received,
+
+   7.  the "htu" claims matches the HTTPS URI value for the HTTP request
+       in which the JWT was received, ignoring any query and fragment
+       parts,
+
+   8.  the token was issued within an acceptable timeframe and, within a
+       reasonable consideration of accuracy and resource utilization, a
+       proof JWT with the same "jti" value has not previously been
+       received at the same resource during that time period (see
+       <a href="#section-8.1">Section 8.1</a>).
+
+   Servers <em>SHOULD</em> employ Syntax-Based Normalization and Scheme-Based
+   Normalization in accordance with <a href="#section-6.2.2">Section 6.2.2</a>. and <a href="/doc/html/rfc3986#section-6.2.3">Section 6.2.3. of
+   [RFC3986]</a> before comparing the "htu" claim.
+
+   If presented with an access token to a protected resource, the server
+   <em>MUST</em> ensure that the value of the "ath" claim equals the hash of the
+   access token that has been presented along side the DPoP proof.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20DPoP%20Access%20Token%20Request"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  DPoP Access Token Request</span>
+
+   To request an access token that is bound to a public key using DPoP,
+   the client <em>MUST</em> provide a valid DPoP proof JWT in a "DPoP" header
+   when making an access token request to the authorization server's
+   token endpoint.  This is applicable for all access token requests
+   regardless of grant type (including, for example, the common
+   "authorization_code" and "refresh_token" grant types but also
+   extension grants such as the JWT authorization grant [<a href="/doc/html/rfc7523" title='"JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants"'>RFC7523</a>]).  The
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   HTTPS request shown in Figure 4 illustrates such an access token
+   request using an authorization code grant with a DPoP proof JWT in
+   the "DPoP" header (extra line breaks and whitespace for display
+   purposes only).
+
+   POST /token HTTP/1.1
+   Host: server.example.com
+   Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+   DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik
+    VDIiwieCI6Imw4dEZyaHgtMzR0VjNoUklDUkRZOXpDa0RscEJoRjQyVVFVZldWQVdCR
+    nMiLCJ5IjoiOVZFNGpmX09rX282NHpiVFRsY3VOSmFqSG10NnY5VERWclUwQ2R2R1JE
+    QSIsImNydiI6IlAtMjU2In19.eyJqdGkiOiItQndDM0VTYzZhY2MybFRjIiwiaHRtIj
+    oiUE9TVCIsImh0dSI6Imh0dHBzOi8vc2VydmVyLmV4YW1wbGUuY29tL3Rva2VuIiwia
+    WF0IjoxNTYyMjYyNjE2fQ.2-GxA6T8lP4vfrg8v-FdWP0A0zdrj8igiMLvqRMUvwnQg
+    4PtFLbdLXiOSsX0x7NVY-FNyJK70nfbV37xRZT3Lg
+
+   grant_type=authorization_code
+   &amp;code=SplxlOBeZQQYbYS6WxSbIA
+   &amp;redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb
+   &amp;code_verifier=bEaL42izcC-o-xBk0K2vuJ6U-y1p9r_wW2dFWIWgjz-
+
+    Figure 4: Token Request for a DPoP sender-constrained token using an
+                             authorization code
+
+   The "DPoP" HTTP header <em>MUST</em> contain a valid DPoP proof JWT.  If the
+   DPoP proof is invalid, the authorization server issues an error
+   response per <a href="/doc/html/rfc6749#section-5.2">Section 5.2 of [RFC6749]</a> with "invalid_dpop_proof" as
+   the value of the "error" parameter.
+
+   To sender-constrain the access token, after checking the validity of
+   the DPoP proof, the authorization server associates the issued access
+   token with the public key from the DPoP proof, which can be
+   accomplished as described in <a href="#section-6">Section 6</a>.  A "token_type" of "DPoP" in
+   the access token response signals to the client that the access token
+   was bound to its DPoP key and can used as described in <a href="#section-7.1">Section 7.1</a>.
+   The example response shown in Figure 5 illustrates such a response.
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Cache-Control: no-store
+
+   {
+    "access_token": "Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU",
+    "token_type": "DPoP",
+    "expires_in": 2677,
+    "refresh_token": "Q..Zkm29lexi8VnWg2zPW1x-tgGad0Ibc3s3EwM_Ni4-g"
+   }
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+                      Figure 5: Access Token Response
+
+   The example response in Figure 5 included a refresh token, which the
+   client can use to obtain a new access token when the previous one
+   expires.  Refreshing an access token is a token request using the
+   "refresh_token" grant type made to the authorization server's token
+   endpoint.  As with all access token requests, the client makes it a
+   DPoP request by including a DPoP proof, which is shown in the
+   Figure 6 example (extra line breaks and whitespace for display
+   purposes only).
+
+   POST /token HTTP/1.1
+   Host: server.example.com
+   Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+   DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik
+    VDIiwieCI6Imw4dEZyaHgtMzR0VjNoUklDUkRZOXpDa0RscEJoRjQyVVFVZldWQVdCR
+    nMiLCJ5IjoiOVZFNGpmX09rX282NHpiVFRsY3VOSmFqSG10NnY5VERWclUwQ2R2R1JE
+    QSIsImNydiI6IlAtMjU2In19.eyJqdGkiOiItQndDM0VTYzZhY2MybFRjIiwiaHRtIj
+    oiUE9TVCIsImh0dSI6Imh0dHBzOi8vc2VydmVyLmV4YW1wbGUuY29tL3Rva2VuIiwia
+    WF0IjoxNTYyMjY1Mjk2fQ.pAqut2IRDm_De6PR93SYmGBPXpwrAk90e8cP2hjiaG5Qs
+    GSuKDYW7_X620BxqhvYC8ynrrvZLTk41mSRroapUA
+
+   grant_type=refresh_token
+   &amp;refresh_token=Q..Zkm29lexi8VnWg2zPW1x-tgGad0Ibc3s3EwM_Ni4-g
+
+    Figure 6: Token Request for a DPoP-bound token using a refresh token
+
+   When an authorization server supporting DPoP issues a refresh token
+   to a public client that presents a valid DPoP proof at the token
+   endpoint, the refresh token <em>MUST</em> be bound to the respective public
+   key.  The binding <em>MUST</em> be validated when the refresh token is later
+   presented to get new access tokens.  As a result, such a client <em>MUST</em>
+   present a DPoP proof for the same key that was used to obtain the
+   refresh token each time that refresh token is used to obtain a new
+   access token.  The implementation details of the binding of the
+   refresh token are at the discretion of the authorization server.  The
+   server both produces and validates the refresh tokens that it issues
+   so there's no interoperability consideration in the specific details
+   of the binding.
+
+   An authorization server <em>MAY</em> elect to issue access tokens which are
+   not DPoP bound, which is signaled to the client with a value of
+   "Bearer" in the "token_type" parameter of the access token response
+   per [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>].  For a public client that is also issued a refresh
+   token, this has the effect of DPoP-binding the refresh token alone,
+   which can improve the security posture even when protected resources
+   are not updated to support DPoP.
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   A client expecting a DPoP-bound access token <em>MAY</em> discard the
+   response, if a "Bearer" token type is received.
+
+   Refresh tokens issued to confidential clients (those having
+   established authentication credentials with the authorization server)
+   are not bound to the DPoP proof public key because they are already
+   sender-constrained with a different existing mechanism.  The OAuth
+   2.0 Authorization Framework [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] already requires that an
+   authorization server bind refresh tokens to the client to which they
+   were issued and that confidential clients authenticate to the
+   authorization server when presenting a refresh token.  As a result,
+   such refresh tokens are sender-constrained by way of the client ID
+   and the associated authentication requirement.  This existing sender-
+   constraining mechanism is more flexible (e.g., it allows credential
+   rotation for the client without invalidating refresh tokens) than
+   binding directly to a particular public key.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.1.%20%20Authorization%20Server%20Metadata"></a></body></html><a class="selflink" href="#section-5.1" id="section-5.1">5.1</a>.  Authorization Server Metadata</span>
+
+   This document introduces the following new authorization server
+   metadata [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>] parameter to signal support for DPoP in general
+   and the specific JWS "alg" values the authorization server supports
+   for DPoP proof JWTs.
+
+   "dpop_signing_alg_values_supported"  A JSON array containing a list
+      of the JWS "alg" values supported by the authorization server for
+      DPoP proof JWTs.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Public%20Key%20Confirmation"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Public Key Confirmation</span>
+
+   Resource servers <em>MUST</em> be able to reliably identify whether an access
+   token is bound using DPoP and ascertain sufficient information about
+   the public key to which the token is bound in order to verify the
+   binding with respect to the presented DPoP proof (see <a href="#section-7.1">Section 7.1</a>).
+   Such a binding is accomplished by associating the public key with the
+   token in a way that can be accessed by the protected resource, such
+   as embedding the JWK hash in the issued access token directly, using
+   the syntax described in <a href="#section-6.1">Section 6.1</a>, or through token introspection
+   as described in <a href="#section-6.2">Section 6.2</a>.  Other methods of associating a public
+   key with an access token are possible, per agreement by the
+   authorization server and the protected resource, but are beyond the
+   scope of this specification.
+
+   Resource servers supporting DPoP <em>MUST</em> ensure that the public key from
+   the DPoP proof matches the public key to which the access token is
+   bound.
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 13]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-14"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.%20%20JWK%20Thumbprint%20Confirmation%20Method"></a></body></html><a class="selflink" href="#section-6.1" id="section-6.1">6.1</a>.  JWK Thumbprint Confirmation Method</span>
+
+   When access tokens are represented as JSON Web Tokens (JWT)
+   [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>], the public key information <em>SHOULD</em> be represented using the
+   "jkt" confirmation method member defined herein.  To convey the hash
+   of a public key in a JWT, this specification introduces the following
+   new JWT Confirmation Method [<a href="/doc/html/rfc7800" title='"Proof-of- Possession Key Semantics for JSON Web Tokens (JWTs)"'>RFC7800</a>] member for use under the "cnf"
+   claim.
+
+   "jkt"  JWK SHA-256 Thumbprint Confirmation Method.  The value of the
+      "jkt" member <em>MUST</em> be the base64url encoding (as defined in
+      [<a href="/doc/html/rfc7515" title='"JSON Web Signature (JWS)"'>RFC7515</a>]) of the JWK SHA-256 Thumbprint (according to [<a href="/doc/html/rfc7638" title='"JSON Web Key (JWK) Thumbprint"'>RFC7638</a>])
+      of the DPoP public key (in JWK format) to which the access token
+      is bound.
+
+   The following example JWT in Figure 7 with decoded JWT payload shown
+   in Figure 8 contains a "cnf" claim with the "jkt" JWK thumbprint
+   confirmation method member.  The "jkt" value in these examples is the
+   hash of the public key from the DPoP proofs in the examples in
+   <a href="#section-5">Section 5</a>.
+
+   eyJhbGciOiJFUzI1NiIsImtpZCI6IkJlQUxrYiJ9.eyJzdWIiOiJzb21lb25lQGV4YW1
+   wbGUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zZXJ2ZXIuZXhhbXBsZS5jb20iLCJuYmYiOjE
+   1NjIyNjI2MTEsImV4cCI6MTU2MjI2NjIxNiwiY25mIjp7ImprdCI6IjBaY09DT1JaTll
+   5LURXcHFxMzBqWnlKR0hUTjBkMkhnbEJWM3VpZ3VBNEkifX0.3Tyo8VTcn6u_PboUmAO
+   YUY1kfAavomW_YwYMkmRNizLJoQzWy2fCo79Zi5yObpIzjWb5xW4OGld7ESZrh0fsrA
+
+       Figure 7: JWT containing a JWK SHA-256 Thumbprint Confirmation
+
+   {
+     "sub":"someone@example.com",
+     "iss":"https://server.example.com",
+     "nbf":1562262611,
+     "exp":1562266216,
+     "cnf":{"jkt":"0ZcOCORZNYy-DWpqq30jZyJGHTN0d2HglBV3uiguA4I"}
+   }
+
+    Figure 8: JWT Claims Set with a JWK SHA-256 Thumbprint Confirmation
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.2.%20%20JWK%20Thumbprint%20Confirmation%20Method%20in%20Token%20Introspection"></a></body></html><a class="selflink" href="#section-6.2" id="section-6.2">6.2</a>.  JWK Thumbprint Confirmation Method in Token Introspection</span>
+
+   OAuth 2.0 Token Introspection [<a href="/doc/html/rfc7662" title='"OAuth 2.0 Token Introspection"'>RFC7662</a>] defines a method for a
+   protected resource to query an authorization server about the active
+   state of an access token as well as to determine metainformation
+   about the token.
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 14]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-15"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   For a DPoP-bound access token, the hash of the public key to which
+   the token is bound is conveyed to the protected resource as
+   metainformation in a token introspection response.  The hash is
+   conveyed using the same "cnf" content with "jkt" member structure as
+   the JWK thumbprint confirmation method, described in <a href="#section-6.1">Section 6.1</a>, as
+   a top-level member of the introspection response JSON.  Note that the
+   resource server does not send a DPoP proof with the introspection
+   request and the authorization server does not validate an access
+   token's DPoP binding at the introspection endpoint.  Rather the
+   resource server uses the data of the introspection response to
+   validate the access token binding itself locally.
+
+   The example introspection request in Figure 9 and corresponding
+   response in Figure 10 illustrate an introspection exchange for the
+   example DPoP-bound access token that was issued in Figure 5.
+
+   POST /as/introspect.oauth2 HTTP/1.1
+   Host: server.example.com
+   Content-Type: application/x-www-form-urlencoded
+   Authorization: Basic cnM6cnM6TWt1LTZnX2xDektJZHo0ZnNON2tZY3lhK1Rp
+
+   token=Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU
+
+                  Figure 9: Example Introspection Request
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Cache-Control: no-store
+
+   {
+     "active": true,
+     "sub": "someone@example.com",
+     "iss": "https://server.example.com",
+     "nbf": 1562262611,
+     "exp": 1562266216,
+     "cnf": {"jkt": "0ZcOCORZNYy-DWpqq30jZyJGHTN0d2HglBV3uiguA4I"}
+   }
+
+     Figure 10: Example Introspection Response for a DPoP-Bound Access
+                                   Token
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 15]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-16"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Protected%20Resource%20Access"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Protected Resource Access</span>
+
+   To make use of an access token that is bound to a public key using
+   DPoP, a client <em>MUST</em> prove possession of the corresponding private key
+   by providing a DPoP proof in the "DPoP" request header.  As such,
+   protected resource requests with a DPoP-bound access token
+   necessarily must include both a DPoP proof as per <a href="#section-4">Section 4</a> and the
+   access token as described in <a href="#section-7.1">Section 7.1</a>.  The DPoP proof <em>MUST</em>
+   include the "ath" claim with a valid hash of the associated access
+   token.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.%20%20The%20DPoP%20Authorization%20Request%20Header%20Scheme"></a></body></html><a class="selflink" href="#section-7.1" id="section-7.1">7.1</a>.  The DPoP Authorization Request Header Scheme</span>
+
+   A DPoP-bound access token is sent using the "Authorization" request
+   header field per <a href="/doc/html/rfc7235#section-2">Section 2 of [RFC7235]</a> using an authentication
+   scheme of "DPoP".  The syntax of the "Authorization" header field for
+   the "DPoP" scheme uses the "token68" syntax defined in <a href="/doc/html/rfc7235#section-2.1">Section 2.1 of
+   [RFC7235]</a> (repeated below for ease of reference) for credentials.
+   The Augmented Backus-Naur Form (ABNF) notation [<a href="/doc/html/rfc5234" title='"Augmented BNF for Syntax Specifications: ABNF"'>RFC5234</a>] syntax for
+   DPoP Authorization scheme credentials is as follows:
+
+    token68    = 1*( ALPHA / DIGIT /
+                      "-" / "." / "_" / "~" / "+" / "/" ) *"="
+
+    credentials = "DPoP" 1*SP token68
+
+                 Figure 11: DPoP Authorization Scheme ABNF
+
+   For such an access token, a resource server <em>MUST</em> check that a DPoP
+   proof was also received in the "DPoP" header field of the HTTP
+   request, check the DPoP proof according to the rules in <a href="#section-4.3">Section 4.3</a>,
+   and check that the public key of the DPoP proof matches the public
+   key to which the access token is bound per <a href="#section-6">Section 6</a>.
+
+   The resource server <em>MUST NOT</em> grant access to the resource unless all
+   checks are successful.
+
+   Figure 12 shows an example request to a protected resource with a
+   DPoP-bound access token in the "Authorization" header and the DPoP
+   proof in the "DPoP" header.  Following that is Figure 13, which shows
+   the decoded content of that DPoP proof.  The JSON of the JOSE header
+   and payload are shown but the signature part is omitted.  As usual,
+   line breaks and extra whitespace are included for formatting and
+   readability in both examples.
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 16]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-17"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   GET /protectedresource HTTP/1.1
+   Host: resource.example.org
+   Authorization: DPoP Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU
+   DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik
+    VDIiwieCI6Imw4dEZyaHgtMzR0VjNoUklDUkRZOXpDa0RscEJoRjQyVVFVZldWQVdCR
+    nMiLCJ5IjoiOVZFNGpmX09rX282NHpiVFRsY3VOSmFqSG10NnY5VERWclUwQ2R2R1JE
+    QSIsImNydiI6IlAtMjU2In19.eyJqdGkiOiJlMWozVl9iS2ljOC1MQUVCIiwiaHRtIj
+    oiR0VUIiwiaHR1IjoiaHR0cHM6Ly9yZXNvdXJjZS5leGFtcGxlLm9yZy9wcm90ZWN0Z
+    WRyZXNvdXJjZSIsImlhdCI6MTU2MjI2MjYxOCwiYXRoIjoiZlVIeU8ycjJaM0RaNTNF
+    c05yV0JiMHhXWG9hTnk1OUlpS0NBcWtzbVFFbyJ9.2oW9RP35yRqzhrtNP86L-Ey71E
+    OptxRimPPToA1plemAgR6pxHF8y6-yqyVnmcw6Fy1dqd-jfxSYoMxhAJpLjA
+
+                 Figure 12: DPoP Protected Resource Request
+
+   {
+     "typ":"dpop+jwt",
+     "alg":"ES256",
+     "jwk": {
+       "kty":"EC",
+       "x":"l8tFrhx-34tV3hRICRDY9zCkDlpBhF42UQUfWVAWBFs",
+       "y":"9VE4jf_Ok_o64zbTTlcuNJajHmt6v9TDVrU0CdvGRDA",
+       "crv":"P-256"
+     }
+   }
+   .
+   {
+     "jti":"e1j3V_bKic8-LAEB",
+     "htm":"GET",
+     "htu":"https://resource.example.org/protectedresource",
+     "iat":1562262618,
+     "ath":"fUHyO2r2Z3DZ53EsNrWBb0xWXoaNy59IiKCAqksmQEo"
+   }
+
+      Figure 13: Decoded Content of the "DPoP" proof JWT in Figure 12
+
+   Upon receipt of a request for a URI of a protected resource within
+   the protection space requiring DPoP authorization, if the request
+   does not include valid credentials or does not contain an access
+   token sufficient for access to the protected resource, the server can
+   reply with a challenge using the 401 (Unauthorized) status code
+   (<a href="/doc/html/rfc7235#section-3.1">[RFC7235], Section 3.1</a>) and the "WWW-Authenticate" header field
+   (<a href="/doc/html/rfc7235#section-4.1">[RFC7235], Section 4.1</a>).  The server <em>MAY</em> include the "WWW-
+   Authenticate" header in response to other conditions as well.
+
+   In such challenges:
+
+   *  The scheme name is "DPoP".
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 17]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-18"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   *  The authentication parameter "realm" <em>MAY</em> be included to indicate
+      the scope of protection in the manner described in <a href="/doc/html/rfc7235#section-2.2">[RFC7235],
+      Section 2.2</a>.
+
+   *  A "scope" authentication parameter <em>MAY</em> be included as defined in
+      <a href="/doc/html/rfc6750#section-3">[RFC6750], Section 3</a>.
+
+   *  An "error" parameter (<a href="/doc/html/rfc6750#section-3">[RFC6750], Section 3</a>) <em>SHOULD</em> be included to
+      indicate the reason why the request was declined, if the request
+      included an access token but failed authorization.  Parameter
+      values are described in <a href="/doc/html/rfc6750#section-3.1">Section 3.1 of [RFC6750]</a>.
+
+   *  An "error_description" parameter (<a href="/doc/html/rfc6750#section-3">[RFC6750], Section 3</a>) <em>MAY</em> be
+      included along with the "error" parameter to provide developers a
+      human-readable explanation that is not meant to be displayed to
+      end-users.
+
+   *  An "algs" parameter <em>SHOULD</em> be included to signal to the client the
+      JWS algorithms that are acceptable for the DPoP proof JWT.  The
+      value of the parameter is a space-delimited list of JWS "alg"
+      (Algorithm) header values (<a href="/doc/html/rfc7515#section-4.1.1">[RFC7515], Section 4.1.1</a>).
+
+   *  Additional authentication parameters <em>MAY</em> be used and unknown
+      parameters <em>MUST</em> be ignored by recipients
+
+   For example, in response to a protected resource request without
+   authentication:
+
+    HTTP/1.1 401 Unauthorized
+    WWW-Authenticate: DPoP realm="WallyWorld", algs="ES256 PS256"
+
+    Figure 14: HTTP 401 Response To A Protected Resource Request Without
+                               Authentication
+
+   And in response to a protected resource request that was rejected
+   because the confirmation of the DPoP binding in the access token
+   failed:
+
+    HTTP/1.1 401 Unauthorized
+    WWW-Authenticate: DPoP realm="WallyWorld", error="invalid_token",
+      error_description="Invalid DPoP key binding", algs="ES256"
+
+     Figure 15: HTTP 401 Response To A Protected Resource Request With
+                              An Invalid Token
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 18]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-19"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.2.%20%20The%20Bearer%20Authorization%20Request%20Header%20Scheme"></a></body></html><a class="selflink" href="#section-7.2" id="section-7.2">7.2</a>.  The Bearer Authorization Request Header Scheme</span>
+
+   Protected resources simultaneously supporting both the "DPoP" and
+   "Bearer" schemes need to update how evaluation of bearer tokens is
+   performed to prevent downgraded usage of a DPoP-bound access tokens.
+   Specifically, such a protected resource <em>MUST</em> reject an access token
+   received as a bearer token per [!@<a href="/doc/html/rfc6750">RFC6750</a>], if that token is
+   determined to be DPoP-bound.
+
+   A protected resource that supports only [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>] and is unaware of
+   DPoP would most presumably accept a DPoP-bound access token as a
+   bearer token (JWT [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>] says to ignore unrecognized claims,
+   Introspection [<a href="/doc/html/rfc7662" title='"OAuth 2.0 Token Introspection"'>RFC7662</a>] says that other parameters might be present
+   while placing no functional requirements on their presence, and
+   [<a href="/doc/html/rfc6750" title='"The OAuth 2.0 Authorization Framework: Bearer Token Usage"'>RFC6750</a>] is effectively silent on the content of the access token as
+   it relates to validity).  As such, a client <em>MAY</em> send a DPoP-bound
+   access token using the "Bearer" scheme upon receipt of a "WWW-
+   Authenticate: Bearer" challenge from a protected resource (or if it
+   has prior such knowledge about the capabilities of the protected
+   resource).  The effect of this likely simplifies the logistics of
+   phased upgrades to protected resources in their support DPoP or even
+   prolonged deployments of protected resources with mixed token type
+   support.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Security Considerations</span>
+
+   In DPoP, the prevention of token replay at a different endpoint (see
+   <a href="#section-2">Section 2</a>) is achieved through the binding of the DPoP proof to a
+   certain URI and HTTP method.  DPoP, however, has a somewhat different
+   nature of protection than TLS-based methods such as OAuth Mutual TLS
+   [<a href="/doc/html/rfc8705" title='"OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens"'>RFC8705</a>] or OAuth Token Binding [<a href="#ref-I-D.ietf-oauth-token-binding">I-D.ietf-oauth-token-binding</a>] (see
+   also <a href="#section-8.1">Section 8.1</a> and <a href="#section-8.5">Section 8.5</a>).  TLS-based mechanisms can leverage
+   a tight integration between the TLS layer and the application layer
+   to achieve a very high level of message integrity with respect to the
+   transport layer to which the token is bound and replay protection in
+   general.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.1.%20%20DPoP%20Proof%20Replay"></a></body></html><a class="selflink" href="#section-8.1" id="section-8.1">8.1</a>.  DPoP Proof Replay</span>
+
+   If an adversary is able to get hold of a DPoP proof JWT, the
+   adversary could replay that token at the same endpoint (the HTTP
+   endpoint and method are enforced via the respective claims in the
+   JWTs).  To prevent this, servers <em>MUST</em> only accept DPoP proofs for a
+   limited time window after their "iat" time, preferably only for a
+   relatively brief period (on the order of a few seconds).  Servers
+   <em>SHOULD</em> store, in the context of the request URI, the "jti" value of
+   each DPoP proof for the time window in which the respective DPoP
+   proof JWT would be accepted and decline HTTP requests to the same URI
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 19]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-20"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   for which the "jti" value has been seen before.  In order to guard
+   against memory exhaustion attacks a server <em>SHOULD</em> reject DPoP proof
+   JWTs with unnecessarily large "jti" values or store only a hash
+   thereof.
+
+   Note: To accommodate for clock offsets, the server <em>MAY</em> accept DPoP
+   proofs that carry an "iat" time in the reasonably near future (e.g.,
+   a few seconds in the future).
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.2.%20%20Untrusted%20Code%20in%20the%20Client%20Context"></a></body></html><a class="selflink" href="#section-8.2" id="section-8.2">8.2</a>.  Untrusted Code in the Client Context</span>
+
+   If an adversary is able to run code in the client's execution
+   context, the security of DPoP is no longer guaranteed.  Common issues
+   in web applications leading to the execution of untrusted code are
+   cross-site scripting and remote code inclusion attacks.
+
+   If the private key used for DPoP is stored in such a way that it
+   cannot be exported, e.g., in a hardware or software security module,
+   the adversary cannot exfiltrate the key and use it to create
+   arbitrary DPoP proofs.  The adversary can, however, create new DPoP
+   proofs as long as the client is online, and use these proofs
+   (together with the respective tokens) either on the victim's device
+   or on a device under the attacker's control to send arbitrary
+   requests that will be accepted by servers.
+
+   To send requests even when the client is offline, an adversary can
+   try to pre-compute DPoP proofs using timestamps in the future and
+   exfiltrate these together with the access or refresh token.
+
+   An adversary might further try to associate tokens issued from the
+   token endpoint with a key pair under the adversary's control.  One
+   way to achieve this is to modify existing code, e.g., by replacing
+   cryptographic APIs.  Another way is to launch a new authorization
+   grant between the client and the authorization server in an iframe.
+   This grant needs to be "silent", i.e., not require interaction with
+   the user.  With code running in the client's origin, the adversary
+   has access to the resulting authorization code and can use it to
+   associate their own DPoP keys with the tokens returned from the token
+   endpoint.  The adversary is then able to use the resulting tokens on
+   their own device even if the client is offline.
+
+   Therefore, protecting clients against the execution of untrusted code
+   is extremely important even if DPoP is used.  Besides secure coding
+   practices, Content Security Policy [<a href="#ref-W3C.CSP" title='"Content Security Policy Level 3"'>W3C.CSP</a>] can be used as a second
+   layer of defense against cross-site scripting.
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 20]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-21"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.3.%20%20Signed%20JWT%20Swapping"></a></body></html><a class="selflink" href="#section-8.3" id="section-8.3">8.3</a>.  Signed JWT Swapping</span>
+
+   Servers accepting signed DPoP proof JWTs <em>MUST</em> check the "typ" field
+   in the headers of the JWTs to ensure that adversaries cannot use JWTs
+   created for other purposes.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.4.%20%20Signature%20Algorithms"></a></body></html><a class="selflink" href="#section-8.4" id="section-8.4">8.4</a>.  Signature Algorithms</span>
+
+   Implementers <em>MUST</em> ensure that only asymmetric digital signature
+   algorithms that are deemed secure can be used for signing DPoP
+   proofs.  In particular, the algorithm "none" <em>MUST NOT</em> be allowed.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.5.%20%20Message%20Integrity"></a></body></html><a class="selflink" href="#section-8.5" id="section-8.5">8.5</a>.  Message Integrity</span>
+
+   DPoP does not ensure the integrity of the payload or headers of
+   requests.  The DPoP proof only contains claims for the HTTP URI and
+   method, but not, for example, the message body or general request
+   headers.
+
+   This is an intentional design decision intended to keep DPoP simple
+   to use, but as described, makes DPoP potentially susceptible to
+   replay attacks where an attacker is able to modify message contents
+   and headers.  In many setups, the message integrity and
+   confidentiality provided by TLS is sufficient to provide a good level
+   of protection.
+
+   Implementers that have stronger requirements on the integrity of
+   messages are encouraged to either use TLS-based mechanisms or signed
+   requests.  TLS-based mechanisms are in particular OAuth Mutual TLS
+   [<a href="/doc/html/rfc8705" title='"OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens"'>RFC8705</a>] and OAuth Token Binding [<a href="#ref-I-D.ietf-oauth-token-binding">I-D.ietf-oauth-token-binding</a>].
+
+   Note: While signatures covering other parts of requests are out of
+   the scope of this specification, additional information to be signed
+   can be added into DPoP proofs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 21]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-22"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.6.%20%20Access%20Token%20and%20Public%20Key%20Binding"></a></body></html><a class="selflink" href="#section-8.6" id="section-8.6">8.6</a>.  Access Token and Public Key Binding</span>
+
+   The binding of the access token to the DPoP public key, which is
+   specified in <a href="#section-6">Section 6</a>, uses a cryptographic hash of the JWK
+   representation of the public key.  It relies on the hash function
+   having sufficient second-preimage resistance so as to make it
+   computationally infeasible to find or create another key that
+   produces to the same hash output value.  The SHA-256 hash function
+   was used because it meets the aforementioned requirement while being
+   widely available.  If, in the future, JWK thumbprints need to be
+   computed using hash function(s) other than SHA-256, it is suggested
+   that an additional related JWT confirmation method member be defined
+   for that purpose, registered in the respective IANA registry, and
+   used in place of the "jkt" confirmation method defined herein.
+
+   Similarly, the binding of the DPoP proof to the access token uses a
+   hash of that access token as the value of the "ath" claim in the DPoP
+   proof (see <a href="#section-4.2">Section 4.2</a>).  This relies on the value of the hash being
+   sufficiently unique so as to reliably identify the access token.  The
+   collision resistance of SHA-256 meets that requirement.  If, in the
+   future, access token digests need be computed using hash function(s)
+   other than SHA-256, it is suggested that an additional related JWT
+   claim be defined for that purpose, registered in the respective IANA
+   registry, and used in place of the "ath" claim defined herein.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  IANA Considerations</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.1.%20%20OAuth%20Access%20Token%20Type%20Registration"></a></body></html><a class="selflink" href="#section-9.1" id="section-9.1">9.1</a>.  OAuth Access Token Type Registration</span>
+
+   This specification requests registration of the following access
+   token type in the "OAuth Access Token Types" registry
+   [<a href="#ref-IANA.OAuth.Params">IANA.OAuth.Params</a>] established by [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+   *  Type name: "DPoP"
+
+   *  Additional Token Endpoint Response Parameters: (none)
+
+   *  HTTP Authentication Scheme(s): "DPoP"
+
+   *  Change controller: IESG
+
+   *  Specification document(s): [[ this specification ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.2.%20%20HTTP%20Authentication%20Scheme%20Registration"></a></body></html><a class="selflink" href="#section-9.2" id="section-9.2">9.2</a>.  HTTP Authentication Scheme Registration</span>
+
+   This specification requests registration of the following scheme in
+   the "Hypertext Transfer Protocol (HTTP) Authentication Scheme
+   Registry" [<a href="/doc/html/rfc7235" title='"Hypertext Transfer Protocol (HTTP/1.1): Authentication"'>RFC7235</a>][IANA.HTTP.AuthSchemes]:
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 22]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-23"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   *  Authentication Scheme Name: "DPoP"
+
+   *  Reference: [[ <a href="#section-7.1">Section 7.1</a> of this specification ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.3.%20%20Media%20Type%20Registration"></a></body></html><a class="selflink" href="#section-9.3" id="section-9.3">9.3</a>.  Media Type Registration</span>
+
+   [[ Is a media type registration at [<a href="#ref-IANA.MediaTypes">IANA.MediaTypes</a>] necessary for
+   "application/dpop+jwt"?  There is a "+jwt" structured syntax suffix
+   registered already at [<a href="#ref-IANA.MediaType.StructuredSuffix">IANA.MediaType.StructuredSuffix</a>] by
+   <a href="/doc/html/rfc8417#section-7.2">Section 7.2 of [RFC8417]</a>, which is maybe sufficient?  A full-blown
+   registration of "application/dpop+jwt" seems like it'd be overkill.
+   The "dpop+jwt" is used in the JWS/JWT "typ" header for explicit
+   typing of the JWT per <a href="/doc/html/rfc8725#section-3.11">Section 3.11 of [RFC8725]</a> but it is not used
+   anywhere else (such as the "Content-Type" of HTTP messages).
+
+   Note that there does seem to be some precedence for [<a href="#ref-IANA.MediaTypes">IANA.MediaTypes</a>]
+   registration with [<a href="#ref-I-D.ietf-oauth-access-token-jwt">I-D.ietf-oauth-access-token-jwt</a>],
+   [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>], [<a href="/doc/html/rfc8417" title='"Security Event Token (SET)"'>RFC8417</a>], and of course [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>].  But
+   precedence isn't always right. ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.4.%20%20JWT%20Confirmation%20Methods%20Registration"></a></body></html><a class="selflink" href="#section-9.4" id="section-9.4">9.4</a>.  JWT Confirmation Methods Registration</span>
+
+   This specification requests registration of the following value in
+   the IANA "JWT Confirmation Methods" registry [<a href="#ref-IANA.JWT" title='"JSON Web Token Claims"'>IANA.JWT</a>] for JWT "cnf"
+   member values established by [<a href="/doc/html/rfc7800" title='"Proof-of- Possession Key Semantics for JSON Web Tokens (JWTs)"'>RFC7800</a>].
+
+   *  Confirmation Method Value: "jkt"
+
+   *  Confirmation Method Description: JWK SHA-256 Thumbprint
+
+   *  Change Controller: IESG
+
+   *  Specification Document(s): [[ <a href="#section-6">Section 6</a> of this specification ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.5.%20%20JSON%20Web%20Token%20Claims%20Registration"></a></body></html><a class="selflink" href="#section-9.5" id="section-9.5">9.5</a>.  JSON Web Token Claims Registration</span>
+
+   This specification requests registration of the following Claims in
+   the IANA "JSON Web Token Claims" registry [<a href="#ref-IANA.JWT" title='"JSON Web Token Claims"'>IANA.JWT</a>] established by
+   [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>].
+
+   HTTP method:
+
+   *  Claim Name: "htm"
+
+   *  Claim Description: The HTTP method of the request
+
+   *  Change Controller: IESG
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 23]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-24"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   *  Specification Document(s): [[ <a href="#section-4.2">Section 4.2</a> of this specification ]]
+
+   HTTP URI:
+
+   *  Claim Name: "htu"
+
+   *  Claim Description: The HTTP URI of the request (without query and
+      fragment parts)
+
+   *  Change Controller: IESG
+
+   *  Specification Document(s): [[ <a href="#section-4.2">Section 4.2</a> of this specification ]]
+
+   Access token hash:
+
+   *  Claim Name: "ath"
+
+   *  Claim Description: The base64url encoded SHA-256 hash of the ASCII
+      encoding of the associated access token's value
+
+   *  Change Controller: IESG
+
+   *  Specification Document(s): [[ <a href="#section-4.2">Section 4.2</a> of this specification ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.6.%20%20HTTP%20Message%20Header%20Field%20Names%20Registration"></a></body></html><a class="selflink" href="#section-9.6" id="section-9.6">9.6</a>.  HTTP Message Header Field Names Registration</span>
+
+   This document specifies the following new HTTP header fields,
+   registration of which is requested in the "Permanent Message Header
+   Field Names" registry [<a href="#ref-IANA.Headers">IANA.Headers</a>] defined in [<a href="/doc/html/rfc3864" title='"Registration Procedures for Message Header Fields"'>RFC3864</a>].
+
+   *  Header Field Name: "DPoP"
+
+   *  Applicable protocol: HTTP
+
+   *  Status: standard
+
+   *  Author/change Controller: IETF
+
+   *  Specification Document(s): [[ this specification ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.7.%20%20Authorization%20Server%20Metadata%20Registration"></a></body></html><a class="selflink" href="#section-9.7" id="section-9.7">9.7</a>.  Authorization Server Metadata Registration</span>
+
+   This specification requests registration of the following values in
+   the IANA "OAuth Authorization Server Metadata" registry
+   [IANA.OAuth.Parameters] established by [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>].
+
+   *  Metadata Name: "dpop_signing_alg_values_supported"
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 24]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-25"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   *  Metadata Description: JSON array containing a list of the JWS
+      algorithms supported for DPoP proof JWTs
+
+   *  Change Controller: IESG
+
+   *  Specification Document(s): [[ <a href="#section-5.1">Section 5.1</a> of this specification ]]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-10" id="section-10">10</a>.  Normative References</span>
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6749">https://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-RFC5234">RFC5234</a>]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, <a href="/doc/html/rfc5234">RFC 5234</a>,
+              DOI 10.17487/RFC5234, January 2008,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc5234">https://www.rfc-editor.org/info/rfc5234</a>&gt;.
+
+   [<a id="ref-RFC3986">RFC3986</a>]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              <a href="/doc/html/rfc3986">RFC 3986</a>, DOI 10.17487/RFC3986, January 2005,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc3986">https://www.rfc-editor.org/info/rfc3986</a>&gt;.
+
+   [<a id="ref-RFC7515">RFC7515</a>]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web
+              Signature (JWS)", <a href="/doc/html/rfc7515">RFC 7515</a>, DOI 10.17487/RFC7515, May
+              2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7515">https://www.rfc-editor.org/info/rfc7515</a>&gt;.
+
+   [<a id="ref-RFC7231">RFC7231</a>]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
+              Protocol (HTTP/1.1): Semantics and Content", <a href="/doc/html/rfc7231">RFC 7231</a>,
+              DOI 10.17487/RFC7231, June 2014,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7231">https://www.rfc-editor.org/info/rfc7231</a>&gt;.
+
+   [<a id="ref-RFC7638">RFC7638</a>]  Jones, M. and N. Sakimura, "JSON Web Key (JWK)
+              Thumbprint", <a href="/doc/html/rfc7638">RFC 7638</a>, DOI 10.17487/RFC7638, September
+              2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7638">https://www.rfc-editor.org/info/rfc7638</a>&gt;.
+
+   [<a id="ref-RFC7800">RFC7800</a>]  Jones, M., Bradley, J., and H. Tschofenig, "Proof-of-
+              Possession Key Semantics for JSON Web Tokens (JWTs)",
+              <a href="/doc/html/rfc7800">RFC 7800</a>, DOI 10.17487/RFC7800, April 2016,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7800">https://www.rfc-editor.org/info/rfc7800</a>&gt;.
+
+   [<a id="ref-RFC7518">RFC7518</a>]  Jones, M., "JSON Web Algorithms (JWA)", <a href="/doc/html/rfc7518">RFC 7518</a>,
+              DOI 10.17487/RFC7518, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7518">https://www.rfc-editor.org/info/rfc7518</a>&gt;.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-11" id="section-11">11</a>.  Informative References</span>
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 25]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-26"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   [<a id="ref-RFC8707">RFC8707</a>]  Campbell, B., Bradley, J., and H. Tschofenig, "Resource
+              Indicators for OAuth 2.0", <a href="/doc/html/rfc8707">RFC 8707</a>, DOI 10.17487/RFC8707,
+              February 2020, &lt;<a href="https://www.rfc-editor.org/info/rfc8707">https://www.rfc-editor.org/info/rfc8707</a>&gt;.
+
+   [<a id="ref-W3C.WebCryptoAPI">W3C.WebCryptoAPI</a>]
+              Watson, M., "Web Cryptography API", 26 January 2017,
+              &lt;<a href="https://www.w3.org/TR/2017/REC-WebCryptoAPI-20170126">https://www.w3.org/TR/2017/REC-WebCryptoAPI-20170126</a>&gt;.
+
+   [<a id="ref-RFC7230">RFC7230</a>]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
+              Protocol (HTTP/1.1): Message Syntax and Routing",
+              <a href="/doc/html/rfc7230">RFC 7230</a>, DOI 10.17487/RFC7230, June 2014,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7230">https://www.rfc-editor.org/info/rfc7230</a>&gt;.
+
+   [<a id="ref-W3C.CSP">W3C.CSP</a>]  West, M., "Content Security Policy Level 3", 15 October
+              2018, &lt;<a href="https://www.w3.org/TR/2018/WD-CSP3-20181015/">https://www.w3.org/TR/2018/WD-CSP3-20181015/</a>&gt;.
+
+   [<a id="ref-IANA.HTTP.AuthSchemes">IANA.HTTP.AuthSchemes</a>]
+              IANA, "Hypertext Transfer Protocol (HTTP) Authentication
+              Scheme Registry",
+              &lt;<a href="https://www.iana.org/assignments/http-authschemes">https://www.iana.org/assignments/http-authschemes</a>&gt;.
+
+   [<a id="ref-RFC3864">RFC3864</a>]  Klyne, G., Nottingham, M., and J. Mogul, "Registration
+              Procedures for Message Header Fields", <a href="/doc/html/bcp90">BCP 90</a>, <a href="/doc/html/rfc3864">RFC 3864</a>,
+              DOI 10.17487/RFC3864, September 2004,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc3864">https://www.rfc-editor.org/info/rfc3864</a>&gt;.
+
+   [<a id="ref-RFC8705">RFC8705</a>]  Campbell, B., Bradley, J., Sakimura, N., and T.
+              Lodderstedt, "OAuth 2.0 Mutual-TLS Client Authentication
+              and Certificate-Bound Access Tokens", <a href="/doc/html/rfc8705">RFC 8705</a>,
+              DOI 10.17487/RFC8705, February 2020,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8705">https://www.rfc-editor.org/info/rfc8705</a>&gt;.
+
+   [<a id="ref-RFC4122">RFC4122</a>]  Leach, P., Mealling, M., and R. Salz, "A Universally
+              Unique IDentifier (UUID) URN Namespace", <a href="/doc/html/rfc4122">RFC 4122</a>,
+              DOI 10.17487/RFC4122, July 2005,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc4122">https://www.rfc-editor.org/info/rfc4122</a>&gt;.
+
+   [<a id="ref-IANA.MediaTypes">IANA.MediaTypes</a>]
+              IANA, "Media Types",
+              &lt;<a href="https://www.iana.org/assignments/media-types">https://www.iana.org/assignments/media-types</a>&gt;.
+
+   [<a id="ref-RFC8725">RFC8725</a>]  Sheffer, Y., Hardt, D., and M. Jones, "JSON Web Token Best
+              Current Practices", <a href="/doc/html/bcp225">BCP 225</a>, <a href="/doc/html/rfc8725">RFC 8725</a>,
+              DOI 10.17487/RFC8725, February 2020,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8725">https://www.rfc-editor.org/info/rfc8725</a>&gt;.
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 26]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-27"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   [<a id="ref-RFC7235">RFC7235</a>]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
+              Protocol (HTTP/1.1): Authentication", <a href="/doc/html/rfc7235">RFC 7235</a>,
+              DOI 10.17487/RFC7235, June 2014,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7235">https://www.rfc-editor.org/info/rfc7235</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-security-topics">I-D.ietf-oauth-security-topics</a>]
+              Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
+              "OAuth 2.0 Security Best Current Practice", Work in
+              Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-security-topics-16">draft-ietf-oauth-security-</a>
+              <a href="/doc/html/draft-ietf-oauth-security-topics-16">topics-16</a>, 5 October 2020, &lt;<a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics-16">https://tools.ietf.org/html/</a>
+              <a href="https://tools.ietf.org/html/draft-ietf-oauth-security-topics-16">draft-ietf-oauth-security-topics-16</a>&gt;.
+
+   [<a id="ref-IANA.OAuth.Params">IANA.OAuth.Params</a>]
+              IANA, "OAuth Parameters",
+              &lt;<a href="https://www.iana.org/assignments/oauth-parameters">https://www.iana.org/assignments/oauth-parameters</a>&gt;.
+
+   [<a id="ref-IANA.MediaType.StructuredSuffix">IANA.MediaType.StructuredSuffix</a>]
+              IANA, "Structured Syntax Suffix Registry",
+              &lt;<a href="https://www.iana.org/assignments/media-type-structured-suffix">https://www.iana.org/assignments/media-type-structured-</a>
+              <a href="https://www.iana.org/assignments/media-type-structured-suffix">suffix</a>&gt;.
+
+   [<a id="ref-RFC6750">RFC6750</a>]  Jones, M. and D. Hardt, "The OAuth 2.0 Authorization
+              Framework: Bearer Token Usage", <a href="/doc/html/rfc6750">RFC 6750</a>,
+              DOI 10.17487/RFC6750, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6750">https://www.rfc-editor.org/info/rfc6750</a>&gt;.
+
+   [<a id="ref-RFC8417">RFC8417</a>]  Hunt, P., Ed., Jones, M., Denniss, W., and M. Ansari,
+              "Security Event Token (SET)", <a href="/doc/html/rfc8417">RFC 8417</a>,
+              DOI 10.17487/RFC8417, July 2018,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8417">https://www.rfc-editor.org/info/rfc8417</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>]
+              Sakimura, N., Bradley, J., and M. Jones, "The OAuth 2.0
+              Authorization Framework: JWT Secured Authorization Request
+              (JAR)", Work in Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-jwsreq-30">draft-ietf-</a>
+              <a href="/doc/html/draft-ietf-oauth-jwsreq-30">oauth-jwsreq-30</a>, 10 September 2020,
+              &lt;<a href="https://tools.ietf.org/html/draft-ietf-oauth-jwsreq-30">https://tools.ietf.org/html/draft-ietf-oauth-jwsreq-30</a>&gt;.
+
+   [<a id="ref-IANA.JWT">IANA.JWT</a>] IANA, "JSON Web Token Claims",
+              &lt;<a href="http://www.iana.org/assignments/jwt">http://www.iana.org/assignments/jwt</a>&gt;.
+
+   [<a id="ref-RFC8174">RFC8174</a>]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in <a href="/doc/html/rfc2119">RFC</a>
+              <a href="/doc/html/rfc2119">2119</a> Key Words", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc8174">RFC 8174</a>, DOI 10.17487/RFC8174,
+              May 2017, &lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;.
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 27]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-28"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   [<a id="ref-RFC7523">RFC7523</a>]  Jones, M., Campbell, B., and C. Mortimore, "JSON Web Token
+              (JWT) Profile for OAuth 2.0 Client Authentication and
+              Authorization Grants", <a href="/doc/html/rfc7523">RFC 7523</a>, DOI 10.17487/RFC7523, May
+              2015, &lt;<a href="https://www.rfc-editor.org/info/rfc7523">https://www.rfc-editor.org/info/rfc7523</a>&gt;.
+
+   [<a id="ref-RFC8414">RFC8414</a>]  Jones, M., Sakimura, N., and J. Bradley, "OAuth 2.0
+              Authorization Server Metadata", <a href="/doc/html/rfc8414">RFC 8414</a>,
+              DOI 10.17487/RFC8414, June 2018,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8414">https://www.rfc-editor.org/info/rfc8414</a>&gt;.
+
+   [<a id="ref-RFC7662">RFC7662</a>]  Richer, J., Ed., "OAuth 2.0 Token Introspection",
+              <a href="/doc/html/rfc7662">RFC 7662</a>, DOI 10.17487/RFC7662, October 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7662">https://www.rfc-editor.org/info/rfc7662</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-access-token-jwt">I-D.ietf-oauth-access-token-jwt</a>]
+              Bertocci, V., "JSON Web Token (JWT) Profile for OAuth 2.0
+              Access Tokens", Work in Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-access-token-jwt-11">draft-</a>
+              <a href="/doc/html/draft-ietf-oauth-access-token-jwt-11">ietf-oauth-access-token-jwt-11</a>, 22 January 2021,
+              &lt;<a href="https://tools.ietf.org/html/draft-ietf-oauth-access-token-jwt-11">https://tools.ietf.org/html/draft-ietf-oauth-access-</a>
+              <a href="https://tools.ietf.org/html/draft-ietf-oauth-access-token-jwt-11">token-jwt-11</a>&gt;.
+
+   [<a id="ref-IANA.Headers">IANA.Headers</a>]
+              IANA, "Message Headers",
+              &lt;<a href="https://www.iana.org/assignments/message-headers">https://www.iana.org/assignments/message-headers</a>&gt;.
+
+   [<a id="ref-RFC7519">RFC7519</a>]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
+              (JWT)", <a href="/doc/html/rfc7519">RFC 7519</a>, DOI 10.17487/RFC7519, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7519">https://www.rfc-editor.org/info/rfc7519</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-token-binding">I-D.ietf-oauth-token-binding</a>]
+              Jones, M., Campbell, B., Bradley, J., and W. Denniss,
+              "OAuth 2.0 Token Binding", Work in Progress, Internet-
+              Draft, <a href="/doc/html/draft-ietf-oauth-token-binding-08">draft-ietf-oauth-token-binding-08</a>, 19 October 2018,
+              &lt;<a href="https://tools.ietf.org/html/draft-ietf-oauth-token-binding-08">https://tools.ietf.org/html/draft-ietf-oauth-token-</a>
+              <a href="https://tools.ietf.org/html/draft-ietf-oauth-token-binding-08">binding-08</a>&gt;.
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 28]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-29"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Acknowledgements</span>
+
+   We would like to thank Annabelle Backman, Dominick Baier, Andrii
+   Deinega, William Denniss, Vladimir Dzhuvinov, Mike Engan, Nikos
+   Fotiou, Mark Haine, Dick Hardt, Bjorn Hjelm, Jared Jennings, Steinar
+   Noem, Neil Madden, Rob Otto, Aaron Parecki, Michael Peck, Paul
+   Querna, Justin Richer, Filip Skokan, Dave Tonge, Jim Willeke,
+   Philippe De Ryck, and others (please let us know, if you've been
+   mistakenly omitted) for their valuable input, feedback and general
+   support of this work.
+
+   This document resulted from discussions at the 4th OAuth Security
+   Workshop in Stuttgart, Germany.  We thank the organizers of this
+   workshop (Ralf Kusters, Guido Schmitz).
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20B.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-B" id="appendix-B">Appendix B</a>.  Document History</span>
+
+   [[ To be removed from the final specification ]]
+
+   -03
+
+   *  Add an access token hash ("ath") claim to the DPoP proof when used
+      in conjunction with the presentation of an access token for
+      protected resource access
+
+   *  add Untrusted Code in the Client Context section to security
+      considerations
+
+   *  Editorial updates and fixes
+
+   -02
+
+   *  Lots of editorial updates and additions including expanding on the
+      objectives, better defining the key confirmation representations,
+      example updates and additions, better describing mixed bearer/dpop
+      token type deployments, clarify RT binding only being done for
+      public clients and why, more clearly allow for a bound RT but with
+      bearer AT, explain/justify the choice of SHA-256 for key binding,
+      and more
+
+   *  Require that a protected resource supporting bearer and DPoP at
+      the same time must reject an access token received as bearer, if
+      that token is DPoP-bound
+
+   *  Remove the case-insensitive qualification on the "htm" claim check
+
+   *  Relax the jti tracking requirements a bit and qualify it by URI
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 29]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-30"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   -01
+
+   *  Editorial updates
+
+   *  Attempt to more formally define the DPoP Authorization header
+      scheme
+
+   *  Define the 401/WWW-Authenticate challenge
+
+   *  Added "invalid_dpop_proof" error code for DPoP errors in token
+      request
+
+   *  Fixed up and added to the IANA section
+
+   *  Added "dpop_signing_alg_values_supported" authorization server
+      metadata
+
+   *  Moved the Acknowledgements into an Appendix and added a bunch of
+      names (best effort)
+
+   -00 [[ Working Group Draft ]]
+
+   *  Working group draft
+
+   -04
+
+   *  Update OAuth MTLS reference to <a href="/doc/html/rfc8705">RFC 8705</a>
+
+   *  Use the newish RFC v3 XML and HTML format
+
+   -03
+
+   *  rework the text around uniqueness requirements on the jti claim in
+      the DPoP proof JWT
+
+   *  make tokens a bit smaller by using "htm", "htu", and "jkt" rather
+      than "http_method", "http_uri", and "jkt#S256" respectively
+
+   *  more explicit recommendation to use mTLS if that is available
+
+   *  added David Waite as co-author
+
+   *  editorial updates
+
+   -02
+
+   *  added normalization rules for URIs
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 30]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-31"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   *  removed distinction between proof and binding
+
+   *  "jwk" header again used instead of "cnf" claim in DPoP proof
+
+   *  renamed "Bearer-DPoP" token type to "DPoP"
+
+   *  removed ability for key rotation
+
+   *  added security considerations on request integrity
+
+   *  explicit advice on extending DPoP proofs to sign other parts of
+      the HTTP messages
+
+   *  only use the jkt#S256 in ATs
+
+   *  iat instead of exp in DPoP proof JWTs
+
+   *  updated guidance on token_type evaluation
+
+   -01
+
+   *  fixed inconsistencies
+
+   *  moved binding and proof messages to headers instead of parameters
+
+   *  extracted and unified definition of DPoP JWTs
+
+   *  improved description
+
+   -00
+
+   *  first draft
+
+Authors' Addresses
+
+   Daniel Fett
+   yes.com
+
+   Email: mail@danielfett.de
+
+
+   Brian Campbell
+   Ping Identity
+
+   Email: bcampbell@pingidentity.com
+
+
+
+
+
+
+<span class="grey">Fett, et al.             Expires 9 October 2021                [Page 31]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-32"></span>
+<span class="grey">Internet-Draft                 OAuth DPoP                     April 2021</span>
+
+
+   John Bradley
+   Yubico
+
+   Email: ve7jtb@ve7jtb.com
+
+
+   Torsten Lodderstedt
+   yes.com
+
+   Email: torsten@lodderstedt.net
+
+
+   Michael Jones
+   Microsoft
+
+   Email: mbj@microsoft.com
+   URI:   <a href="https://self-issued.info/">https://self-issued.info/</a>
+
+
+   David Waite
+   Ping Identity
+
+   Email: david@alkaline-solutions.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fett, et al.             Expires 9 October 2021                [Page 32]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>

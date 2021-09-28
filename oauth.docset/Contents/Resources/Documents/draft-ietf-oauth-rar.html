@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/htmlized_base.html --><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>
+  
+    draft-ietf-oauth-rar-07
+  
+</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+
+  @media only screen 
+    and (min-width: 992px)
+    and (max-width: 1199px) {
+      body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 768px)
+    and (max-width: 991px) {
+            body { font-size: 14pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-width: 480px)
+    and (max-width: 767px) {
+            body { font-size: 11pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (max-width: 479px) {
+            body { font-size: 8pt; }
+            div.content { width: 96ex; margin: 0 auto; }
+        }
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+            body { font-size: 9.5pt; }
+            div.content { width: 96ex; margin: 0; }
+        }
+  @media only screen 
+    and (min-device-width: 1200px) {
+            body { font-size: 10pt; margin: 0 4em; }
+            div.content { width: 96ex; margin: 0; }
+        }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-weight: bold;
+            /* line-height: 0pt; */
+            display: inline;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 1em;
+      font-weight: bold;
+        }
+        pre {
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+  .pre {
+      white-space: pre;
+      font-family: monospace;
+  }
+  .header{
+      font-weight: bold;
+  }
+        .newpage {
+            page-break-before: always;
+        }
+        .invisible {
+            text-decoration: none;
+            color: white;
+        }
+        @media print {
+            body {
+                margin-top: 5em;
+                font-family: monospace;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1em;
+            }
+        
+            a:link, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
+            .noprint {
+                display: none;
+            }
+        }
+  @media screen {
+      .grey, .grey a:link, .grey a:visited {
+    color: #777;
+      }
+            .meta-info {
+                background-color: #EEE;
+            }
+            .top {
+                border-top: 7px solid #EEE;
+            }
+            .pad {
+                padding-top: 7px;
+                line-height: 24px;
+                padding-bottom: 4px;
+            }
+            .bgwhite  { background-color: white; }
+            .bgred    { background-color: #F44; }
+            .bggrey   { background-color: #666; }
+            .bgbrown  { background-color: #840; }            
+            .bgorange { background-color: #FA0; }
+            .bgyellow { background-color: #EE0; }
+            .bgmagenta{ background-color: #F4F; }
+            .bgblue   { background-color: #66F; }
+            .bgcyan   { background-color: #4DD; }
+            .bggreen  { background-color: #4F4; }
+
+            .legend   { font-size: 90%; }
+            .cplate   { font-size: 70%; border: solid grey 1px; }
+  }
+    
+     
+
+.bgwhite  { background-color: white; }
+.bgred    { background-color: #F44; }
+.bggrey   { background-color: #666; }
+.bgbrown  { background-color: #840; }            
+.bgorange { background-color: #FA0; }
+.bgyellow { background-color: #EE0; }
+.bgmagenta{ background-color: #F4F; }
+.bgblue   { background-color: #66F; }
+.bgcyan   { background-color: #4DD; }
+.bggreen  { background-color: #4F4; }
+
+.draftcontent { margin-top:0px !important;}
+
+
+    </style>
+<!--[if lt IE 9]>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/html5shiv/html5shiv.min.js"></script>
+        <script src="https://www.ietf.org/lib/dt/7.38.0/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="/feed/document-changes/draft-ietf-oauth-rar/" rel="alternate" title="Document changes" type="application/atom+xml"/>
+<meta content="OAuth 2.0 Rich Authorization Requests (Internet-Draft, 2021)" name="description"/>
+<script src="https://www.ietf.org/lib/dt/7.38.0/d3/d3.min.js"></script>
+<script src="https://www.ietf.org/lib/dt/7.38.0/jquery/jquery.min.js"></script>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/ietf-icon-blue3.png" rel="shortcut icon"/>
+<link href="https://www.ietf.org/lib/dt/7.38.0/ietf/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body style="padding-top: 0;">
+<div class="content" id="content">
+<!-- template: /a/www/ietf-datatracker/web/ietf/templates/doc/document_html.html -->
+<div class="rfcmarkup">
+<div class="noprint" style="height: 6px;">
+<div class="meta-info bgred" onclick="showLegend();" onmouseout="hideLegend()" onmouseover="this.style.cursor='pointer';" style="height: 6px; min-height: 6px; width: 96ex; position: absolute; margin-top:0; " title="Click for colour legend."> </div>
+<div class="meta-info noprint pre legend" id="legend" onmouseout="hideLegend();" onmouseover="showLegend();" style="position:absolute; top: 4px; left: 4ex; visibility:hidden; background-color: white; padding: 4px 9px 5px 7px; border: solid #345 1px; ">
+</div>
+</div>
+<div class="noprint">
+<pre class="pre meta-info">[<a href="https://datatracker.ietf.org" title="Document search and retrieval page">Search</a>] [<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-rar-07.txt" title="Plaintext version of this document">txt</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-rar-07.html" title="HTML version of this document, from XML2RFC">html</a>|<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-rar-07.xml" title="XML source for this document">xml</a>|<a href="https://tools.ietf.org/pdf/draft-ietf-oauth-rar-07.pdf" title="PDF version of this document">pdf</a>|<a href="/doc/draft-ietf-oauth-rar/07/bibtex" title="BibTex entry for this document">bibtex</a>] [<a href="/doc/draft-ietf-oauth-rar/" title="Datatracker information for this document">Tracker</a>] [<a href="/group/oauth/" title="The working group handling this document">WG</a>] [<a href="mailto:draft-ietf-oauth-rar@ietf.org?subject=draft-ietf-oauth-rar" title="Send email to the document authors">Email</a>] [<a href="https://www.ietf.org/rfcdiff?difftype=--hwdiff&amp;url2=draft-ietf-oauth-rar-07.txt" title="Inline diff (wdiff)">Diff1</a>] [<a href="https://www.ietf.org/rfcdiff?url2=draft-ietf-oauth-rar-07.txt" title="Side-by-side diff">Diff2</a>] [<a href="https://www.ietf.org/tools/idnits?url=https://www.ietf.org/archive/id/draft-ietf-oauth-rar-07.txt" title="Run an idnits check of this document">Nits</a>]
+
+Versions: <a href="/doc/html/draft-ietf-oauth-rar-00">00</a> <a href="/doc/html/draft-ietf-oauth-rar-01">01</a> <a href="/doc/html/draft-ietf-oauth-rar-02">02</a> <a href="/doc/html/draft-ietf-oauth-rar-03">03</a> <a href="/doc/html/draft-ietf-oauth-rar-04">04</a> <a href="/doc/html/draft-ietf-oauth-rar-05">05</a> <a href="/doc/html/draft-ietf-oauth-rar-06">06</a> <a href="/doc/html/draft-ietf-oauth-rar-07"><b>07</b></a>                                       </pre>
+</div>
+<div class="draftcontent">
+<pre>Web Authorization Protocol                                T. Lodderstedt
+Internet-Draft                                                   yes.com
+Intended status: Standards Track                               J. Richer
+Expires: 16 March 2022                               Bespoke Engineering
+                                                             B. Campbell
+                                                           Ping Identity
+                                                       12 September 2021
+
+
+                 <span class="h1">OAuth 2.0 Rich Authorization Requests</span>
+                        <span class="h1">draft-ietf-oauth-rar-07</span>
+
+Abstract
+
+   This document specifies a new parameter "authorization_details" that
+   is used to carry fine-grained authorization data in the OAuth
+   authorization request.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of <a href="/doc/html/bcp78">BCP 78</a> and <a href="/doc/html/bcp79">BCP 79</a>.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at <a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a>.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 16 March 2022.
+
+Copyright Notice
+
+   Copyright (c) 2021 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to <a href="/doc/html/bcp78">BCP 78</a> and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (<a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/</a>
+   <a href="https://trustee.ietf.org/license-info">license-info</a>) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the <a href="https://trustee.ietf.org/license-info">Trust Legal Provisions</a> and are
+   provided without warranty as described in the Simplified BSD License.
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 1]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-2"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+Table of Contents
+
+   <a href="#section-1">1</a>.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   <a href="#page-3">3</a>
+     <a href="#section-1.1">1.1</a>.  Conventions and Terminology . . . . . . . . . . . . . . .   <a href="#page-4">4</a>
+   <a href="#section-2">2</a>.  Request parameter "authorization_details" . . . . . . . . . .   <a href="#page-4">4</a>
+     <a href="#section-2.1">2.1</a>.  Authorization data elements types . . . . . . . . . . . .   <a href="#page-6">6</a>
+     <a href="#section-2.2">2.2</a>.  Authorization Data Types  . . . . . . . . . . . . . . . .  <a href="#page-10">10</a>
+   <a href="#section-3">3</a>.  Authorization Request . . . . . . . . . . . . . . . . . . . .  <a href="#page-11">11</a>
+     <a href="#section-3.1">3.1</a>.  Relationship to "scope" parameter . . . . . . . . . . . .  <a href="#page-13">13</a>
+     <a href="#section-3.2">3.2</a>.  Relationship to "resource" parameter  . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-4">4</a>.  Authorization Response  . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-5">5</a>.  Authorization Error Response  . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+   <a href="#section-6">6</a>.  Token Request . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-14">14</a>
+     <a href="#section-6.1">6.1</a>.  Comparing authorization details . . . . . . . . . . . . .  <a href="#page-15">15</a>
+   <a href="#section-7">7</a>.  Token Response  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-17">17</a>
+     <a href="#section-7.1">7.1</a>.  Enriched authorization details in Token Response  . . . .  <a href="#page-18">18</a>
+   <a href="#section-8">8</a>.  Token Error Response  . . . . . . . . . . . . . . . . . . . .  <a href="#page-21">21</a>
+   <a href="#section-9">9</a>.  Resource Servers  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-22">22</a>
+     <a href="#section-9.1">9.1</a>.  JWT-based Access Tokens . . . . . . . . . . . . . . . . .  <a href="#page-22">22</a>
+     <a href="#section-9.2">9.2</a>.  Token Introspection . . . . . . . . . . . . . . . . . . .  <a href="#page-24">24</a>
+   <a href="#section-10">10</a>. Metadata  . . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-25">25</a>
+   <a href="#section-11">11</a>. Scope value "openid" and "claims" parameter . . . . . . . . .  <a href="#page-26">26</a>
+   <a href="#section-12">12</a>. Implementation Considerations . . . . . . . . . . . . . . . .  <a href="#page-26">26</a>
+     <a href="#section-12.1">12.1</a>.  Using authorization details in a certain deployment  . .  <a href="#page-26">26</a>
+     <a href="#section-12.2">12.2</a>.  Minimal product support  . . . . . . . . . . . . . . . .  <a href="#page-26">26</a>
+     <a href="#section-12.3">12.3</a>.  Use of Machine-readable Type Schemas . . . . . . . . . .  <a href="#page-27">27</a>
+     <a href="#section-12.4">12.4</a>.  Large requests . . . . . . . . . . . . . . . . . . . . .  <a href="#page-28">28</a>
+   <a href="#section-13">13</a>. Security Considerations . . . . . . . . . . . . . . . . . . .  <a href="#page-28">28</a>
+   <a href="#section-14">14</a>. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  <a href="#page-29">29</a>
+   <a href="#section-15">15</a>. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-29">29</a>
+   <a href="#section-16">16</a>. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <a href="#page-29">29</a>
+     <a href="#section-16.1">16.1</a>.  JSON Web Token Claims Registration . . . . . . . . . . .  <a href="#page-30">30</a>
+     <a href="#section-16.2">16.2</a>.  OAuth Authorization Server Metadata  . . . . . . . . . .  <a href="#page-30">30</a>
+     <a href="#section-16.3">16.3</a>.  OAuth Dynamic Client Registration Metadata . . . . . . .  <a href="#page-30">30</a>
+     <a href="#section-16.4">16.4</a>.  OAuth Extensions Error registry  . . . . . . . . . . . .  <a href="#page-30">30</a>
+   <a href="#section-17">17</a>. Normative References  . . . . . . . . . . . . . . . . . . . .  <a href="#page-31">31</a>
+   <a href="#section-18">18</a>. Informative References  . . . . . . . . . . . . . . . . . . .  <a href="#page-31">31</a>
+   <a href="#appendix-A">Appendix A</a>.  Additional Examples  . . . . . . . . . . . . . . . .  <a href="#page-33">33</a>
+     <a href="#appendix-A.1">A.1</a>.  OpenID Connect  . . . . . . . . . . . . . . . . . . . . .  <a href="#page-33">33</a>
+     <a href="#appendix-A.2">A.2</a>.  Remote Electronic Signing . . . . . . . . . . . . . . . .  <a href="#page-34">34</a>
+     <a href="#appendix-A.3">A.3</a>.  Access to Tax Data  . . . . . . . . . . . . . . . . . . .  <a href="#page-35">35</a>
+     <a href="#appendix-A.4">A.4</a>.  eHealth . . . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-36">36</a>
+   <a href="#appendix-B">Appendix B</a>.  Document History . . . . . . . . . . . . . . . . . .  <a href="#page-39">39</a>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <a href="#page-41">41</a>
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 2]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-3"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.%20%20Introduction"></a></body></html><a class="selflink" href="#section-1" id="section-1">1</a>.  Introduction</span>
+
+   The OAuth 2.0 authorization framework [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>] defines the parameter
+   "scope" that allows OAuth clients to specify the requested scope,
+   i.e., the permission, of an access token.  This mechanism is
+   sufficient to implement static scenarios and coarse-grained
+   authorization requests, such as "give me read access to the resource
+   owner's profile" but it is not sufficient to specify fine-grained
+   authorization requirements, such as "please let me transfer an amount
+   of 45 Euros to Merchant A" or "please give me read access to folder A
+   and write access to file X".
+
+   This draft introduces a new parameter "authorization_details" that
+   allows clients to specify their fine-grained authorization
+   requirements using the expressiveness of JSON data structures.
+
+   For example, an authorization request for a credit transfer
+   (designated as "payment initiation" in several open banking
+   initiatives) can be represented using a JSON object like this:
+
+   {
+      "type": "payment_initiation",
+      "locations": [
+         "https://example.com/payments"
+      ],
+      "instructedAmount": {
+         "currency": "EUR",
+         "amount": "123.50"
+      },
+      "creditorName": "Merchant A",
+      "creditorAccount": {
+         "iban": "DE02100100109307118603"
+      },
+      "remittanceInformationUnstructured": "Ref Number Merchant"
+   }
+
+   This object contains detailed information about the intended payment,
+   such as amount, currency, and creditor, that are required to inform
+   the user and obtain her consent.  The AS and the respective RS
+   (providing the payment initiation API) will together enforce this
+   consent.
+
+   For a comprehensive discussion of the challenges arising from new use
+   cases in the open banking and electronic signing spaces see
+   [<a href="#ref-transaction-authorization">transaction-authorization</a>].
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 3]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-4"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   In addition to facilitating custom authorization requests, this draft
+   also introduces a set of common data type fields for use across
+   different APIs.
+
+   Most notably, the field "locations" allows a client to specify where
+   it intends to use a certain authorization, i.e., it is now possible
+   to unambiguously assign permissions to resource servers.  In
+   situations with multiple resource servers, this prevents unintended
+   client authorizations (e.g. a "read" scope value potentially
+   applicable for an email as well as a cloud service).  In combination
+   with the "resource" token request parameter as specified in [<a href="/doc/html/rfc8707" title='"Resource Indicators for OAuth 2.0"'>RFC8707</a>]
+   or by specifying authorization details with a single location only in
+   the token request, it enables the AS to issue RS-specific structured
+   access tokens that only contain the permissions applicable to the
+   respective RS.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/1.1.%20%20Conventions%20and%20Terminology"></a></body></html><a class="selflink" href="#section-1.1" id="section-1.1">1.1</a>.  Conventions and Terminology</span>
+
+   The key words "<em>MUST</em>", "<em>MUST NOT</em>", "<em>REQUIRED</em>", "<em>SHALL</em>", "<em>SHALL NOT</em>",
+   "<em>SHOULD</em>", "<em>SHOULD NOT</em>", "<em>RECOMMENDED</em>", "NOT <em>RECOMMENDED</em>", "<em>MAY</em>", and
+   "<em>OPTIONAL</em>" in this document are to be interpreted as described in <a href="/doc/html/bcp14">BCP</a>
+   <a href="/doc/html/bcp14">14</a> [<a href="/doc/html/rfc2119" title='"Key words for use in RFCs to Indicate Requirement Levels"'>RFC2119</a>] [<a href="/doc/html/rfc8174" title='"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"'>RFC8174</a>] when, and only when, they appear in all
+   capitals, as shown here.
+
+   This specification uses the terms "access token", "refresh token",
+   "authorization server", "resource server", "authorization endpoint",
+   "authorization request", "authorization response", "token endpoint",
+   "grant type", "access token request", "access token response", and
+   "client" defined by The OAuth 2.0 Authorization Framework [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.%20%20Request%20parameter%20%22authorization_details%22"></a></body></html><a class="selflink" href="#section-2" id="section-2">2</a>.  Request parameter "authorization_details"</span>
+
+   The request parameter "authorization_details" contains, in JSON
+   notation, an array of objects.  Each JSON object contains the data to
+   specify the authorization requirements for a certain type of
+   resource.  The type of resource or access requirement is determined
+   by the "type" field.
+
+   This example shows the specification of authorization details using
+   the payment authorization object shown above:
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 4]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-5"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type": "payment_initiation",
+         "actions": [
+            "initiate",
+            "status",
+            "cancel"
+         ],
+         "locations": [
+            "https://example.com/payments"
+         ],
+         "instructedAmount": {
+            "currency": "EUR",
+            "amount": "123.50"
+         },
+         "creditorName": "Merchant A",
+         "creditorAccount": {
+            "iban": "DE02100100109307118603"
+         },
+         "remittanceInformationUnstructured": "Ref Number Merchant"
+      }
+   ]
+
+   This example shows a combined request asking for access to account
+   information and permission to initiate a payment:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 5]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-6"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type": "account_information",
+         "actions": [
+            "list_accounts",
+            "read_balances",
+            "read_transactions"
+         ],
+         "locations": [
+            "https://example.com/accounts"
+         ]
+      },
+      {
+         "type": "payment_initiation",
+         "actions": [
+            "initiate",
+            "status",
+            "cancel"
+         ],
+         "locations": [
+            "https://example.com/payments"
+         ],
+         "instructedAmount": {
+            "currency": "EUR",
+            "amount": "123.50"
+         },
+         "creditorName": "Merchant A",
+         "creditorAccount": {
+            "iban": "DE02100100109307118603"
+         },
+         "remittanceInformationUnstructured": "Ref Number Merchant"
+      }
+   ]
+
+   The JSON objects with "type" fields of "account_information" and
+   "payment_initiation" represent the different authorization data to be
+   used by the AS to ask for consent and <em>MUST</em> subsequently also be made
+   available to the respective resource servers.  The array <em>MAY</em> contain
+   several elements of the same "type".
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.1.%20%20Authorization%20data%20elements%20types"></a></body></html><a class="selflink" href="#section-2.1" id="section-2.1">2.1</a>.  Authorization data elements types</span>
+
+   The allowable contents of the authorization details object are
+   determined by the "type" parameter.
+
+   "type":  The type of authorization data as a string.  This field <em>MAY</em>
+      define which other elements are allowed in the request.  This
+      element is <em>REQUIRED</em>.
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 6]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-7"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   This field <em>MUST</em> be compared using an exact byte match of the string
+   value against known types by the AS.  The AS <em>MUST</em> ensure that there
+   is no collision between different authorization data types that it
+   supports.  The AS <em>MUST NOT</em> do any collation or normalization of data
+   types during comparison.
+
+   The value of the "type" field determines the allowable contents of
+   the object which contains it.  This draft defines a set of common
+   data elements that are designed to be usable across different types
+   of APIs.  These data elements <em>MAY</em> be combined in different ways
+   depending on the needs of the API.  All data elements are <em>OPTIONAL</em>
+   for use by a given API definition.  The allowable values of all
+   elements are determined by the API being protected.
+
+   "locations":  An array of strings representing the location of the
+      resource or resource server.  These strings are typically URIs
+      identifying the location of the RS.
+
+   "actions":  An array of strings representing the kinds of actions to
+      be taken at the resource.
+
+   "datatypes":  An array of strings representing the kinds of data
+      being requested from the resource.
+
+   "identifier":  A string identifier indicating a specific resource
+      available at the API.
+
+   "privileges":  An array of strings representing the types or levels
+      of privilege being requested at the resource.
+
+   When different element types are used in combination, the permissions
+   the client requests is the cartesian product of the values.  That is
+   to say, the object represents a request for all "action" values
+   listed within the object to be used at all "locations" values listed
+   within the object for all "datatype" values listed within the object.
+   In the following example, the client is requesting "read" and "write"
+   access to both the "contacts" and "photos" belonging to customers in
+   a "customer_information" API.  If this request is granted, the client
+   would assume it would be able to use any combination of rights
+   defined by the API, such as reading the photos and writing the
+   contacts.
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 7]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-8"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type": "customer_information",
+         "locations": [
+            "https://example.com/customers"
+         ],
+         "actions": [
+            "read",
+            "write"
+         ],
+         "datatypes": [
+            "contacts",
+            "photos"
+         ]
+      }
+   ]
+
+   If the client wishes to have finer control over its access, it can
+   send multiple objects.  In this example, the client is asking for
+   "read" access to the "contacts" and "write" access to the "photos" in
+   the same API endpoint.  If this request is granted, the client would
+   not be able to write to the contacts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 8]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-9"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type": "customer_information",
+         "locations": [
+            "https://example.com/customers"
+         ],
+         "actions": [
+            "read"
+         ],
+         "datatypes": [
+            "contacts"
+         ]
+      },
+      {
+         "type": "customer_information",
+         "locations": [
+            "https://example.com/customers"
+         ],
+         "actions": [
+            "write"
+         ],
+         "datatypes": [
+            "photos"
+         ]
+      }
+   ]
+
+   An API <em>MAY</em> define its own extensions, subject to the "type" of the
+   respective authorization object.  It is anticipated that API
+   designers will use a combination of common fields defined in this
+   specification as well as fields specific to the API itself.  The
+   following non-normative example shows the use of both common and API-
+   specific fields as part of two different fictitious API "type"
+   values.  The first access request includes the "actions",
+   "locations", and "datatypes" fields specified here as well as the
+   API-specific "geolocation" field.  The second access request includes
+   the "actions" and "identifier" fields specified here as well as the
+   API-specific "currency" field.
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                 [Page 9]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-10"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type":"photo-api",
+         "actions":[
+            "read",
+            "write"
+         ],
+         "locations":[
+            "https://server.example.net/",
+            "https://resource.local/other"
+         ],
+         "datatypes":[
+            "metadata",
+            "images"
+         ],
+         "geolocation":[
+            {
+               "lat":-32.364,
+               "lng":153.207
+            },
+            {
+               "lat":-35.364,
+               "lng":158.207
+            }
+         ]
+      },
+      {
+         "type":"financial-transaction",
+         "actions":[
+            "withdraw"
+         ],
+         "identifier":"account-14-32-32-3",
+         "currency":"USD"
+      }
+   ]
+
+   If this request is approved, the resulting access token's access
+   rights will be the union of the requested types of access for each of
+   the two APIs, just as above.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/2.2.%20%20Authorization%20Data%20Types"></a></body></html><a class="selflink" href="#section-2.2" id="section-2.2">2.2</a>.  Authorization Data Types</span>
+
+   Interpretation of the value of the "type" parameter, and the object
+   elements that the "type" parameter allows, is under the control of
+   the AS.  However, the value of the "type" parameter is also generally
+   documented and intended to be used by developers, it is <em>RECOMMENDED</em>
+   that API designers choose "type" values that are easily copied
+   without ambiguity.  For example, some glyphs have multiple Unicode
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 10]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-11"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   code points for the same visual character, and a developer could
+   potentially type a different character than what the AS has defined.
+   Possible means of reducing potential confusion are limiting the value
+   to ASCII characters, providing a machine-readable listing of data
+   type values, or instructing developers to copy and paste directly
+   from the documentation.
+
+   If an application or API is expected to be deployed across different
+   servers, such as the case in an open standard, the API designer is
+   <em>RECOMMENDED</em> to use a collision-resistant namespace under their
+   control, such as a URI that the API designer controls.
+
+   The following example shows how an implementation could utilize the
+   namespace "https://scheme.example.org/" to ensure collision-resistant
+   element names.
+
+   {
+      "type": "https://scheme.example.org/files",
+      "locations": [
+         "https://example.com/files"
+      ],
+      "permissions": [
+         {
+            "path": "/myfiles/A",
+            "access": [
+               "read"
+            ]
+         },
+         {
+            "path": "/myfiles/A/X",
+            "access": [
+               "read",
+               "write"
+            ]
+         }
+      ]
+   }
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.%20%20Authorization%20Request"></a></body></html><a class="selflink" href="#section-3" id="section-3">3</a>.  Authorization Request</span>
+
+   The "authorization_details" authorization request parameter can be
+   used to specify authorization requirements in all places where the
+   "scope" parameter is used for the same purpose, examples include:
+
+   *  Authorization requests as specified in [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>],
+
+   *  Device Authorization Request as specified in [<a href="/doc/html/rfc8628" title='"OAuth 2.0 Device Authorization Grant"'>RFC8628</a>],
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 11]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-12"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   *  Backchannel Authentication Requests as defined in [<a href="#ref-OpenID.CIBA">OpenID.CIBA</a>].
+
+   In case of a authorization requests as defined in [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>],
+   implementors <em>MAY</em> consider to use pushed authorization requests
+   [<a href="#ref-I-D.ietf-oauth-par">I-D.ietf-oauth-par</a>] to improve to security, privacy, and reliability
+   of the flow.  See <a href="#section-13">Section 13</a>, <a href="#section-14">Section 14</a>, and <a href="#section-12.4">Section 12.4</a> for
+   details.
+
+   Parameter encoding is determined by the respective context.  In the
+   context of an authorization request according to [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>], the
+   parameter is encoded using the "application/x-www-form-urlencoded"
+   format of the serialized JSON as shown in the following using the
+   example from <a href="#section-2">Section 2</a> (line breaks for display purposes only):
+
+  GET /authorize?response_type=code
+     &amp;client_id=s6BhdRkqt3
+     &amp;state=af0ifjsldkj
+     &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+     &amp;code_challenge_method=S256
+     &amp;code_challenge=K2-ltc83acc4h0c9w6ESC_rEMTJ3bwc-uCHaoeK1t8U
+     &amp;authorization_details=%5B%7B%22type%22%3A%22account%5Finfo
+     rmation%22%2C%22actions%22%3A%5B%22list%5Faccounts%22%2C%22
+     read%5Fbalances%22%2C%22read%5Ftransactions%22%5D%2C%22loca
+     tions%22%3A%5B%22https%3A%2F%2Fexample%2Ecom%2Faccounts%22%
+     5D%7D%2C%7B%22type%22%3A%22payment%5Finitiation%22%2C%22act
+     ions%22%3A%5B%22initiate%22%2C%22status%22%2C%22cancel%22%5
+     D%2C%22locations%22%3A%5B%22https%3A%2F%2Fexample%2Ecom%2Fp
+     ayments%22%5D%2C%22instructedAmount%22%3A%7B%22currency%22%
+     3A%22EUR%22%2C%22amount%22%3A%22123%2E50%22%7D%2C%22credito
+     rName%22%3A%22Merchant%20A%22%2C%22creditorAccount%22%3A%7B%
+     22iban%22%3A%22DE02100100109307118603%22%7D%2C%22remittance
+     InformationUnstructured%22%3A%22RefNumberMerchant%22%7D%5D HTTP/1.1
+  Host: server.example.com
+
+   Based on the data provided in the "authorization_details" parameter
+   the AS will ask the user for consent to the requested access
+   permissions.
+
+   Note: the user may also grant a subset of the requested authorization
+   details.
+
+   In this example, the client wants to get access to account
+   information and intiate a payment:
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 12]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-13"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type": "account_information",
+         "actions": [
+            "list_accounts",
+            "read_balances",
+            "read_transactions"
+         ],
+         "locations": [
+            "https://example.com/accounts"
+         ]
+      },
+      {
+         "type": "payment_initiation",
+         "actions": [
+            "initiate",
+            "status",
+            "cancel"
+         ],
+         "locations": [
+            "https://example.com/payments"
+         ],
+         "instructedAmount": {
+            "currency": "EUR",
+            "amount": "123.50"
+         },
+         "creditorName": "Merchant A",
+         "creditorAccount": {
+            "iban": "DE02100100109307118603"
+         },
+         "remittanceInformationUnstructured": "Ref Number Merchant"
+      }
+   ]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.1.%20%20Relationship%20to%20%22scope%22%20parameter"></a></body></html><a class="selflink" href="#section-3.1" id="section-3.1">3.1</a>.  Relationship to "scope" parameter</span>
+
+   "authorization_details" and "scope" can be used in the same
+   authorization request for carrying independent authorization
+   requirements.
+
+   The AS <em>MUST</em> consider both sets of requirements in combination with
+   each other for the given authorization request.  The details of how
+   the AS combines these parameters are specific to the APIs being
+   protected and outside the scope of this specification.
+
+   It is <em>RECOMMENDED</em> that a given API uses only one form of requirement
+   specification.
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 13]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-14"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   When gathering user consent, the AS <em>MUST</em> present the merged set of
+   requirements represented by the authorization request.
+
+   If the resource owner grants the client the requested access, the AS
+   will issue tokens to the client that are associated with the
+   respective "authorization_details" (and scope values, if applicable).
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/3.2.%20%20Relationship%20to%20%22resource%22%20parameter"></a></body></html><a class="selflink" href="#section-3.2" id="section-3.2">3.2</a>.  Relationship to "resource" parameter</span>
+
+   The "resource" authorization request parameter as defined in
+   [<a href="/doc/html/rfc8707" title='"Resource Indicators for OAuth 2.0"'>RFC8707</a>] can be used to further determine the resources where the
+   requested scope can be applied.  The "resource" parameter does not
+   have any impact on the way the AS processes the
+   "authorization_details" authorization request parameter.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/4.%20%20Authorization%20Response"></a></body></html><a class="selflink" href="#section-4" id="section-4">4</a>.  Authorization Response</span>
+
+   This specification does not define extensions to the authorization
+   response.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/5.%20%20Authorization%20Error%20Response"></a></body></html><a class="selflink" href="#section-5" id="section-5">5</a>.  Authorization Error Response</span>
+
+   The AS <em>MUST</em> refuse to process any unknown authorization data type or
+   authorization details not conforming to the respective type
+   definition.  If any of the objects in "authorization_details"
+   contains an unknown authorization data type or an object of known
+   type but containing unknown elements or elements of the wrong type or
+   elements with invalid values or if required elements are missing, the
+   AS <em>MUST</em> abort processing and respond with an error
+   "invalid_authorization_details" to the client.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.%20%20Token%20Request"></a></body></html><a class="selflink" href="#section-6" id="section-6">6</a>.  Token Request</span>
+
+   The "authorization_details" token request parameter can be used to
+   specify the authorization details a client wants the AS to assign to
+   an access token.  The AS checks whether the underlying grant (in case
+   of grant types "authorization_code", "refresh_token", ...) or the
+   client's policy (in case of grant type "client_credential") allows
+   the issuance of an access token with the requested authorization
+   details.  Otherwise, the AS refuses the request with the error code
+   "invalid_authorization_details" (similar to "invalid_scope").
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 14]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-15"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/6.1.%20%20Comparing%20authorization%20details"></a></body></html><a class="selflink" href="#section-6.1" id="section-6.1">6.1</a>.  Comparing authorization details</span>
+
+   Many actions in the OAuth protocol allow the AS and RS to make
+   security decisions based on whether or not the request is asking for
+   "more" or "less" than a previous, existing request.  For example,
+   upon refreshing a token, the client can ask for a new access token
+   with "fewer permissions" than had been previously authorized by the
+   resource owner.  Since the nature of an authorization details request
+   is based solely on the API or APIs that it is describing, there is
+   not a simple means of comparing any two arbitrary authorization
+   details requests.  Authorization servers should not rely on simple
+   object comparison in most cases, as the intersection of some elements
+   within a request could have side effects in the access rights
+   granted, depending on how the API has been designed and deployed.
+   This is a similar effect to the scope values used with some APIs.
+
+   However, when comparing a new request to an existing request,
+   authorization servers can use the same processing techniques as used
+   in granting the request in the first place to determine if a resource
+   owner needs to authorize the request.  The details of this comparison
+   are dependent on the definition of the "type" of authorization
+   request and outside the scope of this specification, but common
+   patterns can be applied.
+
+   This shall be illustrated using our running example.  The example
+   authorization request in <a href="#section-3">Section 3</a>, if approved by the user, resulted
+   in the issuance of an authorization code associated with the
+   privileges to
+
+   *  list accounts
+
+   *  access the balance of one or more accounts,
+
+   *  access the transactions of one or more accounts, and
+
+   *  to initiate a payment.
+
+   The client could now request the AS to issue an access token assigned
+   with the privilege to just access a list of accounts as follows:
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 15]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-16"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type":"account_information",
+         "actions":[
+            "list_accounts"
+         ],
+         "locations":[
+            "https://example.com/accounts"
+         ]
+      }
+   ]
+
+   The example API is designed such that each field used by the
+   "account_information" type contains additive rights, with each value
+   within the "actions" and "locations" arrays specifying a different
+   element of access.  To make a comparison in this instance, the AS
+   would perform the following steps:
+
+   *  compare that the authorization code issued in the previous step
+      contains an authorization details object of type
+      "account_information"
+
+   *  compare whether the approved list of actions contains
+      "list_account", and
+
+   *  whether the "locations" value includes only previously-approved
+      locations.
+
+   If all checks succeed, the AS would issue the requested access token
+   with the reduced set of access.
+
+   Note that this comparison is relevant to this specific API type
+   definition.  A different API type definition could have different
+   processing rules.  For example, the value of an "action" could
+   subsume the rights associated with another "action" value.  For
+   example, if a client initially asks for a token with "write" access,
+   which implies both read and write access to this API:
+
+   [
+       {
+           "type": "example_api",
+           "actions": [
+               "write"
+           ]
+       }
+   ]
+
+   Later that same client makes a refresh request for "read" access:
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 16]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-17"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+       {
+           "type": "example_api",
+           "actions": [
+               "read"
+           ]
+       }
+   ]
+
+   The AS would compare the "type" value and the "action" value to
+   determine that the "read" access is already covered by the "write"
+   access previously granted to the client.
+
+   The predefined authorization data element "locations" <em>MAY</em> be used by
+   the client to request an access token valid for a certain resource
+   server, i.e. it is the recommended way to request issuance of
+   audience restricted access tokens.
+
+   For our running example, the client <em>MAY</em> ask for all permissions of
+   the approved grant of type "payment_iniation" applicable to the
+   resource server residing at "https://example.com/payments" as
+   follows:
+
+   [
+      {
+         "type": "payment_initiation",
+         "locations": [
+            "https://example.com/payments"
+         ]
+      }
+   ]
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.%20%20Token%20Response"></a></body></html><a class="selflink" href="#section-7" id="section-7">7</a>.  Token Response</span>
+
+   In addition to the token response parameters as defined in [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>],
+   the authorization server <em>MUST</em> also return the authorization details
+   as granted by the resource owner and assigned to the respective
+   access token.
+
+   The authorization details assigned to the access token issued in a
+   token response are determined by the "authorization_detail" parameter
+   of the corresponding token request.  If the client does not specify
+   the "authorization_detail" token request parameters, the AS
+   determines the resulting authorization details at its discretion.
+   The authorization server <em>MAY</em> consider the values of other parameters
+   such as "resource" and "scope" if they are present during this
+   processing, and the details of such considerations are outside the
+   scope of this specification.
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 17]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-18"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   The AS <em>MAY</em> omit values in the "authorization_details" to the client
+   in the token Response if these are deemed of no intended use for the
+   client.
+
+   For our running example, this would look like this:
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Cache-Control: no-cache, no-store
+
+   {
+      "access_token": "2YotnFZFEjr1zCsicMWpAA",
+      "token_type": "example",
+      "expires_in": 3600,
+      "refresh_token": "tGzv3JOkF0XG5Qx2TlKWIA",
+      "authorization_details": [
+         {
+            "type": "https://www.someorg.com/payment_initiation",
+            "actions": [
+               "initiate",
+               "status",
+               "cancel"
+            ],
+            "locations": [
+               "https://example.com/payments"
+            ],
+            "instructedAmount": {
+               "currency": "EUR",
+               "amount": "123.50"
+            },
+            "creditorName": "Merchant A",
+            "creditorAccount": {
+               "iban": "DE02100100109307118603"
+            },
+            "remittanceInformationUnstructured": "Ref Number Merchant"
+         }
+      ]
+   }
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/7.1.%20%20Enriched%20authorization%20details%20in%20Token%20Response"></a></body></html><a class="selflink" href="#section-7.1" id="section-7.1">7.1</a>.  Enriched authorization details in Token Response</span>
+
+   The authorization details attached to the access token <em>MAY</em> differ
+   from what the client requests.  In addition to the user authorizing
+   less than what the client requested, there are use cases where the
+   authorization server enriches the data in an authorization details
+   object.  For example, a client may ask for access to account
+   information but leave the decision about the accounts it will be able
+   to access to the user.  The user would select the sub set of accounts
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 18]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-19"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   they wants the client to entitle to access in the course of the
+   authorization process.  As one design option to convey the selected
+   accounts, the authorization server could add this information to the
+   respective authorization details object.
+
+   As an example, the requested authorization detail parameter could
+   look like this:
+
+   "authorization_details": [
+      {
+         "type": "account_information",
+         "access": {
+            "accounts": [],
+            "balances": [],
+            "transactions": []
+         },
+         "recurringIndicator":true
+      }
+   ]
+
+   The authorization server then would expand the authorization details
+   object and add the respective account identifiers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 19]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-20"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Cache-Control: no-cache, no-store
+
+   {
+      "access_token":"2YotnFZFEjr1zCsicMWpAA",
+      "token_type":"example",
+      "expires_in":3600,
+      "refresh_token":"tGzv3JokF0XG5Qx2TlKWIA",
+      "authorization_details":[
+         {
+            "type":"account_information",
+            "access":{
+               "accounts":[
+                  {
+                     "iban":"DE2310010010123456789"
+                  },
+                  {
+                     "maskedPan":"123456xxxxxx1234"
+                  }
+               ],
+               "balances":[
+                  {
+                     "iban":"DE2310010010123456789"
+                  }
+               ],
+               "transactions":[
+                  {
+                     "iban":"DE2310010010123456789"
+                  },
+                  {
+                     "maskedPan":"123456xxxxxx1234"
+                  }
+               ]
+            },
+            "recurringIndicator":true
+         }
+      ]
+   }
+
+   For another example, the client is asking for access to a medical
+   record but does not know the record number at request time.  In this
+   example, the client specifies the type of access it wants but doesn't
+   specify the location or identifier of that access.
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 20]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-21"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   {
+   "authorization_details": [
+      {
+         "type": "medical_record",
+         "sens": [ "HIV", "ETH", "MART" ],
+         "actions": [ "read" ],
+         "datatypes": [ "Patient", "Observation", "Appointment" ]
+      }
+   ]}
+
+   When the user interacts with the AS, they select which of the medical
+   records they are responsible for to give to the client.  This
+   information gets returned with the access token.
+
+   {
+      "access_token":"2YotnFZFEjr1zCsicMWpAA",
+      "token_type":"example",
+      "expires_in":3600,
+      "refresh_token":"tGzv3JokF0XG5Qx2TlKWIA",
+      "authorization_details":[
+       {
+         "type": "medical_record",
+         "sens": [ "HIV", "ETH", "MART" ],
+         "actions": [ "read" ],
+         "datatypes": [ "Patient", "Observation", "Appointment" ],
+         "identifier": "patient-541235",
+         "locations": [ "https://records.example.com/" ]
+        }
+     ]
+   }
+
+   Note: the client needs to be aware upfront of the possibility that a
+   certain authorization details object can be enriched.  It is assumed
+   that this property is part of the definition of the respective
+   authorization details type.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/8.%20%20Token%20Error%20Response"></a></body></html><a class="selflink" href="#section-8" id="section-8">8</a>.  Token Error Response</span>
+
+   The AS <em>MUST</em> refuse to process any unknown authorization data "type"
+   or authorization details not conforming to the respective "type"
+   definition.  If any of the objects in "authorization_details"
+   contains an unknown authorization data "type" or an object of known
+   "type" but containing unknown elements or elements of the wrong
+   "type", elements with invalid values, or if required elements are
+   missing, the AS <em>MUST</em> abort processing and respond with an error
+   "invalid_authorization_details" to the client.
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 21]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-22"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.%20%20Resource%20Servers"></a></body></html><a class="selflink" href="#section-9" id="section-9">9</a>.  Resource Servers</span>
+
+   In order to enable the RS to enforce the authorization details as
+   approved in the authorization process, the AS <em>MUST</em> make this data
+   available to the RS.  The AS <em>MAY</em> add the "authorization_details"
+   element to access tokens in JWT format or to Token Introspection
+   responses.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.1.%20%20JWT-based%20Access%20Tokens"></a></body></html><a class="selflink" href="#section-9.1" id="section-9.1">9.1</a>.  JWT-based Access Tokens</span>
+
+   If the access token is a JWT [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>], the AS is <em>RECOMMENDED</em> to add
+   the "authorization_details" object, filtered to the specific
+   audience, as a top-level claim.
+
+   The AS will typically also add further claims to the JWT the RS
+   requires for request processing, e.g., user id, roles, and
+   transaction-specific data.  What claims the particular RS requires is
+   defined by the RS-specific policy with the AS.
+
+   The following shows the contents of an example JWT for the payment
+   initiation example above:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 22]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-23"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   {
+      "iss": "https://as.example.com",
+      "sub": "24400320",
+      "aud": "a7AfcPcsl2",
+      "exp": 1311281970,
+      "acr": "psd2_sca",
+      "txn": "8b4729cc-32e4-4370-8cf0-5796154d1296",
+      "authorization_details": [
+         {
+            "type": "https://www.someorg.com/payment_initiation",
+            "actions": [
+               "initiate",
+               "status",
+               "cancel"
+            ],
+            "locations": [
+               "https://example.com/payments"
+            ],
+            "instructedAmount": {
+               "currency": "EUR",
+               "amount": "123.50"
+            },
+            "creditorName": "Merchant A",
+            "creditorAccount": {
+               "iban": "DE02100100109307118603"
+            },
+            "remittanceInformationUnstructured": "Ref Number Merchant"
+         }
+      ],
+      "debtorAccount": {
+         "iban": "DE40100100103307118608",
+         "user_role": "owner"
+      }
+   }
+
+   In this case, the AS added the following example claims:
+
+   *  "sub": conveys the user on which behalf the client is asking for
+      payment initation
+
+   *  "txn": transaction id used to trace the transaction across the
+      services of provider "example.com"
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 23]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-24"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   *  "debtorAccount": API-specific element containing the debtor
+      account.  In the example, this account was not passed in the
+      authorization details but selected by the user during the
+      authorization process.  The field "user_role" conveys the role the
+      user has with respect to this particular account.  In this case,
+      they is the owner.  This data is used for access control at the
+      payment API (the RS).
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/9.2.%20%20Token%20Introspection"></a></body></html><a class="selflink" href="#section-9.2" id="section-9.2">9.2</a>.  Token Introspection</span>
+
+   In the case of opaque access tokens, the data provided to a certain
+   RS is determined using the RS's identifier with the AS (see
+   [<a href="#ref-I-D.ietf-oauth-jwt-introspection-response">I-D.ietf-oauth-jwt-introspection-response</a>], section 3).
+
+   The token introspection response provides the RS with the
+   authorization details applicable to it as a top-level JSON element
+   along with the claims the RS requires for request processing.
+
+   Here is an example for the payment initiation example RS:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 24]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-25"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   {
+      "active": true,
+      "sub": "24400320",
+      "aud": "s6BhdRkqt3",
+      "exp": 1311281970,
+      "acr": "psd2_sca",
+      "txn": "8b4729cc-32e4-4370-8cf0-5796154d1296",
+      "authorization_details": [
+         {
+            "type": "https://www.someorg.com/payment_initiation",
+            "actions": [
+               "initiate",
+               "status",
+               "cancel"
+            ],
+            "locations": [
+               "https://example.com/payments"
+            ],
+            "instructedAmount": {
+               "currency": "EUR",
+               "amount": "123.50"
+            },
+            "creditorName": "Merchant123",
+            "creditorAccount": {
+               "iban": "DE02100100109307118603"
+            },
+            "remittanceInformationUnstructured": "Ref Number Merchant"
+         }
+      ],
+      "debtorAccount": {
+         "iban": "DE40100100103307118608",
+         "user_role": "owner"
+      }
+   }
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/10.%20%20Metadata"></a></body></html><a class="selflink" href="#section-10" id="section-10">10</a>.  Metadata</span>
+
+   The AS publishes the list of authorization details types it supports
+   using the metadata parameter "authorization_details_types_supported",
+   which is a JSON array.
+
+   Clients announce the authorization data types they use in the new
+   dynamic client registration parameter "authorization_details_types".
+
+   The registration of authorization data types with the AS is out of
+   scope of this draft.
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 25]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-26"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/11.%20%20Scope%20value%20%22openid%22%20and%20%22claims%22%20parameter"></a></body></html><a class="selflink" href="#section-11" id="section-11">11</a>.  Scope value "openid" and "claims" parameter</span>
+
+   OpenID Connect [<a href="#ref-OIDC" title='"OpenID Connect Core 1.0 incorporating errata set 1"'>OIDC</a>] specifies the JSON-based "claims" request
+   parameter that can be used to specify the claims a client (acting as
+   OpenID Connect Relying Party) wishes to receive in a fine-grained and
+   privacy-preserving way as well as assign those claims to certain
+   delivery mechanisms, i.e. ID Token or userinfo response.
+
+   The combination of the scope value "openid" and the additional
+   parameter "claims" can be used beside "authorization_details" in the
+   same way as every non-OIDC scope value.
+
+   Alternatively, there could be an authorization data type for OpenID
+   Connect.  <a href="#appendix-A.1">Appendix A.1</a> gives an example of what such an authorization
+   data type could look like.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.%20%20Implementation%20Considerations"></a></body></html><a class="selflink" href="#section-12" id="section-12">12</a>.  Implementation Considerations</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.1.%20%20Using%20authorization%20details%20in%20a%20certain%20deployment"></a></body></html><a class="selflink" href="#section-12.1" id="section-12.1">12.1</a>.  Using authorization details in a certain deployment</span>
+
+   Using authorization details in a certain deployment will require the
+   following steps:
+
+   *  Define authorization details types
+
+   *  Publish authorization details types in the OAuth server metadata
+
+   *  Determine how authorization details are shown to the user in the
+      user consent
+
+   *  (if needed) Enrich authorization details in the user consent
+      process (e.g. add selected accounts or set expirations)
+
+   *  (if needed) Determine how authorization details are reflected in
+      access token content or introspection responses
+
+   *  Determine how the resource server(s) process(s) the authorization
+      details or token data derived from authorization details
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.2.%20%20Minimal%20product%20support"></a></body></html><a class="selflink" href="#section-12.2" id="section-12.2">12.2</a>.  Minimal product support</span>
+
+   Products supporting this specification should provide the following
+   basic functions:
+
+   *  Support advertisement of supported authorization details types in
+      OAuth server metadata
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 26]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-27"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   *  Accept "authorization_details" parameter in authorization requests
+      including basic syntax check for compliance with this
+      specification
+
+   *  Support storage of consented authorization details as part of a
+      grant
+
+   *  Implement default behavior for adding authorization details to
+      access tokens and token introspection responses in order to make
+      them available to resource servers (similar to scope values).
+      This should work with any grant type, especially
+      "authorization_code" and "refresh_token".
+
+   Processing and presentation of authorization details will vary
+   significantly among different authorization data types.  Products
+   should therefore support customization of the respective behavior.
+   In particular, products should
+
+   *  allow deployments to determine presentation of the authorization
+      details
+
+   *  allow deployments to modify requested authorization details in the
+      user consent process, e.g. adding fields
+
+   *  allow deployments to merge requested and pre-existing
+      authorization details
+
+   One option would be to have a mechanism allowing the registration of
+   extension modules, each of them responsible for rendering the
+   respective user consent and any transformation needed to provide the
+   data needed to the resource server by way of structured access tokens
+   or token introspection responses.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.3.%20%20Use%20of%20Machine-readable%20Type%20Schemas"></a></body></html><a class="selflink" href="#section-12.3" id="section-12.3">12.3</a>.  Use of Machine-readable Type Schemas</span>
+
+   Products might allow deployments to use machine-readable schema
+   languages for defining authorization details types to facilitate
+   creating and validating authorization details objects against such
+   schemas.  For example, if an authorization details "type" were
+   defined using JSON Schemas [<a href="#ref-JSON.Schema">JSON.Schema</a>], the JSON schema id could be
+   used as "type" value in the respective authorization details objects.
+
+   Note however that "type" values are identifiers understood by the AS
+   and, to the extent necessary, the client and RS.  This specification
+   makes no assumption that a "type" value point to a machine-readable
+   schema format, or that any party in the system (such as the client,
+   AS, or RS) dereference or process the contents of the "type" field in
+   any specific way.
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 27]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-28"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/12.4.%20%20Large%20requests"></a></body></html><a class="selflink" href="#section-12.4" id="section-12.4">12.4</a>.  Large requests</span>
+
+   Authorization request URIs containing authorization details in a
+   request parameter or a request object can become very long.
+   Implementers <em>SHOULD</em> therefore consider using the "request_uri"
+   parameter as defined in [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>] in combination with
+   the pushed request object mechanism as defined in
+   [<a href="#ref-I-D.ietf-oauth-par">I-D.ietf-oauth-par</a>] to pass authorization details in a reliable and
+   secure manner.  Here is an example of such a pushed authorization
+   request that sends the authorization request data directly to the AS
+   via a HTTPS-protected connection:
+
+     POST /as/par HTTP/1.1
+     Host: as.example.com
+     Content-Type: application/x-www-form-urlencoded
+     Authorization: Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3
+
+     response_type=code&amp;
+     client_id=s6BhdRkqt3
+     &amp;state=af0ifjsldkj
+     &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+     &amp;code_challenge_method=S256
+     &amp;code_challenge=K2-ltc83acc4h0c9w6ESC_rEMTJ3bwc-uCHaoeK1t8U
+     &amp;authorization_details=%5B%7B%22type%22%3A%22account_information%22
+     %2C%22actions%22%3A%5B%22list_accounts%22%2C%22read_balances%22%2C%
+     22read_transactions%22%5D%2C%22locations%22%3A%5B%22https%3A%2F%2Fe
+     xample.com%2Faccounts%22%5D%7D%2C%7B%22type%22%3A%22payment_initiat
+     ion%22%2C%22actions%22%3A%5B%22initiate%22%2C%22status%22%2C%22canc
+     el%22%5D%2C%22locations%22%3A%5B%22https%3A%2F%2Fexample.com%2Fpaym
+     ents%22%5D%2C%22instructedAmount%22%3A%7B%22currency%22%3A%22EUR%22
+     %2C%22amount%22%3A%22123.50%22%7D%2C%22creditorName%22%3A%22Merchan
+     t123%22%2C%22creditorAccount%22%3A%7B%22iban%22%3A%22DE021001001093
+     07118603%22%7D%2C%22remittanceInformationUnstructured%22%3A%22Ref%2
+     0Number%20Merchant%22%7D%5D
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/13.%20%20Security%20Considerations"></a></body></html><a class="selflink" href="#section-13" id="section-13">13</a>.  Security Considerations</span>
+
+   Authorization details are sent through the user agent in case of an
+   OAuth authorization request, which makes them vulnerable to
+   modifications by the user.  In order to ensure their integrity, the
+   client <em>SHOULD</em> send authorization details in a signed request object
+   as defined in [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>] or use the "request_uri"
+   authorization request parameter as defined in [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>]
+   in conjunction with [<a href="#ref-I-D.ietf-oauth-par">I-D.ietf-oauth-par</a>] to pass the URI of the
+   request object to the authorization server.
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 28]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-29"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   All strings <em>MUST</em> be compared using the exact byte representation of
+   the characters as defined by [<a href="/doc/html/rfc8259" title='"The JavaScript Object Notation (JSON) Data Interchange Format"'>RFC8259</a>].  This is especially true for
+   the "type" field, which dictates which other fields and functions are
+   allowed in the request.  The server <em>MUST NOT</em> perform any form of
+   collation, transformation, or equivalence on the string values.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/14.%20%20Privacy%20Considerations"></a></body></html><a class="selflink" href="#section-14" id="section-14">14</a>.  Privacy Considerations</span>
+
+   Implementers <em>MUST</em> design and use authorization details in a privacy-
+   preserving manner.
+
+   Any sensitive personal data included in authorization details <em>MUST</em> be
+   prevented from leaking, e.g., through referrer headers.
+   Implementation options include encrypted request objects as defined
+   in [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>] or transmission of authorization details
+   via end-to-end encrypted connections between client and authorization
+   server by utilizing [<a href="#ref-I-D.ietf-oauth-par">I-D.ietf-oauth-par</a>] and the "request_uri"
+   authorization request parameter as defined in
+   [<a href="#ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>].
+
+   Even if the request data is encrypted, an attacker could use the
+   authorization server to learn the user data by injecting the
+   encrypted request data into an authorization request on a device
+   under his control and use the authorization server's user consent
+   screens to show the (decrypted) user data in the clear.
+   Implementations <em>MUST</em> consider this attacker vector and implement
+   appropriate countermeasures, e.g. by only showing portions of the
+   data or, if possible, determining whether the assumed user context is
+   still the same (after user authentication).
+
+   The AS <em>MUST</em> take into consideration the privacy implications when
+   sharing authorization details with the client or resource servers.
+   The AS <em>SHOULD</em> share this data with those parties on a "need to know"
+   basis.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/15.%20%20Acknowledgements"></a></body></html><a class="selflink" href="#section-15" id="section-15">15</a>.  Acknowledgements</span>
+
+   We would like to thank Daniel Fett, Sebastian Ebling, Dave Tonge,
+   Mike Jones, Nat Sakimura, and Rob Otto for their valuable feedback
+   during the preparation of this draft.
+
+   We would also like to thank Vladimir Dzhuvinov, Takahiko Kawasaki,
+   Daniel Fett, Dave Tonge, Travis Spencer, J&amp;#248;rgen Binningsb&amp;#248;,
+   Aamund Bremer, Steinar Noem, Francis Pouatcha, Jacob Ideskog, and
+   Aaron Parecki for their valuable feedback to this draft.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/16.%20%20IANA%20Considerations"></a></body></html><a class="selflink" href="#section-16" id="section-16">16</a>.  IANA Considerations</span>
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 29]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-30"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/16.1.%20%20JSON%20Web%20Token%20Claims%20Registration"></a></body></html><a class="selflink" href="#section-16.1" id="section-16.1">16.1</a>.  JSON Web Token Claims Registration</span>
+
+   This specification requests registration of the following value in
+   the IANA "JSON Web Token Claims Registry" established by [<a href="/doc/html/rfc7519" title='"JSON Web Token (JWT)"'>RFC7519</a>].
+
+   Claim Name:  "authorization_details"
+   Claim Description:  The request parameter "authorization_details"
+      contains, in JSON notation, an array of objects.  Each JSON object
+      contains the data to specify the authorization requirements for a
+      certain type of resource.
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-2">Section 2</a> of this document
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/16.2.%20%20OAuth%20Authorization%20Server%20Metadata"></a></body></html><a class="selflink" href="#section-16.2" id="section-16.2">16.2</a>.  OAuth Authorization Server Metadata</span>
+
+   This specification requests registration of the following values in
+   the IANA "OAuth Authorization Server Metadata" registry of
+   [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by [<a href="/doc/html/rfc8414" title='"OAuth 2.0 Authorization Server Metadata"'>RFC8414</a>].
+
+   Metadata Name:  "authorization_details_types_supported"
+   Metadata Description:  JSON array containing the authorization
+      details types the AS supports
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-10">Section 10</a> of [[ this document ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/16.3.%20%20OAuth%20Dynamic%20Client%20Registration%20Metadata"></a></body></html><a class="selflink" href="#section-16.3" id="section-16.3">16.3</a>.  OAuth Dynamic Client Registration Metadata</span>
+
+   This specification requests registration of the following value in
+   the IANA "OAuth Dynamic Client Registration Metadata" registry of
+   [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by [<a href="/doc/html/rfc7591" title='"OAuth 2.0 Dynamic Client Registration Protocol"'>RFC7591</a>].
+
+   Metadata Name:  "authorization_details_types"
+   Metadata Description:  Indicates what authorization details types the
+      client uses.
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-10">Section 10</a> of [[ this document ]]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/16.4.%20%20OAuth%20Extensions%20Error%20registry"></a></body></html><a class="selflink" href="#section-16.4" id="section-16.4">16.4</a>.  OAuth Extensions Error registry</span>
+
+   This specification requests registration of the following value in
+   the IANA "OAuth Extensions Error registry" registry of
+   [<a href="#ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>] established by [<a href="/doc/html/rfc6749" title='"The OAuth 2.0 Authorization Framework"'>RFC6749</a>].
+
+   Metadata Name:  "invalid_authorization_details"
+   Metadata Description:  indicates invalid
+      "authorization_details_parameter"to the client.
+   Change Controller:  IESG
+   Specification Document(s):  <a href="#section-5">Section 5</a> of [[ this document ]]
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 30]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-31"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/17.%20%20Normative%20References"></a></body></html><a class="selflink" href="#section-17" id="section-17">17</a>.  Normative References</span>
+
+   [<a id="ref-RFC2119">RFC2119</a>]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc2119">RFC 2119</a>,
+              DOI 10.17487/RFC2119, March 1997,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;.
+
+   [<a id="ref-RFC8414">RFC8414</a>]  Jones, M., Sakimura, N., and J. Bradley, "OAuth 2.0
+              Authorization Server Metadata", <a href="/doc/html/rfc8414">RFC 8414</a>,
+              DOI 10.17487/RFC8414, June 2018,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8414">https://www.rfc-editor.org/info/rfc8414</a>&gt;.
+
+   [<a id="ref-RFC8707">RFC8707</a>]  Campbell, B., Bradley, J., and H. Tschofenig, "Resource
+              Indicators for OAuth 2.0", <a href="/doc/html/rfc8707">RFC 8707</a>, DOI 10.17487/RFC8707,
+              February 2020, &lt;<a href="https://www.rfc-editor.org/info/rfc8707">https://www.rfc-editor.org/info/rfc8707</a>&gt;.
+
+   [<a id="ref-RFC8174">RFC8174</a>]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in <a href="/doc/html/rfc2119">RFC</a>
+              <a href="/doc/html/rfc2119">2119</a> Key Words", <a href="/doc/html/bcp14">BCP 14</a>, <a href="/doc/html/rfc8174">RFC 8174</a>, DOI 10.17487/RFC8174,
+              May 2017, &lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;.
+
+   [<a id="ref-RFC8628">RFC8628</a>]  Denniss, W., Bradley, J., Jones, M., and H. Tschofenig,
+              "OAuth 2.0 Device Authorization Grant", <a href="/doc/html/rfc8628">RFC 8628</a>,
+              DOI 10.17487/RFC8628, August 2019,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8628">https://www.rfc-editor.org/info/rfc8628</a>&gt;.
+
+   [<a id="ref-RFC7519">RFC7519</a>]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
+              (JWT)", <a href="/doc/html/rfc7519">RFC 7519</a>, DOI 10.17487/RFC7519, May 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7519">https://www.rfc-editor.org/info/rfc7519</a>&gt;.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/18.%20%20Informative%20References"></a></body></html><a class="selflink" href="#section-18" id="section-18">18</a>.  Informative References</span>
+
+   [<a id="ref-RFC6749">RFC6749</a>]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              <a href="/doc/html/rfc6749">RFC 6749</a>, DOI 10.17487/RFC6749, October 2012,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc6749">https://www.rfc-editor.org/info/rfc6749</a>&gt;.
+
+   [<a id="ref-OIDC">OIDC</a>]     Sakimura, N., Bradley, J., Jones, M., de Medeiros, B., and
+              C. Mortimore, "OpenID Connect Core 1.0 incorporating
+              errata set 1", 8 November 2014,
+              &lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;.
+
+   [<a id="ref-RFC8259">RFC8259</a>]  Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
+              Interchange Format", STD 90, <a href="/doc/html/rfc8259">RFC 8259</a>,
+              DOI 10.17487/RFC8259, December 2017,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>&gt;.
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 31]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-32"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [<a id="ref-transaction-authorization">transaction-authorization</a>]
+              Lodderstedt, T., "Transaction Authorization or why we need
+              to re-think OAuth scopes", 20 April 2019,
+              &lt;<a href="https://medium.com/oauth-2/transaction-authorization-or-why-we-need-to-re-think-oauth-scopes-2326e2038948">https://medium.com/oauth-2/transaction-authorization-or-</a>
+              <a href="https://medium.com/oauth-2/transaction-authorization-or-why-we-need-to-re-think-oauth-scopes-2326e2038948">why-we-need-to-re-think-oauth-scopes-2326e2038948</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-par">I-D.ietf-oauth-par</a>]
+              Lodderstedt, T., Campbell, B., Sakimura, N., Tonge, D.,
+              and F. Skokan, "OAuth 2.0 Pushed Authorization Requests",
+              Work in Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-par-10">draft-ietf-oauth-par-10</a>,
+              29 July 2021, &lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-par-10">https://datatracker.ietf.org/doc/html/</a>
+              <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-par-10">draft-ietf-oauth-par-10</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-jwt-introspection-response">I-D.ietf-oauth-jwt-introspection-response</a>]
+              Lodderstedt, T. and V. Dzhuvinov, "JWT Response for OAuth
+              Token Introspection", Work in Progress, Internet-Draft,
+              <a href="/doc/html/draft-ietf-oauth-jwt-introspection-response-12">draft-ietf-oauth-jwt-introspection-response-12</a>, 4
+              September 2021, &lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-jwt-introspection-response-12">https://datatracker.ietf.org/doc/html/</a>
+              <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-jwt-introspection-response-12">draft-ietf-oauth-jwt-introspection-response-12</a>&gt;.
+
+   [<a id="ref-ETSI">ETSI</a>]     ETSI, "ETSI TS 119 432, Electronic Signatures and
+              Infrastructures (ESI); Protocols for remote digital
+              signature creation", 20 March 2019,
+              &lt;<a href="https://www.etsi.org/deliver/etsi_ts/119400_119499/119432/01.01.01_60/ts_119432v010101p.pdf">https://www.etsi.org/deliver/</a>
+              <a href="https://www.etsi.org/deliver/etsi_ts/119400_119499/119432/01.01.01_60/ts_119432v010101p.pdf">etsi_ts/119400_119499/119432/01.01.01_60/</a>
+              <a href="https://www.etsi.org/deliver/etsi_ts/119400_119499/119432/01.01.01_60/ts_119432v010101p.pdf">ts_119432v010101p.pdf</a>&gt;.
+
+   [<a id="ref-JSON.Schema">JSON.Schema</a>]
+              json-schema.org, "JSON Schema",
+              &lt;<a href="https://json-schema.org/">https://json-schema.org/</a>&gt;.
+
+   [<a id="ref-I-D.ietf-oauth-jwsreq">I-D.ietf-oauth-jwsreq</a>]
+              Sakimura, N., Bradley, J., and M. B. Jones, "The OAuth 2.0
+              Authorization Framework: JWT-Secured Authorization Request
+              (JAR)", Work in Progress, Internet-Draft, <a href="/doc/html/draft-ietf-oauth-jwsreq-34">draft-ietf-</a>
+              <a href="/doc/html/draft-ietf-oauth-jwsreq-34">oauth-jwsreq-34</a>, 8 April 2021,
+              &lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-jwsreq-34">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-</a>
+              <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-jwsreq-34">jwsreq-34</a>&gt;.
+
+   [<a id="ref-IANA.OAuth.Parameters">IANA.OAuth.Parameters</a>]
+              IANA, "OAuth Parameters",
+              &lt;<a href="http://www.iana.org/assignments/oauth-parameters">http://www.iana.org/assignments/oauth-parameters</a>&gt;.
+
+   [<a id="ref-RFC7591">RFC7591</a>]  Richer, J., Ed., Jones, M., Bradley, J., Machulak, M., and
+              P. Hunt, "OAuth 2.0 Dynamic Client Registration Protocol",
+              <a href="/doc/html/rfc7591">RFC 7591</a>, DOI 10.17487/RFC7591, July 2015,
+              &lt;<a href="https://www.rfc-editor.org/info/rfc7591">https://www.rfc-editor.org/info/rfc7591</a>&gt;.
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 32]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-33"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [<a id="ref-OpenID.CIBA">OpenID.CIBA</a>]
+              Fernandez, G., Walter, F., Nennker, A., Tonge, D., and B.
+              Campbell, "OpenID Connect Client Initiated Backchannel
+              Authentication Flow - Core 1.0", 16 January 2019,
+              &lt;<a href="https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html">https://openid.net/specs/openid-client-initiated-</a>
+              <a href="https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html">backchannel-authentication-core-1_0.html</a>&gt;.
+
+   [<a id="ref-CSC">CSC</a>]      Consortium, C. S., "Architectures and protocols for remote
+              signature applications", 1 June 2019,
+              &lt;<a href="https://cloudsignatureconsortium.org/wp-content/uploads/2019/07/CSC_API_V1_1.0.4.0.pdf">https://cloudsignatureconsortium.org/wp-</a>
+              <a href="https://cloudsignatureconsortium.org/wp-content/uploads/2019/07/CSC_API_V1_1.0.4.0.pdf">content/uploads/2019/07/CSC_API_V1_1.0.4.0.pdf</a>&gt;.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20A.%20%20Additional%20Examples"></a></body></html><a class="selflink" href="#appendix-A" id="appendix-A">Appendix A</a>.  Additional Examples</span>
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/A.1.%20%20OpenID%20Connect"></a></body></html><a class="selflink" href="#appendix-A.1" id="appendix-A.1">A.1</a>.  OpenID Connect</span>
+
+   These hypothetical examples try to encapsulate all details specific
+   to the OpenID Connect part of an authorization process into an
+   authorization JSON object.
+
+   The top-level elements are based on the definitions given in [<a href="#ref-OIDC" title='"OpenID Connect Core 1.0 incorporating errata set 1"'>OIDC</a>]:
+
+   *  "claim_sets": names of predefined claim sets, replacement for
+      respective scope values, such as "profile"
+
+   *  "max_age": Maximum Authentication Age
+
+   *  "acr_values": array of ACR values
+
+   *  "claims": the "claims" JSON structure as defined in [<a href="#ref-OIDC" title='"OpenID Connect Core 1.0 incorporating errata set 1"'>OIDC</a>]
+
+   This is a simple request for some claim sets.
+
+   [
+      {
+         "type": "openid",
+         "locations": [
+            "https://op.example.com/userinfo"
+         ],
+         "claim_sets": [
+            "email",
+            "profile"
+         ]
+      }
+   ]
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 33]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-34"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   Note: "locations" specifies the location of the userinfo endpoint
+   since this is the only place where an access token is used by a
+   client (RP) in OpenID Connect to obtain claims.
+
+   A more sophisticated example is shown in the following
+
+   [
+      {
+         "type": "openid",
+         "locations": [
+            "https://op.example.com/userinfo"
+         ],
+         "max_age": 86400,
+         "acr_values": "urn:mace:incommon:iap:silver",
+         "claims": {
+            "userinfo": {
+               "given_name": {
+                  "essential": true
+               },
+               "nickname": null,
+               "email": {
+                  "essential": true
+               },
+               "email_verified": {
+                  "essential": true
+               },
+               "picture": null,
+               "http://example.info/claims/groups": null
+            },
+            "id_token": {
+               "auth_time": {
+                  "essential": true
+               }
+            }
+         }
+      }
+   ]
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/A.2.%20%20Remote%20Electronic%20Signing"></a></body></html><a class="selflink" href="#appendix-A.2" id="appendix-A.2">A.2</a>.  Remote Electronic Signing</span>
+
+   The following example is based on the concept laid out for remote
+   electronic signing in ETSI TS 119 432 [<a href="#ref-ETSI" title='"ETSI TS 119 432, Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation"'>ETSI</a>] and the CSC API for
+   remote signature creation [<a href="#ref-CSC" title='"Architectures and protocols for remote signature applications"'>CSC</a>].
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 34]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-35"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+      {
+         "type": "sign",
+         "locations": [
+            "https://signing.example.com/signdoc"
+         ],
+         "credentialID": "60916d31-932e-4820-ba82-1fcead1c9ea3",
+         "documentDigests": [
+            {
+               "hash": "sTOgwOm+474gFj0q0x1iSNspKqbcse4IeiqlDg/HWuI=",
+               "label": "Credit Contract"
+            },
+            {
+               "hash": "HZQzZmMAIWekfGH0/ZKW1nsdt0xg3H6bZYztgsMTLw0=",
+               "label": "Contract Payment Protection Insurance"
+            }
+         ],
+         "hashAlgorithmOID": "2.16.840.1.101.3.4.2.1"
+      }
+   ]
+
+   The top-level elements have the following meaning:
+
+   *  "credentialID": identifier of the certificate to be used for
+      signing
+
+   *  "documentDigests": array containing the hash of every document to
+      be signed ("hash" elements).  Additionally, the corresponding
+      "label" element identifies the respective document to the user,
+      e.g. to be used in user consent.
+
+   *  "hashAlgorithm": algorithm that was used to calculate the hash
+      values.
+
+   The AS is supposed to ask the user for consent for the creation of
+   signatures for the documents listed in the structure.  The client
+   uses the access token issued as a result of the process to call the
+   sign doc endpoint at the respective signing service to actually
+   create the signature.  This access token is bound to the client, the
+   user id and the hashes (and signature algorithm) as consented by the
+   user.
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/A.3.%20%20Access%20to%20Tax%20Data"></a></body></html><a class="selflink" href="#appendix-A.3" id="appendix-A.3">A.3</a>.  Access to Tax Data</span>
+
+   This example is inspired by an API allowing third parties to access
+   citizen's tax declarations and income statements, for example, to
+   determine their creditworthiness.
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 35]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-36"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   [
+       {
+           "type": "tax_data",
+           "locations": [
+               "https://taxservice.govehub.no"
+           ],
+           "actions":"read_tax_declaration",
+           "periods": ["2018"],
+           "duration_of_access": 30,
+           "tax_payer_id": "23674185438934"
+       }
+   ]
+
+   The top-level elements have the following meaning:
+
+   *  "periods": determines the periods the client wants to access
+
+   *  "duration_of_access": how long does the client intend to access
+      the data in days
+
+   *  "tax_payer_id": identifier of the tax payer (if known to the
+      client)
+
+<span class="h3"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/A.4.%20%20eHealth"></a></body></html><a class="selflink" href="#appendix-A.4" id="appendix-A.4">A.4</a>.  eHealth</span>
+
+   These two examples are inspired by requirements for APIs used in the
+   Norwegian eHealth system.
+
+   In this use case, the physical therapist sits in front of her
+   computer using a local Electronic Health Records (EHR) system.  They
+   want to look at the electronic patient records of a certain patient
+   and they also want to fetch the patients journal entries in another
+   system, perhaps at another institution or a national service.  Access
+   to this data is provided by an API.
+
+   The information necessary to authorize the request at the API is only
+   known by the EHR system, and must be presented to the API.
+
+   In the first example, the authorization details object contains the
+   identifier of an organization.  In this case, the API needs to know
+   if the given organization has the lawful basis for processing
+   personal health information to give access to sensitive data.
+
+
+
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 36]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-37"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   "authorization_details":{
+       "type":"patient_record",
+       "requesting_entity": {
+           "type": "Practitioner",
+           "identifier": [
+           {
+               "system": " urn:oid:2.16.578.1.12.4.1.4.4",
+               "value": "1234567"
+           }],
+           "practitioner_role":{
+               "organization":{
+                   "identifier": {
+                       "system":"urn:oid:2.16.578.1.12.4.1.2.101",
+                       "type":"ENH",
+                       "value":"[organizational number]"
+                   }
+               }
+           }
+       }
+   }
+
+   In the second example, the API requires more information to authorize
+   the request.  In this case, the authorization details object contains
+   additional information about the health institution and the current
+   profession the user has at the time of the request.  The additional
+   level of detail could be used for both authorization and data
+   minimization.
+
+   [
+      {
+         "type": "patient_record",
+         "location": "https://fhir.example.com/patient",
+         "actions": [
+            "read"
+         ],
+         "patient_identifier": [
+            {
+               "system": "urn:oid:2.16.578.1.12.4.1.4.1",
+               "value": "12345678901"
+            }
+         ],
+         "reason_for_request": "Clinical treatment",
+         "requesting_entity": {
+            "type": "Practitioner",
+            "identifier": [
+               {
+                  "system": " urn:oid:2.16.578.1.12.4.1.4.4",
+                  "value": "1234567"
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 37]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-38"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+               }
+            ],
+            "practitioner_role": {
+               "organization": {
+                  "identifier": [
+                     {
+                        "system": "urn:oid:2.16.578.1.12.4.1.2.101",
+                        "type": "ENH",
+                        "value": "&lt;organizational number&gt;"
+                     }
+                  ],
+                  "type": {
+                     "coding": [
+                        {
+                           "system":
+                              "http://hl7.org/fhir/organization-type",
+                           "code": "dept",
+                           "display": "Hospital Department"
+                        }
+                     ]
+                  },
+                  "name": "Akuttmottak"
+               },
+               "profession": {
+                  "coding": [
+                     {
+                        "system": "http://snomed.info/sct",
+                        "code": "36682004",
+                        "display": "Physical therapist"
+                     }
+                  ]
+               }
+            }
+         }
+      }
+   ]
+
+   Description of the elements:
+
+   *  "patient_identifier": the identifier of the patient composed of a
+      system identifier in OID format (namespace) and the actual value
+      within this namespace.
+
+   *  "reason_for_request": the reason why the user wants to access a
+      certain API
+
+
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 38]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-39"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   *  "requesting_entity": specification of the requester by means of
+      identity, role and organizational context.  This data is provided
+      to facilitate authorization and for auditing purposes.
+
+   In this use case, the AS authenticates the requester, who is not the
+   patient, and approves access based on policies.
+
+<span class="h2"><html><body><a class="dashAnchor" name="//apple_ref/cpp/Shortcut/Appendix%20B.%20%20Document%20History"></a></body></html><a class="selflink" href="#appendix-B" id="appendix-B">Appendix B</a>.  Document History</span>
+
+   [[ To be removed from the final specification ]]
+
+   -07
+
+   *  incorporated review feedback from WGLC
+
+   *  fixed wording in token introspection section
+
+   *  added privacy considerations re authorization details in token
+      response
+
+   -06
+
+   *  removed use of resource indicators to filter authorization details
+      in token response
+
+   -05
+
+   *  added "authorization_details" token request parameter and
+      discussion on authorization details comparison
+
+   *  added "privileges" field to authorization details (to align with
+      GNAP)
+
+   *  added IANA text and changed metadata parameter names
+
+   *  added text about use of machine-readable type schemas, e.g JSON
+      Schema
+
+   *  added text on how authorization details are determined for access
+      token issued with token response
+
+   *  added token error response and further error conditions to
+      authorization error response
+
+   -04
+
+   *  restructured draft for better readability
+
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 39]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-40"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   *  simplified normative text about use of the "resource" parameter
+      with "authorization_details"
+
+   *  added implementation considerations for deployments and products
+
+   *  added type union language from GNAP
+
+   *  added recommendation to use PAR to cope with large requests and
+      for request protection
+
+   -03
+
+   *  Updated references to current revisions or RFC numbers
+
+   *  Added section about enrichment of authorization details objects by
+      the AS
+
+   *  Clarified processing of unknown authorization details parameters
+
+   *  clarified dependencies between "resource" and
+      "authorization_details" parameters
+
+   -02
+
+   *  Clarify "type" parameter processing
+
+   -01
+
+   *  Minor fix-up in a few examples
+
+   -00 (WG draft)
+
+   *  initial WG revision
+
+   -03
+
+   *  Reworked examples to illustrate privacy preserving use of
+      "authorization_details"
+
+   *  Added text on audience restriction
+
+   *  Added description of relationship between "scope" and
+      "authorization_details"
+
+   *  Added text on token request &amp; response and "authorization_details"
+
+   *  Added text on how authorization details are conveyed to RSs by
+      JWTs or token introspection endpoint response
+
+
+
+<span class="grey">Lodderstedt, et al.       Expires 16 March 2022                [Page 40]</span></pre>
+<hr class="noprint"/><!--NewPage--><pre class="newpage"><span id="page-41"></span>
+<span class="grey">Internet-Draft                  oauth-rar                 September 2021</span>
+
+
+   *  Added description of relationship between "claims" and
+      "authorization_details"
+
+   *  Added more example from different sectors
+
+   *  Clarified string comparison to be byte-exact without collation
+
+   -02
+
+   *  Added Security Considerations
+
+   *  Added Privacy Considerations
+
+   *  Added notes on URI size and authorization details
+
+   *  Added requirement to return the effective authorization details
+      granted by the resource owner in the token response
+
+   *  changed "authorization_details" structure from object to array
+
+   *  added Justin Richer &amp; Brian Campbell as Co-Authors
+
+   -00 / -01
+
+   *  first draft
+
+Authors' Addresses
+
+   Torsten Lodderstedt
+   yes.com
+
+   Email: torsten@lodderstedt.net
+
+
+   Justin Richer
+   Bespoke Engineering
+
+   Email: ietf@justin.richer.org
+
+
+   Brian Campbell
+   Ping Identity
+
+   Email: bcampbell@pingidentity.com
+
+
+
+
+
+
+
+Lodderstedt, et al.       Expires 16 March 2022                [Page 41]
+</pre>
+</div>
+</div>
+</div>
+<script>$(".visible-nojs").removeClass("visible-nojs");</script>
+<script>$(".hidden-nojs").removeClass("hidden-nojs");</script>
+<script type="text/javascript"><!--
+    var legend_html = "Colour legend:<br /> \
+     <table> \
+        <tr><td>Unknown:</td>                   <td><span class='cplate bgwhite'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft:</td>                     <td><span class='cplate bgred'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Informational:</td>             <td><span class='cplate bgorange'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Experimental:</td>              <td><span class='cplate bgyellow'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Best Common Practice:</td>      <td><span class='cplate bgmagenta'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Proposed Standard:</td>         <td><span class='cplate bgblue'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Draft Standard (old designation):</td> <td><span class='cplate bgcyan'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Internet Standard:</td>         <td><span class='cplate bggreen'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Historic:</td>                  <td><span class='cplate bggrey'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+        <tr><td>Obsolete:</td>                  <td><span class='cplate bgbrown'>&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr> \
+    </table>";
+    function showLegend() {
+        var elem = document.getElementById('legend');
+        elem.innerHTML = legend_html
+        elem.style.visibility='visible';
+    }
+    function hideLegend() {
+        var elem = document.getElementById('legend');
+        elem.style.visibility='hidden';
+        elem.innerHTML = "";
+    }
+    // -->
+    </script>
+</body>
+</html>
